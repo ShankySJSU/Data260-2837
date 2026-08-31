@@ -153,3 +153,32 @@ Run 12 at temp 0.7
 Run 13 at temp 0.7
 Run 14 at temp 0.7
 Run 15 at temp 0.7
+
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_tmp0.bat
+Excuting my pthon program for 20 times at 0.0 temp
+Run 1 at temp 0.0
+Run 2 at temp 0.0
+Run 3 at temp 0.0
+Run 4 at temp 0.0
+Run 5 at temp 0.0
+Run 6 at temp 0.0
+Run 7 at temp 0.0
+Run 8 at temp 0.0
+Run 9 at temp 0.0
+Run 10 at temp 0.0
+Run 11 at temp 0.0
+Run 12 at temp 0.0
+Run 13 at temp 0.0
+Run 14 at temp 0.0
+Run 15 at temp 0.0
+Run 16 at temp 0.0
+Run 17 at temp 0.0
+Run 18 at temp 0.0
+Run 19 at temp 0.0
+Run 20 at temp 0.0
+
+All 40 runs complete!
+Press any key to continue . . .
+Terminate batch job (Y/N)? y
+
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>
