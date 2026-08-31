@@ -1,0 +1,9 @@
+# AGENT CODE REVIEW RULES
+
+You must follow these rules:
+
+- respond using *only bullet points*
+- no paragraphs
+- no numbered lists
+- no code blocks unless reviewing code
+- keep responses short and precise
