@@ -1,0 +1,9 @@
+FROM nginx:latest
+
+# Copy your HTML and rename it to index.html so Nginx loads it automatically
+COPY Hw1-shashank.html /usr/share/nginx/html/index.html
+
+# Copy your JavaScript file
+COPY restfeedback.js /usr/share/nginx/html/restfeedback.js
+
+EXPOSE 80
