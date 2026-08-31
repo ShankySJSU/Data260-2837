@@ -1,1 +1,155 @@
 
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>python agents_demo.py --input nondeterminism_input.json
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Staff Hygiene"
+  ],
+  "prompt_summary": "Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Staff Hygiene"
+  ],
+  "reviewer_summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Staff Hygiene"
+  ],
+  "summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"prompt_summary\": \"Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 81.52647233009338
+Reviewer: 66.95520424842834
+
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>dir /w
+ Volume in drive C is Windows
+ Volume Serial Number is 9E13-6C3F
+
+ Directory of C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260
+
+[.]                         [..]                        agents_demo - bkup_1.py     agents_demo.py              HomeWork1_RUN.bat           Introduction.py             nondeterminism_input.json
+[reports]                   test_help_hw1.py
+               6 File(s)         18,452 bytes
+               3 Dir(s)  227,541,295,104 bytes free
+
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
+Starting 40 nondeterminism runs...
+
+Excuting my pthon program for 20 times at 0.7 temp
+Run 1 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 2 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 3 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 4 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 5 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 6 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 7 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 8 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 9 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 10 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 11 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 12 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 13 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 14 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 15 at temp 0.7
+usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
+                      [--temprature TEMPRATURE]
+agents_demo.py: error: unrecognized arguments: --temperature 0.7
+Run 16 at temp 0.7
+Traceback (most recent call last):
+  File "C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260\agents_demo.py", line 4, in <module>
+    from langchain_ollama import OllamaLLM
+  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_ollama\__init__.py", line 16, in <module>
+    from importlib import metadata
+  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\importlib\metadata\__init__.py", line 8, in <module>
+    import zipfile
+  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 12, in <module>
+    import shutil
+  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 22, in <module>
+    import bz2
+  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\bz2.py", line 17, in <module>
+    from _bz2 import BZ2Compressor, BZ2Decompressor
+KeyboardInterrupt
+^CTerminate batch job (Y/N)? y
+
+C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
+Starting 40 nondeterminism runs...
+
+Excuting my pthon program for 20 times at 0.7 temp
+Run 1 at temp 0.7
+Run 2 at temp 0.7
+Run 3 at temp 0.7
+Run 4 at temp 0.7
+Run 5 at temp 0.7
+Run 6 at temp 0.7
+Run 7 at temp 0.7
+Run 8 at temp 0.7
+Run 9 at temp 0.7
+Run 10 at temp 0.7
+Run 11 at temp 0.7
+Run 12 at temp 0.7
+Run 13 at temp 0.7
+Run 14 at temp 0.7
+Run 15 at temp 0.7
