@@ -1,0 +1,33 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": ["FoodSafety", "Sanitation", "PestControl"],
+  "prompt_summary": "Restaurant inspection assesses cleanliness, food safety, staff hygiene, and pest/waste management compliance."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": ["FoodSafety", "Sanitation", "PestControl"],
+  "reviewer_summary": "Restaurant inspection evaluates cleanliness, food safety, staff hygiene, and pest/waste compliance."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "FoodSafety",
+    "Sanitation",
+    "PestControl"
+  ],
+  "summary": "Restaurant inspection evaluates cleanliness, food safety, staff hygiene, and pest/waste compliance.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\"FoodSafety\", \"Sanitation\", \"PestControl\"],\n  \"prompt_summary\": \"Restaurant inspection assesses cleanliness, food safety, staff hygiene, and pest/waste management compliance.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\"FoodSafety\", \"Sanitation\", \"PestControl\"],\n  \"reviewer_summary\": \"Restaurant inspection evaluates cleanliness, food safety, staff hygiene, and pest/waste compliance.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 66.69586372375488
+Reviewer: 70.71121263504028

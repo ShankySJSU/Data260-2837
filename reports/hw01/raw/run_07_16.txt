@@ -1,0 +1,13 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": ["missing", "error", "planner"],
+  "reviewer_summary": "Planner output not provided"
+}
+Error Could Not parse the string for JSON 

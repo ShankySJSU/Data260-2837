@@ -1,0 +1,41 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Sanitation"
+  ],
+  "prompt_summary": "Restaurant inspection checklist for premises cleanliness, safe food, staff hygiene, and sanitation."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Sanitation"
+  ],
+  "reviewer_summary": "Restaurant inspection checklist for premises cleanliness, food safety, and sanitation."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Sanitation"
+  ],
+  "summary": "Restaurant inspection checklist for premises cleanliness, food safety, and sanitation.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Sanitation\"\n  ],\n  \"prompt_summary\": \"Restaurant inspection checklist for premises cleanliness, safe food, staff hygiene, and sanitation.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Sanitation\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspection checklist for premises cleanliness, food safety, and sanitation.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 75.90871834754944
+Reviewer: 77.94606041908264

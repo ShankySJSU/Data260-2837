@@ -1,0 +1,41 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Waste and Pest Management"
+  ],
+  "prompt_summary": "Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and waste/pest management."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Waste and Pest Management"
+  ],
+  "reviewer_summary": "Restaurant inspection covers premises cleanliness, food safety, and waste/pest management."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "Food Safety",
+    "Premises Cleanliness",
+    "Waste and Pest Management"
+  ],
+  "summary": "Restaurant inspection covers premises cleanliness, food safety, and waste/pest management.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Waste and Pest Management\"\n  ],\n  \"prompt_summary\": \"Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and waste/pest management.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Waste and Pest Management\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspection covers premises cleanliness, food safety, and waste/pest management.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 65.27347302436829
+Reviewer: 85.69316220283508

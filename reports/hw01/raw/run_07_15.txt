@@ -1,0 +1,41 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": [
+    "food_safety",
+    "hygiene",
+    "sanitation"
+  ],
+  "prompt_summary": "Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and sanitation including pests, garbage, and wastewater disposal."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": [
+    "food_safety",
+    "hygiene",
+    "sanitation"
+  ],
+  "reviewer_summary": "Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and sanitation including pests, garbage, and wastewater disposal."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "food_safety",
+    "hygiene",
+    "sanitation"
+  ],
+  "summary": "Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and sanitation including pests, garbage, and wastewater disposal.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\n    \"food_safety\",\n    \"hygiene\",\n    \"sanitation\"\n  ],\n  \"prompt_summary\": \"Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and sanitation including pests, garbage, and wastewater disposal.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"food_safety\",\n    \"hygiene\",\n    \"sanitation\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspection covers premises cleanliness, food safety, staff hygiene, and sanitation including pests, garbage, and wastewater disposal.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 77.18764281272888
+Reviewer: 81.04044079780579

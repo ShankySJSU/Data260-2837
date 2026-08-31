@@ -1,0 +1,41 @@
+This is Homework 1-Shashank Ranjan
+Building of two tiny agents that talk to each other
+Working with Planner Agent...
+
+{
+  "prompt_tags": [
+    "Food Safety",
+    "Hygiene Practices",
+    "Waste Management"
+  ],
+  "prompt_summary": "Restaurant inspection covers cleanliness, food safety, staff hygiene, and waste management including pests and wastewater."
+}
+
+Working with Reviewer Agent...
+
+{
+  "reviewer_tags": [
+    "Food Safety",
+    "Hygiene Practices",
+    "Waste Management"
+  ],
+  "reviewer_summary": "Restaurant inspection covers cleanliness, food safety, staff hygiene, and waste management including pests and wastewater."
+}
+
+=== FINAL OUTPUT ===
+{
+  "tags": [
+    "Food Safety",
+    "Hygiene Practices",
+    "Waste Management"
+  ],
+  "summary": "Restaurant inspection covers cleanliness, food safety, staff hygiene, and waste management including pests and wastewater.",
+  "transcripts": {
+    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Hygiene Practices\",\n    \"Waste Management\"\n  ],\n  \"prompt_summary\": \"Restaurant inspection covers cleanliness, food safety, staff hygiene, and waste management including pests and wastewater.\"\n}",
+    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Hygiene Practices\",\n    \"Waste Management\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspection covers cleanliness, food safety, staff hygiene, and waste management including pests and wastewater.\"\n}"
+  }
+}
+
+Latency (Seconds):
+Planner: 55.74822020530701
+Reviewer: 54.11790585517883
