@@ -1,0 +1,15 @@
+log:Inspection Form Submission with following values: {"restName":"Rangoli Sweets","restAdr":"130 El Camion Real","email":"shanky@gmail.com","comments":"Everything looks good in this resturant with proper seating place and drinking facilities with hygine","inspectionCat":"OverAllCondition","termsChecked":true,"submittedAt":"8/31/2026, 2:44:47 AM"}
+restfeedback.js:55 Primary Field -->(Restaurant Name): Rangoli Sweets
+restfeedback.js:56 Email Field-->(Inspector email): shanky@gmail.com
+restfeedback.js:64 Log:Submiited form values with submission date and time: Object
+restfeedback.js:69 Count of Successfull submission till now: 1
+restfeedback.js:47 log:Inspection Form Submission with following values: {"restName":"China Town","restAdr":"123 Freont Street","email":"ranjan@inspection.com","comments":"Problem in condtion at this resturant with traces of infection due to rodent","inspectionCat":"PestAndDisposal","termsChecked":true,"submittedAt":"8/31/2026, 2:46:26 AM"}
+restfeedback.js:55 Primary Field -->(Restaurant Name): China Town
+restfeedback.js:56 Email Field-->(Inspector email): ranjan@inspection.com
+restfeedback.js:64 Log:Submiited form values with submission date and time: {restName: 'China Town', restAdr: '123 Freont Street', email: 'ranjan@inspection.com', comments: 'Problem in condtion at this resturant with traces of infection due to rodent', inspectionCat: 'PestAndDisposal', …}
+restfeedback.js:69 Count of Successfull submission till now: 2
+restfeedback.js:47 log:Inspection Form Submission with following values: {"restName":"Mc Donald inc","restAdr":"23 Main Street San Jose","email":"raj@sjcity.com","comments":"All Good . No issues found at this location . Employees were using hygienic practice in serving food","inspectionCat":"HygineicCondition","termsChecked":true,"submittedAt":"8/31/2026, 2:48:07 AM"}
+restfeedback.js:55 Primary Field -->(Restaurant Name): Mc Donald inc
+restfeedback.js:56 Email Field-->(Inspector email): raj@sjcity.com
+restfeedback.js:64 Log:Submiited form values with submission date and time: {restName: 'Mc Donald inc', restAdr: '23 Main Street San Jose', email: 'raj@sjcity.com', comments: 'All Good . No issues found at this location . Employees were using hygienic practice in serving food', inspectionCat: 'HygineicCondition', …}
+restfeedback.js:69 Count of Successfull submission till now: 3
