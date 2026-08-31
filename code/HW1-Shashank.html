@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW1-Shashank Ranjan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+            input:focus, select:focus, textarea:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <h1>Resturant Inspection</h1>
+    <form id="inspectionForm">
+        <!-- Primary Field -->
+        <label for="restName">Restaurant Name*:</label>
+        <input type="text"
+               id="restName"
+               name="restName"
+               placeholder="Restaurant Name"
+               required
+               autofocus>
+        <br><br>
+
+        <!-- Secondary Field -->
+        <label for="restAddress">Restaurant Address*:</label>
+        <input type="text"
+               id="restAddress"
+               name="restAddress"
+               placeholder="Restaurant Address"
+               required>
+        <br><br>
+
+        <!-- Email Field -->
+        <label for="inspectorEmail">Inspector/Sbumiter Email*:</label>
+        <input type="email"
+               id="inspectorEmail"
+               name="inspectorEmail"
+               placeholder="Your email"
+               required>
+        <br><br>
+
+        <!-- Description Field -->
+        <label for="notes">Inspection Comments*:</label><br>
+        <textarea id="comments"
+                  name="comments"
+                  placeholder="Put your inspection comments/notes"
+                  required
+                  rows="5"
+                  cols="40"></textarea>
+        <br><br>
+
+        <!-- Dropdown -->
+        <label for="inspectionCat">Inspection Category:</label>
+        <select id="inspectionCat" name="inspectionCat" required>
+            <option value="" disabled selected>-- Select Category --</option>
+            <option value="OverAllCondition">Premises Cleanliness with Proper Eating and Drinking</option>
+            <option value="FoodQuality">Food in Good Condition, safe and unadultered</option>
+            <option value="HygineicCondition">Staff Hygiene, Fruits and Vegetable Wash Condition</option>
+            <option value="PestAndDisposal">Rodents, Insects, Garbage & Wastewater Disposal</option>
+        </select>
+        <br><br>
+
+        <!-- Checkbox -->
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" id="cbTermAndCond" name="cbTermAndCond">
+                </td>
+                <td>
+                    <label for="cbTermAndCond">I agree to the terms and conditions (T&A).</label>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Inspection Report</button>
+
+    </form>
+    <script src="restfeedback.js"></script>
+</body>
+</html>
