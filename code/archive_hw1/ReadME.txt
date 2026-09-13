@@ -1,0 +1,1 @@
+This folder is storing all the files that I uploaded as part of Homework1
