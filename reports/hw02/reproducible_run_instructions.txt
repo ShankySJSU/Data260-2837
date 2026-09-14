@@ -127,7 +127,7 @@ REPORTS:
 ----------------------------------------------------------------------
 GET  /restaurants                 → list records
 POST /restaurants                 → add record
-PUT  /restaurants/update-1        → update record #1
+PUT  /restaurants/update/1        → update record #1
 DELETE /restaurants/latest        → delete highest ID
 GET  /restaurants/search?q=term   → search by name/address
 
