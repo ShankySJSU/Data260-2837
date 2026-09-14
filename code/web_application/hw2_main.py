@@ -1,38 +1,55 @@
+# code/web_application/hw2_main.py
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
 import os
 
+# ======================================================================
+# CONFIGURATION: Based on SID4 = 2837
+# ======================================================================
+PORT_BASE = 8137  # Required by TA instructions
+
 app = FastAPI()
 
-# Enable CORS for frontend
+# Enable CORS for your HTML + JS front-end
+#CORS Setting
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=True
 )
 
+# ======================================================================
+# DATA STORAGE FILE
+# ======================================================================
 DATA_FILE = "restaurants.json"
 
-# Create file if it doesn't exist
+
+# Create data file if it does not yet exist
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
         json.dump([], f)
 
+
 def load_data():
+    """Loads all inspection records from JSON file."""
     with open(DATA_FILE, "r") as f:
         return json.load(f)
 
+
 def save_data(data):
+    """Writes updated list back to JSON file."""
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
-# --------------------------
-# Pydantic Model
-# --------------------------
 
+# ======================================================================
+# PYDANTIC MODEL FOR RESTAURANT INSPECTIONS
+# ======================================================================
 class RestaurantInspection(BaseModel):
     restaurantName: str
     restAddress: str
@@ -41,61 +58,115 @@ class RestaurantInspection(BaseModel):
     inspectionCategory: str
     submittedAt: str
 
-# --------------------------
-# Routes Required for HW2
-# --------------------------
 
-# 1. LIST ALL
+# ======================================================================
+# ROUTES REQUIRED FOR HOMEWORK 2
+# ======================================================================
+
+# -------------------------------
+# 1. LIST ALL RECORDS
+# -------------------------------
 @app.get("/restaurants")
 def get_all():
     return load_data()
 
-# 2. ADD NEW ENTRY
+
+# -------------------------------
+# 2. ADD NEW RECORD
+# -------------------------------
 @app.post("/restaurants")
 def add_restaurant(rec: RestaurantInspection):
     data = load_data()
+    new_id = len(data) + 1
 
-    next_id = len(data) + 1
-    new_rec = rec.dict()
-    new_rec["id"] = next_id
+    new_record = {
+        "id": new_id,
+        "restaurantName": rec.restaurantName,
+        "restAddress": rec.restAddress,
+        "inspectorEmail": rec.inspectorEmail,
+        "inspectionNotes": rec.inspectionNotes,
+        "inspectionCategory": rec.inspectionCategory,
+        "submittedAt": rec.submittedAt
+    }
 
-    data.append(new_rec)
+    data.append(new_record)
     save_data(data)
-    return {"message": "Record added", "record": new_rec}
+    return {"message": "Record added", "record": new_record}
 
+
+# -------------------------------
 # 3. UPDATE RECORD WITH ID = 1
-@app.put("/restaurants/update-1")
-def update_record_one(rec: RestaurantInspection):
+# -------------------------------
+#@app.put("/restaurants/update-1")
+#def update_record_one(rec: RestaurantInspection):
+@app.put("/restaurants/update/{rec_id}")
+def update_record_one(rec_id: int, rec: RestaurantInspection):
     data = load_data()
 
-    if len(data) == 0:
-        raise HTTPException(status_code=404, detail="No records available")
+    for index,item in enumerate(data):
+        if item["id"] == rec_id:
+            # Construct the dictionary with ID explicitly at the top
+            updated_fields = {
+                "id": rec_id, ##keeping it original ID
+                "restaurantName": rec.restaurantName,
+                "restAddress": rec.restAddress,
+                "inspectorEmail": rec.inspectorEmail,
+                "inspectionNotes": rec.inspectionNotes,
+                "inspectionCategory": rec.inspectionCategory,
+                "submittedAt": rec.submittedAt
+            }
+            #now overwrite the data dictionary for this index
+            data[index] = updated_fields
+            save_data(data)
+            statusMsg = f"Resturant ID {rec_id} got updated. Record Details : {item}"
+            #return {"message": f"Record ID 1 updated", "record": item}
+            return {"message": statusMsg}
 
-    # Always modify record with id = 1
-    data[0].update(rec.dict())
-    save_data(data)
-    return {"message": "Record #1 updated", "record": data[0]}
+    raise HTTPException(status_code=404, detail=f"Record ID {rec_id} was not found in data")
 
+
+# -------------------------------
 # 4. DELETE RECORD WITH HIGHEST ID
+# -------------------------------
 @app.delete("/restaurants/latest")
 def delete_latest():
     data = load_data()
-
+    rec_del = None
+    
     if len(data) == 0:
-        raise HTTPException(status_code=404, detail="No records to delete")
+        raise HTTPException(status_code=404, detail="Data set empty. No records to delete")
 
-    deleted = data.pop()
-    save_data(data)
-    return {"message": "Deleted latest record", "deleted": deleted}
+    #get the maxID from the list
+    maxID = max(rec["id"] for rec in data)
 
-# 5. SEARCH   by restaurantName or restAddress
+    # looping through each dictionary one by one (
+    #I am doing this for future, if TA ask me to delee specific record,then my maxID will be the
+    #one that is passed to delete , just like update ID
+    for rec in data:
+        if rec["id"] == maxID:
+            rec_del = rec  # Found it! Save the dictionary.
+            break          # Stop looking through the rest of the list
+
+    #now loop through the list.. and skip the maxID from the collection
+    updated_data = [rec for rec in data if rec["id"] != maxID]
+
+    save_data(updated_data)
+    statusMsg = f"Resturant ID {maxID} got deleted. Record Details : {rec_del}"
+    return {"message": statusMsg}
+
+
+# -------------------------------
+# 5. SEARCH BY NAME OR ADDRESS
+# -------------------------------
 @app.get("/restaurants/search")
 def search(q: str):
     data = load_data()
 
-    res = [
-        rec for rec in data
-        if q.lower() in rec["restaurantName"].lower()
-        or q.lower() in rec["restAddress"].lower()
+    q_lower = q.lower()
+    results = [
+        item for item in data
+        if q_lower in item["restaurantName"].lower()
+        or q_lower in item["restAddress"].lower()
     ]
 
+    return {"query": q, "matches": results}

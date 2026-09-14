@@ -63,7 +63,8 @@ async function loadRecords() {
     hideEmptyState();
 
     try {
-        const resp = await fetch("http://localhost:8137/restaurants");
+        //const resp = await fetch("http://localhost:8137/restaurants");
+        const resp = await fetch("http://127.0.0.1:8137/restaurants");
         const data = await resp.json();
 
         hideLoading();
@@ -99,7 +100,9 @@ document.getElementById("inspectionForm").addEventListener("submit", async (e) =
 
     // HW2: Send to FastAPI backend
     try {
-        const response = await fetch("http://localhost:8137/restaurants", {
+        //const response = await fetch("http://localhost:8137/restaurants", 
+        const response = await fetch("http://127.0.0.1:8137/restaurants",                 
+        {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -114,6 +117,9 @@ document.getElementById("inspectionForm").addEventListener("submit", async (e) =
 
         const data = await response.json();
         console.log("Backend received:", data);
+        //Refresh the record list. shows all the data were uploaded
+        console.log("Refreshing the UI Page and will show all the data");
+        loadRecords();
 
     } catch (error) {
         console.error("Backend submission error:", error);
