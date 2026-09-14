@@ -6,7 +6,7 @@ Q: How is a system prompt different from a user message?
 Ans:  The fules for model is categorized as "system prompt" but the user's messages are basically the tasks or questions from users.
 
 Q: Why do input tokens grow over a conversation?
-Ans: Since each inputs are once again fed for continuity and context understanding hence tokens grow over a conversation.
+Ans: As explained in first question, since for every conversation /request, input are sent to LLMs for continuity and along with that tokens are also sent, hence they grow.
 
 Q What eventually limits that growth?
-Ans :The model’s maximm content window is reached, messages must be truncated.
+Ans: Each model's has a maximum content window and when that maximum reached, the messages must be truncated.
