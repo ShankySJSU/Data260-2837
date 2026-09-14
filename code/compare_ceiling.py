@@ -1,6 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import json
 import time
-from agents.hw2_graph import run_graph
+from code.hw2_graph import run_graph
+
 
 INPUT_PATH = "reports/hw02/cases/schema_input.json"
 
@@ -8,11 +13,16 @@ input_data = json.load(open(INPUT_PATH))
 title = input_data["title"]
 content = input_data["content"]
 
+def clean(result):
+    safe = dict(result)
+    safe.pop("llm", None)
+    return safe
+
 def run_with_ceiling(ceiling):
     results = []
     for _ in range(20):
         start = time.time()
-        r = run_graph(title, content, max_turns=ceiling)
+        r = clean(run_graph(title, content, max_turns=ceiling))
         end = time.time()
         results.append({"success": r.get("success", False), "latency": end - start})
     return results

@@ -1,7 +1,8 @@
 """
 Minimal HW1-compatible agents_demo.py
 This file exists ONLY for reproducibility.
-Homework 2 uses hw2_graph.py instead.
+Homework 2 main file is  hw2_graph.py but I have kept this for 
+Homework 1 continuity.
 """
 
 import json
@@ -47,7 +48,7 @@ def run_agents(title, content):
 
 
 if __name__ == "__main__":
-    # Load the HW1 nondeterminism input for reproducibility
+    # Load the Homewokr 1 JSON file if needed
     data = json.load(open("reports/hw01/cases/nondeterminism_input.json"))
     title = data["title"]
     content = data["content"]

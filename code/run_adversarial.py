@@ -1,6 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import json
 import time
-from agents.hw2_graph import run_graph
+from code.hw2_graph import run_graph
+
 
 adversarial_input = {
     "title": "Inspection",
@@ -11,14 +16,18 @@ adversarial_input = {
     )
 }
 
-def run_adversarial():
-    title = adversarial_input["title"]
-    content = adversarial_input["content"]
+def clean(result):
+    """Remove non-JSON-safe fields."""
+    safe = dict(result)
+    if "llm" in safe:
+        del safe["llm"]
+    return safe
 
+def run_adversarial():
     results = []
     for i in range(5):
-        r = run_graph(title, content, max_turns=10)
-        results.append(r)
+        r = run_graph(adversarial_input["title"], adversarial_input["content"], max_turns=10)
+        results.append(clean(r))
 
     json.dump(results, open("reports/hw02/raw/adversarial_runs.json", "w"), indent=2)
     print("Adversarial results saved.")

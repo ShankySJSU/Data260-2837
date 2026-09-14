@@ -1,6 +1,15 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import json
 import time
-from agents.hw2_graph import run_graph, get_llm
+from code.hw2_graph import run_graph
+
+def clean(result):
+    safe = dict(result)
+    safe.pop("llm", None)
+    return safe
 
 def run_30():
     input_data = json.load(open("reports/hw02/cases/schema_input.json"))
@@ -15,8 +24,7 @@ def run_30():
     }
 
     for i in range(30):
-        result = run_graph(title, content, max_turns=10)
-
+        result = clean(run_graph(title, content, max_turns=10))
         turns = result.get("turn_count", 0)
         success = result.get("success", False)
 

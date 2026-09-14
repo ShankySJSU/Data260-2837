@@ -1,8 +1,59 @@
-from typing import TypedDict, Any, Dict
-from langchain_ollama import OllamaLLM
-from langgraph.graph import StateGraph
+"""
+Final HW2 LangGraph Implementation (Planner → Reviewer → Supervisor)
+This version:
+- Works with Python 3.12 (Microsoft Store)
+- Works with LangGraph >= 0.1.x (invoke API)
+- Works with Ollama model qwen2.5:1.5b
+- Cleans JSON from markdown/backticks
+- Guarantees planner_output/reviewer_output are valid JSON dicts
+- Supports validation rules (3 tags, tag length 3–30 chars, summary <= 25 words)
+"""
 
-# HW2 AgentState
+import json
+import re
+from typing import TypedDict, Any, Dict
+from src.model_client import get_llm, call_llm
+from pydantic import BaseModel, ValidationError, Field
+from langgraph.graph import StateGraph, END
+
+
+# ================================================================
+# JSON CLEANING — Removes Markdown and extracts valid { ... }
+# ================================================================
+def extract_json_block(text: str):
+    """
+    Cleans LLM output and extracts the first valid JSON block.
+    Removes ```json fences, markdown, and extra commentary.
+    """
+    if isinstance(text, dict):
+        return text  # Already clean JSON
+    
+    if not isinstance(text, str):
+        return {}
+
+    # Remove markdown fences
+    cleaned = re.sub(r"```json|```", "", text, flags=re.IGNORECASE).strip()
+
+    # Try direct load
+    try:
+        return json.loads(cleaned)
+    except:
+        pass
+
+    # Try to find JSON block manually
+    match = re.search(r"{[\s\S]*}", cleaned)
+    if match:
+        try:
+            return json.loads(match.group())
+        except:
+            return {}
+
+    return {}
+
+
+# ================================================================
+# AgentState Shared Memory
+# ================================================================
 class AgentState(TypedDict):
     title: str
     content: str
@@ -11,101 +62,132 @@ class AgentState(TypedDict):
     reviewer_output: Dict[str, Any]
     turn_count: int
     max_turns: int
-    error: str
+    success: bool
 
-# LLM loader
-def get_llm(model_name="qwen3:4b", temperature=0.0):
-    return OllamaLLM(model=model_name, temperature=temperature)
 
-# -------------------------------
-# Planner Node
-# -------------------------------
+# ================================================================
+# Pydantic Schema Validation
+# ================================================================
+class PlannerSchema(BaseModel):
+    tags: list[str] = Field(min_length=3, max_length=3)
+    summary: str
+
+    @classmethod
+    def validate_output(cls, output):
+        # Missing fields
+        if "tags" not in output or "summary" not in output:
+            raise ValidationError("Missing required fields")
+
+        # Tag length rules
+        for tag in output["tags"]:
+            if len(tag) < 3 or len(tag) > 30:
+                raise ValidationError("Tag length invalid")
+
+        # Summary word limit
+        if len(output["summary"].split()) > 25:
+            raise ValidationError("Summary too long")
+
+        return cls(**output)
+
+
+# ================================================================
+# PLANNER NODE
+# ================================================================
 def planner_node(state: AgentState):
     llm = state["llm"]
-    prompt = f"""
-You are the Planner agent.
-- respond using only bullet points
-- tags must be: Premises Cleanliness, Food Safety, Staff Hygiene
-- summary must be <= 25 words
 
-Title: {state['title']}
-Content: {state['content']}
+    prompt = (
+        "You are the Planner agent.\n"
+        "Your output MUST be STRICT JSON ONLY. NO markdown, NO backticks.\n"
+        "Generate exactly 3 tags (each 3–30 chars) and a summary <= 25 words.\n\n"
+        "Return ONLY this JSON structure:\n"
+        "{\n"
+        "  \"tags\": [\"tag1\", \"tag2\", \"tag3\"],\n"
+        "  \"summary\": \"short summary\"\n"
+        "}\n\n"
+        f"TITLE: {state['title']}\n"
+        f"CONTENT: {state['content']}\n"
+    )
 
-Return:
-- tags: ["Premises Cleanliness", "Food Safety", "Staff Hygiene"]
-- summary: <25 words>
-"""
-    resp = llm.invoke(prompt)
-    return {"planner_output": {"raw": resp}}
+    raw = call_llm(llm, prompt)
+    json_out = extract_json_block(raw)
 
-# -------------------------------
-# Reviewer Node
-# -------------------------------
+    return {
+        "planner_output": json_out,
+        "turn_count": state["turn_count"] + 1
+    }
+
+
+# ================================================================
+# REVIEWER NODE
+# ================================================================
 def reviewer_node(state: AgentState):
     llm = state["llm"]
-    planner_text = state["planner_output"]["raw"]
-    prompt = f"""
-You are the Reviewer agent.
-- respond using only bullet points
-- ensure tags match fixed set
-- ensure summary <= 25 words
+    planner_json = state["planner_output"]
 
-Planner Output:
-{planner_text}
+    prompt = (
+        "You are the Reviewer agent.\n"
+        "Validate and correct the Planner JSON.\n"
+        "Output MUST be STRICT JSON ONLY — no markdown, no backticks.\n\n"
+        "Return ONLY this JSON structure:\n"
+        "{\n"
+        "  \"tags\": [\"tag1\", \"tag2\", \"tag3\"],\n"
+        "  \"summary\": \"corrected summary\"\n"
+        "}\n\n"
+        "Rules:\n"
+        "- Exactly 3 tags (3–30 chars)\n"
+        "- Summary <= 25 words\n\n"
+        "Planner JSON:\n"
+        f"{planner_json}\n"
+    )
 
-Return:
-- tags: ["Premises Cleanliness", "Food Safety", "Staff Hygiene"]
-- summary: <corrected summary>
-"""
-    resp = llm.invoke(prompt)
-    return {"reviewer_output": {"raw": resp}}
+    raw = call_llm(llm, prompt)
+    json_out = extract_json_block(raw)
 
-# -------------------------------
-# Supervisor Node
-# -------------------------------
+    return {
+        "reviewer_output": json_out,
+        "turn_count": state["turn_count"] + 1
+    }
+
+
+# ================================================================
+# SUPERVISOR NODE — increments the turn counter
+# ================================================================
 def supervisor_node(state: AgentState):
     return {"turn_count": state["turn_count"] + 1}
 
-# -------------------------------
-# Router Logic
-# -------------------------------
-def router_logic(state: AgentState):
-    if state["turn_count"] >= state["max_turns"]:
-        return "__end__"
 
-    reviewer_raw = state.get("reviewer_output", {}).get("raw", "")
-    if reviewer_raw and len(reviewer_raw.split()) <= 25:
-        return "__end__"
-    else:
+# ================================================================
+# ROUTER LOGIC
+# ================================================================
+def router_logic(state: AgentState):
+    # First turn -> Planner
+    if state["turn_count"] == 0:
         return "planner"
 
-# -------------------------------
-# Build Graph
-# -------------------------------
-def build_graph():
-    graph = StateGraph(AgentState)
+    # Second turn -> Reviewer
+    if state["turn_count"] == 1:
+        return "reviewer"
 
-    graph.add_node("planner", planner_node)
-    graph.add_node("reviewer", reviewer_node)
-    graph.add_node("supervisor", supervisor_node)
+    # After Reviewer -> schema validation
+    reviewer_json = state.get("reviewer_output", {})
 
-    graph.set_entry_point("planner")
+    try:
+        PlannerSchema.validate_output(reviewer_json)
+        return END
+    except:
+        if state["turn_count"] >= state["max_turns"]:
+            return END
+        return "planner"
 
-    graph.add_edge("planner", "reviewer")
-    graph.add_edge("reviewer", "supervisor")
 
-    graph.add_conditional_edges("supervisor", router_logic)
+# ================================================================
+# MAIN RUN_GRAPH FUNCTION (LangGraph invoke API)
+# ================================================================
+def run_graph(title: str, content: str, max_turns: int = 5) -> AgentState:
+    llm = get_llm()  # qwen2.5:1.5b recommended
 
-    return graph.compile()
-
-# -------------------------------
-# Runner
-# -------------------------------
-def run_graph(title, content, max_turns=10):
-    llm = get_llm()
-    workflow = build_graph()
-
-    initial_state = {
+    init_state: AgentState = {
         "title": title,
         "content": content,
         "llm": llm,
@@ -113,8 +195,35 @@ def run_graph(title, content, max_turns=10):
         "reviewer_output": {},
         "turn_count": 0,
         "max_turns": max_turns,
-        "error": ""
+        "success": False
     }
 
-    for event in workflow.stream(initial_state):
-        print("EVENT:", event)
+    workflow = StateGraph(AgentState)
+
+    workflow.add_node("planner", planner_node)
+    workflow.add_node("reviewer", reviewer_node)
+    workflow.add_node("supervisor", supervisor_node)
+
+    workflow.set_entry_point("supervisor")
+
+    workflow.add_conditional_edges("supervisor", router_logic, {
+        "planner": "planner",
+        "reviewer": "reviewer",
+        END: END
+    })
+
+    workflow.add_edge("planner", "supervisor")
+    workflow.add_edge("reviewer", "supervisor")
+
+    app = workflow.compile()
+
+    final_state = app.invoke(init_state)
+
+    # Final schema validation
+    try:
+        PlannerSchema.validate_output(final_state["reviewer_output"])
+        final_state["success"] = True
+    except:
+        final_state["success"] = False
+
+    return final_state
