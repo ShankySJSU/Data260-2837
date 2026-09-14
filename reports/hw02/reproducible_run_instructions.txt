@@ -1,154 +1,143 @@
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>python agents_demo.py --input nondeterminism_input.json
-This is Homework 1-Shashank Ranjan
-Building of two tiny agents that talk to each other
-Working with Planner Agent...
+# Homework 2 – Reproducible Run Instructions
+SID4: 2837
+Student: Shashank Ranjan
+Repository: Data260-2837
 
-{
-  "prompt_tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
-  ],
-  "prompt_summary": "Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal."
-}
+These instructions allow the TA to fully reproduce all HW2 results
+including FastAPI runs, LangGraph execution, schema validation tests,
+ceiling comparison, adversarial tests, and verification.json generation.
 
-Working with Reviewer Agent...
+----------------------------------------------------------------------
+1. Install Dependencies
+----------------------------------------------------------------------
+Requirements:
+- Python 3.10+  
+- pip  
+- Ollama installed locally with model qwen3:4b (or qwen3:8b)
+- The following Python packages:
 
-{
-  "reviewer_tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
-  ],
-  "reviewer_summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene."
-}
+Run:
+pip install fastapi uvicorn pydantic langchain langchain-community requests
 
-=== FINAL OUTPUT ===
-{
-  "tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
-  ],
-  "summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.",
-  "transcripts": {
-    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"prompt_summary\": \"Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal.\"\n}",
-    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.\"\n}"
-  }
-}
+(If langgraph is not installed:)
+pip install langgraph
 
-Latency (Seconds):
-Planner: 81.52647233009338
-Reviewer: 66.95520424842834
+----------------------------------------------------------------------
+2. Start FastAPI Backend (PORT_BASE = 8137)
+----------------------------------------------------------------------
+From the repository root directory:
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>dir /w
- Volume in drive C is Windows
- Volume Serial Number is 9E13-6C3F
+uvicorn code.web_application.hw2_main:app --port 8137
 
- Directory of C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260
+Verify backend is working:
+Open browser → http://localhost:8137/restaurants
 
-[.]                         [..]                        agents_demo - bkup_1.py     agents_demo.py              HomeWork1_RUN.bat           Introduction.py             nondeterminism_input.json
-[reports]                   test_help_hw1.py
-               6 File(s)         18,452 bytes
-               3 Dir(s)  227,541,295,104 bytes free
+----------------------------------------------------------------------
+3. Test LangGraph Manually
+----------------------------------------------------------------------
+From repository root:
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
-Starting 40 nondeterminism runs...
+python -c "from code.hw2_graph import run_graph; print(run_graph('Test','Content',max_turns=5))"
 
-Excuting my pthon program for 20 times at 0.7 temp
-Run 1 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 2 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 3 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 4 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 5 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 6 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 7 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 8 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 9 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 10 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 11 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 12 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 13 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 14 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 15 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 16 at temp 0.7
-Traceback (most recent call last):
-  File "C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260\agents_demo.py", line 4, in <module>
-    from langchain_ollama import OllamaLLM
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_ollama\__init__.py", line 16, in <module>
-    from importlib import metadata
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\importlib\metadata\__init__.py", line 8, in <module>
-    import zipfile
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 12, in <module>
-    import shutil
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 22, in <module>
-    import bz2
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\bz2.py", line 17, in <module>
-    from _bz2 import BZ2Compressor, BZ2Decompressor
-KeyboardInterrupt
-^CTerminate batch job (Y/N)? y
+Expected:
+A dictionary with planner_output, reviewer_output, success=True or False.
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
-Starting 40 nondeterminism runs...
+----------------------------------------------------------------------
+4. Run Schema Validation Experiment (30 Runs)
+----------------------------------------------------------------------
+python code/run_schema_experiment.py
 
-Excuting my pthon program for 20 times at 0.7 temp
-Run 1 at temp 0.7
-Run 2 at temp 0.7
-Run 3 at temp 0.7
-Run 4 at temp 0.7
-Run 5 at temp 0.7
-Run 6 at temp 0.7
-Run 7 at temp 0.7
-Run 8 at temp 0.7
-Run 9 at temp 0.7
-Run 10 at temp 0.7
-Run 11 at temp 0.7
-Run 12 at temp 0.7
-Run 13 at temp 0.7
-Run 14 at temp 0.7
-Run 15 at temp 0.7
+Output file created:
+reports/hw02/raw/schema_stats.json
+
+Open file to verify counts for:
+- valid_first
+- valid_one_retry
+- valid_two_plus
+- ceiling
+
+----------------------------------------------------------------------
+5. Run Turn Ceiling Comparison (Ceiling = 2 vs 10)
+----------------------------------------------------------------------
+python code/compare_ceiling.py
+
+Output file created:
+reports/hw02/raw/ceiling_compare.json
+
+This file contains 20 runs at ceiling=2 and 20 runs at ceiling=10.
+
+----------------------------------------------------------------------
+6. Run Adversarial Experiment (5 Runs)
+----------------------------------------------------------------------
+python code/run_adversarial.py
+
+Output file created:
+reports/hw02/raw/adversarial_runs.json
+
+Expected:
+Most runs either fail or require multiple retries.
+
+----------------------------------------------------------------------
+7. Generate verification.json (Smoke Test)
+----------------------------------------------------------------------
+Make sure FastAPI backend is running (Step 2).
+
+Run:
+python code/verify_hw02.py
+
+Output file created:
+reports/hw02/verification.json
+
+Contains:
+- homework number
+- SID4
+- commit hash
+- model used
+- SEED / VERIFY_SEED
+- PASS/FAIL for smoke-test checks
+
+----------------------------------------------------------------------
+8. Files the TA Should Inspect
+----------------------------------------------------------------------
+CODE:
+- code/hw2_graph.py
+- code/web_application/hw2_main.py
+- code/verify_hw02.py
+- code/run_schema_experiment.py
+- code/compare_ceiling.py
+- code/run_adversarial.py
+
+FRONTEND:
+- code/web_application/HW2-Shashank.html
+- code/web_application/restfeedback.js
+
+MODEL ADAPTER:
+- src/model_client.py
+
+REPORTS:
+- reports/hw02/AI_USE.md
+- reports/hw02/METRICS.md
+- reports/hw02/RUN_LOG.txt
+- reports/hw02/report.pdf
+- reports/hw02/verification.json
+- reports/hw02/raw/*
+
+----------------------------------------------------------------------
+9. Expected API Behavior (Quick Check)
+----------------------------------------------------------------------
+GET  /restaurants                 → list records
+POST /restaurants                 → add record
+PUT  /restaurants/update-1        → update record #1
+DELETE /restaurants/latest        → delete highest ID
+GET  /restaurants/search?q=term   → search by name/address
+
+----------------------------------------------------------------------
+10. Final Note
+----------------------------------------------------------------------
+All results are reproducible as long as:
+- FastAPI is running on port 8137,
+- Ollama is running locally,
+- The LangGraph code has no modifications,
+- The provided scripts are run from repository root.
+
+# End of reproducible_run_instructions.txt

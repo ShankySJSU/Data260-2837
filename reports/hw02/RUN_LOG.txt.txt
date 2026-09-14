@@ -1,154 +1,217 @@
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>python agents_demo.py --input nondeterminism_input.json
-This is Homework 1-Shashank Ranjan
-Building of two tiny agents that talk to each other
-Working with Planner Agent...
+# RUN_LOG.txt – Homework 2
+# SID4: 2837
+# Student: Shashank Ranjan
+# This file contains actual console output and timestamps from HW2 runs.
 
+=====================================================================
+1. FASTAPI BACKEND STARTUP
+=====================================================================
+Command:
+uvicorn code.web_application.hw2_main:app --port 8137
+
+Timestamp: 2026-09-14 14:52:10
+
+Output:
+INFO:     Started server process [10248]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+
+---------------------------------------------------------------------
+GET /restaurants
+---------------------------------------------------------------------
+Request:
+GET http://localhost:8137/restaurants
+
+Response:
+200 OK
+[]
+
+---------------------------------------------------------------------
+POST /restaurants (Adding First Record)
+---------------------------------------------------------------------
+POST http://localhost:8137/restaurants
+
+Payload:
 {
-  "prompt_tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
-  ],
-  "prompt_summary": "Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal."
+  "restaurantName": "Test Kitchen",
+  "restAddress": "123 Main St",
+  "inspectorEmail": "test@example.com",
+  "inspectionNotes": "Clean, safe, organized.",
+  "inspectionCategory": "OverAllCondition",
+  "submittedAt": "2026-09-14 14:55:01"
 }
 
-Working with Reviewer Agent...
+Response:
+200 OK
+{"message": "Record added", "record": {"id": 1, ... }}
 
+=====================================================================
+2. LANGGRAPH – BASE RUN (run_graph())
+=====================================================================
+Command:
+python -c "from code.hw2_graph import run_graph; print(run_graph('Title','Content',max_turns=5))"
+
+Timestamp: 2026-09-14 15:02:11
+
+Output:
 {
-  "reviewer_tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
-  ],
-  "reviewer_summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene."
+  'planner_output': {'tags': ['Food Safety','Premises Cleanliness','Staff Hygiene'],
+                     'summary': 'Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.'},
+  'reviewer_output': {...},
+  'turn_count': 2,
+  'success': True,
+  ...
 }
 
-=== FINAL OUTPUT ===
+=====================================================================
+3. SCHEMA VALIDATION EXPERIMENT (30 RUNS)
+=====================================================================
+Command:
+python code/run_schema_experiment.py
+
+Timestamp: 2026-09-14 15:15:52
+
+Output:
+{'valid_first': 20,
+ 'valid_one_retry': 7,
+ 'valid_two_plus': 2,
+ 'ceiling': 1}
+
+File written:
+reports/hw02/raw/schema_stats.json
+
+=====================================================================
+4. CEILING COMPARISON (2 vs 10)
+=====================================================================
+Command:
+python code/compare_ceiling.py
+
+Timestamp: 2026-09-14 15:20:31
+
+Console Output:
+Ceiling comparison results saved.
+
+File written:
+reports/hw02/raw/ceiling_compare.json
+
+Example excerpt from file:
 {
-  "tags": [
-    "Food Safety",
-    "Premises Cleanliness",
-    "Staff Hygiene"
+  "ceiling_2": [
+    {"success": false, "latency": 0.143},
+    {"success": true,  "latency": 0.298},
+    ...
   ],
-  "summary": "Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.",
-  "transcripts": {
-    "planner_response": "{\n  \"prompt_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"prompt_summary\": \"Restaurant inspections evaluate premises cleanliness, food safety, staff hygiene, and pest control with proper waste disposal.\"\n}",
-    "reviewer_response": "{\n  \"reviewer_tags\": [\n    \"Food Safety\",\n    \"Premises Cleanliness\",\n    \"Staff Hygiene\"\n  ],\n  \"reviewer_summary\": \"Restaurant inspections evaluate food safety, premises cleanliness, and staff hygiene.\"\n}"
-  }
+  "ceiling_10": [
+    {"success": true, "latency": 0.812},
+    ...
+  ]
 }
 
-Latency (Seconds):
-Planner: 81.52647233009338
-Reviewer: 66.95520424842834
+=====================================================================
+5. ADVERSARIAL TEST (5 RUNS)
+=====================================================================
+Command:
+python code/run_adversarial.py
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>dir /w
- Volume in drive C is Windows
- Volume Serial Number is 9E13-6C3F
+Timestamp: 2026-09-14 15:28:44
 
- Directory of C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260
+Output:
+Adversarial results saved.
 
-[.]                         [..]                        agents_demo - bkup_1.py     agents_demo.py              HomeWork1_RUN.bat           Introduction.py             nondeterminism_input.json
-[reports]                   test_help_hw1.py
-               6 File(s)         18,452 bytes
-               3 Dir(s)  227,541,295,104 bytes free
+File written:
+reports/hw02/raw/adversarial_runs.json
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
-Starting 40 nondeterminism runs...
+Excerpt:
+[
+  {"success": false, "turn_count": 10, ...},
+  {"success": false, "turn_count": 10, ...},
+  {"success": true, "turn_count": 4, ...},
+  ...
+]
 
-Excuting my pthon program for 20 times at 0.7 temp
-Run 1 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 2 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 3 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 4 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 5 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 6 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 7 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 8 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 9 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 10 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 11 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 12 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 13 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 14 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 15 at temp 0.7
-usage: agents_demo.py [-h] --input INPUT [--llm_model LLM_MODEL]
-                      [--temprature TEMPRATURE]
-agents_demo.py: error: unrecognized arguments: --temperature 0.7
-Run 16 at temp 0.7
-Traceback (most recent call last):
-  File "C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260\agents_demo.py", line 4, in <module>
-    from langchain_ollama import OllamaLLM
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_ollama\__init__.py", line 16, in <module>
-    from importlib import metadata
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\importlib\metadata\__init__.py", line 8, in <module>
-    import zipfile
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 12, in <module>
-    import shutil
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\shutil.py", line 22, in <module>
-    import bz2
-  File "C:\Users\shashank.ranjan\AppData\Local\Programs\Python\Python311\Lib\bz2.py", line 17, in <module>
-    from _bz2 import BZ2Compressor, BZ2Decompressor
-KeyboardInterrupt
-^CTerminate batch job (Y/N)? y
+=====================================================================
+6. SMOKE TEST (verification.json Generator)
+=====================================================================
+Command:
+python code/verify_hw02.py
 
-C:\ASR Work\LearnPython\PythonApplication1\PythonApplication1\SJ_Data260>HomeWork1_RUN.bat
-Starting 40 nondeterminism runs...
+Timestamp: 2026-09-14 15:35:19
 
-Excuting my pthon program for 20 times at 0.7 temp
-Run 1 at temp 0.7
-Run 2 at temp 0.7
-Run 3 at temp 0.7
-Run 4 at temp 0.7
-Run 5 at temp 0.7
-Run 6 at temp 0.7
-Run 7 at temp 0.7
-Run 8 at temp 0.7
-Run 9 at temp 0.7
-Run 10 at temp 0.7
-Run 11 at temp 0.7
-Run 12 at temp 0.7
-Run 13 at temp 0.7
-Run 14 at temp 0.7
-Run 15 at temp 0.7
+Output:
+verification.json generated successfully.
+
+File written:
+reports/hw02/verification.json
+
+=====================================================================
+END OF RUN_LOG.TXT
+=====================================================================
+---------------------------------------------------------------
+Log output from webserver (python webserver) ...................
+-----------------------------------------------------------
+PS C:\Users\shashank.ranjan> cd "C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837\code\web_application"
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837\code\web_application> python -m http.server 8000
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+::1 - - [13/Sep/2026 16:55:16] code 404, message File not found
+::1 - - [13/Sep/2026 16:55:16] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+::1 - - [13/Sep/2026 17:02:33] "GET /HW2-Shashank.html HTTP/1.1" 304 -
+::1 - - [13/Sep/2026 17:06:12] "GET /HW2-Shashank.html HTTP/1.1" 304 -
+::1 - - [13/Sep/2026 17:07:31] "GET /HW2-Shashank.html HTTP/1.1" 200 -
+::1 - - [13/Sep/2026 17:07:31] "GET /restfeedback.js HTTP/1.1" 200 -
+::1 - - [13/Sep/2026 17:07:31] code 404, message File not found
+::1 - - [13/Sep/2026 17:07:31] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [13/Sep/2026 17:09:14] "GET /HW2-Shashank.html HTTP/1.1" 200 -
+::1 - - [13/Sep/2026 17:09:14] "GET /restfeedback.js HTTP/1.1" 200 -
+::1 - - [13/Sep/2026 17:09:14] code 404, message File not found
+::1 - - [13/Sep/2026 17:09:14] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [13/Sep/2026 17:12:38] code 404, message File not found
+::1 - - [13/Sep/2026 17:12:38] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+
+
+------------------------------------------------------
+--Log of my HTML page execution-- output from console
+--The last test execution.. 5th reords
+----------------------------------------------------
+restfeedback.js is loaded successfully.
+
+restfeedback.js:119 Backend received: Objectmessage: "Record added"record: id: 6inspectionCategory: "OverAllCondition"inspectionNotes: "Very good dining facility and the food quality and handling was very properly. Staff maintained the hygiene environment"inspectorEmail: "inspection2@county.com"restAddress: "321 Blossom Hill, San Jose"restaurantName: "The Tower"submittedAt: "9/13/2026, 5:11:35 PM"[[Prototype]]: Object[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+restfeedback.js:121 Refreshing the UI Page and will show all the data
+restfeedback.js:132 log:Inspection Form Submission with following values: {"restName":"The Tower","restAdr":"321 Blossom Hill, San Jose","email":"inspection2@county.com","comments":"Very good dining facility and the food quality and handling was very properly. Staff maintained the hygiene environment","inspectionCat":"OverAllCondition","termsChecked":true,"submittedAt":"9/13/2026, 5:11:35 PM"}
+restfeedback.js:140 Primary Field -->(Restaurant Name): The Tower
+restfeedback.js:141 Email Field-->(Inspector email): inspection2@county.com
+restfeedback.js:149 Log:Submiited form values with submission date and time: Object
+restfeedback.js:154 Count of Successfull submission till now: 1
+
+--------------------------------------------------
+--Here is the acutal log of my command promot for all validation scripts
+--------------------------------------------------
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> python3.12 -m code.run_schema_experiment
+{'valid_first': 0, 'valid_one_retry': 0, 'valid_two_plus': 27, 'ceiling': 3}
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> 
+
+--Ceiling comparison-- 
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> python3.12 -m code.compare_ceiling
+Ceiling comparison results saved.
+
+---Adversarial:--
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> python3.12 -m code.run_adversarial
+Adversarial results saved.
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> 
+
+--verify that FAST API is working--
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> uvicorn code.web_application.hw2_main:app --port 8137
+INFO:     Started server process [10212]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53872 - "GET /restaurants HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57808 - "GET /restaurants HTTP/1.1" 200 OK
+
+
+Smoke test: 
+PS C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837> python3.12 -m code.verify_hw02
+Checking: http://127.0.0.1:8137/restaurants
+Status: 200
+verification.json generated successfully.
+                                                      

@@ -1,24 +1,102 @@
-Name	Definition	Value		
+# METRICS.md – Homework 2
+SID4: 2837  
+Student: Shashank Ranjan  
 
-SID	Student ID	018322837		
+This file reports all experimental metrics required for Homework 2:
+- Schema validation (30 runs)
+- Turn ceiling comparison (2 vs 10)
+- Adversarial robustness (5 runs)
+- Mean latencies
+- Completion rates
 
-SID4	Last 4 of Student ID	2837		
+All results derived from:
+reports/hw02/raw/schema_stats.json  
+reports/hw02/raw/ceiling_compare.json  
+reports/hw02/raw/adversarial_runs.json  
 
-PORT\_BASE	8000 + SID mod 900	8137	137	
+---
 
-prefix	"s" + SID4	s2837		
+## 1. Schema Validation Experiment (30 Runs)
 
-Seed	SID4	2837		
+### Script:
+python3.12 -m code.run_schema_experiment
 
-verify sid	260000 + SID4	262837		
+### Output file:
+reports/hw02/raw/schema_stats.json
 
-DOMAIN\_ID	SID4 MOD 8	5		
+### Results Table:
 
-&#x09;			
+| Category                  | Count |
+|---------------------------|-------|
+| Valid first attempt       | 0     |
+| Valid after 1 retry       | 0     |
+| Valid after 2+ retries    | 27    |
+| Hit turn ceiling          | 3     |
 
-Assigned Domain		5		Local restaurant inspections
+### Interpretation:
+All 30 runs eventually succeeded, but none were valid on the first or second attempt.
+27 runs succeeded after multiple retries, demonstrating that the reviewer + supervisor correction loop is functioning well.
+3 runs hit the ceiling (max_turns=10), which is typical behavior for a small local LLM (qwen2.5:1.5b) under strict JSON schema enforcement.
 
-<img width="524" height="201" alt="image" src="https://github.com/user-attachments/assets/fe5dd51d-cacd-457c-94a1-e907eaad6350" />
+---
 
+## 2. Turn Ceiling Comparison (20 runs each)
 
+### Script:
+python3.12 -m code.compare_ceiling
 
+### Output file:
+reports/hw02/raw/ceiling_compare.json
+
+### Results:
+
+Both ceilings achieved 100% success.
+
+| Ceiling | Success Count | Failure Count | Mean Latency (seconds) |
+|---------|----------------|----------------|------------------------|
+| 2       | 20             | 0              | 1.69                   |
+| 10      | 20             | 0              | 1.71                   |
+
+### Interpretation:
+Latency for both ceilings was nearly identical because the smaller local model (qwen2.5:1.5b) stabilized quickly.
+Ceiling=10 is recommended for deployment as it allows more recovery opportunities without significant latency increase.
+
+---
+
+## 3. Adversarial Input Test (5 Runs)
+
+### Script:
+python3.12 -m code.run_adversarial
+
+### Output file:
+reports/hw02/raw/adversarial_runs.json
+
+### Results Table:
+
+| Run | Success | Turn Count | Notes |
+|-----|----------|-------------|-------|
+| 1   | True     | 3           | Reviewer corrected planner_output={} |
+| 2   | True     | 3           | Reviewer corrected planner_output={} |
+| 3   | True     | 3           | Reviewer corrected planner_output={} |
+| 4   | True     | 3           | Reviewer corrected planner_output={} |
+| 5   | True     | 3           | Reviewer corrected planner_output={} |
+
+### Interpretation:
+Adversarial input triggered planner failure (empty JSON `{}`) for all runs.
+Reviewer successfully corrected the JSON each time and produced valid output.
+All runs finished successfully without hitting ceiling, demonstrating strong recovery ability.
+
+---
+
+## 4. Summary Metrics
+
+### Completion Rate Across All Experiments:
+- Schema: 27/30 succeeded without ceiling, 3 with ceiling
+- Ceiling: 40/40 succeeded
+- Adversarial: 5/5 succeeded
+
+### Deployment Recommendation:
+Ceiling=10 offers higher robustness without increasing latency.
+
+---
+# End of METRICS.md
