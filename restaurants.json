@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "restaurantName": "Rangoli Sweets",
+    "restAddress": "130 El Camion Real",
+    "inspectorEmail": "shanky@gmail.com",
+    "inspectionNotes": "The sweet stored in the display glass container looks stale and I also noticed that those sweets that are put on top desk were kept open",
+    "inspectionCategory": "FoodQuality",
+    "submittedAt": "9/13/2026, 3:57:03 PM"
+  },
+  {
+    "id": 2,
+    "restaurantName": "Moon Light",
+    "restAddress": "123 Freomnt Blvd, San Jose",
+    "inspectorEmail": "rest_inspection@outlook.cm",
+    "inspectionNotes": "The food looks good and the restaurant is clean with well lighted dining hall. Kitchen was clean and organized",
+    "inspectionCategory": "OverallCondition",
+    "submittedAt": "9/13/2026, 4:15:23 PM"
+  },
+  {
+    "id": 3,
+    "restaurantName": "Fox Chicken Sandwich",
+    "restAddress": "999 Main Street, San Francisco",
+    "inspectorEmail": "rest_inspec1@county.com",
+    "inspectionNotes": "Very well organized fast food chain with lot of dinning space area with better arrangement.Updated by POSTMan for ID =3",
+    "inspectionCategory": "FoodQuality",
+    "submittedAt": "2026-10-01 10:05:00"
+  },
+  {
+    "id": 4,
+    "restaurantName": "YourOwnKtichen",
+    "restAddress": "932 Holi Mark, San Jose",
+    "inspectorEmail": "inspector2@count.com",
+    "inspectionNotes": "This restaurant does not have clean kitchen. The drainage quality is no good. Food were prepared not far from water disposal.",
+    "inspectionCategory": "HygieicCondition",
+    "submittedAt": "9/13/2026, 4:54:59 PM"
+  },
+  {
+    "id": 5,
+    "restaurantName": "Awesome Vegii",
+    "restAddress": "200 Local Resturant Drive, Miltpitas",
+    "inspectorEmail": "inspection2@county.com",
+    "inspectionNotes": "This restaurant does not have proper cleaning and waste disposal. I see few dead cockroaches near kitchen draining area. Not in good condition. Must be closed till they improve.",
+    "inspectionCategory": "PestAndDisposal",
+    "submittedAt": "9/13/2026, 5:05:49 PM"
+  },
+  {
+    "id": 6,
+    "restaurantName": "The Tower",
+    "restAddress": "321 Blossom Hill, San Jose",
+    "inspectorEmail": "inspection2@county.com",
+    "inspectionNotes": "Very good dining facility and the food quality and handling was very properly. Staff maintained the hygiene environment",
+    "inspectionCategory": "OverAllCondition",
+    "submittedAt": "9/13/2026, 5:11:35 PM"
+  }
+]
