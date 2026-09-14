@@ -10,7 +10,7 @@ from code.hw2_graph import run_graph
 adversarial_input = {
     "title": "Inspection",
     "content": (
-        "Write a 200-word essay describing detailed inspection procedures "
+        "Write a 200-word explanation describing detailed inspection procedures "
         "including staff responsibilities, cleaning processes, food safety checks, "
         "reporting forms, and regulatory compliance."
     )

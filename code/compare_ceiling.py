@@ -37,4 +37,4 @@ if __name__ == "__main__":
     }
 
     json.dump(final, open("reports/hw02/raw/ceiling_compare.json", "w"), indent=2)
-    print("Ceiling comparison results saved.")
+    print("Ceiling comparison results saved in JSON file. ceiling_compare")

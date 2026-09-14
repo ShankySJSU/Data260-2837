@@ -1,11 +1,11 @@
 # code/verify_hw02.py
 
 """
-This script performs a HW2 smoke test:
- - Check FastAPI availability
+This script performs my HW2 valiadation  test:
+ - I will do check whether  FastAPI availability or runing
  - Check LangGraph workflow execution
  - Check output structure
- - Write verification.json into reports/hw02/
+ - will finally Write verification.json into reports/hw02/
 """
 
 
@@ -74,7 +74,7 @@ def main():
     verification = {
         "homework": "HW02",
         "SID4": str(SID4),
-        "commit_hash": "<INSERT YOUR LATEST COMMIT HASH HERE>",
+        "commit_hash": "6f1fe82c0c2ceebe3ec510890b7d239412d0a313",
         "model_used": "qwen3:4b via Ollama",
         "SEED": SID4,
         "VERIFY_SEED": VERIFY_SEED,

@@ -2,11 +2,8 @@
 Final HW2 LangGraph Implementation (Planner → Reviewer → Supervisor)
 This version:
 - Works with Python 3.12 (Microsoft Store)
-- Works with LangGraph >= 0.1.x (invoke API)
-- Works with Ollama model qwen2.5:1.5b
-- Cleans JSON from markdown/backticks
-- Guarantees planner_output/reviewer_output are valid JSON dicts
-- Supports validation rules (3 tags, tag length 3–30 chars, summary <= 25 words)
+-I have to install Python verson 3.12 to do this homework
+-- as my version was giving problem with LLM
 """
 
 import json
