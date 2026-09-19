@@ -1,0 +1,136 @@
+RESTAURANT KITCHEN SANITATION MANUAL  
+County Environmental Health Department  
+2026 Edition  
+
+INTRODUCTION  
+This manual outlines the minimum sanitation standards required for all commercial restaurant kitchens. It provides detailed guidance on cleaning practices, equipment maintenance, contamination prevention, and operational hygiene. All food facilities are responsible for reviewing these standards regularly and ensuring adherence.
+
+SECTION 1 — DAILY KITCHEN CLEANING TASKS  
+1.1 Prep Surfaces  
+All prep tables must be cleaned and sanitized every 4 hours during active food preparation. Approved sanitizers include quaternary ammonia and chlorine-based solutions. Surfaces must be wiped with single-use towels or designated sanitizing cloths stored in sanitizer buckets.
+
+1.2 Cooking Equipment  
+Grills, griddles, stovetops, fryers, and ovens must be wiped down at the end of the day. Grease buildup along grill edges and fryer walls should be removed before the next shift begins. Excess grease is a fire hazard and a magnet for pests.
+
+1.3 Sinks and Faucets  
+Handwashing and prep sinks must remain unobstructed. Sinks must be scrubbed daily with detergent, followed by sanitizing. Faucet handles must be disinfected, as they accumulate bacteria through repeated touch.
+
+1.4 Refrigeration Units  
+Shelves inside refrigeration units must be wiped daily. Any spills or leaks should be cleaned immediately. The gasket around the refrigerator door must be inspected regularly for cracks, mold, and residue.
+
+SECTION 2 — WEEKLY KITCHEN CLEANING TASKS  
+2.1 Exhaust Hoods  
+Exhaust hoods accumulate grease from cooking vapors. Filters must be removed weekly and washed in hot, soapy water. Persistent residue must be removed using degreaser.
+
+2.2 Storage Shelves  
+Dry storage shelves should be wiped and sanitized weekly. Unlabeled containers must be discarded or properly labeled to avoid cross‑contamination.
+
+2.3 Beverage Machines  
+Coffee makers, soda dispensers, and juice machines must be flushed and cleaned weekly to prevent bacterial buildup. Drip trays and internal water lines should be cleaned using food-safe cleaners.
+
+2.4 Trash and Waste Areas  
+Indoor trash bins must be washed and sanitized weekly. Trash room floors and walls should be cleaned of food residue. Grease traps must be inspected weekly.
+
+SECTION 3 — MONTHLY CLEANING TASKS  
+3.1 Large Equipment  
+Areas behind large appliances—grills, fryers, freezers, ovens—must be cleaned monthly or more frequently depending on grease accumulation. Dust, debris, and grease attract pests.
+
+3.2 Ice Machines  
+Ice machine interiors must be sanitized monthly to prevent mold. Ice trays must be deep cleaned using approved sanitizers.
+
+3.3 Vents and Ceiling Panels  
+Ceiling vents accumulate dust and airborne grease. These must be vacuumed and washed monthly.
+
+SECTION 4 — SANITATION OF UTENSILS AND SMALLWARE  
+4.1 Cutting Boards  
+Cutting boards must be sanitized after each use. Deep grooves in boards indicate potential bacterial harborage and require replacement. A color-coding system is strongly recommended:
+- Green: Produce  
+- Red: Raw meat  
+- Yellow: Poultry  
+- Blue: Seafood  
+- White: Ready-to-eat foods  
+
+4.2 Knives and Tools  
+Knives must be cleaned after each task. Leaving knives on cutting boards or sinks without washing contributes to contamination.
+
+4.3 Storage Containers  
+All containers must be food-grade, labeled, and stored with lids on. Containers with cracks must be discarded immediately.
+
+SECTION 5 — EMPLOYEE SANITATION PRACTICES  
+5.1 Hand Hygiene  
+Employees must follow the county handwashing protocol:
+- Use warm water and soap  
+- Wash hands for 20 seconds  
+- Dry using paper towels  
+- Avoid touching hair, face, or clothing during prep  
+
+5.2 Glove Usage  
+Gloves must be replaced:
+- After handling raw foods  
+- After touching non-food items  
+- After contamination (touching hair or trash)  
+- Every 4 hours during continuous use  
+
+5.3 Attire  
+Hair restraints, clean aprons, closed-toe slip-resistant shoes, and minimal jewelry are required. Aprons must be replaced daily or when soiled.
+
+SECTION 6 — CHEMICAL HANDLING AND STORAGE  
+6.1 Chemical Safety  
+Chemicals must be stored away from food-contact surfaces. Spray bottles must be clearly labeled. Cleaning chemicals must never be stored above food items.
+
+6.2 Sanitizer Buckets  
+Sanitizer buckets must contain solutions at proper concentration:
+- Quaternary ammonia: 200–400 ppm  
+- Chlorine: 50–100 ppm  
+
+Test strips must be used to verify accurate strength.
+
+SECTION 7 — WATER AND PLUMBING  
+7.1 Water Temperature  
+Hot water must reach at least 120°F at sinks used for dishwashing. Cold water must remain potable and free from contamination.
+
+7.2 Drain Maintenance  
+Floor drains must be scrubbed daily. Drain covers must be removed weekly for deep cleaning. Drains showing residue or slow drainage require immediate attention.
+
+SECTION 8 — SEWAGE AND EMERGENCY CLEANING  
+8.1 Sewage Incidents  
+Any sewage backup requires immediate closure of the facility. Contaminated surfaces must undergo professional cleaning. Operations may resume only after reinspection.
+
+8.2 Flooding Events  
+Flooding from external sources requires removal of affected ingredients and thorough cleaning.
+
+SECTION 9 — EVIDENCE OF NON‑COMPLIANCE  
+Signs of insufficient sanitation include:
+- Grease buildup  
+- Mold growth  
+- Unlabeled containers  
+- Pest activity  
+- Residue on cutting boards  
+- Dirty ice machine components  
+- Standing water  
+- Sticky floors  
+
+SECTION 10 — MANAGEMENT CHECKLIST  
+Daily Checklist:
+- Prep surfaces sanitized  
+- Waste bins sealed  
+- Gloves available  
+- Handwashing supplies stocked  
+- Refrigerator temperatures logged  
+- Drain covers cleaned  
+
+Weekly Checklist:
+- Exhaust hood cleaned  
+- Storage shelves sanitized  
+- Trash room cleaned  
+- Beverage machines flushed  
+
+Monthly Checklist:
+- Ice machines sanitized  
+- Vents cleaned  
+- Behind appliances cleaned  
+
+CONCLUSION  
+Maintaining a sanitized kitchen is vital for preventing foodborne illness. Managers must ensure daily, weekly, and monthly cleaning tasks are consistently followed, and corrective actions documented.
+
+END OF DOCUMENT

@@ -1,102 +1,54 @@
-# METRICS.md – Homework 2
+# METRICS.md – Homework 3
 SID4: 2837  
 Student: Shashank Ranjan  
 
-This file reports all experimental metrics required for Homework 2:
-- Schema validation (30 runs)
-- Turn ceiling comparison (2 vs 10)
-- Adversarial robustness (5 runs)
-- Mean latencies
-- Completion rates
+Restaurant Domain Corpus — DATA 260 HW3  
+Date Created: 2026-09
 
-All results derived from:
-reports/hw02/raw/schema_stats.json  
-reports/hw02/raw/ceiling_compare.json  
-reports/hw02/raw/adversarial_runs.json  
+This corpus contains eight synthetic, original text files generated for the purpose of Homework 3 (DATA 260).  
+All documents are non-copyrighted, publicly usable, and modeled after real-world restaurant inspection patterns, food safety guidelines, county sanitation standards, and hygiene training materials.  
+No external copyrighted sources were used.
 
----
+## File List and Descriptions
 
-## 1. Schema Validation Experiment (30 Runs)
+1. **restaurant_inspection_report_1.txt**  
+   Description: A detailed routine inspection report for a sweets and snacks restaurant.  
+   Created: 2026-09  
 
-### Script:
-python3.12 -m code.run_schema_experiment
+2. **restaurant_inspection_report_2.txt**  
+   Description: Follow-up inspection report for a buffet-style restaurant.  
+   Created: 2026-09  
 
-### Output file:
-reports/hw02/raw/schema_stats.json
+3. **restaurant_inspection_report_3.txt**  
+   Description: Annual inspection report for a grilled chicken and sandwich restaurant.  
+   Created: 2026-09  
 
-### Results Table:
+4. **restaurant_food_safety_guidelines.txt**  
+   Description: County food safety rules, temperature standards, storage regulations.  
+   Created: 2026-09  
 
-| Category                  | Count |
-|---------------------------|-------|
-| Valid first attempt       | 0     |
-| Valid after 1 retry       | 0     |
-| Valid after 2+ retries    | 27    |
-| Hit turn ceiling          | 3     |
+5. **restaurant_kitchen_sanitation.txt**  
+   Description: Kitchen sanitation manual covering daily, weekly, monthly cleaning tasks.  
+   Created: 2026-09  
 
-### Interpretation:
-All 30 runs eventually succeeded, but none were valid on the first or second attempt.
-27 runs succeeded after multiple retries, demonstrating that the reviewer + supervisor correction loop is functioning well.
-3 runs hit the ceiling (max_turns=10), which is typical behavior for a small local LLM (qwen2.5:1.5b) under strict JSON schema enforcement.
+6. **county_restaurant_cleaning_standards.txt**  
+   Description: The largest document — full regulatory handbook for cleaning & sanitation.  
+   Created: 2026-09  
 
----
+7. **pest_control_requirements.txt**  
+   Description: Pest identification, monitoring, and corrective-action manual.  
+   Created: 2026-09  
 
-## 2. Turn Ceiling Comparison (20 runs each)
+8. **hygiene_training_manual.txt**  
+   Description: Employee hygiene training guidelines for food-service establishments.  
+   Created: 2026-09
 
-### Script:
-python3.12 -m code.compare_ceiling
+## Notes
+- All files were generated specifically for HW3 based on restaurant domain requirements.
+- No copyrighted text was copied or reproduced.
+- Documents are intentionally structured to support chunking differences across:
+  - Token-based splitting  
+  - Semantic splitting  
+  - Sentence-window splitting  
 
-### Output file:
-reports/hw02/raw/ceiling_compare.json
-
-### Results:
-
-Both ceilings achieved 100% success.
-
-| Ceiling | Success Count | Failure Count | Mean Latency (seconds) |
-|---------|----------------|----------------|------------------------|
-| 2       | 20             | 0              | 1.69                   |
-| 10      | 20             | 0              | 1.71                   |
-
-### Interpretation:
-Latency for both ceilings was nearly identical because the smaller local model (qwen2.5:1.5b) stabilized quickly.
-Ceiling=10 is recommended for deployment as it allows more recovery opportunities without significant latency increase.
-
----
-
-## 3. Adversarial Input Test (5 Runs)
-
-### Script:
-python3.12 -m code.run_adversarial
-
-### Output file:
-reports/hw02/raw/adversarial_runs.json
-
-### Results Table:
-
-| Run | Success | Turn Count | Notes |
-|-----|----------|-------------|-------|
-| 1   | True     | 3           | Reviewer corrected planner_output={} |
-| 2   | True     | 3           | Reviewer corrected planner_output={} |
-| 3   | True     | 3           | Reviewer corrected planner_output={} |
-| 4   | True     | 3           | Reviewer corrected planner_output={} |
-| 5   | True     | 3           | Reviewer corrected planner_output={} |
-
-### Interpretation:
-Adversarial input triggered planner failure (empty JSON `{}`) for all runs.
-Reviewer successfully corrected the JSON each time and produced valid output.
-All runs finished successfully without hitting ceiling, demonstrating strong recovery ability.
-
----
-
-## 4. Summary Metrics
-
-### Completion Rate Across All Experiments:
-- Schema: 27/30 succeeded without ceiling, 3 with ceiling
-- Ceiling: 40/40 succeeded
-- Adversarial: 5/5 succeeded
-
-### Deployment Recommendation:
-Ceiling=10 offers higher robustness without increasing latency.
-
----
-# End of METRICS.md
+END OF FILE
