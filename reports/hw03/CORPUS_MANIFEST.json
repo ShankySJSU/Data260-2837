@@ -2,43 +2,43 @@
   "files": [
     {
       "name": "restaurant_inspection_report_1.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 4447,
+      "sha256": "40c763e0fc4c80656e173a5e2a03a4355037ff24a28f1d435aaaa135a084a69c"
     },
     {
       "name": "restaurant_inspection_report_2.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 5482,
+      "sha256": "e464db0826e6f8f61dccaf003705832863c2de8d0aa5c647fe6c6555f199c807"
     },
     {
       "name": "restaurant_inspection_report_3.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 5691,
+      "sha256": "8cfff58ef0828bb589cb7ccb66ec83d236de5ea611ff8e78433b58770d446250"
     },
     {
       "name": "restaurant_food_safety_guidelines.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 6701,
+      "sha256": "d3d1677d3ae4370bb216a5af0a2422a2f1edf9aba13d3709f276dbc36b69685c"
     },
     {
       "name": "restaurant_kitchen_sanitation.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 6363,
+      "sha256": "9e0245e17e4a576eb10b678b486c183a0ccc9059b306a9eca0a28ffc4ec84030"
     },
     {
       "name": "county_restaurant_cleaning_standards.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 10934,
+      "sha256": "a9c5b9e1c66d433cb1a9fc8656dbdfac49c8af7e1002bde7fafa3489e677b6ad"
     },
     {
       "name": "pest_control_requirements.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 8406,
+      "sha256": "592068b4d6f5686bb4cd78f5ff6f84b6089490ba310c4b43f5fcd3f8300562b6"
     },
     {
       "name": "hygiene_training_manual.txt",
-      "bytes": "<TO-BE-FILLED>",
-      "sha256": "<TO-BE-FILLED>"
+      "bytes": 7717,
+      "sha256": "7109fc09d519473167dddf0252282b3b29e14f7a543fba6b22597e7d86e49e26"
     }
   ]
 }
