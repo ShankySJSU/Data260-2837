@@ -1,0 +1,30 @@
+{
+  "homework": "HW02",
+  "SID4": "2837",
+  "commit_hash": "<INSERT YOUR LATEST COMMIT HASH HERE>",
+  "model_used": "qwen3:4b via Ollama",
+  "SEED": 2837,
+  "VERIFY_SEED": 262837,
+  "checks": [
+    {
+      "name": "FastAPI responds on PORT_BASE=8137",
+      "status": "PASS"
+    },
+    {
+      "name": "LangGraph run_graph() executes without hanging",
+      "status": "PASS"
+    },
+    {
+      "name": "run_graph() returns dictionary with success flag",
+      "status": "PASS"
+    },
+    {
+      "name": "Planner output includes tags & summary",
+      "status": "PASS"
+    },
+    {
+      "name": "Reviewer output includes corrected JSON",
+      "status": "PASS"
+    }
+  ]
+}
