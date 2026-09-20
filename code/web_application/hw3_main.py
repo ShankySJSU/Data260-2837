@@ -17,7 +17,7 @@ PORT_BASE = 8137  # Required by TA instructions
 
 app = FastAPI()
 
-
+'''
 app.add_middleware(
     SessionMiddleware,
     secret_key="super_secret_key_2837",
@@ -25,7 +25,13 @@ app.add_middleware(
     same_site="lax",
     https_only=False,     # True only if running HTTPS
 )
+'''
 
+app.add_middleware(
+    SessionMiddleware,
+    secret_key="super_secret_key_2837",
+    max_age=120
+)
 
 # Include HW3 authentication routes
 app.include_router(auth_router)

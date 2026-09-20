@@ -5,10 +5,20 @@ from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_302_FOUND
 import time
 
+print(">>> USING AUTH FILE:", __file__)
+
 router = APIRouter()
 
 # Templates directory
-templates = Jinja2Templates(directory="code/web_application/templates")
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+#templates = Jinja2Templates(directory="code/web_application/templates")
+
+print("LOADER:", templates.env.loader)
+print("SEARCH PATH:", templates.env.loader.searchpath)
 
 # Hardcoded credentials (HW3 requirement)
 VALID_USERNAME = "admin"
@@ -22,7 +32,16 @@ IDLE_TIMEOUT = 120   # 2 minutes for demo; TA may ask for longer
 # -------------------------------
 @router.get("/")
 def home(request: Request):
+    print("USER SESSION VALUE:", request.session.get("user"))
     user = request.session.get("user")
+    #print("TEMPLATE DIR:", templates.directory)
+    '''
+    return templates.TemplateResponse(
+            "index.html",
+            {"user": user},
+            request=request
+    )
+    '''
     return templates.TemplateResponse(
         "index.html",
         {
@@ -30,7 +49,7 @@ def home(request: Request):
             "user": user
         }
     )
-
+    
 # -------------------------------
 # LOGIN PAGE (GET)
 # -------------------------------
