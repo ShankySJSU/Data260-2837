@@ -1,0 +1,67 @@
+---------------
+-----------------------------------------------------------------
+For Homework 3
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+--for homework 3 -- I have different Repository
+cd "C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837\"
+
+--sR --Since my file is in code\web_appliction folder , hence I am writing
+uvicorn code.web_application.[pythong file that want to exe] --port
+--Step 1 : Now start FastAPI:
+uvicorn code.web_application.hw3_main:app --port 8137
+
+---------------
+exepcted output
+---------------
+INFO:     Started server process [6456]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+
+-----------------
+#ensure your python web server is running (using other command prompt/terminal)
+#start python server
+
+#Navigate to your HTML’s folder:
+cd "C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837\code\web_application\templates"
+#run the python web server
+python -m http.server 8000
+#expected output is 
+Serving HTTP on :: port 8000 (http://[::]:8000/) ...
+
+----------------
+
+---------------------------------------------------------------------------------------
+----------------Homework 2------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--HTMl Execution
+cd "C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837"
+
+
+
+Now start FastAPI:
+uvicorn code.web_application.hw2_main:app --port 8137
+
+netstat -ano | findstr :8137
+
+This time you should see something like:
+TCP    127.0.0.1:8137    LISTENING    <PID>
+
+If you see this → Backend is running correctly.
+PS C:\Users\shashank.ranjan> netstat -ano | findstr :8137
+  TCP    127.0.0.1:8137         0.0.0.0:0              LISTENING       20020
+
+#How to Start PYTHON WEBSERVER
+Open another PowerShell window (not the backend window).
+Navigate to your HTML’s folder:
+cd "C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\Python Lab\Data260-2837\code\web_application"
+run the python web server
+python -m http.server 8000
+
+http://localhost:8000/HW2-Shashank.html
+
+-------------ALL CRUD Operation-----------
+GET (List All)
+Open:
+http://127.0.0.1:8137/restaurants

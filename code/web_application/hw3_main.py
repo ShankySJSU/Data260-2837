@@ -1,4 +1,4 @@
-# code/web_application/hw2_main.py
+# code/web_application/hw3_main.py
 import json
 import os
 from fastapi import FastAPI, HTTPException
@@ -78,7 +78,7 @@ class RestaurantInspection(BaseModel):
 
 
 # ======================================================================
-# ROUTES REQUIRED FOR HOMEWORK 2
+# ROUTES REQUIRED FOR HOMEWORK 3
 # ======================================================================
 
 # -------------------------------
@@ -113,7 +113,7 @@ def add_restaurant(rec: RestaurantInspection):
 
 
 # -------------------------------
-# 3. UPDATE RECORD WITH ID = 1
+# 3. UPDATE RECORD WITH passed ID
 # -------------------------------
 #@app.put("/restaurants/update-1")
 #def update_record_one(rec: RestaurantInspection):
