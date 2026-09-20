@@ -1,0 +1,37 @@
+[
+  {
+    "rank": 1,
+    "chunk_id": "2f81f5d5-67fb-4ffa-9d50-8e81684dcb7e",
+    "cosine_similarity": 0.7178945494899254,
+    "chunk_length": 692,
+    "preview": "The following items require daily cleaning:\n- Prep surfaces  \n- Cutting boards  \n- Sinks  \n- Grill surfaces  \n- Microwave interiors  \n- Floor drains  \n- Food-co"
+  },
+  {
+    "rank": 2,
+    "chunk_id": "7f375c62-3e64-4956-a1d4-e5f5c5af59e9",
+    "cosine_similarity": 0.679533633207177,
+    "chunk_length": 304,
+    "preview": "------------------------------------------------------------\nSECTION 1 \u2014 DAILY CLEANING REQUIREMENTS\n-----------------------------------------------------------"
+  },
+  {
+    "rank": 3,
+    "chunk_id": "9e9421f4-0f5a-4943-aeb0-8f8f492e357e",
+    "cosine_similarity": 0.6626810438700105,
+    "chunk_length": 125,
+    "preview": "SECTION 4 \u2014 SANITATION AND CLEANING STANDARDS\n4.1 Cleaning Schedule  \nRestaurants must maintain a written cleaning schedule. "
+  },
+  {
+    "rank": 4,
+    "chunk_id": "777a6208-044c-4379-9735-c25987dfa0e7",
+    "cosine_similarity": 0.6612267136453737,
+    "chunk_length": 143,
+    "preview": "SECTION 3 \u2014 FOOD PREPARATION AREA\nThe primary kitchen was significantly cleaner than previous visits, showing evidence of improved compliance. "
+  },
+  {
+    "rank": 5,
+    "chunk_id": "d486128c-3ccd-4ecf-bcaa-c51c5e9dd57c",
+    "cosine_similarity": 0.6598303400163932,
+    "chunk_length": 155,
+    "preview": "SECTION 1 \u2014 DAILY KITCHEN CLEANING TASKS  \n1.1 Prep Surfaces  \nAll prep tables must be cleaned and sanitized every 4 hours during active food preparation. "
+  }
+]

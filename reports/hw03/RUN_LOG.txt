@@ -1,0 +1,79 @@
+# RUN_LOG.txt – Homework 3
+# SID4: 2837
+# Student: Shashank Ranjan
+# This file contains actual console output and timestamps from HW3 runs.
+
+===========================================
+STEP 1 — Token Chunker Execution
+===========================================
+Command:
+python reports/hw03/token_chunker.py
+
+(Paste the output exactly as shown in your terminal)
+Example:
+Loaded X chunks...
+Preview...
+Saved token_chunks.json
+
+===========================================
+STEP 2 — Semantic Chunker Execution
+===========================================
+Command:
+python reports/hw03/semantic_chunker.py
+
+(Paste real output from your terminal)
+
+===========================================
+STEP 3 — Sentence-Window Chunker Execution
+===========================================
+Command:
+python reports/hw03/sentence_window_chunker.py
+
+(Paste real output from your terminal)
+
+===========================================
+STEP 4 — Token Index Construction
+===========================================
+Command:
+python reports/hw03/token_index.py
+
+(Paste real output)
+Example:
+Loaded 30 token chunks...
+Embedding matrix shape: (30, 384)
+Saved token_embeddings.npy
+
+===========================================
+STEP 5 — Semantic Index Construction
+===========================================
+Command:
+python reports/hw03/semantic_index.py
+
+(Paste output)
+
+===========================================
+STEP 6 — Sentence-Window Index Construction
+===========================================
+Command:
+python reports/hw03/sentence_window_index.py
+
+(Paste output)
+
+===========================================
+STEP 7 — Retrieval (Token / Semantic / Sentence)
+===========================================
+Command:
+python reports/hw03/retrieval.py
+
+(Paste output for all 3 retrieval logs)
+Example:
+=== TOKEN RETRIEVAL ===
+...
+=== SEMANTIC RETRIEVAL ===
+...
+=== SENTENCE RETRIEVAL ===
+...
+
+===========================================
+END OF RUN LOG
+===========================================

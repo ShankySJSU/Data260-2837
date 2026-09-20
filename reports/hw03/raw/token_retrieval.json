@@ -1,0 +1,37 @@
+[
+  {
+    "rank": 1,
+    "chunk_id": "restaurant_kitchen_sanitation.txt_chunk_0",
+    "cosine_similarity": 0.699517800444615,
+    "chunk_length": 2397,
+    "preview": "RESTAURANT KITCHEN SANITATION MANUAL  \nCounty Environmental Health Department  \n2026 Edition  \n\nINTRODUCTION  \nThis manual outlines the minimum sanitation stand"
+  },
+  {
+    "rank": 2,
+    "chunk_id": "county_restaurant_cleaning_standards.txt_chunk_0",
+    "cosine_similarity": 0.6787700239838316,
+    "chunk_length": 2664,
+    "preview": "COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS  \n2026 Regulatory Compliance Handbook  \nIssued by: County Environmental Health & Sanitation Division  \n\nINTR"
+  },
+  {
+    "rank": 3,
+    "chunk_id": "restaurant_kitchen_sanitation.txt_chunk_2",
+    "cosine_similarity": 0.6257803442585368,
+    "chunk_length": 2201,
+    "preview": "clothing during prep  \n\n5.2 Glove Usage  \nGloves must be replaced:\n- After handling raw foods  \n- After touching non-food items  \n- After contamination (touchin"
+  },
+  {
+    "rank": 4,
+    "chunk_id": "restaurant_kitchen_sanitation.txt_chunk_3",
+    "cosine_similarity": 0.5968954915185898,
+    "chunk_length": 707,
+    "preview": "Standing water  \n- Sticky floors  \n\nSECTION 10 \u2014 MANAGEMENT CHECKLIST  \nDaily Checklist:\n- Prep surfaces sanitized  \n- Waste bins sealed  \n- Gloves available  \n"
+  },
+  {
+    "rank": 5,
+    "chunk_id": "restaurant_food_safety_guidelines.txt_chunk_0",
+    "cosine_similarity": 0.589028510998329,
+    "chunk_length": 2297,
+    "preview": "RESTAURANT FOOD SAFETY GUIDELINES \u2013 COUNTY PUBLIC HEALTH DEPARTMENT\nEdition: 2026 Compliance Handbook\nApplicable To: All food service establishments including r"
+  }
+]

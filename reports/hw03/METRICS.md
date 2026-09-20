@@ -1,102 +1,89 @@
-# METRICS.md – Homework 2
+# METRICS.md – Homework 3
 SID4: 2837  
 Student: Shashank Ranjan  
 
-This file reports all experimental metrics required for Homework 2:
-- Schema validation (30 runs)
-- Turn ceiling comparison (2 vs 10)
-- Adversarial robustness (5 runs)
-- Mean latencies
-- Completion rates
+# DATA260 – HW3 Retrieval Metrics
+Domain: Restaurant Inspection
 
-All results derived from:
-reports/hw02/raw/schema_stats.json  
-reports/hw02/raw/ceiling_compare.json  
-reports/hw02/raw/adversarial_runs.json  
+## Query Used
+"What are the required daily cleaning tasks for restaurant food preparation areas?"
 
 ---
 
-## 1. Schema Validation Experiment (30 Runs)
+# 1. Retrieval Quality Comparison
 
-### Script:
-python3.12 -m code.run_schema_experiment
+## Summary Table
 
-### Output file:
-reports/hw02/raw/schema_stats.json
-
-### Results Table:
-
-| Category                  | Count |
-|---------------------------|-------|
-| Valid first attempt       | 0     |
-| Valid after 1 retry       | 0     |
-| Valid after 2+ retries    | 27    |
-| Hit turn ceiling          | 3     |
-
-### Interpretation:
-All 30 runs eventually succeeded, but none were valid on the first or second attempt.
-27 runs succeeded after multiple retries, demonstrating that the reviewer + supervisor correction loop is functioning well.
-3 runs hit the ceiling (max_turns=10), which is typical behavior for a small local LLM (qwen2.5:1.5b) under strict JSON schema enforcement.
+| Technique          | #Chunks | Avg Chunk Length | Top‑1 Cosine | Mean@5 Cosine | Recall@5 | Latency (ms) |
+|-------------------|---------|------------------|--------------|---------------|----------|--------------|
+| Token             | 30      | ~2000 chars      | 0.6995       | 0.6380        | 5/5      | 0.92         |
+| Semantic          | 32      | ~1600 chars      | 0.6995       | 0.6551        | 5/5      | 0.98         |
+| Sentence-window   | 415     | ~200 chars       | **0.7179**   | **0.6762**    | 5/5      | 10.83        |
 
 ---
 
-## 2. Turn Ceiling Comparison (20 runs each)
+# 2. Observations
 
-### Script:
-python3.12 -m code.compare_ceiling
+1. **Sentence-window chunking produced the highest Top‑1 and Mean@5 cosine similarity.**  
+   This is expected because smaller chunks with neighbor context preserve high semantic relevance without dilution from unrelated text.
 
-### Output file:
-reports/hw02/raw/ceiling_compare.json
+2. **Semantic chunking outperformed token chunking.**  
+   SemanticSplitterNodeParser creates coherent boundaries aligned with meaning, producing more conceptually focused chunks.
 
-### Results:
+3. **Token chunking performed worst among the three**, though still acceptable.  
+   Because tokens are split purely by size, chunks contain mixed topics which lowers cosine similarity.
 
-Both ceilings achieved 100% success.
-
-| Ceiling | Success Count | Failure Count | Mean Latency (seconds) |
-|---------|----------------|----------------|------------------------|
-| 2       | 20             | 0              | 1.69                   |
-| 10      | 20             | 0              | 1.71                   |
-
-### Interpretation:
-Latency for both ceilings was nearly identical because the smaller local model (qwen2.5:1.5b) stabilized quickly.
-Ceiling=10 is recommended for deployment as it allows more recovery opportunities without significant latency increase.
+4. **Sentence-window has highest latency**, because it creates 415 chunks (far more comparisons).  
+   Despite this, its accuracy is best.
 
 ---
 
-## 3. Adversarial Input Test (5 Runs)
+# 3. Example of Incorrect High-Scoring Retrieval (Required by HW3)
 
-### Script:
-python3.12 -m code.run_adversarial
+The following sentence-window chunk scored **0.6612**, even though it does *not* contain the answer:
 
-### Output file:
-reports/hw02/raw/adversarial_runs.json
+Preview:
 
-### Results Table:
+SECTION 3 — FOOD PREPARATION AREA
+The primary kitchen was significantly cleaner than previous visits, showing evidence of improved compliance.
 
-| Run | Success | Turn Count | Notes |
-|-----|----------|-------------|-------|
-| 1   | True     | 3           | Reviewer corrected planner_output={} |
-| 2   | True     | 3           | Reviewer corrected planner_output={} |
-| 3   | True     | 3           | Reviewer corrected planner_output={} |
-| 4   | True     | 3           | Reviewer corrected planner_output={} |
-| 5   | True     | 3           | Reviewer corrected planner_output={} |
-
-### Interpretation:
-Adversarial input triggered planner failure (empty JSON `{}`) for all runs.
-Reviewer successfully corrected the JSON each time and produced valid output.
-All runs finished successfully without hitting ceiling, demonstrating strong recovery ability.
+This chunk does NOT describe daily cleaning tasks, yet similarity is high.  
+This happened because the query includes “cleaning” and “preparation areas,” and the embedding model finds the chunk semantically close — even without containing the correct answer.
 
 ---
 
-## 4. Summary Metrics
+# 4. Conclusion
 
-### Completion Rate Across All Experiments:
-- Schema: 27/30 succeeded without ceiling, 3 with ceiling
-- Ceiling: 40/40 succeeded
-- Adversarial: 5/5 succeeded
+**Sentence-window chunking is the best technique for this restaurant inspection corpus.**
 
-### Deployment Recommendation:
-Ceiling=10 offers higher robustness without increasing latency.
+Reasons:
+- Highest top‑1 retrieval score  
+- Highest mean@k score  
+- Best alignment with precise regulatory content  
+- Smaller chunks allow more accurate cosine comparison  
+- Context window preserves meaning without dilution  
+
+Token chunking is least effective because chunk boundaries do not follow semantic structure.
+
+Semantic chunking performs well but still produces larger chunks than optimal for fine-grained regulatory queries.
 
 ---
-# End of METRICS.md
+
+# 5. AI_USE Required Reflections
+
+1. **What AI assistant was used?**  
+   LLM was used to help generate corpus files, chunkers, vector indexing, retrieval pipeline, and metrics interpretation.
+
+2. **One wrong AI-produced output I corrected:**  
+   LlamaIndex vector store code required refactoring due to API changes (SimpleVectorStore, FAISS import).  
+   I corrected chunk indexing by using embedding matrices and manual cosine similarity.
+
+3. **How I detected the problem:**  
+   The SimpleVectorStore.add() error indicated that the API changed and no longer accepted (id, embedding, node).  
+   Also FAISS imports were unavailable in this environment.
+
+4. **What I changed & why it works now:**  
+   I migrated to a stable approach using HuggingFace embeddings + NumPy cosine similarity.  
+   This is version-agnostic and works consistently across LlamaIndex releases.
+
+---
