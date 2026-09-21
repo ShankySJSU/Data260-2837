@@ -33,7 +33,7 @@
 
           {% if request.query_params.error %}
           <div class="alert alert-danger">
-            Invalid username or password. Please try again.
+            Invalid username ({{ request.session.get("last_username") }} )or password. Please try again.
           </div>
           {% endif %}
 

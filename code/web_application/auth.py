@@ -14,8 +14,6 @@ router = APIRouter()
 
 # Templates directory
 
-
-
 BASE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 #templates = Jinja2Templates(directory="code/web_application/templates")
@@ -28,7 +26,8 @@ VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
 # Idle session timeout (seconds)
-IDLE_TIMEOUT = 120   # 2 minutes for demo; TA may ask for longer
+IDLE_TIMEOUT = 120   # 2 minutes (for my testing i used 30 seconds)
+
 
 # -------------------------------
 # HOME PAGE
@@ -95,6 +94,8 @@ def login(request: Request, username: str = Form(...), password: str = Form(...)
         )
 
     # invalid credentials → show Bootstrap alert
+    #saving in sesssion to display the last username entered in the login form
+    request.session["last_username"] = username
     return RedirectResponse(
         url="/login?error=1",
         status_code=HTTP_302_FOUND
