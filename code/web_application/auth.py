@@ -4,14 +4,17 @@ from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_302_FOUND
 import time
+from pathlib import Path
 
+#ensure that the templates directory is correctly set up 
+# and I am calling the proper auth.py file
 print(">>> USING AUTH FILE:", __file__)
 
 router = APIRouter()
 
 # Templates directory
 
-from pathlib import Path
+
 
 BASE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))

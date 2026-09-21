@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 #added the following for Hw3
 from starlette.middleware.sessions import SessionMiddleware
+#import the auth.py router to include it in the main app
 from code.web_application.auth import router as auth_router
 
 
@@ -26,7 +27,8 @@ app.add_middleware(
     https_only=False,     # True only if running HTTPS
 )
 '''
-
+#the above middleware is commented out because it was causing issues 
+#with session management. The following middleware configuration is used instead.
 app.add_middleware(
     SessionMiddleware,
     secret_key="super_secret_key_2837",
@@ -34,6 +36,9 @@ app.add_middleware(
 )
 
 # Include HW3 authentication routes
+#FastAPI router for authentication is included in the main app 
+#to handle login, logout, and session management. 
+#(auth_router is as router)
 app.include_router(auth_router)
 
 
@@ -60,13 +65,13 @@ if not os.path.exists(DATA_FILE):
 
 
 def load_data():
-    """Loads all inspection records from JSON file."""
+    #Loads all inspection records from JSON file.
     with open(DATA_FILE, "r") as f:
         return json.load(f)
 
 
 def save_data(data):
-    """Writes updated list back to JSON file."""
+    #Writes updated list back to JSON file."""
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
@@ -84,7 +89,7 @@ class RestaurantInspection(BaseModel):
 
 
 # ======================================================================
-# ROUTES REQUIRED FOR HOMEWORK 3
+# ROUTES REQUIRED FOR HOMEWORK 2 that I am copying over to HW3
 # ======================================================================
 
 # -------------------------------
@@ -185,7 +190,8 @@ def delete_latest():
 @app.get("/restaurants/search")
 def search(q: str):
     data = load_data()
-
+    #this will ensure that the search is case-insensitive
+    #TA has asked me to show this feature during my demo in the class
     q_lower = q.lower()
     results = [
         item for item in data
