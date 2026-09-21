@@ -56,9 +56,6 @@ git clone https://github.com/ShankySJSU/Data260-2837.git
 cd Data260-2837
 
 ### 2. Install Requirements
-You must have Python ≥ 3.10.
-
-
 pip install -r requirements.txt
 
 OR manually install:
@@ -73,7 +70,7 @@ pip install faiss-cpu   # optional; not required for HW3 final indexing approach
 
 ---
 
-# 🚀 Running Homework 3 (Authentication App)
+#  Running Homework 3 (Authentication App)
 
 From the project root:
 
@@ -95,7 +92,7 @@ Password: password
 
 ---
 
-# 🔐 HW3 Authentication Features
+# HW3 Authentication Features
 - FastAPI + SessionMiddleware  
 - Secure cookie  
 - Idle timeout (120 seconds)  
@@ -107,7 +104,7 @@ Password: password
 
 ---
 
-# 📚 HW3 RAG Pipeline (Chunking + Retrieval)
+# HW3 RAG Pipeline (Chunking + Retrieval)
 
 ### 1. Build all chunkers
 
@@ -141,7 +138,7 @@ This includes:
 
 ---
 
-# 📝 Required HW3 Supporting Files
+# Required HW3 Supporting Files
 
 | File | Description |
 |------|-------------|
@@ -180,26 +177,11 @@ This includes:
 
 ---
 
-# 🧠 AI_USE Reflection (Short Summary)
-
-- Used AI to generate chunkers, corpus, retrieval scripts, and METRICS.md.
+# AI_USE Reflection (Short Summary)
+- I used an AI assistant to help generate corpus files, getting questions, guiding me to understand technology and terms, and documenting 
 - Corrected model-version errors involving SimpleVectorStore and FAISS by switching to stable embedding-matrix + cosine similarity approach.
 - Verified pipeline using RUN_LOG.txt and verification.json.
 
 ---
-
-# ✔ Final Notes
-
-This repository satisfies all requirements for Homework 1, Homework 2, and Homework 3, including:
-
-- Authentication app  
-- Bootstrap styling  
-- Session management  
-- Three chunking strategies  
-- Retrieval-only comparison  
-- Full RAG evaluation  
-- Required metadata files  
-- Verified reproducibility  
-- Organized directory structure  
 
 Please refer to `reports/hw03/` for complete HW3 artifacts and `Ranjan_HW3.pdf` for the final written submission.

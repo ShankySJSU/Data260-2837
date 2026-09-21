@@ -65,11 +65,50 @@ STEP 1 — Token Chunker Execution
 Command:
 python reports/hw03/token_chunker.py
 
-(Paste the output exactly as shown in your terminal)
-Example:
-Loaded X chunks...
-Preview...
-Saved token_chunks.json
+--output from command termina--
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/token_chunker.py
+
+--- corpusfilelist.txt ---
+Total chunks: 1
+Preview: CORPUS FILES TO BE GENERATED restaurant_inspection_report_1.txt restaurant_inspection_report_2.txt restaurant_inspection_report_3.txt restaurant_food_safety_guidelines.txt restaurant_kitchen_sanitatio
+
+--- county_restaurant_cleaning_standards.txt ---
+Total chunks: 5
+Preview: COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS   2026 Regulatory Compliance Handbook   Issued by: County Environmental Health & Sanitation Division    INTRODUCTION   Restaurants, food vendors, an
+
+--- hygiene_training_manual.txt ---
+Total chunks: 4
+Preview: HYGIENE TRAINING MANUAL FOR FOOD SERVICE EMPLOYEES   County Department of Environmental Health   2026 Standardized Employee Training Module    OVERVIEW   This hygiene manual provides detailed guidelin
+
+--- pest_control_requirements.txt ---
+Total chunks: 4
+Preview: PEST CONTROL REQUIREMENTS FOR FOOD SERVICE ESTABLISHMENTS   County Environmental Health Department   2026 Food Safety Compliance Manual  INTRODUCTION   Pest activity in food facilities poses significa
+
+--- restaurant_food_safety_guidelines.txt ---
+Total chunks: 4
+Preview: RESTAURANT FOOD SAFETY GUIDELINES – COUNTY PUBLIC HEALTH DEPARTMENT Edition: 2026 Compliance Handbook Applicable To: All food service establishments including restaurants, cafes, bakeries, food trucks
+
+--- restaurant_inspection_report_1.txt ---
+Total chunks: 2
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Rangoli Sweets and Snacks Address: 130 El Camino Real, San Jose, CA Inspection Date: March 4, 2026 Inspection Type: Routin
+
+--- restaurant_inspection_report_2.txt ---
+Total chunks: 3
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Moonlight Garden Restaurant & Banquet Hall Address: 455 Blossom Terrace, Santa Clara, CA Inspection Date: April 12, 2026 I
+
+--- restaurant_inspection_report_3.txt ---
+Total chunks: 3
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Fox Chicken Sandwich & Grill Address: 999 Main Street, San Francisco, CA Inspection Date: May 18, 2026 Inspection Type: Ro
+
+--- restaurant_kitchen_sanitation.txt ---
+Total chunks: 4
+Preview: RESTAURANT KITCHEN SANITATION MANUAL   County Environmental Health Department   2026 Edition    INTRODUCTION   This manual outlines the minimum sanitation standards required for all commercial restaur
+
+Total nodes across all documents: 30
+
+Token-based chunking complete. Output written to reports/hw03/raw/token_chunks.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 2 — Semantic Chunker Execution
@@ -77,7 +116,51 @@ STEP 2 — Semantic Chunker Execution
 Command:
 python reports/hw03/semantic_chunker.py
 
-(Paste real output from your terminal)
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/semantic_chunker.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2320.86it/s]
+
+--- corpusfilelist.txt ---
+Total semantic chunks: 1
+Preview: CORPUS FILES TO BE GENERATED restaurant_inspection_report_1.txt restaurant_inspection_report_2.txt restaurant_inspection_report_3.txt restaurant_food_safety_guidelines.txt restaura
+
+--- county_restaurant_cleaning_standards.txt ---
+Total semantic chunks: 6
+Preview: COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS   2026 Regulatory Compliance Handbook   Issued by: County Environmental Health & Sanitation Division    INTRODUCTION   Restauran
+
+--- hygiene_training_manual.txt ---
+Total semantic chunks: 4
+Preview: HYGIENE TRAINING MANUAL FOR FOOD SERVICE EMPLOYEES   County Department of Environmental Health   2026 Standardized Employee Training Module    OVERVIEW   This hygiene manual provid
+
+--- pest_control_requirements.txt ---
+Total semantic chunks: 4
+Preview: PEST CONTROL REQUIREMENTS FOR FOOD SERVICE ESTABLISHMENTS   County Environmental Health Department   2026 Food Safety Compliance Manual  INTRODUCTION   Pest activity in food facili
+
+--- restaurant_food_safety_guidelines.txt ---
+Total semantic chunks: 3
+Preview: RESTAURANT FOOD SAFETY GUIDELINES – COUNTY PUBLIC HEALTH DEPARTMENT Edition: 2026 Compliance Handbook Applicable To: All food service establishments including restaurants, cafes, b
+
+--- restaurant_inspection_report_1.txt ---
+Total semantic chunks: 3
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Rangoli Sweets and Snacks Address: 130 El Camino Real, San Jose, CA Inspection Date: March 4, 2026 Ins
+
+--- restaurant_inspection_report_2.txt ---
+Total semantic chunks: 3
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Moonlight Garden Restaurant & Banquet Hall Address: 455 Blossom Terrace, Santa Clara, CA Inspection Da
+
+--- restaurant_inspection_report_3.txt ---
+Total semantic chunks: 4
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Fox Chicken Sandwich & Grill Address: 999 Main Street, San Francisco, CA Inspection Date: May 18, 2026
+
+--- restaurant_kitchen_sanitation.txt ---
+Total semantic chunks: 4
+Preview: RESTAURANT KITCHEN SANITATION MANUAL   County Environmental Health Department   2026 Edition    INTRODUCTION   This manual outlines the minimum sanitation standards required for al
+
+Total semantic nodes across all documents: 32
+
+Semantic chunking complete. Output written to reports/hw03/raw\semantic_chunks.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 3 — Sentence-Window Chunker Execution
@@ -85,7 +168,49 @@ STEP 3 — Sentence-Window Chunker Execution
 Command:
 python reports/hw03/sentence_window_chunker.py
 
-(Paste real output from your terminal)
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/sentence_window_chunker.py
+
+--- corpusfilelist.txt ---
+Total sentence-window chunks: 1
+Preview: CORPUS FILES TO BE GENERATED restaurant_inspection_report_1.txt restaurant_inspection_report_2.txt restaurant_inspection_report_3.txt restaurant_food_safety_guidelines.txt restaurant_kitchen_sanitatio
+
+--- county_restaurant_cleaning_standards.txt ---
+Total sentence-window chunks: 86
+Preview: COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS   2026 Regulatory Compliance Handbook   Issued by: County Environmental Health & Sanitation Division    INTRODUCTION   Restaurants, food vendors, an
+
+--- hygiene_training_manual.txt ---
+Total sentence-window chunks: 57
+Preview: HYGIENE TRAINING MANUAL FOR FOOD SERVICE EMPLOYEES   County Department of Environmental Health   2026 Standardized Employee Training Module    OVERVIEW   This hygiene manual provides detailed guidelin
+
+--- pest_control_requirements.txt ---
+Total sentence-window chunks: 53
+Preview: PEST CONTROL REQUIREMENTS FOR FOOD SERVICE ESTABLISHMENTS   County Environmental Health Department   2026 Food Safety Compliance Manual  INTRODUCTION   Pest activity in food facilities poses significa
+
+--- restaurant_food_safety_guidelines.txt ---
+Total sentence-window chunks: 31
+Preview: RESTAURANT FOOD SAFETY GUIDELINES – COUNTY PUBLIC HEALTH DEPARTMENT Edition: 2026 Compliance Handbook Applicable To: All food service establishments including restaurants, cafes, bakeries, food trucks
+
+--- restaurant_inspection_report_1.txt ---
+Total sentence-window chunks: 36
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Rangoli Sweets and Snacks Address: 130 El Camino Real, San Jose, CA Inspection Date: March 4, 2026 Inspection Type: Routin
+
+--- restaurant_inspection_report_2.txt ---
+Total sentence-window chunks: 38
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Moonlight Garden Restaurant & Banquet Hall Address: 455 Blossom Terrace, Santa Clara, CA Inspection Date: April 12, 2026 I
+
+--- restaurant_inspection_report_3.txt ---
+Total sentence-window chunks: 58
+Preview: RESTAURANT INSPECTION REPORT – COUNTY PUBLIC HEALTH DEPARTMENT Facility Name: Fox Chicken Sandwich & Grill Address: 999 Main Street, San Francisco, CA Inspection Date: May 18, 2026 Inspection Type: Ro
+
+--- restaurant_kitchen_sanitation.txt ---
+Total sentence-window chunks: 55
+Preview: RESTAURANT KITCHEN SANITATION MANUAL   County Environmental Health Department   2026 Edition    INTRODUCTION   This manual outlines the minimum sanitation standards required for all commercial restaur
+
+Total sentence-window nodes across all documents: 415
+
+Sentence-window chunking complete. Output written to reports/hw03/raw\sentence_chunks.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 4 — Token Index Construction
@@ -93,11 +218,19 @@ STEP 4 — Token Index Construction
 Command:
 python reports/hw03/token_index.py
 
-(Paste real output)
-Example:
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/token_index.py
 Loaded 30 token chunks...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 22748.32it/s]
+
 Embedding matrix shape: (30, 384)
-Saved token_embeddings.npy
+Embedding dimension: 384
+First 8 values of first embedding: [ 0.04947439 -0.03252659 -0.01393218  0.02356097  0.0063507   0.02822951
+ -0.00389065 -0.0507939 ]
+
+Saved token_embeddings.npy, token_index_ids.json, token_index_texts.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 5 — Semantic Index Construction
@@ -105,7 +238,19 @@ STEP 5 — Semantic Index Construction
 Command:
 python reports/hw03/semantic_index.py
 
-(Paste output)
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/semantic_index.py
+Loaded 32 semantic chunks...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 3220.90it/s]
+
+Embedding matrix shape: (32, 384)
+Embedding dimension: 384
+First 8 values of first embedding: [ 0.04947439 -0.03252659 -0.01393218  0.02356097  0.0063507   0.02822951
+ -0.00389065 -0.0507939 ]
+
+Saved semantic_embeddings.npy, semantic_index_ids.json, semantic_index_texts.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 6 — Sentence-Window Index Construction
@@ -113,7 +258,19 @@ STEP 6 — Sentence-Window Index Construction
 Command:
 python reports/hw03/sentence_window_index.py
 
-(Paste output)
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/sentence_window_index.py
+Loaded 415 sentence-window chunks...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 3561.23it/s]
+
+Embedding matrix shape: (415, 384)
+Embedding dimension: 384
+First 8 values of first embedding: [ 0.04947439 -0.03252659 -0.01393218  0.02356097  0.0063507   0.02822951
+ -0.00389065 -0.0507939 ]
+
+Saved sentence_embeddings.npy, sentence_index_ids.json, sentence_index_texts.json, sentence_index_metadata.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 STEP 7 — Retrieval (Token / Semantic / Sentence)
@@ -121,14 +278,180 @@ STEP 7 — Retrieval (Token / Semantic / Sentence)
 Command:
 python reports/hw03/retrieval.py
 
-(Paste output for all 3 retrieval logs)
-Example:
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>python reports/hw03/retrieval.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 13857.68it/s]
+
 === TOKEN RETRIEVAL ===
-...
+Query embedding dimension: 384
+First 8 values: [0.019467702135443687, -0.023654496297240257, 0.08661798387765884, 0.03852933645248413, -0.06809815019369125, -0.05235360190272331, 0.0026472469326108694, -0.11118803173303604]
+Retrieval latency: 0.92 ms
+
+Rank 1:
+  chunk_id: restaurant_kitchen_sanitation.txt_chunk_0
+  cosine_similarity: 0.6995
+  chunk_length: 2397
+  preview: RESTAURANT KITCHEN SANITATION MANUAL
+County Environmental Health Department
+2026 Edition
+
+INTRODUCTION
+This manual outlines the minimum sanitation stand
+
+Rank 2:
+  chunk_id: county_restaurant_cleaning_standards.txt_chunk_0
+  cosine_similarity: 0.6788
+  chunk_length: 2664
+  preview: COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS
+2026 Regulatory Compliance Handbook
+Issued by: County Environmental Health & Sanitation Division
+
+INTR
+
+Rank 3:
+  chunk_id: restaurant_kitchen_sanitation.txt_chunk_2
+  cosine_similarity: 0.6258
+  chunk_length: 2201
+  preview: clothing during prep
+
+5.2 Glove Usage
+Gloves must be replaced:
+- After handling raw foods
+- After touching non-food items
+- After contamination (touchin
+
+Rank 4:
+  chunk_id: restaurant_kitchen_sanitation.txt_chunk_3
+  cosine_similarity: 0.5969
+  chunk_length: 707
+  preview: Standing water
+- Sticky floors
+
+SECTION 10 — MANAGEMENT CHECKLIST
+Daily Checklist:
+- Prep surfaces sanitized
+- Waste bins sealed
+- Gloves available
+
+
+Rank 5:
+  chunk_id: restaurant_food_safety_guidelines.txt_chunk_0
+  cosine_similarity: 0.5890
+  chunk_length: 2297
+  preview: RESTAURANT FOOD SAFETY GUIDELINES – COUNTY PUBLIC HEALTH DEPARTMENT
+Edition: 2026 Compliance Handbook
+Applicable To: All food service establishments including r
+
+Saved results to reports/hw03/raw\token_retrieval.json
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 3279.98it/s]
+
 === SEMANTIC RETRIEVAL ===
-...
+Query embedding dimension: 384
+First 8 values: [0.019467702135443687, -0.023654496297240257, 0.08661798387765884, 0.03852933645248413, -0.06809815019369125, -0.05235360190272331, 0.0026472469326108694, -0.11118803173303604]
+Retrieval latency: 0.62 ms
+
+Rank 1:
+  chunk_id: 9459652d-b0e2-4c84-8904-96358dd3d0b9
+  cosine_similarity: 0.6995
+  chunk_length: 1516
+  preview: RESTAURANT KITCHEN SANITATION MANUAL
+County Environmental Health Department
+2026 Edition
+
+INTRODUCTION
+This manual outlines the minimum sanitation stand
+
+Rank 2:
+  chunk_id: a5bc9909-b485-4cdb-8748-9c708e649e60
+  cosine_similarity: 0.6788
+  chunk_length: 2045
+  preview: COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS
+2026 Regulatory Compliance Handbook
+Issued by: County Environmental Health & Sanitation Division
+
+INTR
+
+Rank 3:
+  chunk_id: e118ac14-1991-456f-b49f-d9caa7311c5d
+  cosine_similarity: 0.6559
+  chunk_length: 3268
+  preview: SECTION 2 — WEEKLY KITCHEN CLEANING TASKS
+2.1 Exhaust Hoods
+Exhaust hoods accumulate grease from cooking vapors. Filters must be removed weekly and washed i
+
+Rank 4:
+  chunk_id: b5a51240-d065-461e-b3b2-3b4d3475fb5b
+  cosine_similarity: 0.6288
+  chunk_length: 1157
+  preview: Contaminated surfaces must undergo professional cleaning. Operations may resume only after reinspection.
+
+8.2 Flooding Events
+Flooding from external sources r
+
+Rank 5:
+  chunk_id: 979c5b68-b1ed-437a-84ce-d844ecc76dc9
+  cosine_similarity: 0.6123
+  chunk_length: 656
+  preview: Improperly stored raw ingredients and cleaning chemicals
+3. Use of bare hands for ready‑to‑eat sweets
+4. Evidence of pest activity near waste disposal
+5. Uncove
+
+Saved results to reports/hw03/raw\semantic_retrieval.json
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2227.85it/s]
+
 === SENTENCE RETRIEVAL ===
-...
+Query embedding dimension: 384
+First 8 values: [0.019467702135443687, -0.023654496297240257, 0.08661798387765884, 0.03852933645248413, -0.06809815019369125, -0.05235360190272331, 0.0026472469326108694, -0.11118803173303604]
+Retrieval latency: 6.23 ms
+
+Rank 1:
+  chunk_id: f8c455c9-1213-420a-b9b1-7c7fd99d2e62
+  cosine_similarity: 0.7179
+  chunk_length: 692
+  preview: The following items require daily cleaning:
+- Prep surfaces
+- Cutting boards
+- Sinks
+- Grill surfaces
+- Microwave interiors
+- Floor drains
+- Food-co
+
+Rank 2:
+  chunk_id: a53f9a0e-b1fe-4fd0-86b7-e6041cf45469
+  cosine_similarity: 0.6795
+  chunk_length: 304
+  preview: ------------------------------------------------------------
+SECTION 1 — DAILY CLEANING REQUIREMENTS
+-----------------------------------------------------------
+
+Rank 3:
+  chunk_id: ac797a9a-f7ce-4136-9134-8121abc99b47
+  cosine_similarity: 0.6627
+  chunk_length: 125
+  preview: SECTION 4 — SANITATION AND CLEANING STANDARDS
+4.1 Cleaning Schedule
+Restaurants must maintain a written cleaning schedule.
+
+Rank 4:
+  chunk_id: c7218666-41e9-4d92-8c7b-04377cb9a5a0
+  cosine_similarity: 0.6612
+  chunk_length: 143
+  preview: SECTION 3 — FOOD PREPARATION AREA
+The primary kitchen was significantly cleaner than previous visits, showing evidence of improved compliance.
+
+Rank 5:
+  chunk_id: 8863e3bf-6d28-4745-bc7f-9f699e3e52f5
+  cosine_similarity: 0.6598
+  chunk_length: 155
+  preview: SECTION 1 — DAILY KITCHEN CLEANING TASKS
+1.1 Prep Surfaces
+All prep tables must be cleaned and sanitized every 4 hours during active food preparation.
+
+Saved results to reports/hw03/raw\sentence_retrieval.json
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>
 
 ===========================================
 END OF RUN LOG

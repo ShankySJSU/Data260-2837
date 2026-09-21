@@ -1,35 +1,35 @@
 [
   {
     "rank": 1,
-    "chunk_id": "5d3f48e6-d435-49a1-8b4c-ba01aec946ef",
+    "chunk_id": "9459652d-b0e2-4c84-8904-96358dd3d0b9",
     "cosine_similarity": 0.699517800444615,
     "chunk_length": 1516,
     "preview": "RESTAURANT KITCHEN SANITATION MANUAL  \nCounty Environmental Health Department  \n2026 Edition  \n\nINTRODUCTION  \nThis manual outlines the minimum sanitation stand"
   },
   {
     "rank": 2,
-    "chunk_id": "337ddbef-9db1-4bb8-bae5-9d507ee91bbe",
+    "chunk_id": "a5bc9909-b485-4cdb-8748-9c708e649e60",
     "cosine_similarity": 0.6787700239838316,
     "chunk_length": 2045,
     "preview": "COUNTY RESTAURANT CLEANING AND SANITATION STANDARDS  \n2026 Regulatory Compliance Handbook  \nIssued by: County Environmental Health & Sanitation Division  \n\nINTR"
   },
   {
     "rank": 3,
-    "chunk_id": "13e106c2-8aab-448b-8132-547e1be4732c",
+    "chunk_id": "e118ac14-1991-456f-b49f-d9caa7311c5d",
     "cosine_similarity": 0.6558642390430794,
     "chunk_length": 3268,
     "preview": "SECTION 2 \u2014 WEEKLY KITCHEN CLEANING TASKS  \n2.1 Exhaust Hoods  \nExhaust hoods accumulate grease from cooking vapors. Filters must be removed weekly and washed i"
   },
   {
     "rank": 4,
-    "chunk_id": "975abc12-c437-406b-9e5b-22bffbaf51ab",
+    "chunk_id": "b5a51240-d065-461e-b3b2-3b4d3475fb5b",
     "cosine_similarity": 0.628792057454722,
     "chunk_length": 1157,
     "preview": "Contaminated surfaces must undergo professional cleaning. Operations may resume only after reinspection.\n\n8.2 Flooding Events  \nFlooding from external sources r"
   },
   {
     "rank": 5,
-    "chunk_id": "3149bb72-396d-41f8-bc21-d1e0c73bb824",
+    "chunk_id": "979c5b68-b1ed-437a-84ce-d844ecc76dc9",
     "cosine_similarity": 0.6122944892150399,
     "chunk_length": 656,
     "preview": "Improperly stored raw ingredients and cleaning chemicals\n3. Use of bare hands for ready\u2011to\u2011eat sweets\n4. Evidence of pest activity near waste disposal\n5. Uncove"
