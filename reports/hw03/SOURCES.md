@@ -45,7 +45,6 @@ No external copyrighted sources were used.
 
 ## Notes
 - All files were generated specifically for HW3 based on restaurant domain requirements.
-- No copyrighted text was copied or reproduced.
 - Documents are intentionally structured to support chunking differences across:
   - Token-based splitting  
   - Semantic splitting  

@@ -3,6 +3,62 @@
 # Student: Shashank Ranjan
 # This file contains actual console output and timestamps from HW3 runs.
 
+------------------------------------------
+Testing of All the HTML pages using auth and main.py
+=======Start=============================
+-------------------------------------------------
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>uvicorn code.web_application.hw3_main:app --port 8137
+>>> USING AUTH FILE: C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837\code\web_application\auth.py
+LOADER: <jinja2.loaders.FileSystemLoader object at 0x00000268F3807620>
+SEARCH PATH: ['C:\\Users\\shashank.ranjan\\OneDrive - SCC-Cloud\\SJSU_Repo\\DATA260\\Data260-2837\\code\\web_application\\templates']
+INFO:     Started server process [22244]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53659 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52546 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:52546 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64212 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:64212 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64212 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:64212 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51076 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:51076 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61073 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61073 - "GET /logout HTTP/1.1" 302 Found
+USER SESSION VALUE: None
+INFO:     127.0.0.1:61073 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61073 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59111 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:59111 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49942 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:49942 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22244]
+
+C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837>uvicorn code.web_application.hw3_main:app --port 8137
+>>> USING AUTH FILE: C:\Users\shashank.ranjan\OneDrive - SCC-Cloud\SJSU_Repo\DATA260\Data260-2837\code\web_application\auth.py
+LOADER: <jinja2.loaders.FileSystemLoader object at 0x000001BE512A7620>
+SEARCH PATH: ['C:\\Users\\shashank.ranjan\\OneDrive - SCC-Cloud\\SJSU_Repo\\DATA260\\Data260-2837\\code\\web_application\\templates']
+INFO:     Started server process [2880]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:62078 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56563 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:56563 - "GET /login?error=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52397 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:52397 - "GET /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /dashboard HTTP/1.1" 302 Found
+USER SESSION VALUE: None
+INFO:     127.0.0.1:63767 - "GET /?expired=1 HTTP/1.1" 200 OK
+
+--------------------------------------------
+=======END=================================
+--------------------------------------------
+
 ===========================================
 STEP 1 — Token Chunker Execution
 ===========================================
