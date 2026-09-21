@@ -37,18 +37,21 @@ def home(request: Request):
     #print("TEMPLATE DIR:", templates.directory)
     '''
     return templates.TemplateResponse(
-            "index.html",
-            {"user": user},
-            request=request
-    )
-    '''
-    return templates.TemplateResponse(
         "index.html",
         {
             "request": request,
             "user": user
         }
     )
+    '''
+    return templates.TemplateResponse(
+            request=request,
+            name="index.html",
+            context={
+                "user": user
+            },
+    )
+    
     
 # -------------------------------
 # LOGIN PAGE (GET)
@@ -56,12 +59,21 @@ def home(request: Request):
 @router.get("/login")
 def login_page(request: Request):
     user = request.session.get("user")
+    '''
     return templates.TemplateResponse(
         "login.html",
         {
             "request": request,
             "user": user
         }
+    )
+    '''
+    return templates.TemplateResponse(
+            request=request,
+            name="login.html",
+            context={
+                "user": user
+            },
     )
 
 # -------------------------------
@@ -113,12 +125,21 @@ def dashboard(request: Request):
     request.session["last_active"] = now
 
     # 4. Render dashboard
+    '''
     return templates.TemplateResponse(
         "dashboard.html",
         {
             "request": request,
             "user": user
         }
+    )
+    '''
+    return templates.TemplateResponse(
+            request=request,
+            name="dashboard.html",
+            context={
+                "user": user
+            },
     )
 
 # -------------------------------
