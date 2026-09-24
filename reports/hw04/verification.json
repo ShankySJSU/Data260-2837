@@ -1,0 +1,79 @@
+{
+  "homework": "HW03",
+  "SID4": "2837",
+  "model_used": "sentence-transformers/all-MiniLM-L6-v2 (embedding), local Python execution",
+  "environment": "Local Windows (Python 3.13) + VS Code Desktop",
+  "checks": [
+    {
+      "name": "Authentication router loads without error",
+      "status": "PASS",
+      "details": "auth.py imported successfully and routes included in hw3_main.py."
+    },
+    {
+      "name": "Templates present",
+      "status": "PASS",
+      "details": "index.html, login.html, dashboard.html located under code/web_application/templates/"
+    },
+    {
+      "name": "SessionMiddleware configured",
+      "status": "PASS",
+      "details": "hw3_main.py includes SessionMiddleware with secret_key and max_age settings."
+    },
+    {
+      "name": "Idle timeout functional",
+      "status": "PASS",
+      "details": "Dashboard redirect tested via ?expired=1 behavior."
+    },
+    {
+      "name": "Token chunking executed",
+      "status": "PASS",
+      "details": "token_chunks.json and console logs confirm 30 token chunks created."
+    },
+    {
+      "name": "Semantic chunking executed",
+      "status": "PASS",
+      "details": "semantic_chunks.json and console logs confirm 32 semantic chunks created."
+    },
+    {
+      "name": "Sentence-window chunking executed",
+      "status": "PASS",
+      "details": "sentence_chunks.json and console logs confirm 415 sentence-window chunks created."
+    },
+    {
+      "name": "Token embeddings and index generated",
+      "status": "PASS",
+      "details": "token_embeddings.npy, token_index_ids.json, token_index_texts.json created."
+    },
+    {
+      "name": "Semantic embeddings and index generated",
+      "status": "PASS",
+      "details": "semantic_embeddings.npy, semantic_index_ids.json, semantic_index_texts.json created."
+    },
+    {
+      "name": "Sentence-window embeddings and index generated",
+      "status": "PASS",
+      "details": "sentence_embeddings.npy, sentence_index_ids.json, sentence_index_texts.json created."
+    },
+    {
+      "name": "Retrieval pipeline executed for all three techniques",
+      "status": "PASS",
+      "details": "token_retrieval.json, semantic_retrieval.json, sentence_retrieval.json created in raw/."
+    },
+    {
+      "name": "Query embedding generated",
+      "status": "PASS",
+      "details": "Query embedding dimension printed as 384."
+    },
+    {
+      "name": "METRICS.md created",
+      "status": "PASS",
+      "details": "Contains top-1 cosine, mean@k, latency, chunk stats, observations, conclusion."
+    },
+    {
+      "name": "Corpus manifest and sources present",
+      "status": "PASS",
+      "details": "CORPUS_MANIFEST.json and SOURCES.md exist under reports/hw03/."
+    }
+  ],
+  "summary": "All HW03 functionality executed successfully. Authentication system verified. Three chunking techniques implemented. Embeddings generated and retrieval completed. Metrics validated. Reports and logs created."
+}
