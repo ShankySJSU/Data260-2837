@@ -2,52 +2,33 @@
 SID4: 2837  
 Student: Shashank Ranjan  
 
-Restaurant Domain Corpus — DATA 260 HW3  
-Date Created: 2026-09
+# AI_USE.md - HW4
 
-This corpus contains eight synthetic, original text files generated for the purpose of Homework 3 (DATA 260).  
-All documents are non-copyrighted, publicly usable, and modeled after real-world restaurant inspection patterns, food safety guidelines, county sanitation standards, and hygiene training materials.  
-No external copyrighted sources were used.
+## 1. What I used an AI assistant for
+I used an AI assistant to:
+- help generate initial code templates for FastAPI + SQLAlchemy
+- structure my React components
+- write the RAG pipeline logic
+- create benchmark scripts and packaging templates
+I wrote all code manually into my project and tested each component myself.
 
-## File List and Descriptions
+## 2. One AI-produced output that was wrong
+The assistant initially produced a JOIN example that used an outdated SQLAlchemy syntax not compatible with my installed version.
 
-1. **restaurant_inspection_report_1.txt**  
-   Description: A detailed routine inspection report for a sweets and snacks restaurant.  
-   Created: 2026-09  
+## 3. How I detected the problem
+Running the backend produced this error:
+"ArgumentError: Mapper option ... is not recognized"
+I checked SQLAlchemy documentation (v2.x) and confirmed the syntax had changed.
 
-2. **restaurant_inspection_report_2.txt**  
-   Description: Follow-up inspection report for a buffet-style restaurant.  
-   Created: 2026-09  
+## 4. What I changed and why it works now
+I replaced the outdated JOIN syntax with:
+options(joinedload(RestaurantInspection.related_items))
 
-3. **restaurant_inspection_report_3.txt**  
-   Description: Annual inspection report for a grilled chicken and sandwich restaurant.  
-   Created: 2026-09  
+This syntax is correct for SQLAlchemy v2.x and results in the proper eager-loaded behavior.
 
-4. **restaurant_food_safety_guidelines.txt**  
-   Description: County food safety rules, temperature standards, storage regulations.  
-   Created: 2026-09  
-
-5. **restaurant_kitchen_sanitation.txt**  
-   Description: Kitchen sanitation manual covering daily, weekly, monthly cleaning tasks.  
-   Created: 2026-09  
-
-6. **county_restaurant_cleaning_standards.txt**  
-   Description: The largest document — full regulatory handbook for cleaning & sanitation.  
-   Created: 2026-09  
-
-7. **pest_control_requirements.txt**  
-   Description: Pest identification, monitoring, and corrective-action manual.  
-   Created: 2026-09  
-
-8. **hygiene_training_manual.txt**  
-   Description: Employee hygiene training guidelines for food-service establishments.  
-   Created: 2026-09
+This fixed the N+1 issue and produced valid results for both endpoints.
 
 ## Notes
-- All files were generated specifically for HW3 based on restaurant domain requirements.
-- Documents are intentionally structured to support chunking differences across:
-  - Token-based splitting  
-  - Semantic splitting  
-  - Sentence-window splitting  
+- All files were generated specifically for HW4 based on restaurant domain requirements.
 
 END OF FILE

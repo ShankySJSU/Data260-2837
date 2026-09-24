@@ -11,6 +11,14 @@ from .domain.models import User
 
 import hashlib
 
+from sqlalchemy import event
+
+query_counter = {"count": 0}
+
+def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+    query_counter["count"] += 1
+
+event.listen(engine, "before_cursor_execute", before_cursor_execute)
 
 # ----------------------------
 # Initialize DB (create tables)

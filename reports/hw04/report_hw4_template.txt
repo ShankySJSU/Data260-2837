@@ -1,0 +1,52 @@
+# DATA260 - HW4 Report
+Student: Shashank Ranjan
+SID4: 2837
+
+## Section 0 — Personal Configuration
+- SID4: 2837
+- PORT_BASE: 8137
+- PREFIX: s2837
+- SEED: 2837
+- VERIFY_SEED: 262837
+- DOMAIN_ID: 5
+- Hardware, model used, commit hash
+
+## Part 1 — React Client
+Screenshots:
+- Login page
+- Login fail
+- Home page
+- Create record
+- Update record
+- Delete record
+- React folder structure
+
+## Part 2 — MySQL Persistence
+Screenshots:
+- MySQL tables (users, sessions, restaurant_inspection, inspection_related)
+- INSERT rows
+- CRUD Postman screenshots for all 5 operations
+
+## Part 3 — N+1 Benchmark Results
+Screenshots:
+- naive endpoint output for page 10/50/200
+- fixed endpoint output for page 10/50/200
+- EXPLAIN before/after INDEX
+- Graph/table from METRICS.md (copy)
+Raw data:
+- mention n_plus_one_raw.csv
+
+## Part 4 — RAG System
+Screenshots:
+- Chunk manifest sample
+- Retrieval top-k printout
+- No-RAG answer
+- Basic-RAG answer
+- Context-RAG answer
+- Q5 refusal
+- Q6 refusal
+- k sweep results
+
+## Appendix
+- RUN_LOG.txt excerpt
+- verification.json excerpt
