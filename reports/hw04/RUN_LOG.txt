@@ -124,23 +124,226 @@ Timestamp:
 
 --- Seed Generator ---
 Command:
-python code/web_application/domain/seed_generator.py
+cd C:\SJSURepo\Data260\Data260-2837\code\web_application>
+python -m domain.seed_generator
 
 Output:
 Seeding completed.
 
-Timestamp:
-<insert timestamp>
+--verifed directly in sql
+SELECT * FROM s2837_rel.restaurant_inspection;
+
+
+============================================================
+Test /naive with default paging:
+Method GET 
+http://localhost:8137/inspection/naive?page=1&page_size=10
+
+{
+    "records": [
+        {
+            "id": 1,
+            "name": "Rangoli Sweets and Snacks",
+            "status": "Pass",
+            "related": []
+        },
+        {
+            "id": 2,
+            "name": "Moonlight Garden Restaurant & Banquet Hall",
+            "status": "Fail",
+            "related": []
+        },
+        {
+            "id": 4,
+            "name": "Restaurant_Bar_0",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 5,
+            "name": "Restaurant_Garden_1",
+            "status": "FAIL",
+            "related": []
+        },
+        {
+            "id": 6,
+            "name": "Restaurant_Cafe_2",
+            "status": "FAIL",
+            "related": []
+        },
+        {
+            "id": 7,
+            "name": "Restaurant_Cafe_3",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 8,
+            "name": "Restaurant_Urban_4",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 9,
+            "name": "Restaurant_Golden_5",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 10,
+            "name": "Restaurant_Golden_6",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 11,
+            "name": "Restaurant_Grill_7",
+            "status": "WARNING",
+            "related": []
+        }
+    ],
+    "sql_queries": 11
+}
+
+2. Test /fixed with the same paging:
+Method GET 
+http://localhost:8137/inspection/fixed?page=1&page_size=10
+
+{
+    "records": [
+        {
+            "id": 1,
+            "name": "Rangoli Sweets and Snacks",
+            "status": "Pass",
+            "related": []
+        },
+        {
+            "id": 2,
+            "name": "Moonlight Garden Restaurant & Banquet Hall",
+            "status": "Fail",
+            "related": []
+        },
+        {
+            "id": 4,
+            "name": "Restaurant_Bar_0",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 5,
+            "name": "Restaurant_Garden_1",
+            "status": "FAIL",
+            "related": []
+        },
+        {
+            "id": 6,
+            "name": "Restaurant_Cafe_2",
+            "status": "FAIL",
+            "related": []
+        },
+        {
+            "id": 7,
+            "name": "Restaurant_Cafe_3",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 8,
+            "name": "Restaurant_Urban_4",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 9,
+            "name": "Restaurant_Golden_5",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 10,
+            "name": "Restaurant_Golden_6",
+            "status": "PASS",
+            "related": []
+        },
+        {
+            "id": 11,
+            "name": "Restaurant_Grill_7",
+            "status": "WARNING",
+            "related": []
+        }
+    ],
+    "sql_queries": 1
+}
+
+====end point verified ..now time to run the full nplust one test .py===
 
 --- N+1 Benchmark ---
 Command:
-python code/web_application/domain/n_plus_one_test.py
+cd code/web_application/domain/
+python n_plus_one_test.py
 
 Output:
-Benchmark completed.
+C:\SJSURepo\Data260\Data260-2837\code\web_application\domain>dir /w
+ Volume in drive C is Windows
+ Volume Serial Number is 39C9-1632
 
-Timestamp:
-<insert timestamp>
+ Directory of C:\SJSURepo\Data260\Data260-2837\code\web_application\domain
+
+[.]                  [..]                 crud.py              models.py            n_plus_one_test.py
+router.py            schema.py            seed_generator.py    session_manager.py   __init__.py
+[__pycache__]
+               8 File(s)         11,475 bytes
+               3 Dir(s)  411,312,660,480 bytes free
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application\domain>python n_plus_one_test.py
+Login successful, starting benchmark...
+Benchmark completed, saved results to ../../reports/hw04/raw/n_plus_one_raw.csv
+
+=== some output from the output files (n_plus_one_raw.csv)
+version,page_size,run,latency_ms,sql_queries
+naive,10,0,20.180940628051758,11
+naive,10,1,17.45772361755371,11
+naive,10,2,10.081291198730469,11
+naive,10,3,15.735387802124023,11
+naive,10,4,15.992879867553711,11
+naive,10,5,5.141019821166992,11
+naive,10,6,13.668060302734375,11
+naive,10,7,16.919374465942383,11
+naive,10,8,13.016939163208008,11
+naive,10,9,5.192041397094727,11
+...
+naive,200,23,116.68872833251953,201
+naive,200,24,125.3652572631836,201
+naive,200,25,142.5004005432129,201
+naive,200,26,125.98037719726562,201
+naive,200,27,149.97529983520508,201
+naive,200,28,152.0678997039795,201
+naive,200,29,147.28236198425293,201
+
+fixed,10,0,10.739803314208984,1
+fixed,10,1,6.7806243896484375,1
+fixed,10,2,7.696866989135742,1
+fixed,10,3,5.296230316162109,1
+fixed,10,4,10.68735122680664,1
+fixed,10,5,6.265401840209961,1
+fixed,10,6,7.994890213012695,1
+fixed,10,7,1.749277114868164,1
+fixed,10,8,0.0,1
+fixed,10,9,0.0,1
+fixed,10,10,17.070293426513672,1
+
+
+---metrics.md..
+C:\SJSURepo\Data260\Data260-2837\code\web_application\domain>python compute_metrics.py
+page_size=10 version=naive n=30 sql=11 p50=14.74ms p95=19.88ms p99=20.50ms
+page_size=10 version=fixed n=30 sql=1 p50=5.78ms p95=15.46ms p99=16.76ms
+page_size=50 version=naive n=30 sql=51 p50=37.83ms p95=47.91ms p99=48.43ms
+page_size=50 version=fixed n=30 sql=1 p50=6.75ms p95=16.69ms p99=18.25ms
+page_size=200 version=naive n=30 sql=201 p50=132.73ms p95=149.07ms p99=151.46ms
+page_size=200 version=fixed n=30 sql=1 p50=15.74ms p95=36.24ms p99=50.80ms
+
+Written to ../../../reports/hw04/METRICS.md
+
 
 --- RAG Pipeline ---
 Command:

@@ -1,22 +1,8 @@
-# METRICS.md – Homework 3
-SID4: 2837  
-Student: Shashank Ranjan  
-
-# HW4 N+1 Query Metrics
-
-## Summary Table
-
-| Page Size | Version | SQL stmts/req | p50 (ms) | p95 (ms) | p99 (ms) |
-|----------|---------|---------------|----------|----------|----------|
-| 10       | naive   | <fill>        | <fill>   | <fill>   | <fill>   |
-| 10       | fixed   | <fill>        | <fill>   | <fill>   | <fill>   |
-| 50       | naive   | <fill>        | <fill>   | <fill>   | <fill>   |
-| 50       | fixed   | <fill>        | <fill>   | <fill>   | <fill>   |
-| 200      | naive   | <fill>        | <fill>   | <fill>   | <fill>   |
-| 200      | fixed   | <fill>        | <fill>   | <fill>   | <fill>   |
-
-## Notes
-
-- Naive version triggers N+1 queries (1 query per record).
-- Fixed version uses joinedload which collapses N queries into 1.
-- As page size grows, naive version gets exponentially slower.
+| Page size | Version | SQL stmts/req | p50 (ms) | p95 (ms) | p99 (ms) |
+|---|---|---|---|---|---|
+| 10 | naive | 11 | 14.74 | 19.88 | 20.50 |
+| 10 | fixed | 1 | 5.78 | 15.46 | 16.76 |
+| 50 | naive | 51 | 37.83 | 47.91 | 48.43 |
+| 50 | fixed | 1 | 6.75 | 16.69 | 18.25 |
+| 200 | naive | 201 | 132.73 | 149.07 | 151.46 |
+| 200 | fixed | 1 | 15.74 | 36.24 | 50.80 |

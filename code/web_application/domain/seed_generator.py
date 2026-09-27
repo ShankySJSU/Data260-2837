@@ -1,7 +1,7 @@
 import random
 from sqlalchemy.orm import Session
 from .models import RestaurantInspection, InspectionRelated
-from ..database import db_session_basede26, Base, engine
+from database import db_session_basede26, Base, engine
 
 SEED = 2837
 random.seed(SEED)
@@ -10,10 +10,12 @@ def run_seed():
     Base.metadata.create_all(bind=engine)
     db: Session = db_session_basede26()
 
+    word_choices = ["Spicy", "Golden", "Urban", "Rustic", "Bar", "Garden", "Bistro", "Cafe", "Deli", "Grill"]
     # 1. Seed 5000 primary records
     inspections = []
     for i in range(5000):
-        name = f"Restaurant_{i}"
+        random_words = random.choice(word_choices)
+        name = f"Restaurant_{random_words}_{i}"
         status = random.choice(["PASS", "FAIL", "WARNING"])
         obj = RestaurantInspection(name=name, status=status)
         db.add(obj)
