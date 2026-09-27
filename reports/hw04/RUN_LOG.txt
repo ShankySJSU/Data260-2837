@@ -7,16 +7,66 @@
 DATA260 HW4 - RUN LOG
 Student: Shashank Ranjan
 SID4: 2837
-Date: <insert date>
+Date: 9/26/2026
 ===========================
 
 --- Backend Startup ---
+=============================================================
 Command:
 uvicorn code.web_application.main:app --port 8137
 
-Timestamp:
-<insert timestamp>
+C:\SJSURepo\Data260\Data260-2837\code\web_application>uvicorn hw4_main:app --port 8137
+C:\Python\python3.12\Lib\site-packages\pydantic\_internal\_config.py:386: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2852]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:61482 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61482 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 
+============verified with the broswer too===============
+http://localhost:8137/
+{
+  "message": "DATA260 HW4 Backend Running",
+  "port": 8137
+}
+
+--testing login with existing user account
+method was POST 
+http://localhost:8137/login?email=test1@sjsu.edu&password=test123
+message : 
+{
+    "message": "Login successful"
+}
+
+http://localhost:8137/me
+{
+    "user_id": 1,
+    "status": "authenticated"
+}
+
+=======tried to create an inspection record============
+{
+  "name": "Rangoli Sweets",
+  "status": "Fail"
+}
+
+successflly created
+
+2. List all records:
+
+GET http://localhost:8137/inspection/
+[
+    {
+        "name": "Rangoli Sweets",
+        "status": "Fail",
+        "id": 1
+    }
+]
+
+========================================================
 --- React Client Startup ---
 Command:
 npm run dev

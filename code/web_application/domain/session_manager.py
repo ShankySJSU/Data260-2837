@@ -2,7 +2,7 @@ import secrets
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 
-from .domain.models import SessionToken, User
+from domain.models import SessionToken, User
 
 SESSION_DURATION_MINUTES = 30
 

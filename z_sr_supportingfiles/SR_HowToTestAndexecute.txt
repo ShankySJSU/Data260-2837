@@ -1,6 +1,23 @@
----------------
------------------------------------------------------------------
+
+===================Homework 4=========================
+ensure uvicorn is installed
+pip install uvicorn
+pip install python-multipart
+pip install pymysql
+--Note:Session_manager was causing some issue hence uninstall it
+pip uninstall session_manager -y
+fix all the root and parent direcotry issues related to files
+=====================================================
+cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
+uvicorn hw4_main:app --port 8137
+
+===============Homew work 4 : END======================
+
+============================================================
 For Homework 3
+pip install uvicorn
+pip install python-multipart
+============================================================
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 --for homework 3 -- I have different Repository

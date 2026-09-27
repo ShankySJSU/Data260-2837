@@ -1,8 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime, timedelta
-
-from ..database import Base
+from database import Base
 
 # MAIN DOMAIN ENTITY: restaurant inspection record
 class RestaurantInspection(Base):

@@ -4,16 +4,15 @@ from fastapi.responses import JSONResponse
 
 from sqlalchemy.orm import Session
 
-from .database import get_db, Base, engine
-from .session_manager import create_session, validate_session, delete_session
-from .domain.router import router as inspection_router
-from .domain.models import User
+from database import get_db, Base, engine
+from database import query_counter
+from domain.session_manager import create_session, validate_session, delete_session
+from domain.router import router as inspection_router
+from domain.models import User
+from sqlalchemy import event
 
 import hashlib
 
-from sqlalchemy import event
-
-query_counter = {"count": 0}
 
 def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
     query_counter["count"] += 1
@@ -71,6 +70,7 @@ def login(request: Request, response: Response, email: str, password: str, db: S
     if not user:
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
+    # since passwords are stored as SHA256 hashes, we need to hash the provided password and compare with the database value
     hashed = hashlib.sha256(password.encode()).hexdigest()
 
     if hashed != user.password_hash:
