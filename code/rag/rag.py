@@ -9,13 +9,15 @@ from langchain_ollama import OllamaLLM
 # ----------------------------
 # 1. Load Corpus
 # ----------------------------
-DOC_PATH = os.path.join(os.path.dirname(__file__), "documents")
-OUTPUT_RAW = os.path.join(os.path.dirname(__file__), "..", "..", "reports", "hw04", "raw")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DOC_PATH = os.path.join(BASE_DIR, "documents")
+OUTPUT_RAW = os.path.join(BASE_DIR, "..", "..", "reports", "hw04", "raw")
 
 os.makedirs(OUTPUT_RAW, exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, "embeddings"), exist_ok=True)
 
 documents = []
-for filename in os.listdir(DOC_PATH):
+for filename in sorted(os.listdir(DOC_PATH)):
     if filename.endswith(".txt"):
         with open(os.path.join(DOC_PATH, filename), "r", encoding="utf-8") as f:
             documents.append((filename, f.read()))
@@ -52,7 +54,7 @@ for source, text in documents:
 
 print(f"Created {len(all_chunks)} chunks total.")
 
-with open(os.path.join(os.path.dirname(__file__), "chunk_manifest.json"), "w") as f:
+with open(os.path.join(BASE_DIR, "chunk_manifest.json"), "w", encoding="utf-8") as f:
     json.dump(all_chunks, f, indent=2)
 
 
@@ -68,17 +70,14 @@ dimension = emb.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(emb)
 
-# Persist embeddings (matches your existing embeddings/ folder structure)
-np.save(os.path.join(os.path.dirname(__file__), "embeddings", "vectors.npy"), emb)
-with open(os.path.join(os.path.dirname(__file__), "embeddings", "ids.json"), "w") as f:
+np.save(os.path.join(BASE_DIR, "embeddings", "vectors.npy"), emb)
+with open(os.path.join(BASE_DIR, "embeddings", "ids.json"), "w", encoding="utf-8") as f:
     json.dump([c["chunk_id"] for c in all_chunks], f, indent=2)
 
 
 # ----------------------------
 # 4. Retrieval Function
 # ----------------------------
-# NOTE: IndexFlatL2 returns squared Euclidean DISTANCE, not similarity.
-# LOWER score = better/closer match. Keep this in mind when writing your analysis.
 def retrieve_topk(question, k=3):
     q_emb = embed_model.encode([question], convert_to_numpy=True)
     scores, idx = index.search(q_emb, k)
@@ -87,34 +86,39 @@ def retrieve_topk(question, k=3):
     for rank, chunk_idx in enumerate(idx[0]):
         c = all_chunks[chunk_idx]
         retrieved.append({
-            "rank": rank,
+            "rank": rank + 1,
             "chunk_id": c["chunk_id"],
             "source": c["source"],
             "text": c["text"],
-            "score": float(scores[0][rank])  # lower = better match
+            "score": float(scores[0][rank])  # L2 distance: lower = closer match
         })
 
     return retrieved
 
 
 # ----------------------------
-# 5. Real LLM via Ollama (reusing HW2's model choice for consistency)
+# 5. LLM Initialization
 # ----------------------------
-def get_llm(model_name="qwen2.5:1.5b", temperature=0.0):
-    """
-    Returns an LLM adapter for RAG generation.
-    temperature=0.0 (not HW2's 0.7) so refusal behavior on Q5/Q6
-    is deterministic rather than creatively hallucinating an answer.
-    """
+def get_llm_basic(model_name="qwen2.5:1.5b", temperature=0.0):
     try:
         return OllamaLLM(model=model_name, temperature=temperature)
+    except Exception as e:
+        raise RuntimeError(f"Failed to load model '{model_name}': {e}")
+
+def get_llm(model_name="qwen2.5:1.5b", temperature=0.0):
+    try:
+        return OllamaLLM(
+            model=model_name, 
+            temperature=temperature,
+            num_predict=150,      # Caps response length to 150 tokens max
+            repeat_penalty=1.15   # Prevents infinite repetition loops
+        )
     except Exception as e:
         raise RuntimeError(f"Failed to load model '{model_name}': {e}")
 
 _llm_instance = get_llm()
 
 def llm(prompt: str):
-    """Unified call, same pattern as HW2's call_llm."""
     try:
         return _llm_instance.invoke(prompt)
     except Exception as e:
@@ -136,7 +140,7 @@ def config_B_basic_rag(question, retrieved):
 
 
 def config_C_context_engineered_rag(question, retrieved):
-    # drop duplicate chunks (same chunk_id retrieved more than once)
+    # Drop duplicate chunks
     seen = set()
     filtered = []
     for r in retrieved:
@@ -144,15 +148,17 @@ def config_C_context_engineered_rag(question, retrieved):
             filtered.append(r)
             seen.add(r["chunk_id"])
 
-    context = "\n\n".join([
-        f"[Source: {r['source']}]\n{r['text']}"
-        for r in filtered
-    ])
+    # Number and label sources clearly for citation
+    context_blocks = []
+    for idx, r in enumerate(filtered, start=1):
+        context_blocks.append(f"[Source {idx}: {r['source']} (Chunk: {r['chunk_id']})]\n{r['text']}")
+    
+    context = "\n\n".join(context_blocks)
 
     grounding_rules = dedent("""
-    - Use only the provided context.
-    - Cite the source for any claim you make.
-    - If the evidence is insufficient or missing, answer exactly:
+    - Answer the question using ONLY the evidence in the provided context.
+    - Cite the source number (e.g., [Source 1]) for any factual claim made.
+    - If the evidence is insufficient, missing, or unrelated to the context, output exactly:
       "I cannot answer this question from the provided documents".
     """)
 
@@ -161,68 +167,71 @@ def config_C_context_engineered_rag(question, retrieved):
 
 
 # ----------------------------
-# 7. Six Homework Questions
+# 7. Six Test Questions Evaluation
 # ----------------------------
-# TODO: verify against your actual documents/ content before final run:
-#   - Q4 should be genuinely AMBIGUOUS (multiple valid interpretations in your corpus)
-#   - Q5 must be UNANSWERABLE from your corpus (pick a topic your docs don't cover)
-old_questions = [
-    "Q1: What is the daily cleaning requirement?",
-    "Q2: Which two procedures must be combined for sanitization?",
-    "Q3: What are two similar pest-control indicators across documents?",
-    "Q4: Under what conditions should a restaurant be closed?",
-    "Q5: What is the recommended cooking temperature for poultry?",
-    "Q6: How do I repair a crashed Linux kernel?"
+questions = [
+    {"id": "Q1", "type": "Single Chunk", "q": "What are the required daily cleaning tasks for restaurant food preparation areas?"},
+    {"id": "Q2", "type": "Two Chunks", "q": "Why did the display case cooling failure at Rangoli Sweets violate county temperature standards?"},
+    {"id": "Q3", "type": "Multi-Doc", "q": "What signs of pest activity have been identified in restaurant inspections?"},
+    {"id": "Q4", "type": "Ambiguous", "q": "Under what conditions should a restaurant be temporarily closed?"},
+    {"id": "Q5", "type": "Not in Docs", "q": "What are the minimum wage and overtime pay requirements for kitchen staff?"},
+    {"id": "Q6", "type": "Unrelated", "q": "How do I assess the value of a single family home in Santa Clara County?"}
 ]
 
-questions = [
-    "Q1: What are the required daily cleaning tasks for restaurant food preparation areas?",
-    "Q2: Why did the display case cooling failure at Rangoli Sweets violate county temperature standards?",
-    "Q3: What signs of pest activity have been identified in restaurant inspections?",
-    "Q4: Under what conditions should a restaurant be temporarily closed?",
-    "Q5: What are the minimum wage and overtime pay requirements for kitchen staff?",
-    "Q6: How do I repair a crashed Linux kernel?"
-]
 six_results = []
 
-for q in questions:
-    print(f"Processing: {q}")
-    retrieved = retrieve_topk(q, k=3)
+print("\n=== RUNNING 6-QUESTION COMPARISON ===")
+for q_info in questions:
+    q_id = q_info["id"]
+    q_text = q_info["q"]
+    print(f"\nProcessing {q_id}: {q_text}")
+    
+    retrieved = retrieve_topk(q_text, k=3)
+    
+    # Print top-k retrievals to console prior to LLM calls
+    print(f"--- Top-{len(retrieved)} Retrieved Chunks ---")
+    for r in retrieved:
+        print(f"  Rank {r['rank']} | Source: {r['source']} | Score (L2): {r['score']:.4f} | ID: {r['chunk_id']}")
 
-    A = config_A_no_rag(q)
-    B = config_B_basic_rag(q, retrieved)
-    C = config_C_context_engineered_rag(q, retrieved)
+    A_ans = config_A_no_rag(q_text)
+    B_ans = config_B_basic_rag(q_text, retrieved)
+    C_ans = config_C_context_engineered_rag(q_text, retrieved)
 
     six_results.append({
-        "question": q,
-        "retrieved": retrieved,
-        "config_A_no_rag": A,
-        "config_B_basic_rag": B,
-        "config_C_context_engineered": C
+        "id": q_id,
+        "type": q_info["type"],
+        "question": q_text,
+        "retrieved_chunks": retrieved,
+        "config_A_no_rag": A_ans,
+        "config_B_basic_rag": B_ans,
+        "config_C_context_engineered": C_ans
     })
 
-with open(os.path.join(OUTPUT_RAW, "six_question_results.json"), "w") as f:
+# Save 6-question results
+with open(os.path.join(OUTPUT_RAW, "six_question_results.json"), "w", encoding="utf-8") as f:
     json.dump(six_results, f, indent=2)
 
 
 # ----------------------------
-# 8. Top-k sweep (k = 1, 3, 5) — now captures the actual generated answer too
+# 8. Top-k Sweep (k = 1, 3, 5)
 # ----------------------------
-sweep_question = "What is the cleaning requirement?"
+sweep_question = "What are the required daily cleaning tasks for restaurant food preparation areas?"
 ksweep_results = []
 
+print("\n=== RUNNING K-SWEEP (k = 1, 3, 5) ===")
 for k in [1, 3, 5]:
-    print(f"Running k-sweep for k={k}")
+    print(f"Running k-sweep for k={k}...")
     ret = retrieve_topk(sweep_question, k=k)
     answer = config_C_context_engineered_rag(sweep_question, ret)
     ksweep_results.append({
         "k": k,
         "question": sweep_question,
-        "chunks": ret,
-        "answer": answer
+        "retrieved_chunks": ret,
+        "generated_answer": answer
     })
 
-with open(os.path.join(OUTPUT_RAW, "k_sweep.json"), "w") as f:
+# Save k-sweep results
+with open(os.path.join(OUTPUT_RAW, "k_sweep.json"), "w", encoding="utf-8") as f:
     json.dump(ksweep_results, f, indent=2)
 
-print("RAG pipeline run complete. Results saved to:", OUTPUT_RAW)
+print("\nRAG pipeline run complete. All raw results successfully written to:", OUTPUT_RAW)

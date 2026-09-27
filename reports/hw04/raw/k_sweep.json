@@ -1,86 +1,86 @@
 [
   {
     "k": 1,
-    "question": "What is the cleaning requirement?",
-    "chunks": [
+    "question": "What are the required daily cleaning tasks for restaurant food preparation areas?",
+    "retrieved_chunks": [
       {
-        "rank": 0,
-        "chunk_id": "doc1.txt_chunk_1",
-        "source": "doc1.txt",
-        "text": "waste disposal, and emergency response. Failure to follow these standards may result in citations, fines, or temporary closure of the establishment.\n\nThis handbook must be reviewed quarterly by the Person-In-Charge (PIC), and all employees must receive training on relevant sections.\n\n------------------------------------------------------------\nSECTION 1 \u2014 DAILY CLEANING REQUIREMENTS\n------------------------------------------------------------\n\n1.1 Prep Areas  \nAll preparation surfaces must be cl",
-        "score": 0.7923940420150757
+        "rank": 1,
+        "chunk_id": "doc5.txt_chunk_1",
+        "source": "doc5.txt",
+        "text": "1 \u2014 DAILY KITCHEN CLEANING TASKS  \n1.1 Prep Surfaces  \nAll prep tables must be cleaned and sanitized every 4 hours during active food preparation. Approved sanitizers include quaternary ammonia and chlorine-based solutions. Surfaces must be wiped with single-use towels or designated sanitizing cloths stored in sanitizer buckets.\n\n1.2 Cooking Equipment  \nGrills, griddles, stovetops, fryers, and ovens must be wiped down at the end of the day. Grease buildup along grill edges and fryer walls should",
+        "score": 0.597553014755249
       }
     ],
-    "answer": "I cannot answer this question from the provided documents."
+    "generated_answer": "The required daily cleaning tasks for restaurant food preparation areas include:\n\n1. **Prep Surfaces**: All prep tables must be cleaned and sanitized every 4 hours during active food preparation.\n2. **Cooking Equipment**: Grills, griddles, stovetops, fryers, and ovens should be wiped down at the end of each day to prevent grease buildup.\n\nThese tasks are specified in Source 1: doc5.txt (Chunk: doc5.txt_chunk_1)."
   },
   {
     "k": 3,
-    "question": "What is the cleaning requirement?",
-    "chunks": [
-      {
-        "rank": 0,
-        "chunk_id": "doc1.txt_chunk_1",
-        "source": "doc1.txt",
-        "text": "waste disposal, and emergency response. Failure to follow these standards may result in citations, fines, or temporary closure of the establishment.\n\nThis handbook must be reviewed quarterly by the Person-In-Charge (PIC), and all employees must receive training on relevant sections.\n\n------------------------------------------------------------\nSECTION 1 \u2014 DAILY CLEANING REQUIREMENTS\n------------------------------------------------------------\n\n1.1 Prep Areas  \nAll preparation surfaces must be cl",
-        "score": 0.7923940420150757
-      },
+    "question": "What are the required daily cleaning tasks for restaurant food preparation areas?",
+    "retrieved_chunks": [
       {
         "rank": 1,
-        "chunk_id": "doc5.txt_chunk_9",
+        "chunk_id": "doc5.txt_chunk_1",
         "source": "doc5.txt",
-        "text": "e required. Aprons must be replaced daily or when soiled.\n\nSECTION 6 \u2014 CHEMICAL HANDLING AND STORAGE  \n6.1 Chemical Safety  \nChemicals must be stored away from food-contact surfaces. Spray bottles must be clearly labeled. Cleaning chemicals must never be stored above food items.\n\n6.2 Sanitizer Buckets  \nSanitizer buckets must contain solutions at proper concentration:\n- Quaternary ammonia: 200\u2013400 ppm  \n- Chlorine: 50\u2013100 ppm  \n\nTest strips must be used to verify accurate strength.\n\nSECTION 7 \u2014 ",
-        "score": 0.8776705861091614
+        "text": "1 \u2014 DAILY KITCHEN CLEANING TASKS  \n1.1 Prep Surfaces  \nAll prep tables must be cleaned and sanitized every 4 hours during active food preparation. Approved sanitizers include quaternary ammonia and chlorine-based solutions. Surfaces must be wiped with single-use towels or designated sanitizing cloths stored in sanitizer buckets.\n\n1.2 Cooking Equipment  \nGrills, griddles, stovetops, fryers, and ovens must be wiped down at the end of the day. Grease buildup along grill edges and fryer walls should",
+        "score": 0.597553014755249
       },
       {
         "rank": 2,
-        "chunk_id": "doc4.txt_chunk_1",
-        "source": "doc4.txt",
-        "text": "iene, and ensure the well-being of customers. All restaurant managers and food handlers must familiarize themselves with these regulations and ensure compliance at all times.\n\nSECTION 1 \u2014 PERSONAL HYGIENE REQUIREMENTS\n1.1 Handwashing Protocol  \n- Hands must be washed:\n  * Before beginning food preparation  \n  * After handling raw meat, poultry, seafood, or eggs  \n  * After using the restroom  \n  * After touching the face, hair, phone, or personal items  \n  * After handling trash, cleaning suppli",
-        "score": 0.8866167664527893
-      }
-    ],
-    "answer": "The cleaning requirement is that all preparation surfaces must be cleaned and sanitized. Aprons must be replaced daily or when soiled."
-  },
-  {
-    "k": 5,
-    "question": "What is the cleaning requirement?",
-    "chunks": [
-      {
-        "rank": 0,
-        "chunk_id": "doc1.txt_chunk_1",
-        "source": "doc1.txt",
-        "text": "waste disposal, and emergency response. Failure to follow these standards may result in citations, fines, or temporary closure of the establishment.\n\nThis handbook must be reviewed quarterly by the Person-In-Charge (PIC), and all employees must receive training on relevant sections.\n\n------------------------------------------------------------\nSECTION 1 \u2014 DAILY CLEANING REQUIREMENTS\n------------------------------------------------------------\n\n1.1 Prep Areas  \nAll preparation surfaces must be cl",
-        "score": 0.7923940420150757
-      },
-      {
-        "rank": 1,
-        "chunk_id": "doc5.txt_chunk_9",
-        "source": "doc5.txt",
-        "text": "e required. Aprons must be replaced daily or when soiled.\n\nSECTION 6 \u2014 CHEMICAL HANDLING AND STORAGE  \n6.1 Chemical Safety  \nChemicals must be stored away from food-contact surfaces. Spray bottles must be clearly labeled. Cleaning chemicals must never be stored above food items.\n\n6.2 Sanitizer Buckets  \nSanitizer buckets must contain solutions at proper concentration:\n- Quaternary ammonia: 200\u2013400 ppm  \n- Chlorine: 50\u2013100 ppm  \n\nTest strips must be used to verify accurate strength.\n\nSECTION 7 \u2014 ",
-        "score": 0.8776705861091614
-      },
-      {
-        "rank": 2,
-        "chunk_id": "doc4.txt_chunk_1",
-        "source": "doc4.txt",
-        "text": "iene, and ensure the well-being of customers. All restaurant managers and food handlers must familiarize themselves with these regulations and ensure compliance at all times.\n\nSECTION 1 \u2014 PERSONAL HYGIENE REQUIREMENTS\n1.1 Handwashing Protocol  \n- Hands must be washed:\n  * Before beginning food preparation  \n  * After handling raw meat, poultry, seafood, or eggs  \n  * After using the restroom  \n  * After touching the face, hair, phone, or personal items  \n  * After handling trash, cleaning suppli",
-        "score": 0.8866167664527893
-      },
-      {
-        "rank": 3,
-        "chunk_id": "doc1.txt_chunk_5",
-        "source": "doc1.txt",
-        "text": "------------------------------------------------\nSECTION 2 \u2014 WEEKLY CLEANING REQUIREMENTS\n------------------------------------------------------------\n\n2.1 Exhaust Hood and Filters  \nKitchen exhaust hoods accumulate grease from steam and smoke. Filters must be removed weekly and washed. Persistent residue requires degreaser and hot water soak.\n\n2.2 Storage Shelves  \nDry storage shelves must be sanitized weekly. Unlabeled items must be discarded. Shelves must be organized to prevent food from bei",
-        "score": 0.8915973901748657
-      },
-      {
-        "rank": 4,
         "chunk_id": "doc4.txt_chunk_7",
         "source": "doc4.txt",
         "text": "Cutting boards  \n- Sinks  \n- Grill surfaces  \n- Microwave interiors  \n- Floor drains  \n- Food-contact utensils\n\nWeekly cleaning tasks include:\n- Exhaust hoods  \n- Refrigeration gaskets  \n- Storage shelves  \n- Beverage dispenser drip trays  \n- Trash room and bin surfaces\n\nMonthly cleaning tasks include:\n- Ceiling vents  \n- Behind large appliances (grill, fryers, ovens)  \n- Drain traps  \n- Ice machine interior surfaces\n\n4.2 Approved Sanitizers  \n- Quaternary ammonia (Quat) at 200\u2013400 ppm  \n- Chlor",
-        "score": 0.9081146717071533
+        "score": 0.672015905380249
+      },
+      {
+        "rank": 3,
+        "chunk_id": "doc2.txt_chunk_16",
+        "source": "doc2.txt",
+        "text": "--------\n\nEmployee hygiene is essential to safe food operations. Restaurants must ensure that staff maintain proper handwashing, glove usage, attire, work area cleanliness, temperature awareness, and waste management.\n\nConsistent hygiene protects customers and supports compliance with county regulations.\n\nEND OF DOCUMENT",
+        "score": 0.739959716796875
       }
     ],
-    "answer": "The cleaning requirement is that all preparation surfaces must be cleaned and sanitized daily or when soiled. Aprons must also be replaced daily or when soiled."
+    "generated_answer": "The required daily cleaning tasks for restaurant food preparation areas include:\n\n1. **Prep Surfaces**: All prep tables must be cleaned and sanitized every 4 hours during active food preparation.\n2. **Cooking Equipment**: Grills, griddles, stovetops, fryers, and ovens must be wiped down at the end of each day.\n\nThese tasks are part of a comprehensive cleaning schedule designed to maintain hygiene standards in restaurant kitchens."
+  },
+  {
+    "k": 5,
+    "question": "What are the required daily cleaning tasks for restaurant food preparation areas?",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "chunk_id": "doc5.txt_chunk_1",
+        "source": "doc5.txt",
+        "text": "1 \u2014 DAILY KITCHEN CLEANING TASKS  \n1.1 Prep Surfaces  \nAll prep tables must be cleaned and sanitized every 4 hours during active food preparation. Approved sanitizers include quaternary ammonia and chlorine-based solutions. Surfaces must be wiped with single-use towels or designated sanitizing cloths stored in sanitizer buckets.\n\n1.2 Cooking Equipment  \nGrills, griddles, stovetops, fryers, and ovens must be wiped down at the end of the day. Grease buildup along grill edges and fryer walls should",
+        "score": 0.597553014755249
+      },
+      {
+        "rank": 2,
+        "chunk_id": "doc4.txt_chunk_7",
+        "source": "doc4.txt",
+        "text": "Cutting boards  \n- Sinks  \n- Grill surfaces  \n- Microwave interiors  \n- Floor drains  \n- Food-contact utensils\n\nWeekly cleaning tasks include:\n- Exhaust hoods  \n- Refrigeration gaskets  \n- Storage shelves  \n- Beverage dispenser drip trays  \n- Trash room and bin surfaces\n\nMonthly cleaning tasks include:\n- Ceiling vents  \n- Behind large appliances (grill, fryers, ovens)  \n- Drain traps  \n- Ice machine interior surfaces\n\n4.2 Approved Sanitizers  \n- Quaternary ammonia (Quat) at 200\u2013400 ppm  \n- Chlor",
+        "score": 0.672015905380249
+      },
+      {
+        "rank": 3,
+        "chunk_id": "doc2.txt_chunk_16",
+        "source": "doc2.txt",
+        "text": "--------\n\nEmployee hygiene is essential to safe food operations. Restaurants must ensure that staff maintain proper handwashing, glove usage, attire, work area cleanliness, temperature awareness, and waste management.\n\nConsistent hygiene protects customers and supports compliance with county regulations.\n\nEND OF DOCUMENT",
+        "score": 0.739959716796875
+      },
+      {
+        "rank": 4,
+        "chunk_id": "doc5.txt_chunk_4",
+        "source": "doc5.txt",
+        "text": " wiped and sanitized weekly. Unlabeled containers must be discarded or properly labeled to avoid cross\u2011contamination.\n\n2.3 Beverage Machines  \nCoffee makers, soda dispensers, and juice machines must be flushed and cleaned weekly to prevent bacterial buildup. Drip trays and internal water lines should be cleaned using food-safe cleaners.\n\n2.4 Trash and Waste Areas  \nIndoor trash bins must be washed and sanitized weekly. Trash room floors and walls should be cleaned of food residue. Grease traps m",
+        "score": 0.7478834986686707
+      },
+      {
+        "rank": 5,
+        "chunk_id": "doc5.txt_chunk_5",
+        "source": "doc5.txt",
+        "text": " should be cleaned of food residue. Grease traps must be inspected weekly.\n\nSECTION 3 \u2014 MONTHLY CLEANING TASKS  \n3.1 Large Equipment  \nAreas behind large appliances\u2014grills, fryers, freezers, ovens\u2014must be cleaned monthly or more frequently depending on grease accumulation. Dust, debris, and grease attract pests.\n\n3.2 Ice Machines  \nIce machine interiors must be sanitized monthly to prevent mold. Ice trays must be deep cleaned using approved sanitizers.\n\n3.3 Vents and Ceiling Panels  \nCeiling ven",
+        "score": 0.7598237991333008
+      }
+    ],
+    "generated_answer": "The required daily cleaning tasks for restaurant food preparation areas include:\n\n1. **Prep Surfaces**: All prep tables must be cleaned and sanitized every 4 hours during active food preparation.\n2. **Cooking Equipment**: Grills, griddles, stovetops, fryers, and ovens must be wiped down at the end of each day.\n\nThese tasks are outlined in [Source 1: doc5.txt (Chunk: doc5.txt_chunk_1)]."
   }
 ]

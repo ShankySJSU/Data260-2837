@@ -19,6 +19,7 @@ verified rows crated..
 SELECT * FROM s2837_rel.restaurant_inspection;
 
 
+
 ===============Homew work 4 : END======================
 
 ============================================================

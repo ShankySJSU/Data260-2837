@@ -408,44 +408,55 @@ INFO:     127.0.0.1:59204 - "GET /me HTTP/1.1" 401 Unauthorized
 Command:
 python code/rag/rag.py
 
-C:\SJSURepo\Data260\Data260-2837\code\rag>python rag.py
 Loaded 6 documents: ['doc1.txt', 'doc2.txt', 'doc3.txt', 'doc4.txt', 'doc5.txt', 'doc6.txt']
 Created 99 chunks total.
-modules.json: 100%|███████████████████████████████████████████████████████████████████████████████| 349/349 [00:00<?, ?B/s]
-C:\Python\python3.12\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\Shashank Ranjan\.cache\huggingface\hub\models--sentence-transformers--all-MiniLM-L6-v2. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
-To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
-  warnings.warn(message)
-config_sentence_transformers.json: 100%|██████████████████████████████████████████████████████████| 116/116 [00:00<?, ?B/s]
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-README.md: 100%|██████████████████████████████████████████████████████████████████████| 10.5k/10.5k [00:00<00:00, 18.5MB/s]
-sentence_bert_config.json: 100%|████████████████████████████████████████████████████████| 53.0/53.0 [00:00<00:00, 52.8kB/s]
-config.json: 100%|████████████████████████████████████████████████████████████████████████████████| 612/612 [00:00<?, ?B/s]
-C:\Python\python3.12\Lib\site-packages\huggingface_hub\file_download.py:149: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\Shashank Ranjan\.cache\huggingface\hub. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
-To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
-  warnings.warn(message)
-model.safetensors: downloading bytes: █████████████████████████████████████████████████████████████████| 85.0MB, 7.78MB/s
-model.safetensors: reconstructing file: 100%|█████████████████████████████████████████████████| 90.9MB / 90.9MB, 8.58MB/s
-Loading weights: 100%|█████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2062.97it/s]
-tokenizer_config.json: 100%|███████████████████████████████████████████████████████████████| 350/350 [00:00<00:00, 271kB/s]
-vocab.txt: 100%|████████████████████████████████████████████████████████████████████████| 232k/232k [00:00<00:00, 3.09MB/s]
-tokenizer.json: 100%|███████████████████████████████████████████████████████████████████| 466k/466k [00:00<00:00, 13.5MB/s]
-special_tokens_map.json: 100%|█████████████████████████████████████████████████████████████| 112/112 [00:00<00:00, 112kB/s]
-config.json: 100%|████████████████████████████████████████████████████████████████████████████████| 190/190 [00:00<?, ?B/s]
-Processing: Q1: What are the required daily cleaning tasks for restaurant food preparation areas?
-Processing: Q2: Why did the display case cooling failure at Rangoli Sweets violate county temperature standards?
-Processing: Q3: What signs of pest activity have been identified in restaurant inspections?
-Processing: Q4: Under what conditions should a restaurant be temporarily closed?
-Processing: Q5: What are the minimum wage and overtime pay requirements for kitchen staff?
-Processing: Q6: How do I repair a crashed Linux kernel?
-Running k-sweep for k=1
-Running k-sweep for k=3
-Running k-sweep for k=5
-RAG pipeline run complete. Results saved to: C:\SJSURepo\Data260\Data260-2837\code\rag\..\..\reports\hw04\raw
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2048.68it/s]
 
+=== RUNNING 6-QUESTION COMPARISON ===
 
-Output:
-RAG pipeline run complete.
+Processing Q1: What are the required daily cleaning tasks for restaurant food preparation areas?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc5.txt | Score (L2): 0.5976 | ID: doc5.txt_chunk_1
+  Rank 2 | Source: doc4.txt | Score (L2): 0.6720 | ID: doc4.txt_chunk_7
+  Rank 3 | Source: doc2.txt | Score (L2): 0.7400 | ID: doc2.txt_chunk_16
 
+Processing Q2: Why did the display case cooling failure at Rangoli Sweets violate county temperature standards?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc6.txt | Score (L2): 0.7920 | ID: doc6.txt_chunk_8
+  Rank 2 | Source: doc6.txt | Score (L2): 0.9543 | ID: doc6.txt_chunk_3
+  Rank 3 | Source: doc6.txt | Score (L2): 1.0076 | ID: doc6.txt_chunk_4
+
+Processing Q3: What signs of pest activity have been identified in restaurant inspections?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc6.txt | Score (L2): 0.6730 | ID: doc6.txt_chunk_7
+  Rank 2 | Source: doc3.txt | Score (L2): 0.6866 | ID: doc3.txt_chunk_0
+  Rank 3 | Source: doc3.txt | Score (L2): 0.7281 | ID: doc3.txt_chunk_17
+
+Processing Q4: Under what conditions should a restaurant be temporarily closed?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc1.txt | Score (L2): 0.8506 | ID: doc1.txt_chunk_17
+  Rank 2 | Source: doc3.txt | Score (L2): 0.8752 | ID: doc3.txt_chunk_2
+  Rank 3 | Source: doc4.txt | Score (L2): 0.9966 | ID: doc4.txt_chunk_0
+
+Processing Q5: What are the minimum wage and overtime pay requirements for kitchen staff?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc5.txt | Score (L2): 1.1139 | ID: doc5.txt_chunk_0
+  Rank 2 | Source: doc6.txt | Score (L2): 1.1563 | ID: doc6.txt_chunk_5
+  Rank 3 | Source: doc4.txt | Score (L2): 1.1581 | ID: doc4.txt_chunk_3
+
+Processing Q6: How do I assess the value of a single family home in Santa Clara County?
+--- Top-3 Retrieved Chunks ---
+  Rank 1 | Source: doc1.txt | Score (L2): 1.5826 | ID: doc1.txt_chunk_12
+  Rank 2 | Source: doc6.txt | Score (L2): 1.6099 | ID: doc6.txt_chunk_0
+  Rank 3 | Source: doc3.txt | Score (L2): 1.6286 | ID: doc3.txt_chunk_1
+
+=== RUNNING K-SWEEP (k = 1, 3, 5) ===
+Running k-sweep for k=1...
+Running k-sweep for k=3...
+Running k-sweep for k=5...
+
+RAG pipeline run complete. All raw results successfully written to: C:\SJSURepo\Data260\Data260-2837\code\rag\..\..\reports\hw04\raw
 
 ===========================
 End of RUN_LOG
