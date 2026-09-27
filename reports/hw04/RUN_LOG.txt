@@ -66,6 +66,54 @@ GET http://localhost:8137/inspection/
     }
 ]
 
+--updated name and pass 
+PUT http://localhost:8137/inspection/1
+{
+  "name": "Rangoli Sweets and Snacks",
+  "status": "Pass"
+}
+
+--verified
+[
+    {
+        "name": "Rangoli Sweets and Snacks",
+        "status": "Pass",
+        "id": 1
+    }
+]
+--created another one and verified
+[
+    {
+        "name": "Rangoli Sweets and Snacks",
+        "status": "Pass",
+        "id": 1
+    },
+    {
+        "name": "Moonlight Garden Restaurant & Banquet Hall",
+        "status": "Fail",
+        "id": 2
+    }
+]
+--another created --to be deleted..
+[
+    {
+        "name": "Rangoli Sweets and Snacks",
+        "status": "Pass",
+        "id": 1
+    },
+    {
+        "name": "Moonlight Garden Restaurant & Banquet Hall",
+        "status": "Fail",
+        "id": 2
+    },
+    {
+        "name": "Resturant Creeated to be Deleted",
+        "status": "Fail",
+        "id": 3
+    }
+]
+----------
+DELETE http://localhost:8137/inspection/3
 ========================================================
 --- React Client Startup ---
 Command:

@@ -1,0 +1,24 @@
+================================================================================================
+Facility Name: Rangoli Sweets and Snacks
+Address: 130 El Camino Real, San Jose, CA
+Inspection Date: March 4, 2026
+Inspection Type: Routine Compliance Inspection
+Permit Number: RSN-440182
+================================================================================================
+Facility Name: Moonlight Garden Restaurant & Banquet Hall
+Address: 455 Blossom Terrace, Santa Clara, CA
+Inspection Date: April 12, 2026
+Inspection Type: Follow-Up Inspection (Post‑Violation Review)
+Permit Number: MGR-552901
+================================================================================================
+Facility Name: Fox Chicken Sandwich & Grill
+Address: 999 Main Street, San Francisco, CA
+Inspection Date: May 18, 2026
+Inspection Type: Routine Annual Inspection
+Permit Number: FCS-382190
+================================================================================================
+restaurantName": "Awesome Vegii",
+ "200 Local Resturant Drive, Miltpitas",
+================================================================================================
+    "restaurantName": "The Tower",
+    "restAddress": "321 Blossom Hill, San Jose",
