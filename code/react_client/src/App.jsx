@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./components/Login";
-import Home from "./components/Home";
-import CreateRecord from "./components/CreateRecord";
-import UpdateRecord from "./components/UpdateRecord";
-import DeleteRecord from "./components/DeleteRecord";
+import Login from "./component/Login";
+import Home from "./component/Home";
+import CreateRecord from "./component/CreateRecord";
+import UpdateRecord from "./component/UpdateRecord";
+import DeleteRecord from "./component/DeleteRecord";
 
 function App() {
     return (

@@ -14,8 +14,9 @@ export default function Login() {
                 params: { email, password }
             });
             navigate("/");
-        } catch {
-            alert("Invalid login");
+        } catch (err) {
+                console.error("Login error:", err.response?.status, err.response?.data);
+                alert("Invalid login or login failed. Please check your credentials and try again.");
         }
     };
 
