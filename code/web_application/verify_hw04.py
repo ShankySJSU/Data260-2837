@@ -14,7 +14,7 @@ Before running validation checks. Please ensure the following are running:
 1. Ensure the database is running (MySQL)
 2. FAST API
 uvicorn hw4_main:app --port 8137
-3. React Frontend
+3. React Frontend (must be in react directory to execute the following command)
 npm run dev
 4. ollama 
 5. Run this verification script
@@ -98,7 +98,13 @@ verification = {
     "checks": checks,
 }
 
-with open("reports/hw04/verification.json", "w") as f:
+file_path = "reports/hw04/verification.json"
+# Ensure that the directory path exists; if not, create it
+os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+# Open the file and dump the JSON data
+with open(file_path, "w") as f:
     json.dump(verification, f, indent=4)
+
 
 print("verification.json created successfully.")
