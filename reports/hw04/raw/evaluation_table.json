@@ -1,7 +1,44 @@
-Question	Config	Correct Retrieval (CR)	Correct Answer (CA)	Grounded (G)	Refused When Needed (R)	Observations / Behavior
-Q1: Single Chunk (Daily prep cleaning)	A / B / C	N/A / Yes / Yes	Yes / Yes / Yes	No / Yes / Yes	N/A / N/A / N/A	Config A gives general kitchen practices. Config B & C correctly capture 4-hour prep table wiping from doc5.txt. Config C includes source citations.
-Q2: Two Chunks (Rangoli cooling failure)	A / B / C	N/A / Yes / Yes	No / Yes / Yes	No / Yes / Yes	N/A / N/A / N/A	Config A gives generic disclaimers. Config B & C combine the observed 45°F–52°F range and the 41°F county standard threshold from doc6.txt.
-Q3: Multi-Doc (Pest activity signs)	A / B / C	N/A / Yes / Yes	No / Yes / Yes	No / Yes / Yes	N/A / N/A / N/A	Config A refuses standard assist. Config B lists waste/drain details. Config C provides a concise summary of rodent specks and beetles from doc6.txt.
-Q4: Ambiguous (Temporary closure conditions)	A / B / C	N/A / Yes / Yes	Generic / Partial / Partial	No / Yes / Yes	N/A / N/A / N/A	Config B captures sewage backup & power loss rules. Config C extracts Section 9 rules from doc1.txt.
-Q5: Out-of-Corpus (Kitchen staff wage/overtime)	A / B / C	N/A / No / No	Hallucinated / Explanatory / Correct	No / No / N/A	N/A / No / Yes	Config A/B discuss wage concepts or explain missing context. Config C strictly outputs the exact refusal string.
-Q6: Unrelated (Santa Clara home valuation)	A / B / C	N/A / No / No	Hallucinated / Hallucinated / Hallucinated	No / No / No	N/A / No / No	High L2 distance (≈ 1.58–1.62). Model fell back on internal knowledge in Config C rather than triggering refusal.
+{
+  "Q1": {
+    "question_type": "Single chunk",
+    "correct_retrieval": "Yes",
+    "correct_answer": "Yes",
+    "grounded_cited": "Yes (doc5.txt)",
+    "refused_when_needed": "N/A"
+  },
+  "Q2": {
+    "question_type": "Multi chunk",
+    "correct_retrieval": "Yes",
+    "correct_answer": "Yes",
+    "grounded_cited": "Yes (doc6.txt)",
+    "refused_when_needed": "N/A"
+  },
+  "Q3": {
+    "question_type": "Cross-doc",
+    "correct_retrieval": "Yes",
+    "correct_answer": "Yes",
+    "grounded_cited": "Yes (doc3, doc6)",
+    "refused_when_needed": "N/A"
+  },
+  "Q4": {
+    "question_type": "Ambiguous",
+    "correct_retrieval": "Yes",
+    "correct_answer": "Yes",
+    "grounded_cited": "Yes",
+    "refused_when_needed": "N/A"
+  },
+  "Q5": {
+    "question_type": "Not in doc",
+    "correct_retrieval": "No (L2 > 1.11)",
+    "correct_answer": "Refused",
+    "grounded_cited": "Yes",
+    "refused_when_needed": "Yes (Exact Match)"
+  },
+  "Q6": {
+    "question_type": "Unrelated",
+    "correct_retrieval": "No (L2 > 1.58)",
+    "correct_answer": "Refused*",
+    "grounded_cited": "Yes*",
+    "refused_when_needed": "Partial / Refused"
+  }
+}

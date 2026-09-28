@@ -1,39 +1,104 @@
 import json
 import requests
-from datetime import datetime
+import subprocess
+import hashlib
+import time
 
-VERIFICATION_FILE = "../../reports/hw04/verification.json"
-BASE = "http://localhost:8137"
+PORT_BASE = 8137
+SID4 = 2837
+SEED = 2837
+VERIFY_SEED = 260000 + SID4
 
-def check(url):
+'''
+Before running validation checks. Please ensure the following are running:
+1. FAST API
+uvicorn hw4_main:app --port 8137
+2. React Frontend
+npm run dev
+3. Ensure the database is running (MySQL)
+4. ollama 
+'''
+
+checks = []
+
+def run_check(name, fn):
     try:
-        r = requests.get(url)
+        result = fn()
+        checks.append({"check": name, "status": "PASS" if result else "FAIL"})
+    except Exception:
+        checks.append({"check": name, "status": "FAIL"})
+
+# 1 – Check backend is running
+def check_backend_running():
+    try:
+        r = requests.get(f"http://localhost:{PORT_BASE}/")
         return r.status_code == 200
     except:
         return False
 
-def main():
-    results = {}
+# 2 – Check main inspection endpoint
+def check_inspection_list():
+    try:
+        r = requests.get(f"http://localhost:{PORT_BASE}/inspection/")
+        return r.status_code == 200 and isinstance(r.json(), list)
+    except:
+        return False
 
-    results["home"] = check(f"{BASE}/")
-    results["naive"] = check(f"{BASE}/inspection/naive?page=1&page_size=10")
-    results["fixed"] = check(f"{BASE}/inspection/fixed?page=1&page_size=10")
+# 3 – Check login functionality
+def check_login():
+    try:
+        r = requests.post(
+            f"http://localhost:{PORT_BASE}/login",
+            params={"email": "test@example.com", "password": "test123"}
+        )
+        return r.status_code == 200
+    except:
+        return False
 
-    output = {
-        "homework": 4,
-        "SID4": 2837,
-        "commit": "<insert commit hash>",
-        "model": "MiniLM-L6-v2",
-        "seed": 2837,
-        "verify_seed": 262837,
-        "checks": results,
-        "timestamp": str(datetime.utcnow())
-    }
+# 4 – Check /me authentication
+def check_me():
+    try:
+        s = requests.Session()
+        # login first
+        login = s.post(
+            f"http://localhost:{PORT_BASE}/login",
+            params={"email": "test@example.com", "password": "test123"}
+        )
+        if login.status_code != 200:
+            return False
+        r = s.get(f"http://localhost:{PORT_BASE}/me")
+        return r.status_code == 200 and "status" in r.json()
+    except:
+        return False
 
-    with open(VERIFICATION_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+# Run tests
+run_check("backend_running", check_backend_running)
+run_check("inspection_list", check_inspection_list)
+run_check("login", check_login)
+run_check("me_authenticated", check_me)
 
-    print("Verification complete.")
+# Obtain Git commit hash
+try:
+    commit_hash = (
+        subprocess.check_output(["git", "rev-parse", "HEAD"])
+        .decode("utf-8")
+        .strip()
+    )
+except:
+    commit_hash = "UNKNOWN"
 
-if __name__ == "__main__":
-    main()
+verification = {
+    "homework": "HW4",
+    "sid4": SID4,
+    "seed": SEED,
+    "verify_seed": VERIFY_SEED,
+    "port": PORT_BASE,
+    "commit_hash": commit_hash,
+    "model": "sentence-transformers/all-MiniLM-L6-v2 + local Ollama models",
+    "checks": checks,
+}
+
+with open("reports/hw04/verification.json", "w") as f:
+    json.dump(verification, f, indent=4)
+
+print("verification.json created successfully.")
