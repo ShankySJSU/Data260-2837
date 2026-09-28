@@ -11,14 +11,14 @@ VERIFY_SEED = 260000 + SID4
 
 '''
 Before running validation checks. Please ensure the following are running:
-1. FAST API
+1. Ensure the database is running (MySQL)
+2. FAST API
 uvicorn hw4_main:app --port 8137
-2. React Frontend
+3. React Frontend
 npm run dev
-3. Ensure the database is running (MySQL)
 4. ollama 
+5. Run this verification script
 '''
-
 checks = []
 
 def run_check(name, fn):
