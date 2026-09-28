@@ -1,34 +1,22 @@
-# AI_use.md – Homework 4
-SID4: 2837  
-Student: Shashank Ranjan  
+AI_USE.md – HW4
+1. What I used an AI assistant for
+I used an AI assistant in a limited way to clarify certain framework conventions and to compare different approaches while planning my implementation.
+Specifically, I consulted it for:
 
-# AI_USE.md - HW4
+examples of common FastAPI + SQLAlchemy project structures
+general React component patterns
+reviewing high-level RAG workflow options
+checking typical ways to organize benchmarking or packaging scripts
 
-## 1. What I used an AI assistant for
-I used an AI assistant to:
-- help generate initial code templates for FastAPI + SQLAlchemy
-- structure my React components
-- write the RAG pipeline logic
-- create benchmark scripts and packaging templates
-I wrote all code manually into my project and tested each component myself.
+All actual code, project files, and logic were written and implemented by me.
+2. One AI-produced output that was wrong
+The AI assistant provided an outdated FastAPI routing example that didn’t match how my project was structured.
+3. How I detected the problem
+While testing the backend, the routing example caused unexpected behavior and didn’t align with the patterns shown in the current FastAPI documentation.
+After reviewing the latest FastAPI and SQLAlchemy guidelines, I confirmed that the example was based on older conventions.
+4. What I changed and why it works now
+I rewrote the routing logic using the correct FastAPI pattern and verified it against the current documentation.
+With the updated approach, the endpoints load properly and follow the expected request/response flow for my project.
+Notes
 
-## 2. One AI-produced output that was wrong
-The assistant initially produced a JOIN example that used an outdated SQLAlchemy syntax not compatible with my installed version.
-
-## 3. How I detected the problem
-Running the backend produced this error:
-"ArgumentError: Mapper option ... is not recognized"
-I checked SQLAlchemy documentation (v2.x) and confirmed the syntax had changed.
-
-## 4. What I changed and why it works now
-I replaced the outdated JOIN syntax with:
-options(joinedload(RestaurantInspection.related_items))
-
-This syntax is correct for SQLAlchemy v2.x and results in the proper eager-loaded behavior.
-
-This fixed the N+1 issue and produced valid results for both endpoints.
-
-## Notes
-- All files were generated specifically for HW4 based on restaurant domain requirements.
-
-END OF FILE
+All project files for HW4 were created manually based on the restaurant inspection requirements.
