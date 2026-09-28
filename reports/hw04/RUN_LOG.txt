@@ -458,6 +458,9 @@ Running k-sweep for k=5...
 
 RAG pipeline run complete. All raw results successfully written to: C:\SJSURepo\Data260\Data260-2837\code\rag\..\..\reports\hw04\raw
 
+--final verificatin 
+C:\SJSURepo\Data260\Data260-2837\code\web_application>python verify_hw04.py
+verification.json created successfully.
 ===========================
 End of RUN_LOG
 ===========================

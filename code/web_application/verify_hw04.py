@@ -1,8 +1,10 @@
 import json
+import traceback
 import requests
 import subprocess
 import hashlib
 import time
+import os
 
 PORT_BASE = 8137
 SID4 = 2837
@@ -26,6 +28,7 @@ def run_check(name, fn):
         result = fn()
         checks.append({"check": name, "status": "PASS" if result else "FAIL"})
     except Exception:
+        traceback.print_exc()
         checks.append({"check": name, "status": "FAIL"})
 
 # 1 – Check backend is running
@@ -36,33 +39,36 @@ def check_backend_running():
     except:
         return False
 
-# 2 – Check main inspection endpoint
+# 2 – Check main inspection endpoint (Get)
+#http://localhost:8137/inspection/    
 def check_inspection_list():
-    try:
-        r = requests.get(f"http://localhost:{PORT_BASE}/inspection/")
-        return r.status_code == 200 and isinstance(r.json(), list)
-    except:
-        return False
+      s = requests.Session()
+      s.post(f"http://localhost:{PORT_BASE}/login",
+             params={"email": "test1@sjsu.edu", "password": "test123"})
+      r = s.get(f"http://localhost:{PORT_BASE}/inspection/")
+      return r.status_code == 200 and isinstance(r.json(), list)
 
-# 3 – Check login functionality
+# 3 – Check login functionality (POST)
+#http://localhost:8137/login?email=test1@sjsu.edu&password=test123
 def check_login():
     try:
         r = requests.post(
             f"http://localhost:{PORT_BASE}/login",
-            params={"email": "test@example.com", "password": "test123"}
+            params={"email": "test1@sjsu.edu", "password": "test123"}
         )
         return r.status_code == 200
     except:
         return False
 
 # 4 – Check /me authentication
+#http://localhost:8137/me
 def check_me():
     try:
         s = requests.Session()
         # login first
         login = s.post(
             f"http://localhost:{PORT_BASE}/login",
-            params={"email": "test@example.com", "password": "test123"}
+            params={"email": "test1@sjsu.edu", "password": "test123"}
         )
         if login.status_code != 200:
             return False
@@ -73,10 +79,11 @@ def check_me():
 
 # Run tests
 run_check("backend_running", check_backend_running)
-run_check("inspection_list", check_inspection_list)
 run_check("login", check_login)
 run_check("me_authenticated", check_me)
+run_check("inspection_list", check_inspection_list)
 
+'''
 # Obtain Git commit hash
 try:
     commit_hash = (
@@ -86,6 +93,7 @@ try:
     )
 except:
     commit_hash = "UNKNOWN"
+'''
 
 verification = {
     "homework": "HW4",
@@ -93,12 +101,12 @@ verification = {
     "seed": SEED,
     "verify_seed": VERIFY_SEED,
     "port": PORT_BASE,
-    "commit_hash": commit_hash,
+    # "commit_hash": commit_hash,
     "model": "sentence-transformers/all-MiniLM-L6-v2 + local Ollama models",
     "checks": checks,
 }
 
-file_path = "reports/hw04/verification.json"
+file_path = "../../reports/hw04/verification.json"
 # Ensure that the directory path exists; if not, create it
 os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
