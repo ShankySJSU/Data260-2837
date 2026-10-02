@@ -1,0 +1,39 @@
+
+===================Homework 5=========================
+cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
+uvicorn hw5_main:app --reload --port 8137
+
+and then tested with localhost:http://localhost:8137/
+It was successfuly message
+{"message":"DATA260 HW5 Backend Running","port":8137,"homework":"HW5"}
+
+#execute the database migration script from python file itslef
+cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
+python migrate_hw5.py
+
+--all successful..
+
+
+
+===================Homework 4=========================
+ensure uvicorn is installed
+pip install uvicorn
+pip install python-multipart
+pip install pymysql
+--Note:Session_manager was causing some issue hence uninstall it
+pip uninstall session_manager -y
+fix all the root and parent direcotry issues related to files
+=====================================================
+cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
+uvicorn hw4_main:app --port 8137
+
+===to run the seed_generator---
+cd C:\SJSURepo\Data260\Data260-2837\code\web_application
+python -m domain.seed_generator
+
+verified rows crated..
+SELECT * FROM s2837_rel.restaurant_inspection;
+
+
+
+===============Homew work 5 : END======================

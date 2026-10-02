@@ -1,0 +1,52 @@
+# RUN_LOG.txt – Homework 4
+# SID4: 2837
+# Student: Shashank Ranjan
+# This file contains actual console output and timestamps from HW4 runs.
+
+===========================
+DATA260 HW4 - RUN LOG
+Student: Shashank Ranjan
+SID4: 2837
+Date: 9/26/2026
+===========================
+
+--- Backend Startup ---
+=============================================================
+Command:
+
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application> uvicorn hw5_main:app --reload --port 8137
+INFO:     Will watch for changes in these directories: ['C:\\SJSURepo\\Data260\\Data260-2837\\code\\web_application']
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     Started reloader process [20696] using StatReload
+C:\Python\python3.12\Lib\site-packages\pydantic\_internal\_config.py:386: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [12200]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:59848 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59848 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59848 - "GET / HTTP/1.1" 200 OK
+
+
+============verified with the broswer too===============
+{"message":"DATA260 HW5 Backend Running","port":8137,"homework":"Shashank-HW5"}
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application>python migrate_hw5.py
+Starting HW5 database migration...
+Adding column: inspection_code
+Adding column: inspection_date
+Adding column: score
+Adding column: restaurant_id
+Adding column: created_at
+Adding column: updated_at
+Creating legacy restaurant record...
+C:\SJSURepo\Data260\Data260-2837\code\web_application\migrate_hw5.py:151: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "created_at": datetime.utcnow(),
+C:\SJSURepo\Data260\Data260-2837\code\web_application\migrate_hw5.py:152: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "updated_at": datetime.utcnow(),
+Adding unique index for inspection_code...
+Adding restaurant foreign key...
+HW5 database migration completed successfully.
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application>
