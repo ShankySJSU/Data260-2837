@@ -1,152 +1,335 @@
-from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session ,joinedload
+from fastapi import APIRouter, Depends, Query
+from sqlalchemy.orm import Session, joinedload
 from database import get_db, query_counter
-from .models import RestaurantInspection, InspectionRelated
-#from .crud import get_all, get_one, create_record, update_record, delete_record
-from . import crud, schema
-
-#shashank explanation to himself..
-'''
-Q. What is dependency injection?
-Ans: Think of it as: "before running this ROUT function, run this other function first, 
-and hand me its return value as an argument."
-I am using FastAPI's dependency injection system to manage database sessions. 
-The `Depends` function allows me to specify that a route function requires a database session, 
-which is provided by the `get_db` function. This ensures that each request has its own database session, 
-which is properly closed after the request is completed.
-'''
-query_counter["count"] = 0
-router = APIRouter(prefix="/inspection", tags=["inspections"])
+from .import crud, schema
+from .models import (
+    InspectionRelated,
+    Restaurant,
+    RestaurantInspection,
+)
 
 
-#=========================
-# All ROUTES methods---------
-#========================
+router = APIRouter(
+    tags=["HW5 Domain API"],
+)
 
-@router.get("/")
-def list_all(db: Session = Depends(get_db)):
-    return crud.get_all(db)
 
-@router.get("/naive")
-def list_naive(db: Session = Depends(get_db), page: int = 1, page_size: int = 10):
-    query_counter["count"] = 0   # reset so we only count THIS request's queries
+# ============================================================
+# RESTAURANT ROUTES
+# ============================================================
+
+@router.get(
+    "/restaurants/",
+    response_model=list[schema.RestaurantResponse],
+)
+def list_restaurants(
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=10,
+        ge=1,
+        le=100,
+    ),
+    db: Session = Depends(get_db),
+):
+    return crud.list_restaurants(
+        db,
+        page=page,
+        page_size=page_size,
+    )
+
+
+@router.post(
+    "/restaurants/",
+    response_model=schema.RestaurantResponse,
+    status_code=201,
+)
+def create_restaurant(
+    data: schema.RestaurantCreate,
+    db: Session = Depends(get_db),
+):
+    return crud.create_restaurant(
+        db,
+        data,
+    )
+
+
+@router.get(
+    "/restaurants/{restaurant_id}",
+    response_model=schema.RestaurantResponse,
+)
+def get_restaurant(
+    restaurant_id: int,
+    db: Session = Depends(get_db),
+):
+    return crud.get_restaurant(
+        db,
+        restaurant_id,
+    )
+
+
+@router.put(
+    "/restaurants/{restaurant_id}",
+    response_model=schema.RestaurantResponse,
+)
+def update_restaurant(
+    restaurant_id: int,
+    data: schema.RestaurantUpdate,
+    db: Session = Depends(get_db),
+):
+    return crud.update_restaurant(
+        db,
+        restaurant_id,
+        data,
+    )
+
+
+@router.delete(
+    "/restaurants/{restaurant_id}",
+)
+def delete_restaurant(
+    restaurant_id: int,
+    db: Session = Depends(get_db),
+):
+    return crud.delete_restaurant(
+        db,
+        restaurant_id,
+    )
+
+
+@router.get(
+    "/restaurants/{restaurant_id}/inspections",
+    response_model=list[schema.InspectionResponse],
+)
+def get_restaurant_inspections(
+    restaurant_id: int,
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=10,
+        ge=1,
+        le=100,
+    ),
+    db: Session = Depends(get_db),
+):
+    return crud.inspections_for_restaurant(
+        db,
+        restaurant_id,
+        page=page,
+        page_size=page_size,
+    )
+
+
+# ============================================================
+# INSPECTION ROUTES
+# ============================================================
+
+@router.get(
+    "/inspection/",
+    response_model=list[schema.InspectionResponse],
+)
+def list_inspections(
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=10,
+        ge=1,
+        le=100,
+    ),
+    db: Session = Depends(get_db),
+):
+    return crud.list_inspections(
+        db,
+        page=page,
+        page_size=page_size,
+    )
+
+
+@router.post(
+    "/inspection/",
+    response_model=schema.InspectionResponse,
+    status_code=201,
+)
+def create_inspection(
+    data: schema.InspectionCreate,
+    db: Session = Depends(get_db),
+):
+    return crud.create_inspection(
+        db,
+        data,
+    )
+
+
+# These static routes must appear before /inspection/{inspection_id}.
+@router.get(
+    "/inspection/naive",
+)
+def list_naive(
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=10,
+        ge=1,
+        le=500,
+    ),
+    db: Session = Depends(get_db),
+):
+    """
+    HW4 benchmark endpoint.
+
+    Performs one related-table query per inspection.
+    """
+    query_counter["count"] = 0
 
     offset = (page - 1) * page_size
-    items = db.query(RestaurantInspection).offset(offset).limit(page_size).all()
 
-    output = []
-    for item in items:
-        related = db.query(InspectionRelated).filter(InspectionRelated.inspection_id == item.id).all()
-        output.append({
-            "id": item.id,
-            "name": item.name,
-            "status": item.status,
-            "related": [{"id": r.id, "details": r.details} for r in related]
-        })
-
-    return {
-        "records": output,
-        "sql_queries": query_counter["count"]
-    }
-
-
-@router.get("/fixed")
-def list_fixed(db: Session = Depends(get_db), page: int = 1, page_size: int = 10):
-    query_counter["count"] = 0   # reset here too, for a fair comparison
-
-    offset = (page - 1) * page_size
     items = (
         db.query(RestaurantInspection)
-          .options(joinedload(RestaurantInspection.related_items))
-          .offset(offset)
-          .limit(page_size)
-          .all()
+        .order_by(RestaurantInspection.id)
+        .offset(offset)
+        .limit(page_size)
+        .all()
     )
 
     output = []
+
     for item in items:
-        output.append({
-            "id": item.id,
-            "name": item.name,
-            "status": item.status,
-            "related": [
-                {"id": r.id, "details": r.details}
-                for r in item.related_items
-            ]
-        })
+        related = (
+            db.query(InspectionRelated)
+            .filter(
+                InspectionRelated.inspection_id == item.id
+            )
+            .all()
+        )
+
+        output.append(
+            {
+                "id": item.id,
+                "name": item.name,
+                "status": item.status,
+                "related": [
+                    {
+                        "id": related_item.id,
+                        "details": related_item.details,
+                    }
+                    for related_item in related
+                ],
+            }
+        )
 
     return {
         "records": output,
-        "sql_queries": query_counter["count"]
+        "sql_queries": query_counter["count"],
     }
 
 
-@router.get("/naive")
-def list_naive(db: Session = Depends(get_db), page: int = 1, page_size: int = 10):
-    query_counter["count"] = 0   # reset so we only count THIS request's queries
+@router.get(
+    "/inspection/fixed",
+)
+def list_fixed(
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=10,
+        ge=1,
+        le=500,
+    ),
+    db: Session = Depends(get_db),
+):
+    """
+    HW4 benchmark endpoint.
+
+    Uses eager loading to avoid the N+1 query problem.
+    """
+    query_counter["count"] = 0
 
     offset = (page - 1) * page_size
-    items = db.query(RestaurantInspection).offset(offset).limit(page_size).all()
 
-    output = []
-    for item in items:
-        related = db.query(InspectionRelated).filter(InspectionRelated.inspection_id == item.id).all()
-        output.append({
-            "id": item.id,
-            "name": item.name,
-            "status": item.status,
-            "related": [{"id": r.id, "details": r.details} for r in related]
-        })
-
-    return {
-        "records": output,
-        "sql_queries": query_counter["count"]
-    }
-
-
-@router.get("/fixed")
-def list_fixed(db: Session = Depends(get_db), page: int = 1, page_size: int = 10):
-    query_counter["count"] = 0   # reset here too, for a fair comparison
-
-    offset = (page - 1) * page_size
     items = (
         db.query(RestaurantInspection)
-          .options(joinedload(RestaurantInspection.related_items))
-          .offset(offset)
-          .limit(page_size)
-          .all()
+        .options(
+            joinedload(
+                RestaurantInspection.related_items
+            )
+        )
+        .order_by(RestaurantInspection.id)
+        .offset(offset)
+        .limit(page_size)
+        .all()
     )
 
     output = []
+
     for item in items:
-        output.append({
-            "id": item.id,
-            "name": item.name,
-            "status": item.status,
-            "related": [
-                {"id": r.id, "details": r.details}
-                for r in item.related_items
-            ]
-        })
+        output.append(
+            {
+                "id": item.id,
+                "name": item.name,
+                "status": item.status,
+                "related": [
+                    {
+                        "id": related_item.id,
+                        "details": related_item.details,
+                    }
+                    for related_item in item.related_items
+                ],
+            }
+        )
 
     return {
         "records": output,
-        "sql_queries": query_counter["count"]
+        "sql_queries": query_counter["count"],
     }
 
-@router.get("/{id}")
-def get_by_id(id: int, db: Session = Depends(get_db)):
-    return crud.get_one(db, id)
 
-@router.post("/")
-def create(data: schema.InspectionCreate, db: Session = Depends(get_db)):
-    return crud.create_record(db, data)
+@router.get(
+    "/inspection/{inspection_id}",
+    response_model=schema.InspectionResponse,
+)
+def get_inspection(
+    inspection_id: int,
+    db: Session = Depends(get_db),
+):
+    return crud.get_inspection(
+        db,
+        inspection_id,
+    )
 
-@router.put("/{id}")
-def update(id: int, data: schema.InspectionUpdate, db: Session = Depends(get_db)):
-    return crud.update_record(db, id, data)
 
-@router.delete("/{id}")
-def delete(id: int, db: Session = Depends(get_db)):
-    return crud.delete_record(db, id)
+@router.put(
+    "/inspection/{inspection_id}",
+    response_model=schema.InspectionResponse,
+)
+def update_inspection(
+    inspection_id: int,
+    data: schema.InspectionUpdate,
+    db: Session = Depends(get_db),
+):
+    return crud.update_inspection(
+        db,
+        inspection_id,
+        data,
+    )
 
+
+@router.delete(
+    "/inspection/{inspection_id}",
+)
+def delete_inspection(
+    inspection_id: int,
+    db: Session = Depends(get_db),
+):
+    return crud.delete_inspection(
+        db,
+        inspection_id,
+    )

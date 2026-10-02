@@ -1,6 +1,6 @@
 import random
 from sqlalchemy.orm import Session
-from .models import RestaurantInspection, InspectionRelated
+from models import RestaurantInspection, InspectionRelated
 from database import db_session_basede26, Base, engine
 
 SEED = 2837

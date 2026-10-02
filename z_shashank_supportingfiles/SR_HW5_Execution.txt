@@ -12,7 +12,47 @@ cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
 python migrate_hw5.py
 
 --all successful..
+--checking everything is working file and module exists in the file
+python -c "import domain.schema as s; print(s.__file__);
+print(hasattr(s, 'RestaurantCreate')); print(hasattr(s, 'InspectionCreate'))"
 
+---now test all the link using postman
+
+--for UI .. use React frontend--
+C:\SJSURepo\Data260\Data260-2837\code\react_client>
+npm run dev
+
+---then verify login page--
+http://localhost:5173/login
+
+Email: test1@sjsu.edu
+Password: test123
+
+---updating the React application by installing Redux toolkit
+npm install @reduxjs/toolkit react-redux
+--then create Redux store
+
+--testing all page with Redux
+Start the React application:
+npm run dev
+
+--start testing using brwoser
+http://localhost:5173/login 
+http://localhost:5173/create
+http://localhost:5173/update/4
+
+------MCP Server Part------------------
+Start MCP Inspector
+cd C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp
+mcp dev meals_server.py
+
+--all good-- now time to use domani server
+--Start the Inspector
+Keep these running:
+•	MySQL
+•	Your FastAPI backend
+cd C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp
+mcp dev domain_server.py --with sqlalchemy --with pymysql
 
 
 ===================Homework 4=========================

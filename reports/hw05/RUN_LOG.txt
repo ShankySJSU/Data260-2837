@@ -49,4 +49,40 @@ Adding unique index for inspection_code...
 Adding restaurant foreign key...
 HW5 database migration completed successfully.
 
-C:\SJSURepo\Data260\Data260-2837\code\web_application>
+---successfully created inspection record using Redux
+INFO:     127.0.0.1:58708 - "POST /inspection/ HTTP/1.1" 201 Created
+INFO:     127.0.0.1:58708 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58708 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58708 - "GET /inspection/?page=1&page_size=100 HTTP/1.1" 200 OK
+
+--successfully Updated records using Redux
+INFO:     127.0.0.1:62161 - "GET /inspection/?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64217 - "GET /inspection/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64217 - "GET /inspection/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65352 - "OPTIONS /inspection/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49756 - "PUT /inspection/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49756 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49756 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49756 - "GET /inspection/?page=1&page_size=100 HTTP/1.1" 200 OK
+
+--successfully deleted inspection record
+INFO:     127.0.0.1:50164 - "GET /inspection/?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60879 - "OPTIONS /inspection/17 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51856 - "DELETE /inspection/17 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51856 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51856 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51856 - "GET /inspection/?page=1&page_size=100 HTTP/1.1" 200 OK
+
+===================PART 2 : MCP server ===================
+Starting MCP inspector...
+
+MCP Inspector Web is up and running at:
+   http://127.0.0.1:6274?MCP_INSPECTOR_API_TOKEN=5f62b32b3da3e62cba0845836b43cb8e40b7f8324929ec89cf4b48f58e10f4a9
+
+   Sandbox (MCP Apps): http://127.0.0.1:6275/sandbox
+
+   Auth token: 5f62b32b3da3e62cba0845836b43cb8e40b7f8324929ec89cf4b48f58e10f4a9
+
+   Secrets: OS keychain
+
+Opening browser...
