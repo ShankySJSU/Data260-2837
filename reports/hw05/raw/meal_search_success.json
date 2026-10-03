@@ -1,0 +1,37 @@
+[
+    {
+  "id": "52795",
+  "name": "Chicken Handi",
+  "area": "India",
+  "category": "Chicken",
+  "thumb": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
+},
+{
+  "id": "53358",
+  "name": "Chicken Mandi",
+  "area": "India",
+  "category": "Chicken",
+  "thumb": "https://www.themealdb.com/images/media/meals/er4d081765186828.jpg"
+},
+{
+  "id": "53110",
+  "name": "Sticky Chicken",
+  "area": "Australian",
+  "category": "Chicken",
+  "thumb": "https://www.themealdb.com/images/media/meals/cj56fs1762340001.jpg"
+},
+{
+  "id": "52956",
+  "name": "Chicken Congee",
+  "area": "Chinese",
+  "category": "Chicken",
+  "thumb": "https://www.themealdb.com/images/media/meals/1529446352.jpg"
+},
+{
+  "id": "52831",
+  "name": "Chicken Karaage",
+  "area": "Japanese",
+  "category": "Chicken",
+  "thumb": "https://www.themealdb.com/images/media/meals/tyywsw1505930373.jpg"
+}
+]

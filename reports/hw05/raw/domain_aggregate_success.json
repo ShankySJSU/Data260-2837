@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "data": {
+    "status_filter": "WARNING",
+    "total_restaurants": 12,
+    "total_inspections": 1636,
+    "average_score": 0.07,
+    "counts_by_status": {
+      "PASS": 0,
+      "FAIL": 0,
+      "WARNING": 1636
+    }
+  },
+  "error": null
+}

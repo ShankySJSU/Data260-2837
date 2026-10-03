@@ -86,3 +86,154 @@ MCP Inspector Web is up and running at:
    Secrets: OS keychain
 
 Opening browser...
+
+=============PART 3 --CONTRACTS========================================
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> python fault_injection_runner.py
+Running retry demonstrations...
+success_on_first_attempt: success=True, attempts=1, error=None
+failure_then_success_after_retry: success=True, attempts=2, error=None
+failure_after_all_allowed_retries: success=False, attempts=3, error=injected transient failure
+
+Running 150-call fault experiment...
+
+Running failure rate 0%...
+success rate=100.0%, mean=1.743 ms, p99=2.242 ms
+
+Running failure rate 20%...
+success rate=98.0%, mean=3.897 ms, p99=17.706 ms
+
+Running failure rate 50%...
+success rate=92.0%, mean=5.819 ms, p99=18.786 ms
+
+Part 3 experiment completed.
+Raw calls: C:\SJSURepo\Data260\Data260-2837\reports\hw05\raw\fault_injection_calls.csv
+Summary: C:\SJSURepo\Data260\Data260-2837\reports\hw05\raw\fault_injection_summary.json
+Metrics: C:\SJSURepo\Data260\Data260-2837\reports\hw05\part3_metrics.md
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+==========PART 4 ======================
+--EXECUTING OFFLINE TEST..(from MCP folder)
+python test_execute_tool_offline.py
+
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> python test_execute_tool_offline.py
+PASS search_valid
+PASS search_invalid
+PASS detail_valid
+PASS detail_invalid
+PASS aggregate_valid
+PASS aggregate_invalid
+PASS unknown_tool
+
+7/7 tests passed
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+==========Part 5 ===============================
+testing of offline tool test
+python test_execute_tool_offline.py
+
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> python test_execute_tool_offline.py
+PASS search_valid
+PASS search_invalid
+PASS detail_valid
+PASS detail_invalid
+PASS aggregate_valid
+PASS aggregate_invalid
+PASS unknown_tool
+PASS safety_rule_allows_valid_score
+PASS safety_rule_blocks_invalid_score
+
+9/9 tests passed
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+=====================
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> python test_execute_tool_offline.py
+PASS search_valid
+PASS search_invalid
+PASS detail_valid
+PASS detail_invalid
+PASS aggregate_valid
+PASS aggregate_invalid
+PASS unknown_tool
+PASS safety_rule_allows_valid_score
+PASS safety_rule_blocks_invalid_score
+PASS agent_stops_at_max_steps
+
+10/10 tests passed
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+==============part 5 D===========
+test one line agent request
+python agent.py
+
+{
+  "answer": "The inspections for Rangoli are as follows:\n\n1. Rangoli Sweets and Snacks, Restaurant Name: Legacy HW4 Restaurants, Inspection Date: 2026-10-02, Score: 0, Status: PASS.\n\n2. Rangoli Sweets and Snacks, Restaurant Name: Legacy HW4 Restaurants, Inspection Date: 2026-10-02, Score: 92, Status: PASS.\n\n3. Rangoli Sweets and Snacks, Restaurant Name: Legacy HW4 Restaurants, Inspection Date: 2026-10-01, Score: 95, Status: PASS.\n\n4. Rangoli Sweets and Snakcs, Restaurant Name: Rangoli Sweets and Snakcs, Inspection Date: 2026-10-01, Score: 95, Status: PASS.",
+  "steps": 2,
+  "tool_calls": 1,
+  "stop_reason": "normal_completion"
+}
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+running scenarios..
+Running scenario: search_rangoli
+{
+  "scenario": "search_rangoli",
+  "input": "Find all inspections for Rangoli and summarize their scores and statuses.",
+  "steps": 4,
+  "stop_reason": "model_error",
+  "tool_calls": 3,
+  "answer": null
+}
+
+Running scenario: inspection_detail
+{
+  "scenario": "inspection_detail",
+  "input": "Give me the details for inspection 5006, including its status and score.",
+  "steps": 4,
+  "stop_reason": "normal_completion",
+  "tool_calls": 3,
+  "answer": "The inspection ID 5006 for the restaurant 'Legacy HW4 Restaurants' is categorized as a PASS with a score of 92."
+}
+
+Running scenario: pass_aggregate
+{
+  "scenario": "pass_aggregate",
+  "input": "How many PASS inspections are there and what is the average score?",
+  "steps": 4,
+  "stop_reason": "normal_completion",
+  "tool_calls": 3,
+  "answer": "There are 1713 PASS inspections with an average score of 0.16."
+}
+
+Running scenario: fail_search
+{
+  "scenario": "fail_search",
+  "input": "Find inspections with FAIL status and summarize them.",
+  "steps": 6,
+  "stop_reason": "normal_completion",
+  "tool_calls": 5,
+  "answer": "There is no inspection with FAIL status found for Rangoli. The inspection was skipped due to the error 'inspection_id must be an integer'. Please check the input or correct it."
+}
+
+Agent scenarios completed.
+Summary written to: C:\SJSURepo\Data260\Data260-2837\reports\hw05\raw\agent_scenarios.json
+Log written to: C:\SJSURepo\Data260\Data260-2837\reports\hw05\raw\agent_scenarios.jsonl
+PS C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp> 
+
+================final verification script================
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54839 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54842 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54844 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54844 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54846 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54846 - "GET /restaurants/?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54848 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54848 - "GET /inspection/?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52897 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52899 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52901 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52901 - "GET /me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52903 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52903 - "GET /restaurants/?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52906 - "POST /login?email=test1%40sjsu.edu&password=test123 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52906 - "GET /inspection/?page=1&page_size=10 HTTP/1.1" 200 OK

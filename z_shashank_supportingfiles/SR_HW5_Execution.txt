@@ -50,11 +50,15 @@ mcp dev meals_server.py
 --all good-- now time to use domani server
 --Start the Inspector
 Keep these running:
-cdMySQL
-Your FastAPI backend
+MySQL
+Your FastAPI backend ( it will launch MCP Inspector)
 cd C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp
 mcp dev domain_server.py --with sqlalchemy --with pymysql
 
+
+===============Homew work 5 : END======================
+
++++++++ For reference home wokr 4 ++++++++++++
 
 ===================Homework 4=========================
 ensure uvicorn is installed
@@ -74,7 +78,3 @@ python -m domain.seed_generator
 
 verified rows crated..
 SELECT * FROM s2837_rel.restaurant_inspection;
-
-
-
-===============Homew work 5 : END======================

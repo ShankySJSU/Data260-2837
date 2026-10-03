@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "data": {
+    "id": 19,
+    "name": "Restaurant_Deli_15",
+    "inspection_code": "INSP-00000019",
+    "inspection_date": "2026-10-02T00:18:54",
+    "status": "PASS",
+    "score": 0,
+    "restaurant_id": 10,
+    "restaurant_name": "Restaurant_Deli",
+    "restaurant_permit_code": "PERM010"
+  },
+  "error": null
+}

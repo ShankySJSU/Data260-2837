@@ -1,0 +1,34 @@
+[
+  {
+    "scenario": "search_rangoli",
+    "input": "Find all inspections for Rangoli and summarize their scores and statuses.",
+    "steps": 4,
+    "stop_reason": "model_error",
+    "tool_calls": 3,
+    "answer": null
+  },
+  {
+    "scenario": "inspection_detail",
+    "input": "Give me the details for inspection 5006, including its status and score.",
+    "steps": 4,
+    "stop_reason": "normal_completion",
+    "tool_calls": 3,
+    "answer": "The inspection ID 5006 for the restaurant 'Legacy HW4 Restaurants' is categorized as a PASS with a score of 92."
+  },
+  {
+    "scenario": "pass_aggregate",
+    "input": "How many PASS inspections are there and what is the average score?",
+    "steps": 4,
+    "stop_reason": "normal_completion",
+    "tool_calls": 3,
+    "answer": "There are 1713 PASS inspections with an average score of 0.16."
+  },
+  {
+    "scenario": "fail_search",
+    "input": "Find inspections with FAIL status and summarize them.",
+    "steps": 6,
+    "stop_reason": "normal_completion",
+    "tool_calls": 5,
+    "answer": "There is no inspection with FAIL status found for Rangoli. The inspection was skipped due to the error 'inspection_id must be an integer'. Please check the input or correct it."
+  }
+]

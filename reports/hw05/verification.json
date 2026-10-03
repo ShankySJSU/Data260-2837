@@ -1,26 +1,52 @@
 {
-    "homework": "HW4",
-    "sid4": 2837,
-    "seed": 2837,
-    "verify_seed": 262837,
-    "port": 8137,
-    "model": "sentence-transformers/all-MiniLM-L6-v2 + local Ollama models",
-    "checks": [
-        {
-            "check": "backend_running",
-            "status": "PASS"
-        },
-        {
-            "check": "login",
-            "status": "PASS"
-        },
-        {
-            "check": "me_authenticated",
-            "status": "PASS"
-        },
-        {
-            "check": "inspection_list",
-            "status": "PASS"
-        }
-    ]
+  "homework": "HW5",
+  "sid4": 2837,
+  "seed": 2837,
+  "verify_seed": 262837,
+  "port": 8137,
+  "model": "qwen2.5:1.5b",
+  "commit_hash": "1d8c180ade569a569b5fc7021655e3cfede5c3e5",
+  "generated_at_utc": "2026-10-03T11:40:56.485752+00:00",
+  "checks": [
+    {
+      "check": "backend_running",
+      "status": "PASS"
+    },
+    {
+      "check": "login",
+      "status": "PASS"
+    },
+    {
+      "check": "authenticated_me_endpoint",
+      "status": "PASS"
+    },
+    {
+      "check": "restaurant_list",
+      "status": "PASS"
+    },
+    {
+      "check": "inspection_list",
+      "status": "PASS"
+    },
+    {
+      "check": "domain_execute_tool",
+      "status": "PASS"
+    },
+    {
+      "check": "meals_server_file",
+      "status": "PASS"
+    },
+    {
+      "check": "domain_server_file",
+      "status": "PASS"
+    },
+    {
+      "check": "python_compilation",
+      "status": "PASS"
+    },
+    {
+      "check": "offline_tests",
+      "status": "PASS"
+    }
+  ]
 }

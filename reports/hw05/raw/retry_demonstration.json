@@ -1,0 +1,23 @@
+[
+  {
+    "scenario": "success_on_first_attempt",
+    "success": true,
+    "attempts": 1,
+    "latency_ms": 2.586,
+    "error": null
+  },
+  {
+    "scenario": "failure_then_success_after_retry",
+    "success": true,
+    "attempts": 2,
+    "latency_ms": 7.649,
+    "error": null
+  },
+  {
+    "scenario": "failure_after_all_allowed_retries",
+    "success": false,
+    "attempts": 3,
+    "latency_ms": 16.347,
+    "error": "injected transient failure"
+  }
+]

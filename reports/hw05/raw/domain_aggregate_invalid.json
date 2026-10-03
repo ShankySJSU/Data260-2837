@@ -1,0 +1,5 @@
+{
+  "ok": false,
+  "data": null,
+  "error": "status must be PASS, FAIL, or WARNING"
+}
