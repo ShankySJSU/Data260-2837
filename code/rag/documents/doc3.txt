@@ -1,0 +1,217 @@
+PEST CONTROL REQUIREMENTS FOR FOOD SERVICE ESTABLISHMENTS  
+County Environmental Health Department  
+2026 Food Safety Compliance Manual
+
+INTRODUCTION  
+Pest activity in food facilities poses significant risks to public health, contaminates food supplies, damages structural components, and jeopardizes regulatory compliance. Restaurants must implement comprehensive pest‑control protocols designed to prevent infestation, monitor activity, and respond rapidly to any signs of pests. This document outlines the official county standards for pest prevention, identification, mitigation, and contractor oversight.
+
+------------------------------------------------------------
+SECTION 1 — PREVENTIVE STRUCTURAL MEASURES
+------------------------------------------------------------
+
+1.1 Building Integrity  
+All food establishments must maintain structural integrity to prevent pest entry:
+- Door sweeps must be tight-fitting with no gaps.
+- Windows must have intact screens.
+- Cracks in walls, ceilings, and flooring must be sealed using approved sealants.
+- Vents must include mesh coverings with openings no greater than 1/4 inch.
+
+1.2 Exterior Maintenance  
+The exterior perimeter of the restaurant must be kept clean:
+- Landscaping must not touch the building structure.
+- Standing water must be eliminated.
+- Dumpsters must be placed at least 10 feet away from exterior walls.
+- Grease spills must be removed immediately, including around outdoor containers.
+
+1.3 Delivery and Receiving Doors  
+Receiving doors must remain closed when not in use. Food deliveries must be inspected for signs of contamination such as:
+- Punctured packaging
+- Rodent gnaw marks
+- Insect presence inside containers
+- Damp or moldy boxes
+
+------------------------------------------------------------
+SECTION 2 — COMMON PESTS FOUND IN RESTAURANTS
+------------------------------------------------------------
+
+2.1 Rodents  
+Rodents are among the most dangerous pests in food service facilities. Signs include:
+- Droppings resembling small black pellets
+- Grease marks along walls
+- Gnawed packaging
+- Shredded materials indicating nesting
+- Scratching sounds near storage areas
+
+Rodents contaminate food preparation surfaces and carry pathogens. Immediate action is required upon detection.
+
+2.2 Cockroaches  
+Cockroaches thrive in moist environments, particularly near drains. Signs include:
+- Shed skins
+- Egg casings (oothecae)
+- Musty odor
+- Sightings of live insects during the day (indicates severe infestation)
+
+Cockroaches can contaminate food-contact surfaces and trigger allergenic reactions.
+
+2.3 Ants  
+Ant infestations are commonly linked to poor waste management. Signs include:
+- Lines of ants near soda machines, spills, or sugary residues
+- Presence near storage shelves
+- Small piles of sawdust-like debris (possible nesting material)
+
+2.4 Flies  
+Fruit flies and drain flies are indicators of sanitation issues:
+- Fruit flies hover near waste bins and sugary spills.
+- Drain flies emerge from slow-moving or dirty drains.
+
+2.5 Beetles  
+Beetles often target grain-based foods. They may appear near flour sacks or dry storage areas.
+
+------------------------------------------------------------
+SECTION 3 — INTERNAL PREVENTION PRACTICES
+------------------------------------------------------------
+
+3.1 Food Storage Practices  
+- Store food at least 6 inches off the floor.
+- Keep flour, sugar, rice, and grain products in sealed containers.
+- Rotate food items following FIFO (First In, First Out).
+- Inspect bulk ingredients weekly for signs of pests.
+
+3.2 Waste Control  
+Improper waste management is a primary cause of pest activity:
+- Indoor waste bins must be sealed and emptied regularly.
+- Outdoor bins must remain closed.
+- Spills near waste bins must be cleaned immediately.
+- Mop rooms must remain free of standing water.
+
+3.3 Cleaning Protocols  
+Cleanliness strongly correlates with pest presence:
+- Prep surfaces must be sanitized frequently.
+- Floors must be swept and mopped daily.
+- Drains must be scrubbed weekly or after signs of pest activity.
+- Grease traps must be monitored weekly.
+
+3.4 Equipment Storage  
+Store cleaning equipment properly:
+- Mops must be hung to dry.
+- Buckets must be emptied and sanitized.
+- Brooms must be stored away from food-storage areas.
+
+------------------------------------------------------------
+SECTION 4 — IDENTIFICATION AND MONITORING PROTOCOLS
+------------------------------------------------------------
+
+4.1 Daily Monitoring  
+Daily monitoring must document:
+- Live pest sightings
+- Droppings
+- Damaged packaging
+- Unusual odors
+- Grease trails
+- Activity around drains and waste bins
+
+4.2 Weekly Monitoring  
+Weekly monitoring must include:
+- Inspection of dry storage shelves
+- Inspection of soda and beverage machines
+- Inspection of floor drains
+- Review of pest-control logs
+
+4.3 Monitoring Tools  
+Approved tools include:
+- Glue traps
+- UV light traps
+- Rodent bait stations (only by licensed contractors)
+- Monitoring boards placed near drains and waste bins
+
+------------------------------------------------------------
+SECTION 5 — CORRECTIVE ACTION AND RESPONSE PROTOCOL
+------------------------------------------------------------
+
+5.1 Immediate Response  
+Upon detecting pest activity, the employee must:
+- Notify the Person-In-Charge (PIC)
+- Dispose of contaminated food
+- Clean the affected area thoroughly
+- Document findings in the pest-control log
+
+5.2 Contractor Response  
+Licensed pest-control contractors must be contacted when:
+- Evidence of rodents is detected
+- Cockroaches are found in food prep areas
+- Flies emerge in large numbers
+- Beetles contaminate dry goods
+
+Contractor visits must occur within 48 hours of major findings.
+
+5.3 Deep Cleaning Requirements  
+For major pest incidents:
+- All prep surfaces must be sanitized.
+- All food-contact equipment must be washed.
+- Drains must be scrubbed thoroughly.
+- Storage shelves must be reorganized.
+- Waste bins must be sanitized.
+- Floors must be deep-cleaned using degreaser.
+
+------------------------------------------------------------
+SECTION 6 — PREVENTION THROUGH EMPLOYEE PRACTICES
+------------------------------------------------------------
+
+6.1 Employee Training  
+Employees must be trained to recognize:
+- Rodent droppings
+- Egg casings
+- Nesting materials
+- Gnawed packaging
+- Beetle contamination
+
+6.2 Hygiene Practices  
+- Employees must wash hands before touching clean equipment.
+- Gloves must be changed frequently.
+- Employees must avoid leaving spills unattended.
+- Sweat, hair, or clothing contamination must be avoided.
+
+6.3 Reporting  
+Employees must report:
+- Unusual sounds behind walls
+- Gaps in doors or windows
+- Areas with persistent moisture
+- Fruit fly clusters
+
+------------------------------------------------------------
+SECTION 7 — CRITICAL VIOLATIONS AND TEMPORARY CLOSURE
+------------------------------------------------------------
+
+A restaurant must be **temporarily closed** if any of the following occur:
+- Live rodent sightings inside the food prep area
+- Heavy cockroach infestation
+- Pest contamination of ready-to-eat foods
+- Sewage backup that attracts pests
+- Significant grease overflow near dumpsters
+- Structural gaps allowing pest entry
+- Repeated pest sightings over multiple days without corrective action
+
+Closure remains in effect until:
+- Contractor assessment is complete
+- Violations are corrected
+- Inspector verifies compliance
+
+------------------------------------------------------------
+SECTION 8 — DOCUMENTATION AND LOG REQUIREMENTS
+------------------------------------------------------------
+
+Log entries must include:
+- Date
+- Time
+- Type of pest observed
+- Location
+- Corrective action taken
+- Staff initials
+
+Logs must be retained for at least 12 months and made available during inspections.
+
+------------------------------------------------------------
+CONCLUSION  
+Pest prevention is an essential component of food safety. Restaurants that maintain strong sanitation practices, waste control, and monitoring protocols significantly reduce the risk of infestation. These standards must be followed daily to ensure compliance and protect public health.
+
+END OF DOCUMENT

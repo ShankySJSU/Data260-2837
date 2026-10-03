@@ -1,5 +1,6 @@
 
 ===================Homework 5=========================
+#git pull origin main
 cd to C:\SJSURepo\Data260\Data260-2837\code\web_application>
 uvicorn hw5_main:app --reload --port 8137
 
@@ -49,7 +50,7 @@ mcp dev meals_server.py
 --all good-- now time to use domani server
 --Start the Inspector
 Keep these running:
-MySQL
+cdMySQL
 Your FastAPI backend
 cd C:\SJSURepo\Data260\Data260-2837\code\web_application\mcp
 mcp dev domain_server.py --with sqlalchemy --with pymysql
