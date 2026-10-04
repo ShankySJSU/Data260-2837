@@ -1,0 +1,69 @@
+1. git status
+
+PS C:\SJSURepo\Data260\Data260-2837> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+
+2. Once you made change to file and saved it (try git status)
+PS C:\SJSURepo\Data260\Data260-2837> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   code/web_application/hw5_main.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+3. Git add *
+PS C:\SJSURepo\Data260\Data260-2837> git add *
+PS C:\SJSURepo\Data260\Data260-2837> git commit -m "Testing how to use git"
+[main 197bdce] Testing how to use git
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\SJSURepo\Data260\Data260-2837> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+4. git push origin main
+nothing to commit, working tree clean
+PS C:\SJSURepo\Data260\Data260-2837> git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 493 bytes | 246.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/ShankySJSU/Data260-2837.git
+   c7f3bb6..197bdce  main -> main
+
+5. Verify again with Git status
+PS C:\SJSURepo\Data260\Data260-2837> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\SJSURepo\Data260\Data260-2837> git status                            
+
+
+6. no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\SJSURepo\Data260\Data260-2837> git add *
+PS C:\SJSURepo\Data260\Data260-2837> git commit -m "removed testing comment"
+
+
+[main 853ad08] removed testing comment
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+PS C:\SJSURepo\Data260\Data260-2837> git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 486 bytes | 243.00 KiB/s, done.
+Total 5 (delta 3), reused 1 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/ShankySJSU/Data260-2837.git
+   197bdce..853ad08  main -> main
+
