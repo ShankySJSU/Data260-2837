@@ -13,7 +13,7 @@
 | Assigned domain | Local restaurant inspections |
 | Local model | qwen2.5:1.5b |
 | Repository | https://github.com/ShankySJSU/Data260-2837 |
-| Final commit hash | To be added after the final HW5 commit |
+| Final commit hash |  |
 
 ---
 
@@ -353,9 +353,3 @@ reports/hw05/raw/agent_scenarios.jsonl
 reports/hw05/raw/agent_scenarios.json
 ```
 
-The final commit hash will be added after the HW5 verification script runs
-successfully and the repository is tagged with:
-
-```text
-hw5
-```
