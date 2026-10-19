@@ -11,17 +11,19 @@ import memory_service
 REPO_ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = REPO_ROOT / "reports" / "hw06" / "raw"
 
+
+
 CONVERSATION = [
-    "My name is Shashank Ranjan.",
-    "My SID4 is 2837.",
+    "My name is Shashank and I am doing HW6 and domain is restaurant inspections.",
+    "My SID4 is 2837 and my required port is 8137.",
     "The required backend port is 8137.",
     "My project domain is restaurant inspections.",
-    "The relational database is s2837_rel.",
-    "The MongoDB database is s2837_doc.",
-    "I use local MongoDB on localhost.",
-    "I use qwen2.5:1.5b through local Ollama.",
-    "The embedding model is all-MiniLM-L6-v2.",
-    "The main domain entity is RestaurantInspection.",
+    "My MySQL relational database is s2837_rel.",
+    "My MongoDB document database is s2837_doc.",
+    "I am using MongoDB on my localhost which is  running on port 27017.",
+    "I am using  qwen2.5:1.5b through local Ollama.",
+    "My embedding model is all-MiniLM-L6-v2",
+    "My main domain entity is Restaurant Inspection.",
 ] * 3
 
 PROBES = [
