@@ -1,0 +1,142 @@
+[
+  {
+    "setting": "SHORT_TERM_N=4",
+    "short_term_n": 4,
+    "compressed": false,
+    "mean_prompt_tokens": 497.46666666666664,
+    "mean_latency_ms": 12375.150666666666,
+    "probe_quality": 3.4,
+    "probe_results": [
+      {
+        "question": "What is my SID4 and port?",
+        "score": 5,
+        "reply": "Your SID4 is 2837, and your required port is 8137."
+      },
+      {
+        "question": "Which MongoDB database does HW6 use?",
+        "score": 3,
+        "reply": "HW6 uses the MongoDB document database, which is identified by the ID s2837_doc."
+      },
+      {
+        "question": "What is my domain?",
+        "score": 5,
+        "reply": "Your domain is Restaurant Inspection."
+      },
+      {
+        "question": "Which local model should I use?",
+        "score": 1,
+        "reply": "You should use the local MongoDB model identified by the ID s2837_doc."
+      },
+      {
+        "question": "Which two memory systems are compared?",
+        "score": 3,
+        "reply": "The two memory systems compared are MySQL Relational Database and MongoDB Document Database."
+      }
+    ]
+  },
+  {
+    "setting": "SHORT_TERM_N=12",
+    "short_term_n": 12,
+    "compressed": false,
+    "mean_prompt_tokens": 666.9666666666667,
+    "mean_latency_ms": 14216.146,
+    "probe_quality": 3.4,
+    "probe_results": [
+      {
+        "question": "What is my SID4 and port?",
+        "score": 5,
+        "reply": "Your SID4 (System Information Data Type 4) is 2837, and your required port is 8137."
+      },
+      {
+        "question": "Which MongoDB database does HW6 use?",
+        "score": 3,
+        "reply": "The MongoDB database used by HW6 is s2837_doc."
+      },
+      {
+        "question": "What is my domain?",
+        "score": 5,
+        "reply": "Your domain is Restaurant Inspection."
+      },
+      {
+        "question": "Which local model should I use?",
+        "score": 1,
+        "reply": "The local model you should use is \"all-MiniLM-L6-v2\"."
+      },
+      {
+        "question": "Which two memory systems are compared?",
+        "score": 3,
+        "reply": "The two memory systems compared are MySQL relational database (`s2837_rel`) and MongoDB document database (`s2837_doc`)."
+      }
+    ]
+  },
+  {
+    "setting": "SHORT_TERM_N=30",
+    "short_term_n": 30,
+    "compressed": false,
+    "mean_prompt_tokens": 1322.6,
+    "mean_latency_ms": 27894.124666666667,
+    "probe_quality": 3.4,
+    "probe_results": [
+      {
+        "question": "What is my SID4 and port?",
+        "score": 5,
+        "reply": "Your SID4 is 2837 and your required port is 8137."
+      },
+      {
+        "question": "Which MongoDB database does HW6 use?",
+        "score": 3,
+        "reply": "HW6 uses the MongoDB database named `s2837_doc`."
+      },
+      {
+        "question": "What is my domain?",
+        "score": 5,
+        "reply": "Your domain is restaurant inspections."
+      },
+      {
+        "question": "Which local model should I use?",
+        "score": 1,
+        "reply": "For your project on restaurant inspections, you should use the all-MiniLM-L6-v2 embedding model. This model is suitable for various text-based tasks such as text classification, sentiment analysis, and more. Ensure that this model is correctly integrated into your project's pipeline and properly configured for your specific needs."
+      },
+      {
+        "question": "Which two memory systems are compared?",
+        "score": 3,
+        "reply": "The two memory systems compared are the MySQL relational database system and the MongoDB document-based database system."
+      }
+    ]
+  },
+  {
+    "setting": "compression",
+    "short_term_n": 30,
+    "compressed": true,
+    "mean_prompt_tokens": 987.5333333333333,
+    "mean_latency_ms": 20563.40066666667,
+    "probe_quality": 3.8,
+    "probe_results": [
+      {
+        "question": "What is my SID4 and port?",
+        "score": 5,
+        "reply": "Your SID4 is 2837 and your required port is 8137."
+      },
+      {
+        "question": "Which MongoDB database does HW6 use?",
+        "score": 3,
+        "reply": "HW6 uses a MongoDB document database named s2837_doc."
+      },
+      {
+        "question": "What is my domain?",
+        "score": 5,
+        "reply": "Your domain is restaurant inspections. Make sure your project includes:\n\n- A requirement for a MySQL relational database named s2837_rel.\n- A project domain related to restaurant inspections.\n- Proper backend communication through port 8137.\n- A focus on improving restaurant safety and compliance through inspections."
+      },
+      {
+        "question": "Which local model should I use?",
+        "score": 3,
+        "reply": "You should use `qwen2.5:1.5b` as your local model for HW6."
+      },
+      {
+        "question": "Which two memory systems are compared?",
+        "score": 3,
+        "reply": "The two memory systems mentioned in the provided context are:\n\n1. MySQL relational database named `s2837_rel`.\n2. MongoDB document database named `s2837_doc`."
+      }
+    ]
+  }
+]
