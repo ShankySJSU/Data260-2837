@@ -1,3 +1,468 @@
 HW6 implementation scaffold created locally.
 Python compileall check passed for the repository source.
 Local MongoDB/Ollama execution results will be appended during the reproducible run.
+
+======================================================================================
+C:\SJSURepo\Data260\Data260-2837\code\web_application>echo "Shashank Ranjan Homework 6"
+"Shashank Ranjan Homework 6"
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application>uvicorn hw6_main:app --reload --port 8137
+INFO:     Will watch for changes in these directories: ['C:\\SJSURepo\\Data260\\Data260-2837\\code\\web_application']
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     Started reloader process [8800] using StatReload
+C:\Python\python3.12\Lib\site-packages\pydantic\_internal\_config.py:386: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [3304]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:63656 - "GET / HTTP/1.1" 200 OK
+
+http://localhost:8137/
+{
+  "message": "DATA260 HW6 Backend Running",
+  "port": 8137,
+  "homework": "Shashank-HW6"
+}
+
+http://localhost:8137/api/documents/schema/status
+
+{
+  "database": "s2837_doc",
+  "collection": "inspections"
+}
+
+http://localhost:8137/docs
+
+--successfuly created a document using PostMan
+http://localhost:8137/api/documents
+
+THIS WAS PART OF BODY
+{
+  "inspection_code": "HW6-INSP-001",
+  "description": "Routine restaurant inspection",
+  "status": "PASS",
+  "category": "Routine",
+  "inspection_date": "2026-10-18"
+}
+
+
+---THIS WAS THE RESULT---
+{
+    "inspection_code": "HW6-INSP-001",
+    "description": "Routine restaurant inspection",
+    "status": "PASS",
+    "category": "Routine",
+    "inspection_date": "2026-10-18T00:00:00",
+    "id": "6ad657f96238e5098b3fe8f8",
+    "created_at": "2026-10-19T17:48:41.769000",
+    "updated_at": "2026-10-19T17:48:41.769000"
+}
+
+========================================================
+ANOTHER ONE..
+{
+    "inspection_code": "HW6-INSP-003",
+    "description": "MongoDB AllEat Resurant Inspection",
+    "status": "FAIL",
+    "category": "Routine",
+    "inspection_date": "2026-10-15T00:00:00",
+    "id": "6ad65b296238e5098b3fe8fa",
+    "created_at": "2026-10-19T18:02:17.979000",
+    "updated_at": "2026-10-19T18:02:17.979000"
+}
+
+========================================================
+Retrieve all
+GET /api/documents
+
+http://localhost:8137/api/documents
+
+Got all 3 documents that i had created..
+
+[
+    {
+        "inspection_code": "HW6-INSP-001",
+        "description": "Routine restaurant inspection",
+        "status": "PASS",
+        "category": "Routine",
+        "inspection_date": "2026-10-18T00:00:00",
+        "id": "6ad657f96238e5098b3fe8f8",
+        "created_at": "2026-10-19T17:48:41.769000",
+        "updated_at": "2026-10-19T17:48:41.769000"
+    },
+    {
+        "inspection_code": "HW6-INSP-002",
+        "description": "Rangoli restaurant inspection",
+        "status": "PASS",
+        "category": "Routine",
+        "inspection_date": "2026-10-17T00:00:00",
+        "id": "6ad659fa6238e5098b3fe8f9",
+        "created_at": "2026-10-19T17:57:14.910000",
+        "updated_at": "2026-10-19T17:57:14.910000"
+    },
+    {
+        "inspection_code": "HW6-INSP-003",
+        "description": "MongoDB AllEat Resurant Inspection",
+        "status": "FAIL",
+        "category": "Routine",
+        "inspection_date": "2026-10-15T00:00:00",
+        "id": "6ad65b296238e5098b3fe8fa",
+        "created_at": "2026-10-19T18:02:17.979000",
+        "updated_at": "2026-10-19T18:02:17.979000"
+    }
+]
+========================================================
+Retrieve one doucment with given ID
+GET /api/documents/{id}
+
+http://localhost:8137/api/documents/6ad657f96238e5098b3fe8f8
+
+{
+    "inspection_code": "HW6-INSP-001",
+    "description": "Routine restaurant inspection",
+    "status": "PASS",
+    "category": "Routine",
+    "inspection_date": "2026-10-18T00:00:00",
+    "id": "6ad657f96238e5098b3fe8f8",
+    "created_at": "2026-10-19T17:48:41.769000",
+    "updated_at": "2026-10-19T17:48:41.769000"
+}
+
+=============
+UPDATED FROM FAIL TO warning
+Using PUT
+http://localhost:8137/api/documents/6ad65b296238e5098b3fe8fa
+
+{
+    "inspection_code": "HW6-INSP-003",
+    "description": "MongoDB AllEat Resurant Inspection",
+    "status": "WARNING",
+    "category": "Follow-up",
+    "inspection_date": "2026-10-18T00:00:00",
+    "id": "6ad65b296238e5098b3fe8fa",
+    "created_at": "2026-10-19T18:02:17.979000",
+    "updated_at": "2026-10-19T18:11:23.181000"
+}
+===================
+will be deleting the following inspection..
+{
+    "inspection_code": "HW6-INSP-004",
+    "description": "TEST Inspection",
+    "status": "FAIL",
+    "category": "Routine",
+    "inspection_date": "2026-10-18T00:00:00",
+    "id": "6ad65e006238e5098b3fe8fb",
+    "created_at": "2026-10-19T18:14:24.128000",
+    "updated_at": "2026-10-19T18:14:24.128000"
+}
+
+using DELETE
+
+http://localhost:8137/api/documents/6ad65e006238e5098b3fe8fb
+
+{
+    "message": "Document deleted successfully",
+    "id": "6ad65e006238e5098b3fe8fb"
+}
+====================================================================
+===Now time to test chat================
+===================================================================
+C:\SJSURepo\Data260\Data260-2837>echo shashank ranjan
+shashank ranjan
+C:\SJSURepo\Data260\Data260-2837>ollama list
+NAME            ID              SIZE      MODIFIED
+qwen2.5:1.5b    65ec06548149    986 MB    3 weeks ago
+qwen3:4b        359d7dd4bcda    2.5 GB    3 weeks ago
+llama3.2:1b     baf6a787fdff    1.3 GB    3 weeks ago
+
+C:\SJSURepo\Data260\Data260-2837>
+C:\SJSURepo\Data260\Data260-2837>ollama run qwen2.5:1.5b "Are you ready for Homework 6"
+Yes, I am ready to assist you with Homework 6. Please provide more details about the topic or question you need help
+with, and I'll be happy to guide you through the material or provide specific examples and explanations as needed.
+
+=========testing of chat=========
+using POST
+http://localhost:8137/api/chat
+
+{
+  "user_id": "shashank-2837",
+  "message": "My name is Shashank and I am doing HW6 and domain is restaurant inspections."
+}
+---the response was--
+{
+    "session_id": "2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+    "reply": "I see. For HW6 in the restaurant inspection domain, what specific task or concept are you focusing on right now?",
+    "used": {
+        "short_term": [
+            {
+                "role": "user",
+                "content": "My name is Shashank and I am doing HW6 and domain is restaurant inspections.",
+                "created_at": "2026-10-19T18:35:27.673000"
+            }
+        ],
+        "long_term_summary": {
+            "session": null,
+            "lifetime": null
+        },
+        "episodic_facts": [],
+        "system_primer_tokens": 30,
+        "long_term_tokens": 0,
+        "short_term_tokens": 17,
+        "episodic_tokens": 3
+    },
+    "cost": {
+        "prompt_tokens": 106,
+        "completion_tokens": 25,
+        "latency_ms": 8453.05
+    }
+}
+--------------
+===
+Once I got the Session ID, I sent messages using the following JSON body templatate: 
+My JSON body was :
+
+===
+{
+  "user_id": "shashank-2837",
+  "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+  "message": "My SID4 is 2837 and my required port is 8137."
+}
+
+---and response was long.. hence truncating some part--
+{
+    "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+    "reply": "Understood, Shashank. For your SID4 and required port, you should use 2837 and 8137 respectively. If you need any further assistance, feel free to ask.",
+    "used": {
+        "short_term": [
+            {
+                "role": "user",
+                "content": "My SID4 is 2837 and my required port is 8137.",
+                "created_at": "2026-10-19T18:52:41.994000"
+            }
+        ],
+        "long_term_summary": {
+            "session": null,
+            "lifetime": null
+        },
+        "episodic_facts": [
+            {
+                "user_id": "shashank-2837",
+                "session_id": "2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+                "fact": "User's name is Shashank",
+                "importance": 0.9,
+                "created_at": "2026-10-19T18:37:09.275000",
+                "similarity": 0.07626958709075275
+            }
+        ],
+        "system_primer_tokens": 30,
+        "long_term_tokens": 0,
+        "short_term_tokens": 13,
+        "episodic_tokens": 7
+    },
+    "cost": {
+        "prompt_tokens": 116,
+        "completion_tokens": 44,
+        "latency_ms": 8427.03
+    }
+}
+
+---Subsequently I used the following messages to chat---
+============================================================
+My name is Shashank and I am doing HW6 and domain is restaurant inspections.
+My SID4 is 2837 and my required port is 8137.
+My MySQL relational database is s2837_rel.
+My MongoDB document database is s2837_doc.
+I am using MongoDB on my localhost which is  running on port 27017.
+I am using  qwen2.5:1.5b through local Ollama.
+My embedding model is all-MiniLM-L6-v2.
+My main domain entity is Restaurant Inspection.
+I am comparing MongoDB memory with file-based memory.
+I am working on these assginemts as part of my Homework 6 for Data 260.
+
+============================================================
+The final resonse was ..very long..
+
+Now testing and verifying memory results..
+/api/memory/{user_id}
+
+http://localhost:8137/api/memory/shashank-2837
+
+{
+    "user_id": "shashank-2837",
+    "messages": [
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "role": "user",
+            "content": "My MongoDB document database is s2837_doc",
+            "created_at": "2026-10-19T19:10:11.405000"
+        },
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "role": "assistant",
+            "content": "Understood, Shashank. If you need any assistance with your MongoDB document database, feel free to ask.",
+            "created_at": "2026-10-19T19:10:16.761000"
+        },
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "role": "user",
+            "content": "I am using MongoDB on my localhost which is  running on port 27017.",
+            "created_at": "2026-10-19T19:11:35.608000"
+        },
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "role": "assistant",
+            "content": "That's correct! If you need any assistance with your MongoDB setup, feel free to ask.",
+            "created_at": "2026-10-19T19:11:42.102000"
+        },
+        .....
+
+        =============================================
+        GET aggregate
+
+        http://localhost:8137/api/aggregate/shashank-2837
+
+        {
+    "user_id": "shashank-2837",
+    "daily_message_counts": [
+        {
+            "date": "2026-10-19",
+            "message_count": 22
+        }
+    ],
+    "recent_summaries": [
+        {
+            "user_id": "shashank-2837",
+            "session_id": null,
+            "scope": "user",
+            "text": "- **User's SID4**: 2837\n- **Required Port**: 8137\n- **MySQL Database**: s2837_rel\n- **MongoDB**: s2837_doc\n- **MongoDB Running on**: localhost\n- **MongoDB Port**: 27017\n- **Embedding Model**: all-MiniLM-L6-v2\n- **Main Domain Entity**: Restaurant Inspection\n- **Memory Usage in MongoDB**: optimized for memory efficiency compared to file-based storage\n- **Homework Assignment**: working on these assignments as part of Homework 6 for Data 260",
+            "created_at": "2026-10-19T19:19:59.222000"
+        },
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "scope": "session",
+            "text": "- **SID4**: 2837\n- **Required Port**: 8137\n- **MySQL Relational Database**: s2837_rel\n- **MongoDB on localhost**: running on port 27017\n- **Embedding Model**: all-MiniLM-L6-v2\n- **Main Domain Entity**: Restaurant Inspection\n- **Memory Usage in MongoDB**: optimized for memory efficiency compared to file-based storage\n- **Homework Assignment**: working on these assignments as part of your Homework 6 for Data 260",
+            "created_at": "2026-10-19T19:19:45.989000"
+        },
+        {
+            "user_id": "shashank-2837",
+            "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+            "scope": "session",
+            "text": "- User's SID4 is 2837, and required port is 8137.\n- User's MySQL relational database name is s2837_rel.\n- User's MongoDB document database name is s2837_doc.\n- MongoDB is running on localhost on port 27017.",
+            "created_at": "2026-10-19T19:15:07.526000"
+        }
+    ]
+}
+=====================================================================
+
+    verify file based memory commands
+=================================
+using POST
+http://localhost:8137/api/chat
+{
+  "user_id": "shashank-2837",
+  "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+  "message": "/help"
+}
+{
+    "session_id": " 2b4578e9-f9ac-48e1-a7b7-da08227890f8",
+    "file_memory": {
+        "commands": [
+            "/memory",
+            "/compact",
+            "/dream",
+            "/help"
+        ]
+    }
+}
+
+--------now testing.. the following...
+using POST
+http://localhost:8137/api/chat
+
+{
+  "user_id": "shashank-2837",
+  "message": "/memory"
+}
+{
+    "session_id": null,
+    "file_memory": {
+        "agent": "# Project Instructions\n\n- Project description: extend the DATA260 restaurant-inspection application for HW6.\n- Technology stack: keep FastAPI for HTTP routes, MySQL for the existing relational domain, and local MongoDB for document memory.\n- Technology stack: use the local Ollama adapter and do not require a paid hosted model.\n- Coding convention: use type hints, Pydantic validation, clear HTTP status codes, and small service functions.\n- Testing approach: every new endpoint must have a smoke test and at least one invalid-input test.\n- Testing approach: record real command output and timestamps in reports/hw06/RUN_LOG.txt.\n",
+        "memory": "# Durable Memory\n\nLast consolidated: 2026-10-16T18:00:00+00:00\n\n- Project: DATA260 restaurant inspection application.\n- Domain: local restaurant inspections.\n- Student: Shashank Ranjan.\n- SID4: 2837.\n- Port: 8137.\n- Prefix: s2837.\n- Database: s2837_rel for relational data.\n- Mongo database: s2837_doc.\n- Model: qwen2.5:1.5b through local Ollama.\n- Embedding model: all-MiniLM-L6-v2.\n- Frontend: React with Vite.\n- Backend: FastAPI.\n- Backend: FastAPI.\n- Database: s2837_doc.\n- Model: qwen2.5:1.5b through local Ollama.\n- Preference: local services should be used for testing.\n- Preference: cloud services should be used for testing.\n- Testing: use PORT_BASE 8137.\n- Testing: use port 8137.\n- Domain entity: RestaurantInspection.\n- Domain entity: RestaurantInspection.\n- Domain entity: Restaurant.\n- Domain entity: Restaurant.\n- HW5 status: complete.\n- HW5 status: pending review.\n- HW6 focus: MongoDB document API.\n- HW6 focus: MongoDB-backed memory.\n- HW6 focus: file-based memory.\n- Collection: inspections.\n- Collection: messages.\n- Collection: summaries.\n- Collection: episodes.\n- Memory policy: keep the last 12 messages.\n- Memory policy: keep the last 12 messages.\n- Summary trigger: every 5 user messages.\n- Summary trigger: every 5 user messages.\n- Episode limit: 3 facts per user message.\n- Episode limit: 3 facts per user message.\n- Probe count: 5 questions.\n- Probe count: 5 questions.\n- Report folder: reports/hw06.\n- Report folder: reports/hw06.\n- Verification file: reports/hw06/verification.json.\n- Verification file: reports/hw06/verification.json.\n- Commit tag: hw6.\n- Commit tag: hw6.\n- Evidence: include screenshots with the student name visible.\n- Evidence: include screenshots with the student name visible.\n"
+    }
+}
+
+-----------
+{
+  "user_id": "shashank-2837",
+  "message": "/compact"
+}
+-------
+{
+    "session_id": null,
+    "file_memory": {
+        "before": 49,
+        "after": 27,
+        "resolved_contradictions": [
+            "database",
+            "preference",
+            "testing",
+            "domain entity",
+            "domain entity",
+            "hw5 status",
+            "hw6 focus",
+            "hw6 focus",
+            "collection",
+            "collection",
+            "collection"
+        ],
+        "consolidation_required": false
+    }
+}
+
+========
+/dream
+{
+  "user_id": "shashank-2837",
+  "message": "/dream"
+}
+
+---resposne
+{
+    "session_id": null,
+    "file_memory": {
+        "added": [
+            "- Learned from conversation: I am using  qwen2.5:1.5b through local Ollama.",
+            "- Learned from conversation: I am comparing MongoDB memory with file-based memory.",
+            "- Learned from conversation: I am working on these assginemts as part of my Homework 6 for Data 260."
+        ],
+        "count": 3
+    }
+}
+======
+verification: All Passed.
+
+[
+  {
+    "check": "backend_running",
+    "status": "PASS"
+  },
+  {
+    "check": "mongodb_schema_endpoint",
+    "status": "PASS"
+  },
+  {
+    "check": "mongodb_document_list",
+    "status": "PASS"
+  },
+  {
+    "check": "memory_aggregate_endpoint",
+    "status": "PASS"
+  }
+]
+=====

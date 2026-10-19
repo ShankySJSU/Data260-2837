@@ -20,7 +20,7 @@ from memory_service import ensure_memory_indexes
 
 
 # ============================================================
-# DATA260 HW5 CONFIGURATION
+# DATA260 HW6 CONFIGURATION
 # ============================================================
 
 PORT_BASE = 8137
@@ -45,13 +45,13 @@ def before_cursor_execute(
 
 
 # Prevent duplicate event listeners during development reloads
-if not getattr(engine, "_hw5_query_listener_added", False):
+if not getattr(engine, "_hw6_query_listener_added", False):
     event.listen(
         engine,
         "before_cursor_execute",
         before_cursor_execute,
     )
-    engine._hw5_query_listener_added = True
+    engine._hw6_query_listener_added = True
 
 
 # ============================================================

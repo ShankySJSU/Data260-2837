@@ -1,8 +1,7 @@
 # AI Use
 
-1. I used an AI assistant to help map the HW6 requirements onto the existing HW5
-   FastAPI and restaurant-inspection architecture, review the MongoDB schema design,
-   and identify validation and testing cases.
+1. I used an AI assistant understand the requirments for Homework 6 and document the report for language and correctness.
+
 2. I independently verified the route structure, database names, local model choice,
    and required configuration values against the assignment and my existing repository.
 3. I detected problems by compiling the modified Python files, reviewing imports and
