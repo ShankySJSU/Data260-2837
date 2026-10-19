@@ -465,4 +465,22 @@ verification: All Passed.
     "status": "PASS"
   }
 ]
-=====
+=====final execution of test experiemtns...
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application>echo "Shashank Homework 6"
+"Shashank Homework 6"
+
+C:\SJSURepo\Data260\Data260-2837\code\web_application>python run_hw06_memory_experiment.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2761.86it/s]
+Loading weights: 100%|█████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 1451.89it/s]
+
+
+{"timestamp": "2026-10-19T20:49:23.475220+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 106, "completion_tokens": 33, "latency_ms": 5433.54, "system_primer_tokens": 30, "long_term_tokens": 0, "short_term_tokens": 17, "episodic_tokens": 3, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:49:35.420559+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 194, "completion_tokens": 30, "latency_ms": 6934.61, "system_primer_tokens": 30, "long_term_tokens": 0, "short_term_tokens": 63, "episodic_tokens": 32, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:49:50.003724+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 241, "completion_tokens": 40, "latency_ms": 10270.41, "system_primer_tokens": 30, "long_term_tokens": 0, "short_term_tokens": 102, "episodic_tokens": 34, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:50:04.040973+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 275, "completion_tokens": 37, "latency_ms": 9190.12, "system_primer_tokens": 30, "long_term_tokens": 0, "short_term_tokens": 148, "episodic_tokens": 32, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:50:40.704094+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 341, "completion_tokens": 59, "latency_ms": 13159.5, "system_primer_tokens": 30, "long_term_tokens": 0, "short_term_tokens": 195, "episodic_tokens": 28, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:51:02.269713+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 455, "completion_tokens": 41, "latency_ms": 11443.31, "system_primer_tokens": 30, "long_term_tokens": 25, "short_term_tokens": 261, "episodic_tokens": 40, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:51:19.699412+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 512, "completion_tokens": 27, "latency_ms": 13060.17, "system_primer_tokens": 30, "long_term_tokens": 25, "short_term_tokens": 299, "episodic_tokens": 35, "short_term_n": 12}
+{"timestamp": "2026-10-19T20:51:38.388050+00:00", "user_id": "hw6-exp-12-baseline", "session_id": "86085b96-f615-4d93-8a15-ef3970cd3344", "prompt_tokens": 505, "completion_tokens": 48, "latency_ms": 13527.59, "system_primer_tokens": 30, "long_term_tokens": 25, "short_term_tokens": 299, "episodic_tokens": 35, "short_term_n": 12}
