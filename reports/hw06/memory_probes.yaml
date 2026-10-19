@@ -1,0 +1,21 @@
+questions:
+  - id: probe_1
+    question: "What is the student's SID4 and required API port?"
+    expected: "SID4 is 2837 and PORT_BASE is 8137."
+    rubric: "1 point for each correct value; 5 means both are correct and clearly stated."
+  - id: probe_2
+    question: "Which database stores the HW6 document and memory collections?"
+    expected: "The local MongoDB database is s2837_doc."
+    rubric: "1-5 based on exact database name and explanation."
+  - id: probe_3
+    question: "Which local model should the application use?"
+    expected: "qwen2.5:1.5b through Ollama."
+    rubric: "1-5 based on identifying the model and local execution."
+  - id: probe_4
+    question: "What is the user's domain?"
+    expected: "Restaurant inspections."
+    rubric: "1-5 based on identifying the domain and relevant entity."
+  - id: probe_5
+    question: "What memory systems are compared in HW6?"
+    expected: "MongoDB-backed memory and file-based AGENT.md/MEMORY.md memory."
+    rubric: "1-5 based on naming both systems and their files or collections."
