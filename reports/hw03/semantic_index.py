@@ -1,7 +1,7 @@
 import os
 import json
+import importlib
 import numpy as np
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 RAW_DIR = "reports/hw03/raw"
 OUTPUT_DIR = "reports/hw03/raw"
@@ -12,6 +12,16 @@ def load_semantic_chunks():
         return json.load(f)
 
 def build_embedding_matrix(chunks):
+    try:
+        HuggingFaceEmbedding = importlib.import_module(
+            "llama_index.embeddings.huggingface"
+        ).HuggingFaceEmbedding
+    except ModuleNotFoundError as exc:
+        raise ImportError(
+            "Install the Hugging Face integration with "
+            "'pip install llama-index-embeddings-huggingface'."
+        ) from exc
+
     embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
     ids = []
