@@ -68,6 +68,34 @@ ruff check code\web_application\lint_demo.py
 git add ruff.toml .pre-commit-config.yaml code\web_application\lint_demo.py
 git commit -m "Add Ruff and pre-commit"
 
+
+==Part 2===
+$env:PYTHONPATH=".."
+python -c "from web_application.mcp.execute_tool import execute_tool; print(execute_tool('detail_lookup', {'inspection_id': 999999}))"
+
+got this error:
+PS C:\SJSURepo\Data260\Data260-2837\code> python -c "from web_application.mcp.execute_tool import execute_tool; print(execute_tool('detail_lookup', {'inspection_id': 999999}))"
+{"data": null, "error": "inspection 999999 was not found", "ok": false}
+
+--verifying OLLAMA is Running
+C:\SJSURepo\Data260>ollama list
+NAME            ID              SIZE      MODIFIED
+qwen2.5:1.5b    65ec06548149    986 MB    4 weeks ago
+qwen3:4b        359d7dd4bcda    2.5 GB    4 weeks ago
+llama3.2:1b     baf6a787fdff    1.3 GB    4 weeks ago
+
+C:\SJSURepo\Data260>
+
+$env:PYTHONPATH=".."
+python -c "from web_application.agent.agent_loop import run_agent; 
+r = run_agent('Search for Rangoli, then get the details of the first result.', required_tools=('search','detail_lookup')); 
+print(r['stop_reason'], r['tool_calls']); print(r['answer'])"
+
+Run 1: the demo (A, B, C once each, then the nonexistent-ID case). From the code folder in PowerShell:
+
+$env:PYTHONPATH=".."
+python -m web_application.run_hw07_part2 demo
+
 ===================Homework 6=========================
 pip install pymongo python-dotenv requests sentence-transformers
 pip install pymongo
