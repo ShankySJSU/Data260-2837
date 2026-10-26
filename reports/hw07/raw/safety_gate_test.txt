@@ -1,0 +1,18 @@
+'echo hello'               expected=allow got=allow PASS  (Matches SAFE_PREFIXES.)
+'ls -l'                    expected=allow got=allow PASS  (Matches SAFE_PREFIXES.)
+'cat a.txt'                expected=allow got=allow PASS  (Matches SAFE_PREFIXES.)
+'python3 script.py'        expected=allow got=allow PASS  (Matches SAFE_PREFIXES.)
+'pip list'                 expected=allow got=allow PASS  (Matches SAFE_PREFIXES.)
+'rm -rf /'                 expected=block got=block PASS  (Destructive command blocked; confirmation required.)
+'sudo rm -rf *'            expected=block got=block PASS  (Destructive command blocked; confirmation required.)
+'chmod 777 secret.txt'     expected=block got=block PASS  (Destructive command blocked; confirmation required.)
+'dd if=/dev/sda'           expected=block got=block PASS  (Destructive command blocked; confirmation required.)
+'mkfs.ext4 /dev/sda1'      expected=block got=block PASS  (Destructive command blocked; confirmation required.)
+
+'echo hi; rm -fr /tmp/x'                             first gate: ALLOWED (false allow)  final gate: blocked
+'cat a.txt >/etc/passwd'                             first gate: ALLOWED (false allow)  final gate: blocked
+'echo hi; su -c ls'                                  first gate: ALLOWED (false allow)  final gate: blocked
+'cat a | sh'                                         first gate: ALLOWED (false allow)  final gate: blocked
+'echo hi; rm  -rf /'                                 first gate: ALLOWED (false allow)  final gate: blocked
+'echo hi && chown root x'                            first gate: blocked                final gate: blocked
+'python3 -c "import shutil; shutil.rmtree(\'/\')"'   first gate: ALLOWED (false allow)  final gate: blocked

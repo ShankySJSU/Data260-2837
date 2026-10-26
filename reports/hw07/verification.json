@@ -1,27 +1,60 @@
 {
-  "homework": "HW6",
+  "homework": "HW7",
   "sid4": 2837,
-  "commit_hash": "run-before-tagging",
-  "model": "qwen2.5:1.5b",
+  "commit_hash": "eb3e6d712d5e0cdde321819c0c2f17e5fdaa04b6",
+  "model": "qwen2.5:1.5b (local Ollama)",
   "seed": 2837,
   "verify_seed": 262837,
-  "generated_at_utc": "2026-10-19T20:18:07.900926+00:00",
+  "generated_at_utc": "2026-10-26T21:26:01+00:00",
   "checks": [
     {
       "check": "backend_running",
       "status": "PASS"
     },
     {
-      "check": "mongodb_schema_endpoint",
+      "check": "login_valid_returns_token",
       "status": "PASS"
     },
     {
-      "check": "mongodb_document_list",
+      "check": "login_invalid_returns_401",
       "status": "PASS"
     },
     {
-      "check": "memory_aggregate_endpoint",
+      "check": "auth_me_without_token_401",
+      "status": "PASS"
+    },
+    {
+      "check": "auth_me_returns_identity_and_role",
+      "status": "PASS"
+    },
+    {
+      "check": "reader_can_list_200",
+      "status": "PASS"
+    },
+    {
+      "check": "reader_create_forbidden_403",
+      "status": "PASS"
+    },
+    {
+      "check": "writer_create_201",
+      "status": "PASS"
+    },
+    {
+      "check": "writer_delete_forbidden_403",
+      "status": "PASS"
+    },
+    {
+      "check": "moderator_delete_succeeds",
+      "status": "PASS"
+    },
+    {
+      "check": "agent_loop_completes_verification_task",
+      "status": "PASS"
+    },
+    {
+      "check": "safety_gate_blocks_destructive_commands",
       "status": "PASS"
     }
-  ]
+  ],
+  "summary": "12/12 passed"
 }

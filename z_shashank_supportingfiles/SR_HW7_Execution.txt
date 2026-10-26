@@ -96,6 +96,13 @@ Run 1: the demo (A, B, C once each, then the nonexistent-ID case). From the code
 $env:PYTHONPATH=".."
 python -m web_application.run_hw07_part2 demo
 
+
+$env:PYTHONPATH=".."
+python -m web_application.run_hw07_part6
+
+--final verification
+python -m web_application.verify_hw07
+
 ===================Homework 6=========================
 pip install pymongo python-dotenv requests sentence-transformers
 pip install pymongo

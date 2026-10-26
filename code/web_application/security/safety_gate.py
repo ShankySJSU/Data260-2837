@@ -12,7 +12,7 @@ _DENY = [
     r"\brm\b[^;&|]*--recursive",
     r"\b(sudo|su|doas)\b",                  # privilege escalation
     r"\b(chmod|chown|chgrp|setfacl)\b",     # permission / ownership changes
-    r"\bdd\b[^;&|]*\bof=",                  # raw writes with dd
+    r"\bdd\b[^;&|]*(\bof=|/dev/)",         # dd against raw devices
     r">+\s*/dev/(sd|nvme|hd|disk)",         # redirect to a raw device
     r"\bmkfs(\.\w+)?\b|\bmkswap\b|\bfdisk\b|\bparted\b",   # filesystem creation
     r">>?\s*/(?!tmp/)",                     # redirect to a root path
