@@ -1,0 +1,12 @@
+line-length = 100
+extend-exclude = [
+  "code/web_application/hw_main_archvie",
+  "code/web_application/hw_auth_archive",
+  "code/web_application/hw_verification_archive",
+  "code/web_application/domain/Hw_backup",
+  "code/react_client",
+  "z_shashank_supportingfiles",
+]
+
+[lint]
+select = ["E", "F"]
