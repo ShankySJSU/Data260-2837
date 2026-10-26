@@ -1,158 +1,142 @@
-#this is my authentical router file (auth.py)
-from fastapi import APIRouter, Request, Form
-from fastapi.responses import RedirectResponse
-from fastapi.templating import Jinja2Templates
-from starlette.status import HTTP_302_FOUND
-import time
-from pathlib import Path
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi.security import OAuth2PasswordBearer
+from pydantic import BaseModel
+from datetime import datetime, timedelta
+import jwt
+import bcrypt
 
-#ensure that the templates directory is correctly set up 
-# and I am calling the proper auth.py file
-print(">>> USING AUTH FILE:", __file__)
+from .database import mysql_conn  # your existing DB connector
+from web_application.domain.models_users import AuthUser
 
 router = APIRouter()
 
-# Templates directory
+# ------------------------------
+# JWT / SECURITY CONFIG
+# ------------------------------
+SECRET = "CHANGE_THIS_FOR_PRODUCTION"
+ALGORITHM = "HS256"
+TOKEN_EXPIRE_MINUTES = 60
 
-BASE_DIR = Path(__file__).resolve().parent
-templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
-#templates = Jinja2Templates(directory="code/web_application/templates")
-
-print("LOADER:", templates.env.loader)
-print("SEARCH PATH:", templates.env.loader.searchpath)
-
-# Hardcoded credentials (HW3 requirement)
-VALID_USERNAME = "admin"
-VALID_PASSWORD = "password"
-
-# Idle session timeout (seconds)
-IDLE_TIMEOUT = 120   # 2 minutes (for my testing i used 30 seconds)
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 
 
-# -------------------------------
-# HOME PAGE
-# -------------------------------
-@router.get("/")
-def home(request: Request):
-    print("USER SESSION VALUE:", request.session.get("user"))
-    user = request.session.get("user")
-    #print("TEMPLATE DIR:", templates.directory)
-    '''
-    return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,
-            "user": user
-        }
-    )
-    '''
-    return templates.TemplateResponse(
-            request=request,
-            name="index.html",
-            context={
-                "user": user
-            },
-    )
-    
-    
-# -------------------------------
-# LOGIN PAGE (GET)
-# -------------------------------
-@router.get("/login")
-def login_page(request: Request):
-    user = request.session.get("user")
-    '''
-    return templates.TemplateResponse(
-        "login.html",
-        {
-            "request": request,
-            "user": user
-        }
-    )
-    '''
-    return templates.TemplateResponse(
-            request=request,
-            name="login.html",
-            context={
-                "user": user
-            },
-    )
+# ------------------------------
+# Pydantic Models
+# ------------------------------
+class LoginInput(BaseModel):
+    username: str
+    password: str
 
-# -------------------------------
-# LOGIN (POST)
-# -------------------------------
-@router.post("/login")
-def login(request: Request, username: str = Form(...), password: str = Form(...)):
-    if username == VALID_USERNAME and password == VALID_PASSWORD:
-        # Store session
-        request.session["user"] = username
-        request.session["last_active"] = time.time()
 
-        return RedirectResponse(
-            url="/dashboard",
-            status_code=HTTP_302_FOUND
-        )
+class TokenResponse(BaseModel):
+    token: str
+    token_type: str = "bearer"
 
-    # invalid credentials → show Bootstrap alert
-    #saving in sesssion to display the last username entered in the login form
-    request.session["last_username"] = username
-    return RedirectResponse(
-        url="/login?error=1",
-        status_code=HTTP_302_FOUND
-    )
 
-# -------------------------------
-# DASHBOARD (Protected)
-# -------------------------------
-@router.get("/dashboard")
-def dashboard(request: Request):
-    user = request.session.get("user")
-    last_active = request.session.get("last_active")
+# ------------------------------
+# Password Hashing Utilities
+# ------------------------------
+def hash_password(password: str) -> str:
+    """Hash password using bcrypt."""
+    hashed = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+    return hashed.decode("utf-8")
 
-    # 1. No user → redirect with expired flag
+
+def verify_password(password: str, hashed: str) -> bool:
+    """Verify a password against its hash."""
+    return bcrypt.checkpw(password.encode("utf-8"), hashed.encode("utf-8"))
+
+
+# ------------------------------
+# JWT Utilities
+# ------------------------------
+def create_access_token(username: str, role: str):
+    expire = datetime.utcnow() + timedelta(minutes=TOKEN_EXPIRE_MINUTES)
+    payload = {
+        "sub": username,
+        "role": role,
+        "exp": expire
+    }
+    return jwt.encode(payload, SECRET, algorithm=ALGORITHM)
+
+
+def decode_token(token: str):
+    """Decode and verify a JWT."""
+    try:
+        return jwt.decode(token, SECRET, algorithms=[ALGORITHM])
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(401, "Token expired")
+    except jwt.InvalidTokenError:
+        raise HTTPException(401, "Invalid token")
+
+
+# ------------------------------
+# Authentication Dependency
+# ------------------------------
+def get_current_user(token: str = Depends(oauth2_scheme)):
+    payload = decode_token(token)
+    return {
+        "username": payload["sub"],
+        "role": payload["role"]
+    }
+
+
+# ------------------------------
+# Role-based Decorator
+# ------------------------------
+def require_role(*allowed_roles):
+    def wrapper(user=Depends(get_current_user)):
+        if user["role"] not in allowed_roles:
+            raise HTTPException(403, "Forbidden: insufficient role")
+        return user
+    return wrapper
+
+
+# ------------------------------
+# ROUTE: POST /auth/login --using SQL directly
+'''
+def login_using_sql(creds: LoginInput):
+    conn = mysql_conn()
+    cur = conn.cursor(dictionary=True)
+
+    cur.execute("SELECT username, password_hash, role FROM users WHERE username=%s",
+                (creds.username,))
+    user = cur.fetchone()
+
+    cur.close()
+    conn.close()
+
     if not user:
-        return RedirectResponse(
-            url="/?expired=1",
-            status_code=HTTP_302_FOUND
-        )
+        raise HTTPException(401, "Invalid credentials")
 
-    # 2. Check idle timeout
-    now = time.time()
-    if last_active and now - last_active > IDLE_TIMEOUT:
-        request.session.clear()
-        return RedirectResponse(
-            url="/?expired=1",
-            status_code=HTTP_302_FOUND
-        )
+    if not verify_password(creds.password, user["password_hash"]):
+        raise HTTPException(401, "Invalid credentials")
 
-    # 3. Update last active timestamp
-    request.session["last_active"] = now
+    token = create_access_token(user["username"], user["role"])
+    return TokenResponse(token=token)
+'''
+# ------------------------------
 
-    # 4. Render dashboard
-    '''
-    return templates.TemplateResponse(
-        "dashboard.html",
-        {
-            "request": request,
-            "user": user
-        }
-    )
-    '''
-    return templates.TemplateResponse(
-            request=request,
-            name="dashboard.html",
-            context={
-                "user": user
-            },
+@router.post("/auth/login", response_model=TokenResponse)
+def login(creds: LoginInput, db: Session = Depends(get_db)):
+    user = (
+        db.query(AuthUser)
+          .filter(AuthUser.username == creds.username)
+          .first()
     )
 
-# -------------------------------
-# LOGOUT
-# -------------------------------
-@router.get("/logout")
-def logout(request: Request):
-    request.session.clear()
-    return RedirectResponse(
-        url="/",
-        status_code=HTTP_302_FOUND
-    )
+    if not user:
+        raise HTTPException(401, "Invalid credentials")
+
+    if not verify_password(creds.password, user.password_hash):
+        raise HTTPException(401, "Invalid credentials")
+
+    token = create_access_token(user.username, user.role)
+    return TokenResponse(token=token)
+
+# ------------------------------
+# ROUTE: GET /auth/me
+# ------------------------------
+@router.get("/auth/me")
+def auth_me(current = Depends(get_current_user)):
+    return current

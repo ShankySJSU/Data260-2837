@@ -1,0 +1,49 @@
+# Shashank : we have to also do the final intergration testing
+
+Scenario:
+
+Create three test files (a.txt, b.txt, debug.txt).
+Search for “DEBUG” using glob.
+Read the matched file.
+Hre is teh Pseudo python code..
+
+'''
+write_file("a.txt", "hello")
+write_file("debug.txt", "contains DEBUG marker")
+
+glob_files("*.txt")
+search_in_files("*.txt", "DEBUG")
+read_file("debug.txt")
+
+''
+
+Command Safety Gate Test (5 pass, 5 blocked)
+Commands that should PASS:
+echo hello
+ls -l
+cat a.txt
+python3 script.py
+pip list
+
+Commands that must be BLOCKED:
+rm -rf /
+sudo rm -rf *
+chmod 777 secret.txt
+dd if=/dev/sda
+mkfs.ext4 /dev/sda1
+
+----How to run our verification----
+Step 1 — Start backend:
+uvicorn web_application.hw7_main:app --port 8137
+
+Step 2 — Run verifier:
+python -m web_application.verification_hw7
+
+Step 3 — The file will appear:
+reports/hw07/verification.json
+
+Step 4 — Include the following in Inside your HW7 Report.pdf.
+script output
+JSON file in repo
+screenshot of console run
+
