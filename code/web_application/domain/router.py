@@ -1,13 +1,12 @@
-from fastapi import APIRouter, Depends, Query, HTTPException
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session, joinedload
 
 from web_application.auth import get_current_user, require_role
-from database import get_db, query_counter
+from web_application.database import get_db, query_counter
 
-from .import crud, schema
+from . import crud, schema
 from .models import (
     InspectionRelated,
-    Restaurant,
     RestaurantInspection,
 )
 

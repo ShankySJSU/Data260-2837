@@ -5,8 +5,11 @@ from datetime import datetime, timedelta
 import jwt
 import bcrypt
 
-from .database import mysql_conn  # your existing DB connector
+#from .database import mysql_conn  # your existing DB connector
 from web_application.domain.models_users import AuthUser
+
+from sqlalchemy.orm import Session
+from web_application.database import get_db
 
 router = APIRouter()
 

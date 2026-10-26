@@ -3,18 +3,20 @@
 import sys
 from pathlib import Path
 
-from datetime import datetime
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from memory_service import (
+from web_application.memory_service import (
     EPISODES,
     MESSAGES,
     SUMMARIES,
     ensure_memory_indexes,
     process_chat,
 )
+
+from file_memory import handle_file_command
+
 # AGENT.md and MEMORY.md intentionally live at repository root. Add that root
 # to the import path because the existing HW5 launch command runs from this
 # web_application directory.
@@ -22,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from file_memory import handle_file_command
+
 
 router = APIRouter(prefix="/api", tags=["HW6 Memory"])
 

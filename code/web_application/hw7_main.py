@@ -10,7 +10,6 @@ from web_application.mongo_db import ensure_mongodb_schema
 from web_application.memory_service import ensure_memory_indexes
 
 #for HW7.
-from web_application.domain.models_users import AuthUser  # ensure table creation
 
 # ============================================================
 # DATA260 HW7 CONFIGURATION

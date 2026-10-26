@@ -4,8 +4,8 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, status
 from pymongo.errors import DuplicateKeyError, PyMongoError
 
-from mongo_db import documents, ensure_mongodb_schema, utc_now
-from mongo_schema import DocumentCreate, DocumentResponse, DocumentUpdate
+from web_application.mongo_db import documents, ensure_mongodb_schema, utc_now
+from web_application.mongo_schema import DocumentCreate, DocumentResponse, DocumentUpdate
 
 router = APIRouter(prefix="/api/documents", tags=["HW6 MongoDB Documents"])
 

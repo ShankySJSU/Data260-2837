@@ -8,5 +8,7 @@ extend-exclude = [
   "z_shashank_supportingfiles",
 ]
 
+
 [lint]
 select = ["E", "F"]
+ignore = ["E501", "E402", "E722"]

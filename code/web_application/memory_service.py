@@ -13,7 +13,7 @@ from typing import Any
 
 import requests
 
-from mongo_db import mongo_db, utc_now
+from web_application.mongo_db import mongo_db, utc_now
 
 MESSAGES = mongo_db["messages"]
 SUMMARIES = mongo_db["summaries"]

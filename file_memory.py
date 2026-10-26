@@ -6,8 +6,10 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from mongo_db import utc_now
-from memory_service import MESSAGES
+#from mongo_db import utc_now
+#from memory_service import MESSAGES
+
+from web_application.memory_service import MESSAGES
 
 REPO_ROOT = Path(__file__).resolve().parent
 AGENT_PATH = REPO_ROOT / "AGENT.md"

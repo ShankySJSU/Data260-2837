@@ -1,21 +1,8 @@
 import json
-import sys
-from pathlib import Path
 from typing import Any
 
-
-# ============================================================
-# IMPORT APPLICATION MODELS
-# ============================================================
-
-WEB_APP_DIR = Path(__file__).resolve().parents[1]
-
-if str(WEB_APP_DIR) not in sys.path:
-    sys.path.insert(0, str(WEB_APP_DIR))
-
-
-from database import db_session_basede26
-from domain.models import Restaurant, RestaurantInspection
+from web_application.database import db_session_basede26
+from web_application.domain.models import Restaurant, RestaurantInspection
 
 
 # ============================================================
@@ -312,10 +299,10 @@ def validate_aggregate_inputs(
 
     return status
 
-#================
-# Enfornce saftety rules for tool execution.
-#  Only approved tools can be executed, and inputs are validated to prevent injection attacks or other unsafe operations.
-#=========================================
+# ============================================================
+# Enforce safety rules for tool execution.
+# Only approved tools run, and inputs are validated first.
+# ============================================================
 
 def enforce_safety_rules(
     tool_name: str,

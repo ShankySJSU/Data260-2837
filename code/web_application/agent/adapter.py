@@ -1,46 +1,41 @@
-import json
+"""HW1 model adapter (local Ollama), reused by the HW7 agent loop.
+
+Same model settings for every run: temperature 0 and seed = SID4 (2837).
+"""
+
+import os
+
 import requests
 
-# ----------------------------------------------------
-# HW1 Model Adapter (Generalized for HW7)
-# ----------------------------------------------------
-# This adapter assumes an Ollama-compatible local model.
-# Modify the URL or payload shape if you use a different backend.
-# ----------------------------------------------------
-
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "qwen2.5:1.5b"  # Your default local model
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
+MODEL_NAME = os.getenv("OLLAMA_MODEL", "qwen2.5:1.5b")
+SEED = 2837
+TEMPERATURE = 0
 
 
-def call_model(messages, json_mode=False):
+def chat(messages, model=None, json_mode=True, timeout=120, temperature=None, seed=None):
+    """Send chat messages to Ollama.
+
+    Returns {"content": str, "prompt_tokens": int, "completion_tokens": int}.
     """
-    messages: list of {role, content}
-    json_mode: instruct model to output JSON only (for tool calls)
-    """
-    prompt = ""
-    for m in messages:
-        prompt += f"{m['role']}: {m['content']}\n"
-
-    if json_mode:
-        prompt += "\nRespond ONLY with valid JSON.\n"
-
     payload = {
-        "model": MODEL_NAME,
-        "prompt": prompt,
+        "model": model or MODEL_NAME,
         "stream": False,
+        "messages": messages,
+        "options": {
+            "temperature": TEMPERATURE if temperature is None else temperature,
+            "seed": SEED if seed is None else seed,
+        },
     }
-
-    response = requests.post(OLLAMA_URL, json=payload)
-    response.raise_for_status()
-
-    text = response.json().get("response", "")
-
-    # Try parsing JSON output (for tool calls)
     if json_mode:
-        try:
-            parsed = json.loads(text)
-            return parsed, text
-        except Exception:
-            return None, text
+        payload["format"] = "json"
 
-    return text
+    response = requests.post(OLLAMA_URL, json=payload, timeout=timeout)
+    response.raise_for_status()
+    data = response.json()
+
+    return {
+        "content": data["message"]["content"],
+        "prompt_tokens": int(data.get("prompt_eval_count") or 0),
+        "completion_tokens": int(data.get("eval_count") or 0),
+    }

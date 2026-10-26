@@ -2,9 +2,7 @@
 HW7 smoke test; run while the HW7 backend is running.
 """
 
-import json
 import os
-from datetime import datetime, timezone
 from pathlib import Path
 
 import requests

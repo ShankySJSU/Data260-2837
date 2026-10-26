@@ -3,7 +3,6 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import json
-import time
 from code.web_application.hw2_graph import run_graph
 
 def clean(result):

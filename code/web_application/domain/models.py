@@ -12,7 +12,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import relationship
 
-from database import Base
+#from database import Base
+from web_application.database import Base
 
 
 # ============================================================
@@ -181,7 +182,7 @@ class InspectionRelated(Base):
         back_populates="related_items",
     )
 
-
+'''
 # ============================================================
 # USERS
 # ============================================================
@@ -212,6 +213,7 @@ class User(Base):
         nullable=False,
     )
 
+'''
 
 # ============================================================
 # SERVER-SIDE SESSIONS
