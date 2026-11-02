@@ -1,0 +1,112 @@
+========================== Homework 8 - how to run everything ==========================
+Shashank Ranjan | SID4 2837 | PREFIX s2837 | PORT_BASE 8137 | VERIFY_SEED 262837
+Primary entity = Inspection -> CREATE_INSPECTION / GET_INSPECTION
+Topics: s2837_inspection_requests, s2837_inspection_responses (Part 1)
+        s2837_inbox, s2837_tasks (2 partitions), s2837_drafts, s2837_final, s2837_dead_letter
+Total time: about 30-40 minutes, most of it waiting.
+
+---------------------------------------------------------------------------------------
+0. ONE-TIME SETUP
+---------------------------------------------------------------------------------------
+- Unzip the HW8 files over the repo root (Data260-2837). Nothing existing is overwritten
+  except .gitignore (2 lines appended).
+- Docker Desktop must be running.  Ollama running with qwen2.5:1.5b (ollama pull qwen2.5:1.5b)
+- From the repo root:
+      pip install -r code\requirements_hw8.txt
+  (kafka-python must be >= 2.1. Version 2.0.2 crashes on Python 3.12)
+- Name in screenshots: every log line already prints "Shashank Ranjan | s2837". To also put
+  your name in the prompt:
+      cmd:         prompt Shashank Ranjan $P$G
+      PowerShell:  function prompt { "Shashank Ranjan PS $PWD> " }
+
+---------------------------------------------------------------------------------------
+1. START KAFKA + WORKER + FASTAPI   (Part 1 screenshot 1)
+---------------------------------------------------------------------------------------
+repo root>  docker compose up -d --build
+repo root>  docker ps                         <-- SCREENSHOT (s2837-kafka, s2837-worker, s2837-api)
+repo root>  docker logs s2837-worker          <-- SCREENSHOT "Consumer is ready and listening..."
+repo root>  docker logs s2837-api             <-- SCREENSHOT "FastAPI server started at http://127.0.0.1:8137"
+Browser: http://127.0.0.1:8137/docs  (optional)
+
+Topics (worker/API already create them; this prints the CLI form and confirms):
+repo root>  cd code
+code>  python web_application\kafka_pipeline\create_topics.py
+code>  docker exec s2837-kafka /opt/kafka/bin/kafka-topics.sh --describe --bootstrap-server localhost:9092
+       <-- SCREENSHOT (s2837_tasks PartitionCount: 2)
+
+---------------------------------------------------------------------------------------
+2. PART 1 DEMO   (screenshots 2, 3, 4)
+---------------------------------------------------------------------------------------
+code>  python web_application\kafka_pipeline\homework_demo.py --via-api   (optional, goes through FastAPI)
+code>  python web_application\kafka_pipeline\homework_demo.py             (run this one LAST - the report uses it)
+       <-- SCREENSHOT the STEP 1..10 lines + FULL SEQUENCE block + ERROR CASES
+code>  docker logs s2837-worker --tail 30     <-- SCREENSHOT worker receive/process/reply lines
+
+---------------------------------------------------------------------------------------
+3. PART 2 - FOUR TERMINALS  (cd code\web_application\kafka_pipeline in each)
+---------------------------------------------------------------------------------------
+T1>  python planner.py
+T2>  python writer.py
+T3>  python reviewer.py
+T4>  python send_question.py
+     (first answer can take 30-60 s on qwen2.5:1.5b. If Ollama is off, the log says
+      "using template" and the run still completes)
+<-- SCREENSHOT all four terminals (journey lines + FINAL JSON in T4)
+Then press Ctrl+C in T1, T2 and T3. Part 3 starts its own agents.
+
+---------------------------------------------------------------------------------------
+4. PART 3 - FAILURE TESTS (about 4 minutes, fully automatic)
+---------------------------------------------------------------------------------------
+code\web_application\kafka_pipeline>  python run_hw08_failures.py all
+   duplicate -> crash (kills the writer mid-processing and restarts it) -> poison -> ordering
+   Writes reports\hw08\raw\part3_*.json|csv|txt and reports\hw08\METRICS.md
+   <-- SCREENSHOT the "RESULT" lines (one per test) and the ordering tables
+   Optional extra evidence for the crash test:
+   docker exec s2837-kafka /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+   docker exec s2837-kafka /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group <s2837_crash_after_... name>
+
+---------------------------------------------------------------------------------------
+5. COMMIT CODE, THEN THE SMOKE TEST
+---------------------------------------------------------------------------------------
+repo root>  git add -A
+repo root>  git commit -m "HW8 Kafka request/response, 3-agent pipeline, failure tests"
+code>  python -m web_application.verify_hw08          (docker compose must be up)
+       -> reports\hw08\verification.json, expect 18/18 PASS
+       (make verify-hw08 does the same if you have make)
+
+---------------------------------------------------------------------------------------
+6. REPORT
+---------------------------------------------------------------------------------------
+code>  python -m web_application.make_hw08_report --hardware "Windows PC, i7, 16 GB RAM, Python 3.12, Docker Desktop"
+   -> reports\hw08\Ranjan_HW8_For_PDF.docx (all tables/logs come from YOUR run files)
+   Open it, paste each screenshot at the yellow [SCREENSHOT ...] markers, check AI_USE,
+   then save as PDF: reports\hw08\Ranjan_HW8.pdf
+
+---------------------------------------------------------------------------------------
+7. TAG AND PUSH
+---------------------------------------------------------------------------------------
+repo root>  git add -A
+repo root>  git commit -m "HW8 report and evidence"
+repo root>  git tag hw8
+repo root>  git push
+repo root>  git push origin hw8
+repo root>  git rev-parse hw8        (write this hash at the top of the report if it differs)
+
+---------------------------------------------------------------------------------------
+OPTIONAL - JMeter (from the JMeter instructions PDF, adapted)
+---------------------------------------------------------------------------------------
+HTTP Request: 127.0.0.1, port 8137, POST, path /inspections-direct (baseline) and a second
+sampler with path /inspections/kafka. Header Content-Type: application/json. Body:
+{"name": "Alice Cafe inspection", "inspection_code": "JMETER-0001",
+ "inspection_date": "2026-11-02T10:00:00", "status": "PASS", "score": 90, "restaurant_id": 1}
+Thread Group: 100 threads, ramp-up 10, loop 1. In the Summary Report, use "Save Table Data"
+-> reports\hw08\raw\jmeter_summary.csv. The report builder then adds a JMeter section.
+
+---------------------------------------------------------------------------------------
+TROUBLESHOOTING
+---------------------------------------------------------------------------------------
+- NoBrokersAvailable: Kafka is still starting. Wait about 20 s (docker ps should show "healthy").
+- Port 9092 or 8137 already in use: stop the other Kafka/uvicorn process, or docker compose down.
+- Clean restart: docker compose down  then  docker compose up -d --build
+  (topics and the worker's in-memory dictionary are reset)
+- Worker code changed: docker compose up -d --build worker

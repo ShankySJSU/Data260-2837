@@ -1,0 +1,10 @@
+# HW8 image for the inspection worker and the FastAPI wrapper (same image, different command)
+FROM python:3.12-slim
+WORKDIR /app/code
+ENV PYTHONPATH=/app/code PYTHONUNBUFFERED=1
+COPY code/requirements_hw8.txt /app/code/requirements_hw8.txt
+RUN pip install --no-cache-dir -r /app/code/requirements_hw8.txt
+COPY code/web_application/__init__.py /app/code/web_application/__init__.py
+COPY code/web_application/hw8_main.py /app/code/web_application/hw8_main.py
+COPY code/web_application/domain/__init__.py code/web_application/domain/schema.py /app/code/web_application/domain/
+COPY code/web_application/kafka_pipeline /app/code/web_application/kafka_pipeline

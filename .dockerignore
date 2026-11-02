@@ -1,0 +1,6 @@
+.git
+**/__pycache__
+**/node_modules
+code/web_application/kafka_pipeline/state
+reports
+z_shashank_supportingfiles

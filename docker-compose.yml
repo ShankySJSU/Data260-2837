@@ -1,0 +1,61 @@
+# DATA-260 HW8 - Shashank Ranjan (SID4 2837, PREFIX s2837, PORT_BASE 8137)
+# docker compose up -d --build      -> kafka + inspection worker + FastAPI wrapper
+# From the host, Kafka is localhost:9092 and the API is http://127.0.0.1:8137
+services:
+  kafka:
+    image: apache/kafka:3.8.0
+    container_name: s2837-kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,CONTROLLER://0.0.0.0:9093,PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_NUM_PARTITIONS: 1
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.hw8
+    container_name: s2837-worker
+    command: ["python", "web_application/kafka_pipeline/inspection_worker.py"]
+    environment:
+      KAFKA_BOOTSTRAP: kafka:29092
+    volumes:
+      - ./reports:/app/reports        # RUN_LOG.txt and raw/trace_events.jsonl land in the repo
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.hw8
+    container_name: s2837-api
+    command: ["python", "-m", "uvicorn", "web_application.hw8_main:app", "--host", "0.0.0.0", "--port", "8137"]
+    environment:
+      KAFKA_BOOTSTRAP: kafka:29092
+    ports:
+      - "127.0.0.1:8137:8137"
+    volumes:
+      - ./reports:/app/reports
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
