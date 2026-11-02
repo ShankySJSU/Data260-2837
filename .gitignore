@@ -3,6 +3,9 @@ code/web_application/mcp/__pycache__/execute_tool.cpython-312.pyc
 code/web_application/mcp/__pycache__/execute_tool.cpython-312.pyc
 code/web_application/mcp/__pycache__/execute_tool.cpython-312.pyc
 
+#ignore all my supporting files
+z_shashank_supportingfiles/
+
 # HW8 runtime state (idempotency SQLite files)
 code/web_application/kafka_pipeline/state/
 __pycache__/
