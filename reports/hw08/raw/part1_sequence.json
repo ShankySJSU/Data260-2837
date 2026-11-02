@@ -1,0 +1,266 @@
+{
+  "student": "Shashank Ranjan",
+  "via_api": false,
+  "request_topic": "s2837_inspection_requests",
+  "response_topic": "s2837_inspection_responses",
+  "create": {
+    "request": {
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "reply_to": "s2837_inspection_responses",
+      "operation": "CREATE_INSPECTION",
+      "data": {
+        "name": "Rangoli Indian Cuisine - routine inspection",
+        "inspection_code": "S2837-INSP-0001",
+        "inspection_date": "2026-11-02T10:30:00",
+        "status": "PASS",
+        "score": 94,
+        "restaurant_id": 1
+      }
+    },
+    "response": {
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "success": true,
+      "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+      "message": "Inspection created",
+      "worker_processed_at": "2026-11-02T07:46:13.879+00:00"
+    }
+  },
+  "get": {
+    "request": {
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "reply_to": "s2837_inspection_responses",
+      "operation": "GET_INSPECTION",
+      "data": {
+        "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b"
+      }
+    },
+    "response": {
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "success": true,
+      "inspection": {
+        "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+        "name": "Rangoli Indian Cuisine - routine inspection",
+        "inspection_code": "S2837-INSP-0001",
+        "inspection_date": "2026-11-02T10:30:00",
+        "status": "PASS",
+        "score": 94,
+        "restaurant_id": 1,
+        "created_at": "2026-11-02T07:46:13.879+00:00"
+      },
+      "worker_processed_at": "2026-11-02T07:46:13.922+00:00"
+    }
+  },
+  "correlation_id_preserved": true,
+  "sequence": [
+    {
+      "ts": "2026-11-02T07:46:13.859+00:00",
+      "component": "CLIENT",
+      "event": "CLIENT_SEND",
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "topic": "s2837_inspection_requests",
+      "partition": 0,
+      "offset": 5,
+      "message": {
+        "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+        "reply_to": "s2837_inspection_responses",
+        "operation": "CREATE_INSPECTION",
+        "data": {
+          "name": "Rangoli Indian Cuisine - routine inspection",
+          "inspection_code": "S2837-INSP-0001",
+          "inspection_date": "2026-11-02T10:30:00",
+          "status": "PASS",
+          "score": 94,
+          "restaurant_id": 1
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.868+00:00",
+      "component": "WORKER",
+      "event": "WORKER_RECEIVE",
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "topic": "s2837_inspection_requests",
+      "partition": 0,
+      "offset": 5,
+      "message": {
+        "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+        "reply_to": "s2837_inspection_responses",
+        "operation": "CREATE_INSPECTION",
+        "data": {
+          "name": "Rangoli Indian Cuisine - routine inspection",
+          "inspection_code": "S2837-INSP-0001",
+          "inspection_date": "2026-11-02T10:30:00",
+          "status": "PASS",
+          "score": 94,
+          "restaurant_id": 1
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.879+00:00",
+      "component": "WORKER",
+      "event": "WORKER_PROCESS",
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "success": true,
+      "result": {
+        "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+        "operation": "CREATE_INSPECTION",
+        "success": true,
+        "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+        "message": "Inspection created",
+        "worker_processed_at": "2026-11-02T07:46:13.879+00:00"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.899+00:00",
+      "component": "WORKER",
+      "event": "WORKER_REPLY",
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "topic": "s2837_inspection_responses",
+      "partition": 0,
+      "offset": 5,
+      "response": {
+        "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+        "operation": "CREATE_INSPECTION",
+        "success": true,
+        "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+        "message": "Inspection created",
+        "worker_processed_at": "2026-11-02T07:46:13.879+00:00"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.895+00:00",
+      "component": "CLIENT",
+      "event": "CLIENT_RECEIVE",
+      "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+      "operation": "CREATE_INSPECTION",
+      "where": "s2837_inspection_responses[p0@5]",
+      "round_trip_ms": 155.5,
+      "response": {
+        "correlation_id": "81382958-c78b-454f-af44-b8ea73093926",
+        "operation": "CREATE_INSPECTION",
+        "success": true,
+        "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+        "message": "Inspection created",
+        "worker_processed_at": "2026-11-02T07:46:13.879+00:00"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.905+00:00",
+      "component": "CLIENT",
+      "event": "CLIENT_SEND",
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "topic": "s2837_inspection_requests",
+      "partition": 0,
+      "offset": 6,
+      "message": {
+        "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+        "reply_to": "s2837_inspection_responses",
+        "operation": "GET_INSPECTION",
+        "data": {
+          "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.912+00:00",
+      "component": "WORKER",
+      "event": "WORKER_RECEIVE",
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "topic": "s2837_inspection_requests",
+      "partition": 0,
+      "offset": 6,
+      "message": {
+        "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+        "reply_to": "s2837_inspection_responses",
+        "operation": "GET_INSPECTION",
+        "data": {
+          "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b"
+        }
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.922+00:00",
+      "component": "WORKER",
+      "event": "WORKER_PROCESS",
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "success": true,
+      "result": {
+        "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+        "operation": "GET_INSPECTION",
+        "success": true,
+        "inspection": {
+          "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+          "name": "Rangoli Indian Cuisine - routine inspection",
+          "inspection_code": "S2837-INSP-0001",
+          "inspection_date": "2026-11-02T10:30:00",
+          "status": "PASS",
+          "score": 94,
+          "restaurant_id": 1,
+          "created_at": "2026-11-02T07:46:13.879+00:00"
+        },
+        "worker_processed_at": "2026-11-02T07:46:13.922+00:00"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.940+00:00",
+      "component": "WORKER",
+      "event": "WORKER_REPLY",
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "topic": "s2837_inspection_responses",
+      "partition": 0,
+      "offset": 6,
+      "response": {
+        "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+        "operation": "GET_INSPECTION",
+        "success": true,
+        "inspection": {
+          "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+          "name": "Rangoli Indian Cuisine - routine inspection",
+          "inspection_code": "S2837-INSP-0001",
+          "inspection_date": "2026-11-02T10:30:00",
+          "status": "PASS",
+          "score": 94,
+          "restaurant_id": 1,
+          "created_at": "2026-11-02T07:46:13.879+00:00"
+        },
+        "worker_processed_at": "2026-11-02T07:46:13.922+00:00"
+      }
+    },
+    {
+      "ts": "2026-11-02T07:46:13.936+00:00",
+      "component": "CLIENT",
+      "event": "CLIENT_RECEIVE",
+      "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+      "operation": "GET_INSPECTION",
+      "where": "s2837_inspection_responses[p0@6]",
+      "round_trip_ms": 34.6,
+      "response": {
+        "correlation_id": "6e6c3788-feca-49bc-8d7d-57abf1f3c027",
+        "operation": "GET_INSPECTION",
+        "success": true,
+        "inspection": {
+          "inspection_id": "5c72cee2-0d9a-4186-adaa-8705114cde4b",
+          "name": "Rangoli Indian Cuisine - routine inspection",
+          "inspection_code": "S2837-INSP-0001",
+          "inspection_date": "2026-11-02T10:30:00",
+          "status": "PASS",
+          "score": 94,
+          "restaurant_id": 1,
+          "created_at": "2026-11-02T07:46:13.879+00:00"
+        },
+        "worker_processed_at": "2026-11-02T07:46:13.922+00:00"
+      }
+    }
+  ]
+}

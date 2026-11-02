@@ -8,11 +8,38 @@ Total time: about 30-40 minutes, most of it waiting.
 ---------------------------------------------------------------------------------------
 0. ONE-TIME SETUP
 ---------------------------------------------------------------------------------------
-- Unzip the HW8 files over the repo root (Data260-2837). Nothing existing is overwritten
-  except .gitignore (2 lines appended).
 - Docker Desktop must be running.  Ollama running with qwen2.5:1.5b (ollama pull qwen2.5:1.5b)
 - From the repo root:
-      pip install -r code\requirements_hw8.txt
+--Contents of requirements_hw8.txt ..
+kafka-python>=2.1.0,<3
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.5
+requests>=2.31
+python-docx>=1.1
+
+pip install -r code\requirements_hw8.txt
+kafka-python>=2.1.0,<3   # 3.x changed the API - keep 2.x
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.5
+requests>=2.31
+python-docx>=1.1
+================
+#pip install kafka-python>=2.1.0
+pip install "kafka-python>=2.1.0,<3"
+--this got installed..
+-------------------------------
+--the following were already satisfied
+pip install fastapi>=0.110
+pip install uvicorn>=0.29
+pip install pydantic>=2.5
+pip install requests>=2.31
+-------------------------------
+pip install python-docx>=1.1
+--this got installed
+===============
+ 
   (kafka-python must be >= 2.1. Version 2.0.2 crashes on Python 3.12)
 - Name in screenshots: every log line already prints "Shashank Ranjan | s2837". To also put
   your name in the prompt:
@@ -29,10 +56,12 @@ repo root>  docker logs s2837-api             <-- SCREENSHOT "FastAPI server sta
 Browser: http://127.0.0.1:8137/docs  (optional)
 
 Topics (worker/API already create them; this prints the CLI form and confirms):
-repo root>  cd code
+C:\SJSURepo\Data260\Data260-2837>cd code
+C:\SJSURepo\Data260\Data260-2837\code>python web_application\kafka_pipeline\create_topics.py
+
 code>  python web_application\kafka_pipeline\create_topics.py
 code>  docker exec s2837-kafka /opt/kafka/bin/kafka-topics.sh --describe --bootstrap-server localhost:9092
-       <-- SCREENSHOT (s2837_tasks PartitionCount: 2)
+       
 
 ---------------------------------------------------------------------------------------
 2. PART 1 DEMO   (screenshots 2, 3, 4)
@@ -45,6 +74,16 @@ code>  docker logs s2837-worker --tail 30     <-- SCREENSHOT worker receive/proc
 ---------------------------------------------------------------------------------------
 3. PART 2 - FOUR TERMINALS  (cd code\web_application\kafka_pipeline in each)
 ---------------------------------------------------------------------------------------
+--verifying OLLAMA is Running
+C:\SJSURepo\Data260>ollama list
+NAME            ID              SIZE      MODIFIED
+qwen2.5:1.5b    65ec06548149    986 MB    4 weeks ago
+qwen3:4b        359d7dd4bcda    2.5 GB    4 weeks ago
+llama3.2:1b     baf6a787fdff    1.3 GB    4 weeks ago
+
+C:\SJSURepo\Data260>
+cd code\web_application\kafka_pipeline
+--execute them in 3 separate terminials
 T1>  python planner.py
 T2>  python writer.py
 T3>  python reviewer.py
@@ -56,6 +95,13 @@ Then press Ctrl+C in T1, T2 and T3. Part 3 starts its own agents.
 
 ---------------------------------------------------------------------------------------
 4. PART 3 - FAILURE TESTS (about 4 minutes, fully automatic)
+Next: Part 3
+
+Press Ctrl+C in the planner, writer and reviewer terminals.
+In any of them, still in the kafka_pipeline folder, run:
+   python run_hw08_failures.py all
+
+It takes about 4–5 minutes and starts and kills its own test agents. That includes deliberately killing a writer mid-task, so lines like KILLED and ERROR attempt are expected.
 ---------------------------------------------------------------------------------------
 code\web_application\kafka_pipeline>  python run_hw08_failures.py all
    duplicate -> crash (kills the writer mid-processing and restarts it) -> poison -> ordering

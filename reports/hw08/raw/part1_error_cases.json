@@ -1,0 +1,60 @@
+[
+  {
+    "case": "unknown inspection_id",
+    "request": {
+      "correlation_id": "8f1fb4f5-bc99-4c9d-8053-6e13f7be29df",
+      "reply_to": "s2837_inspection_responses",
+      "operation": "GET_INSPECTION",
+      "data": {
+        "inspection_id": "b6b46083-e92a-4524-9f4a-43257255ea44"
+      }
+    },
+    "response": {
+      "correlation_id": "8f1fb4f5-bc99-4c9d-8053-6e13f7be29df",
+      "operation": "GET_INSPECTION",
+      "success": false,
+      "error": "Inspection not found",
+      "worker_processed_at": "2026-11-02T07:46:15.499+00:00"
+    },
+    "pass": true
+  },
+  {
+    "case": "unknown operation",
+    "request": {
+      "correlation_id": "8366f5c3-895f-4686-9c8b-03c6c718b367",
+      "reply_to": "s2837_inspection_responses",
+      "operation": "DELETE_EVERYTHING",
+      "data": {}
+    },
+    "response": {
+      "correlation_id": "8366f5c3-895f-4686-9c8b-03c6c718b367",
+      "operation": "DELETE_EVERYTHING",
+      "success": false,
+      "error": "Unknown operation",
+      "worker_processed_at": "2026-11-02T07:46:15.539+00:00"
+    },
+    "pass": true
+  },
+  {
+    "case": "missing/invalid fields",
+    "request": {
+      "correlation_id": "88806b06-f6fd-46c1-bfcf-b36a04fc8575",
+      "reply_to": "s2837_inspection_responses",
+      "operation": "CREATE_INSPECTION",
+      "data": {
+        "name": "",
+        "inspection_code": "X1",
+        "status": "MAYBE",
+        "score": 150
+      }
+    },
+    "response": {
+      "correlation_id": "88806b06-f6fd-46c1-bfcf-b36a04fc8575",
+      "operation": "CREATE_INSPECTION",
+      "success": false,
+      "error": "Invalid inspection data - name: String should have at least 2 characters; inspection_code: String should have at least 8 characters; inspection_date: Field required; status: Value error, status must be PASS, FAIL, or WARNING; score: Input should be less than or equal to 100; restaurant_id: Field required",
+      "worker_processed_at": "2026-11-02T07:46:15.578+00:00"
+    },
+    "pass": true
+  }
+]

@@ -2,8 +2,17 @@
 FROM python:3.12-slim
 WORKDIR /app/code
 ENV PYTHONPATH=/app/code PYTHONUNBUFFERED=1
-COPY code/requirements_hw8.txt /app/code/requirements_hw8.txt
-RUN pip install --no-cache-dir -r /app/code/requirements_hw8.txt
+#COPY code/requirements_hw8.txt /app/code/requirements_hw8.txt
+#RUN pip install --no-cache-dir -r /app/code/requirements_hw8.txt
+# Install dependencies
+#RUN pip install kafka-python>=2.1.0
+RUN pip install "kafka-python>=2.1.0,<3"
+RUN pip install fastapi>=0.110
+RUN pip install uvicorn>=0.29
+RUN pip install pydantic>=2.5
+RUN pip install requests>=2.31
+RUN pip install python-docx>=1.1
+#copy the code for the web application
 COPY code/web_application/__init__.py /app/code/web_application/__init__.py
 COPY code/web_application/hw8_main.py /app/code/web_application/hw8_main.py
 COPY code/web_application/domain/__init__.py code/web_application/domain/schema.py /app/code/web_application/domain/

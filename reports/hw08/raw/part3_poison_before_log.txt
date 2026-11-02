@@ -1,0 +1,37 @@
+2026-11-02 00:21:28.965 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RECEIVED s2837_tasks[p1@6] correlation_id=9484baec-c2d7-49f2-88c2-d4e572c3abf4 message={"correlation_id": "9484baec-c2d7-49f2-88c2-d4e572c3abf4", "test_run": "poison-before-20261102001941", "kind": "answer_task", "question": "poison", "plan": "THIS-IS-NOT-A-LIST"}
+2026-11-02 00:21:28.969 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 1 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:28.969 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:29.976 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 2 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:29.979 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:30.988 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 3 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:30.990 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:31.996 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 4 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:31.999 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:33.006 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 5 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:33.008 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:34.018 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 6 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:34.020 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:35.032 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 7 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:35.035 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:36.040 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 8 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:36.041 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:37.045 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 9 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:37.046 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:38.052 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 10 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:38.055 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:39.064 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 11 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:39.065 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:40.071 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 12 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:40.073 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:41.080 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 13 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:41.082 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:42.087 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 14 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:42.088 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:43.095 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 15 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:43.097 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:44.105 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 16 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:44.108 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:45.118 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 17 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:45.121 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)
+2026-11-02 00:21:46.126 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | ERROR attempt 18 at s2837_tasks[p1@6]: PermanentError: plan.steps must be a non-empty list of strings
+2026-11-02 00:21:46.126 | Shashank Ranjan | s2837 | WRITER-POISON-BEFORE | RETRY in 1.0s (message blocks this partition until it succeeds)

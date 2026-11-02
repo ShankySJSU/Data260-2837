@@ -1,0 +1,22 @@
+2026-11-02 00:22:00.596 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | READY assigned partitions=[0] positions={0: 13} - Consumer is ready and listening...
+2026-11-02 00:22:00.596 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | READY assigned partitions=[1] positions={1: 24} - Consumer is ready and listening...
+2026-11-02 00:22:01.852 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-D seq=1 partition=1 offset=24
+2026-11-02 00:22:01.886 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-C seq=1 partition=0 offset=13
+2026-11-02 00:22:02.608 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-D seq=2 partition=1 offset=25
+2026-11-02 00:22:02.643 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=1 partition=0 offset=14
+2026-11-02 00:22:02.720 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-D seq=3 partition=1 offset=26
+2026-11-02 00:22:02.860 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=2 partition=0 offset=15
+2026-11-02 00:22:02.966 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=3 partition=0 offset=16
+2026-11-02 00:22:03.293 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-A seq=1 partition=1 offset=27
+2026-11-02 00:22:03.375 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-A seq=2 partition=1 offset=28
+2026-11-02 00:22:03.609 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-A seq=3 partition=1 offset=29
+2026-11-02 00:22:03.715 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=4 partition=0 offset=17
+2026-11-02 00:22:03.951 | Shashank Ranjan | s2837 | WRITER-ORDER-2-KEYED | ORDER entity=INSP-2837-D seq=4 partition=1 offset=30
+2026-11-02 00:22:04.507 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=5 partition=0 offset=18
+2026-11-02 00:22:04.561 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-C seq=2 partition=0 offset=19
+2026-11-02 00:22:05.453 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-C seq=3 partition=0 offset=20
+2026-11-02 00:22:06.107 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=6 partition=0 offset=21
+2026-11-02 00:22:06.379 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-C seq=4 partition=0 offset=22
+2026-11-02 00:22:06.992 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=7 partition=0 offset=23
+2026-11-02 00:22:07.360 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-C seq=5 partition=0 offset=24
+2026-11-02 00:22:07.978 | Shashank Ranjan | s2837 | WRITER-ORDER-1-KEYED | ORDER entity=INSP-2837-B seq=8 partition=0 offset=25

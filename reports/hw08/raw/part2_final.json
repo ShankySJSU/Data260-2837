@@ -1,0 +1,68 @@
+{
+  "inbox_message": {
+    "correlation_id": "c88dcfc7-8966-41c3-8ba1-afb40890e891",
+    "question": "A restaurant just received a WARNING status with a score of 72 in its health inspection. What should the owner do before the re-inspection?",
+    "sent_at": "2026-11-02T08:11:55.841+00:00",
+    "source": "send_question.py"
+  },
+  "final": {
+    "correlation_id": "c88dcfc7-8966-41c3-8ba1-afb40890e891",
+    "test_run": null,
+    "status": "approved",
+    "answer": "Before the re-inspection, the restaurant owner should take the following steps:\n\n1. **Review the Inspection Report and Issues**: Carefully examine the inspection report to understand the specific issues highlighted by the warning. This might include areas such as food safety practices, cleanliness, food handling, and employee health.\n\n2. **Implement Corrective Actions**: Address the identified issues immediately. This could involve:\n   - Improving food storage and preparation practices to ensure proper temperature control.\n   - Enhancing cleaning procedures to eliminate cross-contamination.\n   - Ensuring proper handwashing and glove use by staff.\n   - Training staff on food safety protocols and proper handling of food.\n   - Implementing a system to monitor and log food temperatures and staff health.\n\n3. **Schedule a Follow-Up Inspection**: Arrange for a follow-up inspection within a reasonable timeframe, typically 1-2 weeks, to ensure the corrective measures are being effectively implemented. This will allow the restaurant to demonstrate that the necessary improvements have been made and that the issues highlighted in the warning have been resolved.\n\nBy following these steps, the restaurant can demonstrate to the health department that it is taking the necessary steps to improve its food safety practices and address the issues highlighted in the warning, thereby potentially reducing the warning status and improving its overall health inspection score.",
+    "question": "A restaurant just received a WARNING status with a score of 72 in its health inspection. What should the owner do before the re-inspection?",
+    "review": {
+      "checks": {
+        "non_empty": true,
+        "length_40_400_words": true,
+        "on_domain": true,
+        "no_error_text": true
+      },
+      "word_count": 209,
+      "reviewer": "reviewer-1",
+      "reviewed_at": "2026-11-02T08:12:27.479+00:00"
+    },
+    "plan_steps": [
+      "Step 1: Review the inspection report and the specific issues highlighted by the warning.",
+      "Step 2: Implement the necessary corrective actions to address the identified health concerns.",
+      "Step 3: Schedule a follow-up inspection to monitor the implementation of the corrective measures."
+    ],
+    "writer": {
+      "instance": "writer-1",
+      "model": "ollama:qwen2.5:1.5b (temperature 0, seed 2837)",
+      "written_at": "2026-11-02T08:12:27.459+00:00"
+    },
+    "trace": [
+      {
+        "stage": "planner",
+        "agent": "planner-1",
+        "pid": 8120,
+        "topic": "s2837_inbox",
+        "partition": 0,
+        "offset": 0,
+        "received_at": "2026-11-02T08:11:55.962+00:00",
+        "finished_at": "2026-11-02T08:12:06.933+00:00"
+      },
+      {
+        "stage": "writer",
+        "agent": "writer-1",
+        "pid": 6712,
+        "topic": "s2837_tasks",
+        "partition": 0,
+        "offset": 0,
+        "received_at": "2026-11-02T08:12:06.947+00:00",
+        "finished_at": "2026-11-02T08:12:27.459+00:00"
+      },
+      {
+        "stage": "reviewer",
+        "agent": "reviewer-1",
+        "pid": 11864,
+        "topic": "s2837_drafts",
+        "partition": 0,
+        "offset": 0,
+        "received_at": "2026-11-02T08:12:27.478+00:00",
+        "finished_at": "2026-11-02T08:12:27.481+00:00"
+      }
+    ]
+  }
+}

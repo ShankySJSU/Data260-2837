@@ -1,0 +1,142 @@
+[
+  {
+    "global_index": 0,
+    "entity_id": "INSP-2837-D",
+    "seq": 1,
+    "event": "SCHEDULED",
+    "work_ms": 82
+  },
+  {
+    "global_index": 1,
+    "entity_id": "INSP-2837-C",
+    "seq": 1,
+    "event": "SCHEDULED",
+    "work_ms": 114
+  },
+  {
+    "global_index": 2,
+    "entity_id": "INSP-2837-B",
+    "seq": 1,
+    "event": "SCHEDULED",
+    "work_ms": 734
+  },
+  {
+    "global_index": 3,
+    "entity_id": "INSP-2837-D",
+    "seq": 2,
+    "event": "STARTED",
+    "work_ms": 730
+  },
+  {
+    "global_index": 4,
+    "entity_id": "INSP-2837-D",
+    "seq": 3,
+    "event": "VIOLATION_RECORDED",
+    "work_ms": 75
+  },
+  {
+    "global_index": 5,
+    "entity_id": "INSP-2837-B",
+    "seq": 2,
+    "event": "STARTED",
+    "work_ms": 198
+  },
+  {
+    "global_index": 6,
+    "entity_id": "INSP-2837-B",
+    "seq": 3,
+    "event": "VIOLATION_RECORDED",
+    "work_ms": 71
+  },
+  {
+    "global_index": 7,
+    "entity_id": "INSP-2837-B",
+    "seq": 4,
+    "event": "SCORE_UPDATED",
+    "work_ms": 714
+  },
+  {
+    "global_index": 8,
+    "entity_id": "INSP-2837-B",
+    "seq": 5,
+    "event": "STATUS_CHANGED",
+    "work_ms": 762
+  },
+  {
+    "global_index": 9,
+    "entity_id": "INSP-2837-C",
+    "seq": 2,
+    "event": "STARTED",
+    "work_ms": 31
+  },
+  {
+    "global_index": 10,
+    "entity_id": "INSP-2837-C",
+    "seq": 3,
+    "event": "VIOLATION_RECORDED",
+    "work_ms": 870
+  },
+  {
+    "global_index": 11,
+    "entity_id": "INSP-2837-B",
+    "seq": 6,
+    "event": "REINSPECTION_BOOKED",
+    "work_ms": 620
+  },
+  {
+    "global_index": 12,
+    "entity_id": "INSP-2837-A",
+    "seq": 1,
+    "event": "SCHEDULED",
+    "work_ms": 548
+  },
+  {
+    "global_index": 13,
+    "entity_id": "INSP-2837-A",
+    "seq": 2,
+    "event": "STARTED",
+    "work_ms": 46
+  },
+  {
+    "global_index": 14,
+    "entity_id": "INSP-2837-C",
+    "seq": 4,
+    "event": "SCORE_UPDATED",
+    "work_ms": 256
+  },
+  {
+    "global_index": 15,
+    "entity_id": "INSP-2837-B",
+    "seq": 7,
+    "event": "CLOSED",
+    "work_ms": 574
+  },
+  {
+    "global_index": 16,
+    "entity_id": "INSP-2837-A",
+    "seq": 3,
+    "event": "VIOLATION_RECORDED",
+    "work_ms": 208
+  },
+  {
+    "global_index": 17,
+    "entity_id": "INSP-2837-D",
+    "seq": 4,
+    "event": "SCORE_UPDATED",
+    "work_ms": 301
+  },
+  {
+    "global_index": 18,
+    "entity_id": "INSP-2837-C",
+    "seq": 5,
+    "event": "STATUS_CHANGED",
+    "work_ms": 350
+  },
+  {
+    "global_index": 19,
+    "entity_id": "INSP-2837-B",
+    "seq": 8,
+    "event": "NOTE_ADDED",
+    "work_ms": 597
+  }
+]
