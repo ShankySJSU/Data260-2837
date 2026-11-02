@@ -1,0 +1,104 @@
+{
+  "homework": "HW8",
+  "student": "Shashank Ranjan",
+  "sid4": 2837,
+  "commit_hash": "f5e58344abea62a3913471f143c58f7745a84e70",
+  "model": "template for smoke test; agents use ollama qwen2.5:1.5b in Part 2",
+  "configuration": {
+    "prefix": "s2837",
+    "port_base": 8137,
+    "kafka_bootstrap": "localhost:9092",
+    "max_retries": 3,
+    "topics": {
+      "s2837_inspection_requests": 1,
+      "s2837_inspection_responses": 1,
+      "s2837_inbox": 1,
+      "s2837_tasks": 2,
+      "s2837_drafts": 1,
+      "s2837_final": 1,
+      "s2837_dead_letter": 1
+    }
+  },
+  "seed": 2837,
+  "verify_seed": 262837,
+  "generated_at_utc": "2026-11-02T08:33:48Z",
+  "duration_seconds": 13.8,
+  "checks": [
+    {
+      "check": "kafka_reachable",
+      "status": "PASS"
+    },
+    {
+      "check": "all_prefix_topics_exist_with_partitions",
+      "status": "PASS"
+    },
+    {
+      "check": "create_then_get_roundtrip_through_kafka",
+      "status": "PASS"
+    },
+    {
+      "check": "correlation_id_preserved_request_to_response",
+      "status": "PASS"
+    },
+    {
+      "check": "request_has_required_envelope_fields",
+      "status": "PASS"
+    },
+    {
+      "check": "get_unknown_id_returns_error_with_correlation_id",
+      "status": "PASS"
+    },
+    {
+      "check": "unknown_operation_returns_error",
+      "status": "PASS"
+    },
+    {
+      "check": "invalid_or_missing_fields_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "duplicate_request_same_correlation_id_creates_no_second_entity",
+      "status": "PASS"
+    },
+    {
+      "check": "fastapi_running_on_port_base",
+      "status": "PASS"
+    },
+    {
+      "check": "fastapi_create_get_via_kafka",
+      "status": "PASS"
+    },
+    {
+      "check": "pipeline_inbox_to_final_with_status_and_answer",
+      "status": "PASS"
+    },
+    {
+      "check": "pipeline_correlation_id_preserved_all_stages",
+      "status": "PASS"
+    },
+    {
+      "check": "poison_message_retried_then_dead_lettered",
+      "status": "PASS"
+    },
+    {
+      "check": "message_after_poison_still_processed",
+      "status": "PASS"
+    },
+    {
+      "check": "replayed_task_produces_no_second_draft",
+      "status": "PASS"
+    },
+    {
+      "check": "same_key_messages_land_in_one_partition",
+      "status": "PASS"
+    },
+    {
+      "check": "idempotency_store_tracks_in_progress_and_done",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 18,
+    "total": 18
+  }
+}

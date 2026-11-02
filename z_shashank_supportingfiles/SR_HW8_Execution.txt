@@ -116,9 +116,13 @@ code\web_application\kafka_pipeline>  python run_hw08_failures.py all
 ---------------------------------------------------------------------------------------
 repo root>  git add -A
 repo root>  git commit -m "HW8 Kafka request/response, 3-agent pipeline, failure tests"
+
+Run the smoke test from the code folder, with Docker still running:
+   python -m web_application.verify_hw08
+
 code>  python -m web_application.verify_hw08          (docker compose must be up)
        -> reports\hw08\verification.json, expect 18/18 PASS
-       (make verify-hw08 does the same if you have make)
+ 
 
 ---------------------------------------------------------------------------------------
 6. REPORT
@@ -128,6 +132,17 @@ code>  python -m web_application.make_hw08_report --hardware "Windows PC, i7, 16
    Open it, paste each screenshot at the yellow [SCREENSHOT ...] markers, check AI_USE,
    then save as PDF: reports\hw08\Ranjan_HW8.pdf
 
+cd C:\SJSURepo\Data260\Data260-2837
+docker images
+
+Find the image built for your worker. It’s usually named data260-2837-worker. Then run:
+
+docker run --rm -v "%cd%":/app -w /app/code -e PYTHONPATH=/app/code data260-2837-worker python -m web_application.make_hw08_report --hardware "Windows PC, i7, 16 GB RAM, Python 3.12, Docker Desktop"
+
+In PowerShell, replace "%cd%" with "${PWD}".
+
+data260-2837-worker
+
 ---------------------------------------------------------------------------------------
 7. TAG AND PUSH
 ---------------------------------------------------------------------------------------
@@ -136,23 +151,5 @@ repo root>  git commit -m "HW8 report and evidence"
 repo root>  git tag hw8
 repo root>  git push
 repo root>  git push origin hw8
-repo root>  git rev-parse hw8        (write this hash at the top of the report if it differs)
+repo root>  git rev-parse hw8        
 
----------------------------------------------------------------------------------------
-OPTIONAL - JMeter (from the JMeter instructions PDF, adapted)
----------------------------------------------------------------------------------------
-HTTP Request: 127.0.0.1, port 8137, POST, path /inspections-direct (baseline) and a second
-sampler with path /inspections/kafka. Header Content-Type: application/json. Body:
-{"name": "Alice Cafe inspection", "inspection_code": "JMETER-0001",
- "inspection_date": "2026-11-02T10:00:00", "status": "PASS", "score": 90, "restaurant_id": 1}
-Thread Group: 100 threads, ramp-up 10, loop 1. In the Summary Report, use "Save Table Data"
--> reports\hw08\raw\jmeter_summary.csv. The report builder then adds a JMeter section.
-
----------------------------------------------------------------------------------------
-TROUBLESHOOTING
----------------------------------------------------------------------------------------
-- NoBrokersAvailable: Kafka is still starting. Wait about 20 s (docker ps should show "healthy").
-- Port 9092 or 8137 already in use: stop the other Kafka/uvicorn process, or docker compose down.
-- Clean restart: docker compose down  then  docker compose up -d --build
-  (topics and the worker's in-memory dictionary are reset)
-- Worker code changed: docker compose up -d --build worker
