@@ -909,3 +909,4 @@ e904-4a40-9c18-6d0f2a1542f7"}}
 2026-11-02 00:33:42.109 | Shashank Ranjan | s2837 | WRITER-VERIFY | RECEIVED s2837_tasks[p0@27] correlation_id=af2c0e5c-ca3a-41ca-a929-0dee54932b9e message={"correlation_id": "af2c0e5c-ca3a-41ca-a929-0dee54932b9e", "test_run": "verify-cc03bfa2", "kind": "answer_task", "question": "Restaurant inspection replay?", "plan": {"steps": ["a", "b"]}}
 2026-11-02 00:33:42.113 | Shashank Ranjan | s2837 | WRITER-VERIFY | DUPLICATE correlation_id=af2c0e5c-ca3a-41ca-a929-0dee54932b9e already processed - skipped, no new output (idempotent)
 2026-11-02 00:33:42.121 | Shashank Ranjan | s2837 | WRITER-VERIFY | COMMITTED offset 28 on p0 after duplicate_skipped
+2026-11-02 08:55:26.228 | Shashank Ranjan | s2837 | API        | FastAPI server stopped
