@@ -1,7 +1,19 @@
 # DATA-260 HW8 - Shashank Ranjan (SID4 2837, PREFIX s2837, PORT_BASE 8137)
 # docker compose up -d --build      -> kafka + inspection worker + FastAPI wrapper
+# HW9: docker compose up -d redis   -> s2837-redis (redis-stack-server: RediSearch vector index)
 # From the host, Kafka is localhost:9092 and the API is http://127.0.0.1:8137
 services:
+  redis:
+    image: redis/redis-stack-server:latest
+    container_name: s2837-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
   kafka:
     image: apache/kafka:3.8.0
     container_name: s2837-kafka

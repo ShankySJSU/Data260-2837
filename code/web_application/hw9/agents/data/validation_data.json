@@ -1,0 +1,46 @@
+{
+  "split": "validation",
+  "note": "Input questions only - no expected answers. The Evaluator Agent checks answers against reference_data.json.",
+  "questions": [
+    {
+      "id": "val_01",
+      "question": "When is Rustic Garden Deli's re-inspection due?"
+    },
+    {
+      "id": "val_02",
+      "question": "What score did Cafe Milano get?"
+    },
+    {
+      "id": "val_03",
+      "question": "Does Rangoli Indian Cuisine need a re-inspection?"
+    },
+    {
+      "id": "val_04",
+      "question": "What violations were recorded at Taj Grill?"
+    },
+    {
+      "id": "val_05",
+      "question": "What was the result of Golden Crust Bakery's latest inspection?"
+    },
+    {
+      "id": "val_06",
+      "question": "What score did Harbor View Grill get?"
+    },
+    {
+      "id": "val_07",
+      "question": "What is the minimum score to PASS an inspection?"
+    },
+    {
+      "id": "val_08",
+      "question": "What was the outcome of Golden Dragon Bistro's inspection?"
+    },
+    {
+      "id": "val_09",
+      "question": "When must Grill & Barrel Bar be re-inspected?"
+    },
+    {
+      "id": "val_10",
+      "question": "What is the latest inspection status at Maple Leaf Cafe?"
+    }
+  ]
+}

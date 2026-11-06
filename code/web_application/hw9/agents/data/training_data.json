@@ -1,0 +1,46 @@
+{
+  "split": "training",
+  "note": "Input questions only - no expected answers. The Evaluator Agent checks answers against reference_data.json.",
+  "questions": [
+    {
+      "id": "train_01",
+      "question": "When must Taj Grill be re-inspected?"
+    },
+    {
+      "id": "train_02",
+      "question": "What score did Rangoli Indian Cuisine receive in its latest inspection?"
+    },
+    {
+      "id": "train_03",
+      "question": "By what date does Golden Dragon Bistro need its follow-up inspection?"
+    },
+    {
+      "id": "train_04",
+      "question": "What violations were found at Rustic Garden Deli?"
+    },
+    {
+      "id": "train_05",
+      "question": "What was the result of the latest inspection at Urban Taco Cafe?"
+    },
+    {
+      "id": "train_06",
+      "question": "What score did Sunset Noodle House get on its last inspection?"
+    },
+    {
+      "id": "train_07",
+      "question": "What is the re-inspection deadline for Spicy Pho House?"
+    },
+    {
+      "id": "train_08",
+      "question": "Which score range counts as a WARNING?"
+    },
+    {
+      "id": "train_09",
+      "question": "What was the outcome of Bayside Sushi Bar's inspection?"
+    },
+    {
+      "id": "train_10",
+      "question": "What score did Lucky Star Diner receive?"
+    }
+  ]
+}

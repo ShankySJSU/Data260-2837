@@ -1,0 +1,239 @@
+{
+  "domain": "Local restaurant inspections",
+  "prefix": "s2837",
+  "description": "Ground truth for HW9. The same restaurants/inspections are seeded into s2837_rel (restaurant, restaurant_inspection, inspection_related). Only the Evaluator Agent reads this file; the Answering Agent sees the raw record (no derived due date, no rules).",
+  "rules": {
+    "status_bands": {
+      "PASS": {
+        "min": 85,
+        "max": 100
+      },
+      "WARNING": {
+        "min": 70,
+        "max": 84
+      },
+      "FAIL": {
+        "min": 0,
+        "max": 69
+      }
+    },
+    "reinspection_days": {
+      "PASS": null,
+      "WARNING": 30,
+      "FAIL": 10
+    },
+    "text": "Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date)."
+  },
+  "restaurants": [
+    {
+      "restaurant": "Rangoli Indian Cuisine",
+      "permit_code": "S2837-P-001",
+      "address": "111 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0001",
+      "inspection_date": "2026-10-12",
+      "status": "PASS",
+      "score": 94,
+      "violations": [],
+      "reinspection_due": null
+    },
+    {
+      "restaurant": "Taj Grill",
+      "permit_code": "S2837-P-002",
+      "address": "122 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0002",
+      "inspection_date": "2026-10-20",
+      "status": "WARNING",
+      "score": 78,
+      "violations": [
+        {
+          "text": "Cold-holding unit above 41F",
+          "keywords": [
+            "41",
+            "cold-holding",
+            "cold holding"
+          ]
+        },
+        {
+          "text": "Prepared food missing date labels",
+          "keywords": [
+            "date label",
+            "labeled",
+            "labels"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-11-19"
+    },
+    {
+      "restaurant": "Golden Dragon Bistro",
+      "permit_code": "S2837-P-003",
+      "address": "133 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0003",
+      "inspection_date": "2026-10-05",
+      "status": "FAIL",
+      "score": 62,
+      "violations": [
+        {
+          "text": "No hot water at the handwashing sink",
+          "keywords": [
+            "hot water"
+          ]
+        },
+        {
+          "text": "Evidence of rodents in dry storage",
+          "keywords": [
+            "rodent"
+          ]
+        },
+        {
+          "text": "Raw chicken stored above ready-to-eat food",
+          "keywords": [
+            "raw chicken"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-10-15"
+    },
+    {
+      "restaurant": "Urban Taco Cafe",
+      "permit_code": "S2837-P-004",
+      "address": "144 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0004",
+      "inspection_date": "2026-10-28",
+      "status": "PASS",
+      "score": 88,
+      "violations": [
+        {
+          "text": "Employee drink stored on a food-prep table",
+          "keywords": [
+            "drink"
+          ]
+        }
+      ],
+      "reinspection_due": null
+    },
+    {
+      "restaurant": "Rustic Garden Deli",
+      "permit_code": "S2837-P-005",
+      "address": "155 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0005",
+      "inspection_date": "2026-09-30",
+      "status": "WARNING",
+      "score": 71,
+      "violations": [
+        {
+          "text": "Sanitizer concentration too low",
+          "keywords": [
+            "sanitizer"
+          ]
+        },
+        {
+          "text": "Food handler card expired",
+          "keywords": [
+            "food handler"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-10-30"
+    },
+    {
+      "restaurant": "Bayside Sushi Bar",
+      "permit_code": "S2837-P-006",
+      "address": "166 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0006",
+      "inspection_date": "2026-10-15",
+      "status": "PASS",
+      "score": 91,
+      "violations": [],
+      "reinspection_due": null
+    },
+    {
+      "restaurant": "Spicy Pho House",
+      "permit_code": "S2837-P-007",
+      "address": "177 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0007",
+      "inspection_date": "2026-10-22",
+      "status": "FAIL",
+      "score": 58,
+      "violations": [
+        {
+          "text": "Improper cooling of cooked rice",
+          "keywords": [
+            "cooling",
+            "rice"
+          ]
+        },
+        {
+          "text": "No certified food manager on site",
+          "keywords": [
+            "food manager"
+          ]
+        },
+        {
+          "text": "Cross-contamination at cutting boards",
+          "keywords": [
+            "cross-contamination",
+            "cross contamination",
+            "cutting board"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-11-01"
+    },
+    {
+      "restaurant": "Golden Crust Bakery",
+      "permit_code": "S2837-P-008",
+      "address": "188 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0008",
+      "inspection_date": "2026-10-18",
+      "status": "WARNING",
+      "score": 83,
+      "violations": [
+        {
+          "text": "Light shields missing over the prep area",
+          "keywords": [
+            "light shield"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-11-17"
+    },
+    {
+      "restaurant": "Cafe Milano",
+      "permit_code": "S2837-P-009",
+      "address": "199 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0009",
+      "inspection_date": "2026-10-09",
+      "status": "PASS",
+      "score": 97,
+      "violations": [],
+      "reinspection_due": null
+    },
+    {
+      "restaurant": "Grill & Barrel Bar",
+      "permit_code": "S2837-P-010",
+      "address": "210 Market St, San Jose, CA",
+      "inspection_code": "S2837-H9-0010",
+      "inspection_date": "2026-10-25",
+      "status": "WARNING",
+      "score": 75,
+      "violations": [
+        {
+          "text": "Ice machine not cleaned",
+          "keywords": [
+            "ice machine"
+          ]
+        },
+        {
+          "text": "Handwashing sink blocked by equipment",
+          "keywords": [
+            "blocked",
+            "hand sink",
+            "handwashing sink"
+          ]
+        }
+      ],
+      "reinspection_due": "2026-11-24"
+    }
+  ]
+}

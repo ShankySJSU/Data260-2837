@@ -1,0 +1,140 @@
+# HW9 Part 3.1 - labeled semantic-cache test set (Shashank Ranjan, PREFIX s2837)
+# Domain: local restaurant inspections. Restaurants = the ten S2837-H9-* records in s2837_rel.
+#
+# Protocol: the cache is warmed with every non-null cached_query (30 entries, each stored with
+# the HW8 agent's answer). Each `query` is then looked up against that whole cache.
+#   expected: hit  -> the correct outcome is a hit on THIS case's cached_query
+#   expected: miss -> any hit is a false hit (the cached answer is wrong for the query)
+#
+# Labels were written before any threshold sweep and are NOT edited afterwards.
+# Labeling mistakes found later are documented in cache_cases_errata.md instead.
+version: 1
+created: "2026-11-06"
+cases:
+  # ---------------- 10 exact duplicates (should hit) ----------------
+  - {id: E01, category: exact_duplicate, expected: hit,
+     cached_query: "What score did Taj Grill get in its latest inspection?",
+     query: "What score did Taj Grill get in its latest inspection?"}
+  - {id: E02, category: exact_duplicate, expected: hit,
+     cached_query: "What violations were found at Golden Dragon Bistro?",
+     query: "What violations were found at Golden Dragon Bistro?"}
+  - {id: E03, category: exact_duplicate, expected: hit,
+     cached_query: "When must Rustic Garden Deli be re-inspected?",
+     query: "When must Rustic Garden Deli be re-inspected?"}
+  - {id: E04, category: exact_duplicate, expected: hit,
+     cached_query: "What was the result of the latest inspection at Urban Taco Cafe?",
+     query: "What was the result of the latest inspection at Urban Taco Cafe?"}
+  - {id: E05, category: exact_duplicate, expected: hit,
+     cached_query: "Does Bayside Sushi Bar need a re-inspection?",
+     query: "Does Bayside Sushi Bar need a re-inspection?"}
+  - {id: E06, category: exact_duplicate, expected: hit,
+     cached_query: "What score range counts as a WARNING?",
+     query: "What score range counts as a WARNING?"}
+  - {id: E07, category: exact_duplicate, expected: hit,
+     cached_query: "What violations were recorded at Spicy Pho House?",
+     query: "What violations were recorded at Spicy Pho House?"}
+  - {id: E08, category: exact_duplicate, expected: hit,
+     cached_query: "When is the follow-up inspection for Golden Crust Bakery due?",
+     query: "When is the follow-up inspection for Golden Crust Bakery due?"}
+  - {id: E09, category: exact_duplicate, expected: hit,
+     cached_query: "What temperature must cold food be held at in a restaurant?",
+     query: "What temperature must cold food be held at in a restaurant?"}
+  - {id: E10, category: exact_duplicate, expected: hit,
+     cached_query: "How long does a FAIL restaurant have before it is re-inspected?",
+     query: "How long does a FAIL restaurant have before it is re-inspected?"}
+
+  # ---------------- 10 paraphrases (should hit their own cached_query) ----------------
+  - {id: P01, category: paraphrase, expected: hit,
+     cached_query: "What score did Cafe Milano receive on its last inspection?",
+     query: "How many points did Cafe Milano get at its most recent inspection?"}
+  - {id: P02, category: paraphrase, expected: hit,
+     cached_query: "Which violations were cited at Grill & Barrel Bar?",
+     query: "What problems did inspectors find at Grill & Barrel Bar?"}
+  - {id: P03, category: paraphrase, expected: hit,
+     cached_query: "When is Spicy Pho House's re-inspection deadline?",
+     query: "By what date does Spicy Pho House have to be inspected again?"}
+  - {id: P04, category: paraphrase, expected: hit,
+     cached_query: "Did Rangoli Indian Cuisine pass its health inspection?",
+     query: "Was Rangoli Indian Cuisine's health inspection a pass?"}
+  - {id: P05, category: paraphrase, expected: hit,
+     cached_query: "What is the minimum score needed to pass an inspection?",
+     query: "What is the lowest score that still counts as a PASS?"}
+  - {id: P06, category: paraphrase, expected: hit,
+     cached_query: "How should cooked rice be cooled safely?",
+     query: "What is the safe way to cool down cooked rice?"}
+  - {id: P07, category: paraphrase, expected: hit,
+     cached_query: "What does a WARNING inspection status mean for a restaurant?",
+     query: "What does it mean when a restaurant gets a WARNING status?"}
+  - {id: P08, category: paraphrase, expected: hit,
+     cached_query: "What was Golden Dragon Bistro's inspection score?",
+     query: "What score did Golden Dragon Bistro get when it was inspected?"}
+  - {id: P09, category: paraphrase, expected: hit,
+     cached_query: "What happens after a restaurant fails its inspection?",
+     query: "What happens to a restaurant once it fails a health inspection?"}
+  - {id: P10, category: paraphrase, expected: hit,
+     cached_query: "What should an owner fix before a re-inspection?",
+     query: "What should a restaurant owner correct before the re-inspection?"}
+
+  # ------- 10 superficially similar questions with a different correct answer (should miss) -------
+  - {id: S01, category: similar_different, expected: miss,
+     cached_query: "What score did Bayside Sushi Bar get in its latest inspection?",
+     query: "What score did Golden Crust Bakery get in its latest inspection?",
+     why_different: "different restaurant: 91 vs 83"}
+  - {id: S02, category: similar_different, expected: miss,
+     cached_query: "When must Taj Grill be re-inspected?",
+     query: "When was Taj Grill last inspected?",
+     why_different: "due date 2026-11-19 vs inspection date 2026-10-20"}
+  - {id: S03, category: similar_different, expected: miss,
+     cached_query: "What violations were found at Urban Taco Cafe?",
+     query: "What violations were found at Rustic Garden Deli?",
+     why_different: "different restaurant, different violations"}
+  - {id: S04, category: similar_different, expected: miss,
+     cached_query: "What score range counts as a PASS?",
+     query: "What score range counts as a FAIL?",
+     why_different: "85-100 vs 0-69"}
+  - {id: S05, category: similar_different, expected: miss,
+     cached_query: "Does Golden Dragon Bistro need a re-inspection?",
+     query: "Does Cafe Milano need a re-inspection?",
+     why_different: "FAIL (yes, by 2026-10-15) vs PASS (no)"}
+  - {id: S06, category: similar_different, expected: miss,
+     cached_query: "What temperature must hot food be held at?",
+     query: "What temperature must frozen food be stored at?",
+     why_different: "135F or above vs 0F or below"}
+  - {id: S07, category: similar_different, expected: miss,
+     cached_query: "How many days does a WARNING restaurant have before re-inspection?",
+     query: "How many days does a FAIL restaurant have before re-inspection?",
+     why_different: "30 days vs 10 days"}
+  - {id: S08, category: similar_different, expected: miss,
+     cached_query: "What was the result of the latest inspection at Spicy Pho House?",
+     query: "What was the result of the latest inspection at Rangoli Indian Cuisine?",
+     why_different: "FAIL 58 vs PASS 94"}
+  - {id: S09, category: similar_different, expected: miss,
+     cached_query: "Which restaurant had the highest inspection score?",
+     query: "Which restaurant had the lowest inspection score?",
+     why_different: "Cafe Milano (97) vs Spicy Pho House (58)"}
+  - {id: S10, category: similar_different, expected: miss,
+     cached_query: "Is a score of 84 a PASS?",
+     query: "Is a score of 85 a PASS?",
+     why_different: "84 = WARNING (no) vs 85 = PASS (yes)"}
+
+  # ---------------- 10 unrelated questions (should miss; no cached counterpart) ----------------
+  - {id: U01, category: unrelated, expected: miss, cached_query: null,
+     query: "How do I apply for a new food service permit?"}
+  - {id: U02, category: unrelated, expected: miss, cached_query: null,
+     query: "Can a restaurant appeal an inspection result?"}
+  - {id: U03, category: unrelated, expected: miss, cached_query: null,
+     query: "What are the requirements to get a food handler card?"}
+  - {id: U04, category: unrelated, expected: miss, cached_query: null,
+     query: "Are pets allowed inside restaurant dining areas?"}
+  - {id: U05, category: unrelated, expected: miss, cached_query: null,
+     query: "How should a restaurant store cleaning chemicals?"}
+  - {id: U06, category: unrelated, expected: miss, cached_query: null,
+     query: "What is the fee for a food truck permit?"}
+  - {id: U07, category: unrelated, expected: miss, cached_query: null,
+     query: "How often must grease traps be cleaned?"}
+  - {id: U08, category: unrelated, expected: miss, cached_query: null,
+     query: "Do restaurants have to post their inspection placard by the entrance?"}
+  - {id: U09, category: unrelated, expected: miss, cached_query: null,
+     query: "What pest control records must a restaurant keep?"}
+  - {id: U10, category: unrelated, expected: miss, cached_query: null,
+     query: "How do I report food poisoning after eating out?"}
