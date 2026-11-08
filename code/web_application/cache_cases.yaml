@@ -1,3 +1,5 @@
+# This file is modified for ensuring that commit is done before the execution for report
+# Shashank Ranjan --comming now..
 # HW9 Part 3.1 - labeled semantic-cache test set (Shashank Ranjan, PREFIX s2837)
 # Domain: local restaurant inspections. Restaurants = the ten S2837-H9-* records in s2837_rel.
 #
@@ -9,7 +11,7 @@
 # Labels were written before any threshold sweep and are NOT edited afterwards.
 # Labeling mistakes found later are documented in cache_cases_errata.md instead.
 version: 1
-created: "2026-11-06"
+created: "2026-11-07"
 cases:
   # ---------------- 10 exact duplicates (should hit) ----------------
   - {id: E01, category: exact_duplicate, expected: hit,
