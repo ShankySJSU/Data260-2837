@@ -15,8 +15,8 @@ from docx import Document
 from docx.enum.text import WD_COLOR_INDEX
 from docx.shared import Pt
 
-from . import config as cfg
-from .agents import evaluator_agent, system
+from . import hw09_config as cfg
+from .hw2_agents_demo import evaluator_agent, system
 from .util import load_json, load_raw
 
 doc = Document()

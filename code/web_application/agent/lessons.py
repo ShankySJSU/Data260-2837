@@ -10,7 +10,7 @@ failure_code, applies_to (question types it is loaded for), source_question, sta
 import json
 from datetime import date
 
-from .. import config as cfg
+from .. import hw09_config as cfg
 from ..util import log
 from .domain_kb import reference
 

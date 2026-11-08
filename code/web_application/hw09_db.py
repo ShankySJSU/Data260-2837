@@ -10,7 +10,7 @@ import json
 import sqlite3
 from datetime import datetime
 
-from . import config as cfg
+from . import hw09_config as cfg
 from .util import log
 
 HW9_CODE_PREFIX = "S2837-H9-"

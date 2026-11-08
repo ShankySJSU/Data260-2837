@@ -11,7 +11,7 @@ import sys
 
 import yaml
 
-from . import config as cfg
+from . import hw09_config as cfg
 from .util import load_json, load_raw, log, now_iso
 
 COMPONENT = "VERIFY"

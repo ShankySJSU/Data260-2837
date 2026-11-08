@@ -4,7 +4,7 @@ import json
 import time
 from datetime import datetime, timezone
 
-from . import config as cfg
+from . import hw09_config as cfg
 
 
 def now_iso():

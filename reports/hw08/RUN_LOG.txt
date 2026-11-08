@@ -910,3 +910,503 @@ e904-4a40-9c18-6d0f2a1542f7"}}
 2026-11-02 00:33:42.113 | Shashank Ranjan | s2837 | WRITER-VERIFY | DUPLICATE correlation_id=af2c0e5c-ca3a-41ca-a929-0dee54932b9e already processed - skipped, no new output (idempotent)
 2026-11-02 00:33:42.121 | Shashank Ranjan | s2837 | WRITER-VERIFY | COMMITTED offset 28 on p0 after duplicate_skipped
 2026-11-02 08:55:26.228 | Shashank Ranjan | s2837 | API        | FastAPI server stopped
+2026-11-07 20:23:32.110 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:23:32.112 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:23:32.112 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inbox partitions=1
+2026-11-07 20:23:32.113 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_tasks partitions=2
+2026-11-07 20:23:32.114 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_drafts partitions=1
+2026-11-07 20:23:32.115 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_final partitions=1
+2026-11-07 20:23:32.115 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:23:32.132 | Shashank Ranjan | s2837 | PLANNER-1  | planner started pid=6716 topic=s2837_inbox group=s2837_planners idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:23:32.418 | Shashank Ranjan | s2837 | PLANNER-1  | READY assigned partitions=[0] positions={0: 1} - Consumer is ready and listening...
+2026-11-07 20:23:32.419 | Shashank Ranjan | s2837 | PLANNER-1  | IGNORED s2837_inbox[p0@1] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:23:32.438 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 2 on p0 after ignored
+2026-11-07 20:25:24.422 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:25:24.423 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:25:24.424 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inbox partitions=1
+2026-11-07 20:25:24.424 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_tasks partitions=2
+2026-11-07 20:25:24.425 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_drafts partitions=1
+2026-11-07 20:25:24.425 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_final partitions=1
+2026-11-07 20:25:24.426 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:25:24.443 | Shashank Ranjan | s2837 | WRITER-1   | writer started pid=15836 topic=s2837_tasks group=s2837_writers idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:25:24.689 | Shashank Ranjan | s2837 | WRITER-1   | READY assigned partitions=[0, 1] positions={0: 1, 1: 0} - Consumer is ready and listening...
+2026-11-07 20:25:24.690 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@1] test_run=dup-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.694 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 2 on p0 after ignored
+2026-11-07 20:25:24.695 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@2] test_run=dup-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.699 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 3 on p0 after ignored
+2026-11-07 20:25:24.700 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@3] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.704 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 4 on p0 after ignored
+2026-11-07 20:25:24.705 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@4] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.708 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 5 on p0 after ignored
+2026-11-07 20:25:24.708 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@5] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.713 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 6 on p0 after ignored
+2026-11-07 20:25:24.714 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@6] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.718 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 7 on p0 after ignored
+2026-11-07 20:25:24.719 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@7] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.722 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 8 on p0 after ignored
+2026-11-07 20:25:24.723 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@8] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.726 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 9 on p0 after ignored
+2026-11-07 20:25:24.727 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@9] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.731 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 10 on p0 after ignored
+2026-11-07 20:25:24.731 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@10] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.736 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 11 on p0 after ignored
+2026-11-07 20:25:24.737 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@11] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.740 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 12 on p0 after ignored
+2026-11-07 20:25:24.742 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@12] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.744 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 13 on p0 after ignored
+2026-11-07 20:25:24.745 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@13] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.751 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 14 on p0 after ignored
+2026-11-07 20:25:24.752 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@14] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.755 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 15 on p0 after ignored
+2026-11-07 20:25:24.756 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@15] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.760 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 16 on p0 after ignored
+2026-11-07 20:25:24.761 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@16] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.764 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 17 on p0 after ignored
+2026-11-07 20:25:24.766 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@17] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.771 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 18 on p0 after ignored
+2026-11-07 20:25:24.772 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@18] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.775 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 19 on p0 after ignored
+2026-11-07 20:25:24.776 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@19] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.779 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 20 on p0 after ignored
+2026-11-07 20:25:24.781 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@20] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.787 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 21 on p0 after ignored
+2026-11-07 20:25:24.788 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@21] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.794 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 22 on p0 after ignored
+2026-11-07 20:25:24.795 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@22] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.798 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 23 on p0 after ignored
+2026-11-07 20:25:24.798 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@23] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.803 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 24 on p0 after ignored
+2026-11-07 20:25:24.804 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@24] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.808 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 25 on p0 after ignored
+2026-11-07 20:25:24.809 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@25] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.812 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 26 on p0 after ignored
+2026-11-07 20:25:24.813 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@26] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:24.817 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 27 on p0 after ignored
+2026-11-07 20:25:24.818 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p0@27] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:24.822 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 28 on p0 after ignored
+2026-11-07 20:25:24.823 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@0] test_run=dup-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.826 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 1 on p1 after ignored
+2026-11-07 20:25:24.828 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@1] test_run=dup-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.830 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 2 on p1 after ignored
+2026-11-07 20:25:24.831 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@2] test_run=crash-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.835 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 3 on p1 after ignored
+2026-11-07 20:25:24.836 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@3] test_run=crash-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.839 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 4 on p1 after ignored
+2026-11-07 20:25:24.841 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@4] test_run=crash-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.844 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 5 on p1 after ignored
+2026-11-07 20:25:24.845 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@5] test_run=crash-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.848 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 6 on p1 after ignored
+2026-11-07 20:25:24.852 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@6] test_run=poison-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.858 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 7 on p1 after ignored
+2026-11-07 20:25:24.859 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@7] test_run=poison-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.863 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 8 on p1 after ignored
+2026-11-07 20:25:24.865 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@8] test_run=poison-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.873 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 9 on p1 after ignored
+2026-11-07 20:25:24.874 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@9] test_run=poison-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.878 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 10 on p1 after ignored
+2026-11-07 20:25:24.880 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@10] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.887 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 11 on p1 after ignored
+2026-11-07 20:25:24.889 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@11] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.894 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 12 on p1 after ignored
+2026-11-07 20:25:24.895 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@12] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.900 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 13 on p1 after ignored
+2026-11-07 20:25:24.902 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@13] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.905 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 14 on p1 after ignored
+2026-11-07 20:25:24.907 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@14] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.910 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 15 on p1 after ignored
+2026-11-07 20:25:24.912 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@15] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.916 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 16 on p1 after ignored
+2026-11-07 20:25:24.918 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@16] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.923 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 17 on p1 after ignored
+2026-11-07 20:25:24.926 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@17] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.929 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 18 on p1 after ignored
+2026-11-07 20:25:24.931 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@18] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.937 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 19 on p1 after ignored
+2026-11-07 20:25:24.938 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@19] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.943 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 20 on p1 after ignored
+2026-11-07 20:25:24.944 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@20] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.949 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 21 on p1 after ignored
+2026-11-07 20:25:24.951 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@21] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.957 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 22 on p1 after ignored
+2026-11-07 20:25:24.958 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@22] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.961 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 23 on p1 after ignored
+2026-11-07 20:25:24.962 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@23] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.967 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 24 on p1 after ignored
+2026-11-07 20:25:24.969 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@24] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.974 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 25 on p1 after ignored
+2026-11-07 20:25:24.976 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@25] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.979 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 26 on p1 after ignored
+2026-11-07 20:25:24.981 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@26] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.986 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 27 on p1 after ignored
+2026-11-07 20:25:24.988 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@27] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.992 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 28 on p1 after ignored
+2026-11-07 20:25:24.994 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@28] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:24.998 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 29 on p1 after ignored
+2026-11-07 20:25:24.999 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@29] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:25.006 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 30 on p1 after ignored
+2026-11-07 20:25:25.007 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@30] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:25:25.011 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 31 on p1 after ignored
+2026-11-07 20:25:25.012 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@31] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.019 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 32 on p1 after ignored
+2026-11-07 20:25:25.020 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@32] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.024 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 33 on p1 after ignored
+2026-11-07 20:25:25.026 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@33] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.030 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 34 on p1 after ignored
+2026-11-07 20:25:25.031 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@34] test_run=keycheck-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.039 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 35 on p1 after ignored
+2026-11-07 20:25:25.040 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@35] test_run=keycheck-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.043 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 36 on p1 after ignored
+2026-11-07 20:25:25.045 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@36] test_run=keycheck-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.049 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 37 on p1 after ignored
+2026-11-07 20:25:25.053 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@37] test_run=keycheck-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.058 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 38 on p1 after ignored
+2026-11-07 20:25:25.059 | Shashank Ranjan | s2837 | WRITER-1   | IGNORED s2837_tasks[p1@38] test_run=keycheck-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:25:25.064 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 39 on p1 after ignored
+2026-11-07 20:26:07.737 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:26:07.738 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:26:07.739 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inbox partitions=1
+2026-11-07 20:26:07.740 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_tasks partitions=2
+2026-11-07 20:26:07.740 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_drafts partitions=1
+2026-11-07 20:26:07.741 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_final partitions=1
+2026-11-07 20:26:07.741 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:26:07.756 | Shashank Ranjan | s2837 | REVIEWER-1 | reviewer started pid=20368 topic=s2837_drafts group=s2837_reviewers idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:26:07.989 | Shashank Ranjan | s2837 | REVIEWER-1 | READY assigned partitions=[0] positions={0: 1} - Consumer is ready and listening...
+2026-11-07 20:26:07.991 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@1] test_run=dup-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:07.996 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 2 on p0 after ignored
+2026-11-07 20:26:07.998 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@2] test_run=dup-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.001 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 3 on p0 after ignored
+2026-11-07 20:26:08.003 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@3] test_run=dup-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.007 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 4 on p0 after ignored
+2026-11-07 20:26:08.008 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@4] test_run=crash-before-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.013 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 5 on p0 after ignored
+2026-11-07 20:26:08.014 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@5] test_run=crash-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.017 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 6 on p0 after ignored
+2026-11-07 20:26:08.019 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@6] test_run=crash-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.023 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 7 on p0 after ignored
+2026-11-07 20:26:08.024 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@7] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.028 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 8 on p0 after ignored
+2026-11-07 20:26:08.029 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@8] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.032 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 9 on p0 after ignored
+2026-11-07 20:26:08.033 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@9] test_run=poison-after-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.035 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 10 on p0 after ignored
+2026-11-07 20:26:08.036 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@10] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.040 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 11 on p0 after ignored
+2026-11-07 20:26:08.041 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@11] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.043 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 12 on p0 after ignored
+2026-11-07 20:26:08.045 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@12] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.048 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 13 on p0 after ignored
+2026-11-07 20:26:08.049 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@13] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.052 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 14 on p0 after ignored
+2026-11-07 20:26:08.053 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@14] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.055 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 15 on p0 after ignored
+2026-11-07 20:26:08.057 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@15] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.061 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 16 on p0 after ignored
+2026-11-07 20:26:08.063 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@16] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.065 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 17 on p0 after ignored
+2026-11-07 20:26:08.066 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@17] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.069 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 18 on p0 after ignored
+2026-11-07 20:26:08.070 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@18] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.073 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 19 on p0 after ignored
+2026-11-07 20:26:08.074 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@19] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.078 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 20 on p0 after ignored
+2026-11-07 20:26:08.079 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@20] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.082 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 21 on p0 after ignored
+2026-11-07 20:26:08.083 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@21] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.086 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 22 on p0 after ignored
+2026-11-07 20:26:08.086 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@22] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.090 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 23 on p0 after ignored
+2026-11-07 20:26:08.091 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@23] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.095 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 24 on p0 after ignored
+2026-11-07 20:26:08.096 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@24] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.099 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 25 on p0 after ignored
+2026-11-07 20:26:08.100 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@25] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.103 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 26 on p0 after ignored
+2026-11-07 20:26:08.104 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@26] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.107 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 27 on p0 after ignored
+2026-11-07 20:26:08.108 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@27] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.112 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 28 on p0 after ignored
+2026-11-07 20:26:08.113 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@28] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.116 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 29 on p0 after ignored
+2026-11-07 20:26:08.117 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@29] test_run=order-unkeyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.120 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 30 on p0 after ignored
+2026-11-07 20:26:08.121 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@30] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.127 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 31 on p0 after ignored
+2026-11-07 20:26:08.128 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@31] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.131 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 32 on p0 after ignored
+2026-11-07 20:26:08.132 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@32] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.135 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 33 on p0 after ignored
+2026-11-07 20:26:08.137 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@33] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.140 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 34 on p0 after ignored
+2026-11-07 20:26:08.141 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@34] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.144 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 35 on p0 after ignored
+2026-11-07 20:26:08.145 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@35] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.148 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 36 on p0 after ignored
+2026-11-07 20:26:08.149 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@36] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.152 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 37 on p0 after ignored
+2026-11-07 20:26:08.154 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@37] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.157 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 38 on p0 after ignored
+2026-11-07 20:26:08.158 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@38] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.162 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 39 on p0 after ignored
+2026-11-07 20:26:08.164 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@39] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.166 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 40 on p0 after ignored
+2026-11-07 20:26:08.168 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@40] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.172 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 41 on p0 after ignored
+2026-11-07 20:26:08.173 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@41] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.176 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 42 on p0 after ignored
+2026-11-07 20:26:08.177 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@42] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.181 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 43 on p0 after ignored
+2026-11-07 20:26:08.182 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@43] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.185 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 44 on p0 after ignored
+2026-11-07 20:26:08.186 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@44] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.189 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 45 on p0 after ignored
+2026-11-07 20:26:08.190 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@45] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.193 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 46 on p0 after ignored
+2026-11-07 20:26:08.194 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@46] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.197 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 47 on p0 after ignored
+2026-11-07 20:26:08.198 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@47] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.201 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 48 on p0 after ignored
+2026-11-07 20:26:08.202 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@48] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.205 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 49 on p0 after ignored
+2026-11-07 20:26:08.206 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@49] test_run=order-keyed-20261102001941 (this agent handles test_run=None)
+2026-11-07 20:26:08.210 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 50 on p0 after ignored
+2026-11-07 20:26:08.212 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@50] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:26:08.215 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 51 on p0 after ignored
+2026-11-07 20:26:08.216 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@51] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:26:08.218 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 52 on p0 after ignored
+2026-11-07 20:26:08.220 | Shashank Ranjan | s2837 | REVIEWER-1 | IGNORED s2837_drafts[p0@52] test_run=verify-cc03bfa2 (this agent handles test_run=None)
+2026-11-07 20:26:08.222 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 53 on p0 after ignored
+2026-11-07 20:35:22.733 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@2] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 question='What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violations: Cold-holding unit above 41F; Prepared food missing date labels\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:22.735 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 on s2837_final ...
+2026-11-07 20:35:22.735 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@2] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violations: Cold-holding unit above 41F; Prepared...
+2026-11-07 20:35:22.743 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4
+2026-11-07 20:35:22.748 | Shashank Ranjan | s2837 | PLANNER-1  | Ollama unavailable (ModuleNotFoundError: No module named 'web_application.agent.adapter'); using template
+2026-11-07 20:35:22.748 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:22.758 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@28] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "test_run": null, "kind": "answer_task", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violatio...
+2026-11-07 20:35:22.759 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@28] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "test_run": null, "kind": "answer_task", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violatio...
+2026-11-07 20:35:22.765 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4
+2026-11-07 20:35:22.765 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 3 on p0 after success
+2026-11-07 20:35:22.767 | Shashank Ranjan | s2837 | WRITER-1   | Ollama unavailable (ModuleNotFoundError: No module named 'web_application.agent.adapter'); using template
+2026-11-07 20:35:22.768 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 176 words
+2026-11-07 20:35:22.777 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@53] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "test_run": null, "kind": "answer_draft", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violati...
+2026-11-07 20:35:22.778 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@53] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "test_run": null, "kind": "answer_draft", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violati...
+2026-11-07 20:35:22.784 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4
+2026-11-07 20:35:22.784 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 29 on p0 after success
+2026-11-07 20:35:22.786 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:22.793 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@7] correlation_id=0ef4e0e2-831c-4791-93be-b44c4a0d13a4 message={"correlation_id": "0ef4e0e2-831c-4791-93be-b44c4a0d13a4", "test_run": null, "status": "approved", "answer": "Answer to: What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; ...
+2026-11-07 20:35:22.800 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 54 on p0 after success
+2026-11-07 20:35:23.025 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@3] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 question='What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; violations: No hot water at the handwashing sink; Evidence of rodents in dry storage; Raw chicken stored above ready-to-eat food\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:23.026 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@3] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; violations: No hot water at the handwashing ...
+2026-11-07 20:35:23.027 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 on s2837_final ...
+2026-11-07 20:35:23.029 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982
+2026-11-07 20:35:23.030 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:23.035 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p1@39] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "test_run": null, "kind": "answer_task", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vio...
+2026-11-07 20:35:23.036 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p1@39] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "test_run": null, "kind": "answer_task", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vio...
+2026-11-07 20:35:23.039 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982
+2026-11-07 20:35:23.041 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 185 words
+2026-11-07 20:35:23.042 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 4 on p0 after success
+2026-11-07 20:35:23.046 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@54] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "test_run": null, "kind": "answer_draft", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vi...
+2026-11-07 20:35:23.047 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@54] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "test_run": null, "kind": "answer_draft", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vi...
+2026-11-07 20:35:23.051 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982
+2026-11-07 20:35:23.052 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:23.053 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 40 on p1 after success
+2026-11-07 20:35:23.057 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@8] correlation_id=b9221a6f-dd9c-47d6-81d2-f2d44c8bc982 message={"correlation_id": "b9221a6f-dd9c-47d6-81d2-f2d44c8bc982", "test_run": null, "status": "approved", "answer": "Answer to: What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score...
+2026-11-07 20:35:23.063 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 55 on p0 after success
+2026-11-07 20:35:23.270 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@4] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 question='When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violations: Sanitizer concentration too low; Food handler card expired\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:23.270 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@4] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violations: Sanitizer concentration too low; Food...
+2026-11-07 20:35:23.272 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 on s2837_final ...
+2026-11-07 20:35:23.274 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=34d4003c-c04b-46cc-8729-cb0496013531
+2026-11-07 20:35:23.275 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:23.279 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@29] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "test_run": null, "kind": "answer_task", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violatio...
+2026-11-07 20:35:23.280 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@29] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "test_run": null, "kind": "answer_task", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violatio...
+2026-11-07 20:35:23.282 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=34d4003c-c04b-46cc-8729-cb0496013531
+2026-11-07 20:35:23.283 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 173 words
+2026-11-07 20:35:23.286 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 5 on p0 after success
+2026-11-07 20:35:23.289 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@55] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "test_run": null, "kind": "answer_draft", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violati...
+2026-11-07 20:35:23.290 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@55] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "test_run": null, "kind": "answer_draft", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violati...
+2026-11-07 20:35:23.294 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=34d4003c-c04b-46cc-8729-cb0496013531
+2026-11-07 20:35:23.295 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:23.297 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 30 on p0 after success
+2026-11-07 20:35:23.301 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@9] correlation_id=34d4003c-c04b-46cc-8729-cb0496013531 message={"correlation_id": "34d4003c-c04b-46cc-8729-cb0496013531", "test_run": null, "status": "approved", "answer": "Answer to: When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; ...
+2026-11-07 20:35:23.310 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 56 on p0 after success
+2026-11-07 20:35:23.506 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@5] correlation_id=81696443-6367-421a-bc5d-765744431393 question='What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:23.507 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@5] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNIN...
+2026-11-07 20:35:23.507 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=81696443-6367-421a-bc5d-765744431393 on s2837_final ...
+2026-11-07 20:35:23.509 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=81696443-6367-421a-bc5d-765744431393
+2026-11-07 20:35:23.511 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:23.516 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@30] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "test_run": null, "kind": "answer_task", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 ...
+2026-11-07 20:35:23.516 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@30] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "test_run": null, "kind": "answer_task", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 ...
+2026-11-07 20:35:23.518 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=81696443-6367-421a-bc5d-765744431393
+2026-11-07 20:35:23.520 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 163 words
+2026-11-07 20:35:23.523 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 6 on p0 after success
+2026-11-07 20:35:23.526 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@56] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "test_run": null, "kind": "answer_draft", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100...
+2026-11-07 20:35:23.527 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@56] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "test_run": null, "kind": "answer_draft", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100...
+2026-11-07 20:35:23.530 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=81696443-6367-421a-bc5d-765744431393
+2026-11-07 20:35:23.531 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:23.532 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 31 on p0 after success
+2026-11-07 20:35:23.536 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@10] correlation_id=81696443-6367-421a-bc5d-765744431393 message={"correlation_id": "81696443-6367-421a-bc5d-765744431393", "test_run": null, "status": "approved", "answer": "Answer to: What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score...
+2026-11-07 20:35:23.544 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 57 on p0 after success
+2026-11-07 20:35:23.740 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@6] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 question='How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:23.740 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@6] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-ins...
+2026-11-07 20:35:23.742 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 on s2837_final ...
+2026-11-07 20:35:23.743 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=b418341f-1541-45d1-987e-48bcd56f1030
+2026-11-07 20:35:23.745 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:23.749 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p1@40] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "test_run": null, "kind": "answer_task", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (n...
+2026-11-07 20:35:23.751 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p1@40] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "test_run": null, "kind": "answer_task", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (n...
+2026-11-07 20:35:23.753 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=b418341f-1541-45d1-987e-48bcd56f1030
+2026-11-07 20:35:23.755 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 160 words
+2026-11-07 20:35:23.759 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 7 on p0 after success
+2026-11-07 20:35:23.761 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@57] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "test_run": null, "kind": "answer_draft", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (...
+2026-11-07 20:35:23.762 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@57] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "test_run": null, "kind": "answer_draft", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (...
+2026-11-07 20:35:23.764 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=b418341f-1541-45d1-987e-48bcd56f1030
+2026-11-07 20:35:23.765 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:23.766 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 41 on p1 after success
+2026-11-07 20:35:23.770 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@11] correlation_id=b418341f-1541-45d1-987e-48bcd56f1030 message={"correlation_id": "b418341f-1541-45d1-987e-48bcd56f1030", "test_run": null, "status": "approved", "answer": "Answer to: How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 =...
+2026-11-07 20:35:23.778 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 58 on p0 after success
+2026-11-07 20:35:23.956 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@7] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff question='What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violations: none recorded\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:35:23.957 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@7] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violations: none recorded\nCounty policy: score ...
+2026-11-07 20:35:23.957 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff on s2837_final ...
+2026-11-07 20:35:23.960 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff
+2026-11-07 20:35:23.961 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (template) steps=['Identify what the inspection status or rule in the question means', 'List the concrete corrective actions the restaurant should take', 'Explain how to verify the fixes before the next inspection']
+2026-11-07 20:35:23.965 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@31] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "test_run": null, "kind": "answer_task", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violati...
+2026-11-07 20:35:23.966 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@31] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "test_run": null, "kind": "answer_task", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violati...
+2026-11-07 20:35:23.969 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff
+2026-11-07 20:35:23.971 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (template) 169 words
+2026-11-07 20:35:23.973 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 8 on p0 after success
+2026-11-07 20:35:23.976 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@58] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "test_run": null, "kind": "answer_draft", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violat...
+2026-11-07 20:35:23.977 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@58] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "test_run": null, "kind": "answer_draft", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violat...
+2026-11-07 20:35:23.980 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff
+2026-11-07 20:35:23.982 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:35:23.982 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 32 on p0 after success
+2026-11-07 20:35:23.989 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@12] correlation_id=4fad6eab-1b0d-461a-8534-06689add1cff message={"correlation_id": "4fad6eab-1b0d-461a-8534-06689add1cff", "test_run": null, "status": "approved", "answer": "Answer to: What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97;...
+2026-11-07 20:35:23.995 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 59 on p0 after success
+2026-11-07 20:44:42.752 | Shashank Ranjan | s2837 | REVIEWER-1 | stopped by Ctrl+C (uncommitted work will be redelivered)
+2026-11-07 20:44:49.837 | Shashank Ranjan | s2837 | WRITER-1   | stopped by Ctrl+C (uncommitted work will be redelivered)
+2026-11-07 20:44:55.390 | Shashank Ranjan | s2837 | PLANNER-1  | stopped by Ctrl+C (uncommitted work will be redelivered)
+2026-11-07 20:45:00.074 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:45:00.075 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:45:00.076 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_inbox partitions=1
+2026-11-07 20:45:00.076 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_tasks partitions=2
+2026-11-07 20:45:00.077 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_drafts partitions=1
+2026-11-07 20:45:00.078 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_final partitions=1
+2026-11-07 20:45:00.078 | Shashank Ranjan | s2837 | PLANNER-1  | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:45:00.091 | Shashank Ranjan | s2837 | PLANNER-1  | planner started pid=24900 topic=s2837_inbox group=s2837_planners idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:45:01.104 | Shashank Ranjan | s2837 | PLANNER-1  | READY assigned partitions=[0] positions={0: 8} - Consumer is ready and listening...
+2026-11-07 20:45:06.701 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:45:06.703 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:45:06.703 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_inbox partitions=1
+2026-11-07 20:45:06.704 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_tasks partitions=2
+2026-11-07 20:45:06.705 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_drafts partitions=1
+2026-11-07 20:45:06.705 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_final partitions=1
+2026-11-07 20:45:06.706 | Shashank Ranjan | s2837 | WRITER-1   | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:45:06.720 | Shashank Ranjan | s2837 | WRITER-1   | writer started pid=25200 topic=s2837_tasks group=s2837_writers idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:45:07.727 | Shashank Ranjan | s2837 | WRITER-1   | READY assigned partitions=[0, 1] positions={0: 32, 1: 41} - Consumer is ready and listening...
+2026-11-07 20:45:12.590 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inspection_requests partitions=1
+2026-11-07 20:45:12.591 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inspection_responses partitions=1
+2026-11-07 20:45:12.592 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_inbox partitions=1
+2026-11-07 20:45:12.593 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_tasks partitions=2
+2026-11-07 20:45:12.593 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_drafts partitions=1
+2026-11-07 20:45:12.595 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_final partitions=1
+2026-11-07 20:45:12.595 | Shashank Ranjan | s2837 | REVIEWER-1 | topic ready s2837_dead_letter partitions=1
+2026-11-07 20:45:12.613 | Shashank Ranjan | s2837 | REVIEWER-1 | reviewer started pid=17092 topic=s2837_drafts group=s2837_reviewers idempotency=True commit_mode=after dlq=s2837_dead_letter max_retries=3
+2026-11-07 20:45:13.626 | Shashank Ranjan | s2837 | REVIEWER-1 | READY assigned partitions=[0] positions={0: 59} - Consumer is ready and listening...
+2026-11-07 20:45:36.164 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@8] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 question='What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violations: Cold-holding unit above 41F; Prepared food missing date labels\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:45:36.166 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@8] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violations: Cold-holding unit above 41F; Prepared...
+2026-11-07 20:45:36.172 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0
+2026-11-07 20:45:49.285 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=["Search for Taj Grill's inspection record", 'Identify the inspection date and score', 'Compare the score to the county policy thresholds', 'Determine the inspection outcome']
+2026-11-07 20:45:49.296 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@32] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "test_run": null, "kind": "answer_task", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violatio...
+2026-11-07 20:45:49.297 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@32] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "test_run": null, "kind": "answer_task", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violatio...
+2026-11-07 20:45:49.303 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0
+2026-11-07 20:45:49.304 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 9 on p0 after success
+2026-11-07 20:46:00.560 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 69 words
+2026-11-07 20:46:00.572 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@59] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "test_run": null, "kind": "answer_draft", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violati...
+2026-11-07 20:46:00.573 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@59] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "test_run": null, "kind": "answer_draft", "question": "What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Taj Grill: inspection S2837-H9-0002 on 2026-10-20, status WARNING, score 78; violati...
+2026-11-07 20:46:00.580 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 33 on p0 after success
+2026-11-07 20:46:00.582 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0
+2026-11-07 20:46:00.583 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:46:00.595 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@13] correlation_id=a5898ca7-33f9-4539-b077-fa1b6c33caa0 message={"correlation_id": "a5898ca7-33f9-4539-b077-fa1b6c33caa0", "test_run": null, "status": "approved", "answer": "Taj Grill's inspection record shows that it was inspected on October 20, 2026, with a score of 78. This score falls below the county policy threshold of 70-84, which indicates a WARNING stat...
+2026-11-07 20:46:00.602 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 60 on p0 after success
+2026-11-07 20:46:00.858 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@9] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; violations: No hot water at the handwashing ...
+ food\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:46:00.876 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b on s2837_final ...
+2026-11-07 20:46:00.878 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b
+2026-11-07 20:46:15.791 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=['Identify the inspection ID and date', 'Locate the violations from the provided facts', 'Determine the inspection status and score', 'Apply the county policy to the inspection score', 'Conclude with the violations found']
+2026-11-07 20:46:15.796 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p1@41] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "test_run": null, "kind": "answer_task", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vio...
+2026-11-07 20:46:15.797 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p1@41] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "test_run": null, "kind": "answer_task", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vio...
+2026-11-07 20:46:15.800 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b
+2026-11-07 20:46:15.802 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 10 on p0 after success
+2026-11-07 20:46:35.410 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 143 words
+2026-11-07 20:46:35.415 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@60] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "test_run": null, "kind": "answer_draft", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vi...
+2026-11-07 20:46:35.416 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@60] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "test_run": null, "kind": "answer_draft", "question": "What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Golden Dragon Bistro: inspection S2837-H9-0003 on 2026-10-05, status FAIL, score 62; vi...
+2026-11-07 20:46:35.420 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b
+2026-11-07 20:46:35.422 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:46:35.423 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 42 on p1 after success
+2026-11-07 20:46:35.428 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@14] correlation_id=2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b message={"correlation_id": "2c9ac3dd-3a8c-49aa-9bfb-fa2a8eec731b", "test_run": null, "status": "approved", "answer": "The inspection ID for Golden Dragon Bistro is S2837-H9-0003, conducted on 2026-10-05. The inspection status is FAIL with a score of 62, indicating a need for improvement. The violations iden...
+2026-11-07 20:46:35.437 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 61 on p0 after success
+2026-11-07 20:46:35.635 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@10] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 question='When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violations: Sanitizer concentration too low; Food handler card expired\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:46:35.636 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@10] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violations: Sanitizer concentration too low; Food...
+2026-11-07 20:46:35.636 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=bc288c67-6006-478c-913c-e50fd4796043 on s2837_final ...
+2026-11-07 20:46:35.639 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=bc288c67-6006-478c-913c-e50fd4796043
+2026-11-07 20:46:43.226 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=['Review the inspection history of Rustic Garden Deli.', 'Determine the inspection date and the current status.', 'Apply the County policy to the inspection score to decide the re-inspection requirement.']
+2026-11-07 20:46:43.232 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p1@42] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "test_run": null, "kind": "answer_task", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violatio...
+2026-11-07 20:46:43.233 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p1@42] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "test_run": null, "kind": "answer_task", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violatio...
+2026-11-07 20:46:43.237 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=bc288c67-6006-478c-913c-e50fd4796043
+2026-11-07 20:46:43.241 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 11 on p0 after success
+2026-11-07 20:46:56.871 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 85 words
+2026-11-07 20:46:56.877 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@61] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "test_run": null, "kind": "answer_draft", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violati...
+2026-11-07 20:46:56.877 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@61] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "test_run": null, "kind": "answer_draft", "question": "When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Garden Deli: inspection S2837-H9-0005 on 2026-09-30, status WARNING, score 71; violati...
+2026-11-07 20:46:56.881 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=bc288c67-6006-478c-913c-e50fd4796043
+2026-11-07 20:46:56.881 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:46:56.882 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 43 on p1 after success
+2026-11-07 20:46:56.887 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@15] correlation_id=bc288c67-6006-478c-913c-e50fd4796043 message={"correlation_id": "bc288c67-6006-478c-913c-e50fd4796043", "test_run": null, "status": "approved", "answer": "Rustic Garden Deli was last inspected on September 30, 2026, with a status of WARNING and a score of 71. The violations noted were Sanitizer concentration too low and Food handler card expir...
+2026-11-07 20:46:56.895 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 62 on p0 after success
+2026-11-07 20:46:57.166 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@11] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c question='What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:46:57.167 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@11] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNIN...
+2026-11-07 20:46:57.168 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c on s2837_final ...
+2026-11-07 20:46:57.172 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c
+2026-11-07 20:47:05.559 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=['Search for the specific temperature requirement for cold food in the given facts.', 'Identify that the temperature requirement is not provided in the given facts.', 'Conclude that the temperature requirement for cold food in a restaurant is not specified in the provided information.']
+2026-11-07 20:47:05.566 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@33] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "test_run": null, "kind": "answer_task", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 ...
+2026-11-07 20:47:05.566 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@33] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "test_run": null, "kind": "answer_task", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 ...
+2026-11-07 20:47:05.569 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c
+2026-11-07 20:47:05.573 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 12 on p0 after success
+2026-11-07 20:47:16.202 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 64 words
+2026-11-07 20:47:16.209 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@62] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "test_run": null, "kind": "answer_draft", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100...
+2026-11-07 20:47:16.209 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@62] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "test_run": null, "kind": "answer_draft", "question": "What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100...
+2026-11-07 20:47:16.212 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c
+2026-11-07 20:47:16.213 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:47:16.217 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 34 on p0 after success
+2026-11-07 20:47:16.219 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@16] correlation_id=ae1855d9-0058-4c9b-af48-16a5d561164c message={"correlation_id": "ae1855d9-0058-4c9b-af48-16a5d561164c", "test_run": null, "status": "approved", "answer": "The temperature requirement for cold food in a restaurant is not specified in the given facts. Therefore, the restaurant must ensure that the food is held at a temperature that is safe for f...
+2026-11-07 20:47:16.225 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 63 on p0 after success
+2026-11-07 20:47:16.429 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@12] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 question='How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:47:16.430 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@12] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-ins...
+2026-11-07 20:47:16.430 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 on s2837_final ...
+2026-11-07 20:47:16.432 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893
+2026-11-07 20:47:24.501 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=['Search for the specific restaurant record related to local restaurant health inspections in the county.', 'Analyze the provided facts from s2837_rel to determine the inspection frequency based on the score range.', 'Based on the inspection score, determine the appropriate inspection frequency for the restaurant.']
+2026-11-07 20:47:24.506 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p0@34] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "test_run": null, "kind": "answer_task", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (n...
+2026-11-07 20:47:24.507 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p0@34] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "test_run": null, "kind": "answer_task", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (n...
+2026-11-07 20:47:24.510 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893
+2026-11-07 20:47:24.514 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 13 on p0 after success
+2026-11-07 20:47:59.025 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 265 words
+2026-11-07 20:47:59.033 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@63] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "test_run": null, "kind": "answer_draft", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (...
+2026-11-07 20:47:59.034 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@63] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "test_run": null, "kind": "answer_draft", "question": "How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo specific restaurant record matched this question.\nCounty policy: score 85-100 = PASS (...
+2026-11-07 20:47:59.037 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893
+2026-11-07 20:47:59.039 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:47:59.041 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 35 on p0 after success
+2026-11-07 20:47:59.046 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@17] correlation_id=7dd8ef69-7704-48e3-a6c9-4250ad665893 message={"correlation_id": "7dd8ef69-7704-48e3-a6c9-4250ad665893", "test_run": null, "status": "approved", "answer": "To determine the inspection frequency for restaurants in your county, we need to follow these steps:\n\n1. **Search for the Specific Restaurant Record**: We need to find a specific restauran...
+2026-11-07 20:47:59.056 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 64 on p0 after success
+2026-11-07 20:47:59.258 | Shashank Ranjan | s2837 | SENDER     | SENT s2837_inbox[p0@13] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 question='What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violations: none recorded\nCounty policy: score 85-100 = PASS (no re-inspection); 70-84 = WARNING (re-inspection within 30 days of the inspection date); 0-69 = FAIL (re-inspection within 10 days).'
+2026-11-07 20:47:59.258 | Shashank Ranjan | s2837 | PLANNER-1  | RECEIVED s2837_inbox[p0@13] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violations: none recorded\nCounty policy: score ...
+2026-11-07 20:47:59.259 | Shashank Ranjan | s2837 | SENDER     | waiting for correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 on s2837_final ...
+2026-11-07 20:47:59.261 | Shashank Ranjan | s2837 | PLANNER-1  | PROCESSING correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805
+2026-11-07 20:48:06.390 | Shashank Ranjan | s2837 | PLANNER-1  | PLAN (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) steps=['Search for the inspection record for Cafe Milano.', 'Identify the score from the inspection record.', 'Determine the score range and corresponding action based on the score.', 'Provide the score as the answer.']
+2026-11-07 20:48:06.397 | Shashank Ranjan | s2837 | PLANNER-1  | SENT s2837_tasks[p1@43] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "kind": "answer_task", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violati...
+2026-11-07 20:48:06.398 | Shashank Ranjan | s2837 | WRITER-1   | RECEIVED s2837_tasks[p1@43] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "kind": "answer_task", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violati...
+2026-11-07 20:48:06.403 | Shashank Ranjan | s2837 | WRITER-1   | PROCESSING correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805
+2026-11-07 20:48:06.405 | Shashank Ranjan | s2837 | PLANNER-1  | COMMITTED offset 14 on p0 after success
+2026-11-07 20:48:16.334 | Shashank Ranjan | s2837 | WRITER-1   | DRAFT (ollama:qwen2.5:1.5b (temperature 0, seed 2837)) 53 words
+2026-11-07 20:48:16.341 | Shashank Ranjan | s2837 | WRITER-1   | SENT s2837_drafts[p0@64] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "kind": "answer_draft", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violat...
+2026-11-07 20:48:16.342 | Shashank Ranjan | s2837 | REVIEWER-1 | RECEIVED s2837_drafts[p0@64] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "kind": "answer_draft", "question": "What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- Cafe Milano: inspection S2837-H9-0009 on 2026-10-09, status PASS, score 97; violat...
+2026-11-07 20:48:16.344 | Shashank Ranjan | s2837 | REVIEWER-1 | PROCESSING correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805
+2026-11-07 20:48:16.345 | Shashank Ranjan | s2837 | REVIEWER-1 | REVIEW status=approved checks={'non_empty': True, 'length_40_400_words': True, 'on_domain': True, 'no_error_text': True}
+2026-11-07 20:48:16.349 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 44 on p1 after success
+2026-11-07 20:48:16.351 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@18] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "status": "approved", "answer": "Cafe Milano received a score of 97 in its latest inspection on 2026-10-09. This score falls within the PASS range, indicating no re-inspection is required based on the current policy. The sc...
+2026-11-07 20:48:16.360 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 65 on p0 after success

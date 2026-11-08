@@ -1,0 +1,121 @@
+2026-11-07 19:51:33.444 | Shashank Ranjan | s2837 | DB         | added column restaurant_inspection.view_count
+2026-11-07 19:51:33.579 | Shashank Ranjan | s2837 | PART1      | ======================================================================
+2026-11-07 19:51:33.581 | Shashank Ranjan | s2837 | PART1      | HW9 Part 1 - Shashank Ranjan - view counter for inspection S2837-H9-0001 (id=5009) key=s2837:views:inspection:5009
+2026-11-07 19:51:33.582 | Shashank Ranjan | s2837 | PART1      | ======================================================================
+2026-11-07 19:51:33.596 | Shashank Ranjan | s2837 | PART1      | Synced views to database: s2837:views:inspection:5009 = 10 -> restaurant_inspection.view_count (id=5009)
+2026-11-07 19:51:33.608 | Shashank Ranjan | s2837 | PART1      | Synced views to database: s2837:views:inspection:5009 = 20 -> restaurant_inspection.view_count (id=5009)
+2026-11-07 19:51:33.613 | Shashank Ranjan | s2837 | PART1      | final: Redis s2837:views:inspection:5009 = 25, s2837_rel.restaurant_inspection.view_count = 20 (last sync at a multiple of 10)
+2026-11-07 19:51:33.702 | Shashank Ranjan | s2837 | PART1      | measured avg per view: Redis INCR path 0.976 ms (includes the sync writes), direct DB UPDATE per view 3.38 ms
+2026-11-07 20:34:03.007 | Shashank Ranjan | s2837 | SEMCACHE   | created vector index s2837:semcache:idx (FLAT, COSINE, dim 384) on prefix s2837:semcache:entry:
+2026-11-07 20:35:22.391 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:35:22.392 | Shashank Ranjan | s2837 | PART2      | HW9 Part 2 - Shashank Ranjan - semantic cache threshold 0.85, embeddings sentence-transformers/all-MiniLM-L6-v2, miss path = HW8 agents (kafka); cleared 0 old entries
+2026-11-07 20:35:22.392 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:35:22.393 | Shashank Ranjan | s2837 | PART2      | --- query #1 [new] 'What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:35:22.411 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.0000 < 0.85 query='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:35:22.796 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 370.7 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 20:35:22.804 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:a9aa60fe1152 deps={'S2837-H9-0002': 0} total latency=410.6 ms
+2026-11-07 20:35:22.805 | Shashank Ranjan | s2837 | PART2      | #1 is_cached=False similarity=0.0000 latency_ms=410.6 answer='Answer to: What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- '...
+2026-11-07 20:35:22.806 | Shashank Ranjan | s2837 | PART2      | --- query #2 [exact duplicate of #1] 'What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:35:22.825 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=17.0 ms query='What score did Taj Grill get in its latest inspection?' matched='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:35:22.825 | Shashank Ranjan | s2837 | PART2      | #2 is_cached=True similarity=1.0000 latency_ms=17.0 answer='Answer to: What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- '...
+2026-11-07 20:35:22.826 | Shashank Ranjan | s2837 | PART2      | --- query #3 [paraphrase of #1] "What was Taj Grill's most recent inspection score?"
+2026-11-07 20:35:22.846 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.9589 >= 0.85 latency=18.1 ms query="What was Taj Grill's most recent inspection score?" matched='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:35:22.847 | Shashank Ranjan | s2837 | PART2      | #3 is_cached=True similarity=0.9589 latency_ms=18.1 answer='Answer to: What score did Taj Grill get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n- '...
+2026-11-07 20:35:22.848 | Shashank Ranjan | s2837 | PART2      | --- query #4 [new] 'What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:35:22.867 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.3107 < 0.85 query='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:35:23.060 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 181.4 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 20:35:23.065 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:3086e74af288 deps={'S2837-H9-0003': 0} total latency=216.1 ms
+2026-11-07 20:35:23.066 | Shashank Ranjan | s2837 | PART2      | #4 is_cached=False similarity=0.3107 latency_ms=216.1 answer='Answer to: What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Gol'...
+2026-11-07 20:35:23.066 | Shashank Ranjan | s2837 | PART2      | --- query #5 [paraphrase of #4] 'Which violations did inspectors record at Golden Dragon Bistro?'
+2026-11-07 20:35:23.084 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.8701 >= 0.85 latency=16.3 ms query='Which violations did inspectors record at Golden Dragon Bistro?' matched='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:35:23.085 | Shashank Ranjan | s2837 | PART2      | #5 is_cached=True similarity=0.8701 latency_ms=16.3 answer='Answer to: What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Gol'...
+2026-11-07 20:35:23.086 | Shashank Ranjan | s2837 | PART2      | --- query #6 [new] 'When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:35:23.103 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.3198 < 0.85 query='When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:35:23.305 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 190.3 ms status=approved deps=['S2837-H9-0005']
+2026-11-07 20:35:23.310 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:b36f6d80fe20 deps={'S2837-H9-0005': 0} total latency=223.5 ms
+2026-11-07 20:35:23.312 | Shashank Ranjan | s2837 | PART2      | #6 is_cached=False similarity=0.3198 latency_ms=223.5 answer='Answer to: When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Ga'...
+2026-11-07 20:35:23.313 | Shashank Ranjan | s2837 | PART2      | --- query #7 [exact duplicate of #6] 'When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:35:23.330 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=15.8 ms query='When must Rustic Garden Deli be re-inspected?' matched='When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:35:23.332 | Shashank Ranjan | s2837 | PART2      | #7 is_cached=True similarity=1.0000 latency_ms=15.8 answer='Answer to: When must Rustic Garden Deli be re-inspected?\n\nFacts from s2837_rel (use them exactly):\n- Rustic Ga'...
+2026-11-07 20:35:23.332 | Shashank Ranjan | s2837 | PART2      | --- query #8 [new] 'What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:35:23.349 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.2290 < 0.85 query='What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:35:23.540 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 180.7 ms status=approved deps=[]
+2026-11-07 20:35:23.544 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:627ae7ca62c3 deps={} total latency=211.1 ms
+2026-11-07 20:35:23.544 | Shashank Ranjan | s2837 | PART2      | #8 is_cached=False similarity=0.2290 latency_ms=211.1 answer='Answer to: What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly'...
+2026-11-07 20:35:23.545 | Shashank Ranjan | s2837 | PART2      | --- query #9 [paraphrase of #8] 'At what temperature should a restaurant keep cold food?'
+2026-11-07 20:35:23.562 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.9136 >= 0.85 latency=15.2 ms query='At what temperature should a restaurant keep cold food?' matched='What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:35:23.563 | Shashank Ranjan | s2837 | PART2      | #9 is_cached=True similarity=0.9136 latency_ms=15.2 answer='Answer to: What temperature must cold food be held at in a restaurant?\n\nFacts from s2837_rel (use them exactly'...
+2026-11-07 20:35:23.564 | Shashank Ranjan | s2837 | PART2      | --- query #10 [new] 'How often are restaurants inspected in our county?'
+2026-11-07 20:35:23.581 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.5326 < 0.85 query='How often are restaurants inspected in our county?'
+2026-11-07 20:35:23.774 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 181.2 ms status=approved deps=[]
+2026-11-07 20:35:23.777 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:e2128d4a617a deps={} total latency=212.7 ms
+2026-11-07 20:35:23.778 | Shashank Ranjan | s2837 | PART2      | #10 is_cached=False similarity=0.5326 latency_ms=212.7 answer='Answer to: How often are restaurants inspected in our county?\n\nFacts from s2837_rel (use them exactly):\nNo spe'...
+2026-11-07 20:35:23.779 | Shashank Ranjan | s2837 | PART2      | --- query #11 [exact duplicate of #4] 'What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:35:23.797 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=16.1 ms query='What violations were found at Golden Dragon Bistro?' matched='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:35:23.797 | Shashank Ranjan | s2837 | PART2      | #11 is_cached=True similarity=1.0000 latency_ms=16.1 answer='Answer to: What violations were found at Golden Dragon Bistro?\n\nFacts from s2837_rel (use them exactly):\n- Gol'...
+2026-11-07 20:35:23.798 | Shashank Ranjan | s2837 | PART2      | --- query #12 [new (similar wording to #1, different restaurant)] 'What score did Cafe Milano get in its latest inspection?'
+2026-11-07 20:35:23.814 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.5808 < 0.85 query='What score did Cafe Milano get in its latest inspection?'
+2026-11-07 20:35:23.992 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 166.6 ms status=approved deps=['S2837-H9-0009']
+2026-11-07 20:35:23.996 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:5eb8beca1300 deps={'S2837-H9-0009': 0} total latency=197.0 ms
+2026-11-07 20:35:23.997 | Shashank Ranjan | s2837 | PART2      | #12 is_cached=False similarity=0.5808 latency_ms=197.0 answer='Answer to: What score did Cafe Milano get in its latest inspection?\n\nFacts from s2837_rel (use them exactly):\n'...
+2026-11-07 20:35:23.999 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:35:24.000 | Shashank Ranjan | s2837 | PART2      | RESULTS
+2026-11-07 20:35:24.001 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:35:24.002 | Shashank Ranjan | s2837 | PART2      | hit rate 50.0% (6/12); avg latency cached 16.4 ms vs non-cached 245.2 ms
+2026-11-07 20:35:24.004 | Shashank Ranjan | s2837 | PART2      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part2_results.json
+2026-11-07 20:45:35.845 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:45:35.846 | Shashank Ranjan | s2837 | PART2      | HW9 Part 2 - Shashank Ranjan - semantic cache threshold 0.85, embeddings sentence-transformers/all-MiniLM-L6-v2, miss path = HW8 agents (kafka); cleared 6 old entries
+2026-11-07 20:45:35.848 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:45:35.849 | Shashank Ranjan | s2837 | PART2      | --- query #1 [new] 'What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:45:35.872 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.0000 < 0.85 query='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:46:00.597 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 24711.4 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 20:46:00.603 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:d38d7d66678a deps={'S2837-H9-0002': 0} total latency=24753.1 ms
+2026-11-07 20:46:00.604 | Shashank Ranjan | s2837 | PART2      | #1 is_cached=False similarity=0.0000 latency_ms=24753.1 answer="Taj Grill's inspection record shows that it was inspected on October 20, 2026, with a score of 78. This score "...
+2026-11-07 20:46:00.606 | Shashank Ranjan | s2837 | PART2      | --- query #2 [exact duplicate of #1] 'What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:46:00.626 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=19.9 ms query='What score did Taj Grill get in its latest inspection?' matched='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:46:00.628 | Shashank Ranjan | s2837 | PART2      | #2 is_cached=True similarity=1.0000 latency_ms=19.9 answer="Taj Grill's inspection record shows that it was inspected on October 20, 2026, with a score of 78. This score "...
+2026-11-07 20:46:00.629 | Shashank Ranjan | s2837 | PART2      | --- query #3 [paraphrase of #1] "What was Taj Grill's most recent inspection score?"
+2026-11-07 20:46:00.653 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.9589 >= 0.85 latency=22.7 ms query="What was Taj Grill's most recent inspection score?" matched='What score did Taj Grill get in its latest inspection?'
+2026-11-07 20:46:00.655 | Shashank Ranjan | s2837 | PART2      | #3 is_cached=True similarity=0.9589 latency_ms=22.7 answer="Taj Grill's inspection record shows that it was inspected on October 20, 2026, with a score of 78. This score "...
+2026-11-07 20:46:00.657 | Shashank Ranjan | s2837 | PART2      | --- query #4 [new] 'What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:46:00.680 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.3107 < 0.85 query='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:46:35.432 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 34738.5 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 20:46:35.437 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:a7a041a8106e deps={'S2837-H9-0003': 0} total latency=34778.7 ms
+2026-11-07 20:46:35.438 | Shashank Ranjan | s2837 | PART2      | #4 is_cached=False similarity=0.3107 latency_ms=34778.7 answer='The inspection ID for Golden Dragon Bistro is S2837-H9-0003, conducted on 2026-10-05. The inspection status is'...
+2026-11-07 20:46:35.439 | Shashank Ranjan | s2837 | PART2      | --- query #5 [paraphrase of #4] 'Which violations did inspectors record at Golden Dragon Bistro?'
+2026-11-07 20:46:35.460 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.8701 >= 0.85 latency=18.8 ms query='Which violations did inspectors record at Golden Dragon Bistro?' matched='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:46:35.461 | Shashank Ranjan | s2837 | PART2      | #5 is_cached=True similarity=0.8701 latency_ms=18.8 answer='The inspection ID for Golden Dragon Bistro is S2837-H9-0003, conducted on 2026-10-05. The inspection status is'...
+2026-11-07 20:46:35.461 | Shashank Ranjan | s2837 | PART2      | --- query #6 [new] 'When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:46:35.478 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.3198 < 0.85 query='When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:46:56.890 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 21399.8 ms status=approved deps=['S2837-H9-0005']
+2026-11-07 20:46:56.895 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:c76dd93aca21 deps={'S2837-H9-0005': 0} total latency=21432.4 ms
+2026-11-07 20:46:56.896 | Shashank Ranjan | s2837 | PART2      | #6 is_cached=False similarity=0.3198 latency_ms=21432.4 answer='Rustic Garden Deli was last inspected on September 30, 2026, with a status of WARNING and a score of 71. The v'...
+2026-11-07 20:46:56.897 | Shashank Ranjan | s2837 | PART2      | --- query #7 [exact duplicate of #6] 'When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:46:56.917 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=18.2 ms query='When must Rustic Garden Deli be re-inspected?' matched='When must Rustic Garden Deli be re-inspected?'
+2026-11-07 20:46:56.918 | Shashank Ranjan | s2837 | PART2      | #7 is_cached=True similarity=1.0000 latency_ms=18.2 answer='Rustic Garden Deli was last inspected on September 30, 2026, with a status of WARNING and a score of 71. The v'...
+2026-11-07 20:46:56.918 | Shashank Ranjan | s2837 | PART2      | --- query #8 [new] 'What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:46:56.936 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.2290 < 0.85 query='What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:47:16.221 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 19271.0 ms status=approved deps=[]
+2026-11-07 20:47:16.225 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:dab77fa88a56 deps={} total latency=19305.9 ms
+2026-11-07 20:47:16.228 | Shashank Ranjan | s2837 | PART2      | #8 is_cached=False similarity=0.2290 latency_ms=19305.9 answer='The temperature requirement for cold food in a restaurant is not specified in the given facts. Therefore, the '...
+2026-11-07 20:47:16.229 | Shashank Ranjan | s2837 | PART2      | --- query #9 [paraphrase of #8] 'At what temperature should a restaurant keep cold food?'
+2026-11-07 20:47:16.248 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=0.9136 >= 0.85 latency=16.1 ms query='At what temperature should a restaurant keep cold food?' matched='What temperature must cold food be held at in a restaurant?'
+2026-11-07 20:47:16.249 | Shashank Ranjan | s2837 | PART2      | #9 is_cached=True similarity=0.9136 latency_ms=16.1 answer='The temperature requirement for cold food in a restaurant is not specified in the given facts. Therefore, the '...
+2026-11-07 20:47:16.250 | Shashank Ranjan | s2837 | PART2      | --- query #10 [new] 'How often are restaurants inspected in our county?'
+2026-11-07 20:47:16.269 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.5326 < 0.85 query='How often are restaurants inspected in our county?'
+2026-11-07 20:47:59.051 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 42768.9 ms status=approved deps=[]
+2026-11-07 20:47:59.056 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:1013da5c8e82 deps={} total latency=42805.8 ms
+2026-11-07 20:47:59.057 | Shashank Ranjan | s2837 | PART2      | #10 is_cached=False similarity=0.5326 latency_ms=42805.8 answer='To determine the inspection frequency for restaurants in your county, we need to follow these steps:\n\n1. **Sea'...
+2026-11-07 20:47:59.059 | Shashank Ranjan | s2837 | PART2      | --- query #11 [exact duplicate of #4] 'What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:47:59.083 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=21.7 ms query='What violations were found at Golden Dragon Bistro?' matched='What violations were found at Golden Dragon Bistro?'
+2026-11-07 20:47:59.084 | Shashank Ranjan | s2837 | PART2      | #11 is_cached=True similarity=1.0000 latency_ms=21.7 answer='The inspection ID for Golden Dragon Bistro is S2837-H9-0003, conducted on 2026-10-05. The inspection status is'...
+2026-11-07 20:47:59.085 | Shashank Ranjan | s2837 | PART2      | --- query #12 [new (similar wording to #1, different restaurant)] 'What score did Cafe Milano get in its latest inspection?'
+2026-11-07 20:47:59.104 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.5808 < 0.85 query='What score did Cafe Milano get in its latest inspection?'
+2026-11-07 20:48:16.354 | Shashank Ranjan | s2837 | AGENT      | agent (kafka) answered in 17236.0 ms status=approved deps=['S2837-H9-0009']
+2026-11-07 20:48:16.360 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:d9a6fbbe4008 deps={'S2837-H9-0009': 0} total latency=17273.5 ms
+2026-11-07 20:48:16.361 | Shashank Ranjan | s2837 | PART2      | #12 is_cached=False similarity=0.5808 latency_ms=17273.5 answer='Cafe Milano received a score of 97 in its latest inspection on 2026-10-09. This score falls within the PASS ra'...
+2026-11-07 20:48:16.362 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:48:16.364 | Shashank Ranjan | s2837 | PART2      | RESULTS
+2026-11-07 20:48:16.366 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-07 20:48:16.368 | Shashank Ranjan | s2837 | PART2      | hit rate 50.0% (6/12); avg latency cached 19.6 ms vs non-cached 26724.9 ms
+2026-11-07 20:48:16.371 | Shashank Ranjan | s2837 | PART2      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part2_results.json

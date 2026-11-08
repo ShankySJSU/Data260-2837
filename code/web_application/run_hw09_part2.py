@@ -1,5 +1,4 @@
 """HW9 Part 2 - run 12 queries (new, exact duplicates, paraphrases) through the semantic cache.
-
     cd code
     python -m web_application.hw9.run_part2                    # HW8 agents over Kafka
     python -m web_application.hw9.run_part2 --agent direct     # same agents in-process
@@ -11,7 +10,7 @@ latency of cached vs non-cached queries (raw/part2_results.json).
 import argparse
 import sys
 
-from . import config as cfg
+from . import hw09_config as cfg
 from .embedder import embedder_name
 from .qa_service import QAService
 from .util import banner, log, save_raw

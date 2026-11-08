@@ -1,0 +1,147 @@
+{
+  "inspection_code": "S2837-H9-0001",
+  "inspection_id": 5009,
+  "key": "s2837:views:inspection:5009",
+  "accesses": [
+    {
+      "access": 1,
+      "total": 1,
+      "ms": 2.2
+    },
+    {
+      "access": 2,
+      "total": 2,
+      "ms": 0.6
+    },
+    {
+      "access": 3,
+      "total": 3,
+      "ms": 0.5
+    },
+    {
+      "access": 4,
+      "total": 4,
+      "ms": 0.5
+    },
+    {
+      "access": 5,
+      "total": 5,
+      "ms": 0.5
+    },
+    {
+      "access": 6,
+      "total": 6,
+      "ms": 0.5
+    },
+    {
+      "access": 7,
+      "total": 7,
+      "ms": 0.5
+    },
+    {
+      "access": 8,
+      "total": 8,
+      "ms": 0.4
+    },
+    {
+      "access": 9,
+      "total": 9,
+      "ms": 0.6
+    },
+    {
+      "access": 10,
+      "total": 10,
+      "ms": 4.7
+    },
+    {
+      "access": 11,
+      "total": 11,
+      "ms": 0.8
+    },
+    {
+      "access": 12,
+      "total": 12,
+      "ms": 0.5
+    },
+    {
+      "access": 13,
+      "total": 13,
+      "ms": 0.5
+    },
+    {
+      "access": 14,
+      "total": 14,
+      "ms": 0.5
+    },
+    {
+      "access": 15,
+      "total": 15,
+      "ms": 0.6
+    },
+    {
+      "access": 16,
+      "total": 16,
+      "ms": 0.6
+    },
+    {
+      "access": 17,
+      "total": 17,
+      "ms": 1.0
+    },
+    {
+      "access": 18,
+      "total": 18,
+      "ms": 0.6
+    },
+    {
+      "access": 19,
+      "total": 19,
+      "ms": 0.5
+    },
+    {
+      "access": 20,
+      "total": 20,
+      "ms": 5.0
+    },
+    {
+      "access": 21,
+      "total": 21,
+      "ms": 0.8
+    },
+    {
+      "access": 22,
+      "total": 22,
+      "ms": 0.5
+    },
+    {
+      "access": 23,
+      "total": 23,
+      "ms": 0.5
+    },
+    {
+      "access": 24,
+      "total": 24,
+      "ms": 0.5
+    },
+    {
+      "access": 25,
+      "total": 25,
+      "ms": 0.5
+    }
+  ],
+  "syncs": [
+    {
+      "count": 10,
+      "db_value": 10
+    },
+    {
+      "count": 20,
+      "db_value": 20
+    }
+  ],
+  "final_redis": 25,
+  "final_db": 20,
+  "avg_ms_redis_path": 0.976,
+  "avg_ms_db_update_per_view": 3.38,
+  "db_dialect": "mysql"
+}

@@ -12,8 +12,8 @@ import argparse
 import sys
 import time
 
-from . import config as cfg
-from .db import Db
+from . import hw09_config as cfg
+from .hw09_db import Db
 from .util import banner, log, ms_since, redis_client, save_raw
 
 COMPONENT = "PART1"

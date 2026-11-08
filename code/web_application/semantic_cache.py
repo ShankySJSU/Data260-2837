@@ -18,7 +18,7 @@ import uuid
 
 import numpy as np
 
-from . import config as cfg
+from . import hw09_config as cfg
 from .embedder import cosine, embed
 from .util import log, now_iso
 

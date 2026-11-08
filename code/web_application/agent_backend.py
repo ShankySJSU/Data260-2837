@@ -13,7 +13,7 @@ Modes (HW9_AGENT_MODE or --agent):
 
 import time
 
-from . import config as cfg
+from . import hw09_config as cfg
 from .util import log, ms_since
 
 COMPONENT = "AGENT"

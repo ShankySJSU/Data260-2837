@@ -51,12 +51,12 @@ SQLITE_PATH = os.getenv("HW9_SQLITE")
 
 # ---------------- paths ----------------
 HW9_DIR = Path(__file__).resolve().parent
-REPO_ROOT = HW9_DIR.parents[2]
+REPO_ROOT = HW9_DIR.parents[1]
 REPORT_DIR = Path(os.getenv("HW9_REPORT_DIR", REPO_ROOT / "reports" / "hw09"))
 RAW_DIR = REPORT_DIR / "raw"
 RUN_LOG = REPORT_DIR / "RUN_LOG.txt"
 CACHE_CASES = HW9_DIR / "cache_cases.yaml"
-AGENT_DATA_DIR = HW9_DIR / "agents" / "data"
+AGENT_DATA_DIR = HW9_DIR / "agent" / "data"
 REFERENCE_FILE = AGENT_DATA_DIR / "reference_data.json"
 LESSONS_FILE = Path(os.getenv("HW9_LESSONS_FILE", AGENT_DATA_DIR / "lessons.json"))
 

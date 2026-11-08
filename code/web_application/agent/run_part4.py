@@ -11,7 +11,7 @@ kept, test_data.json is used ONLY for the final 4-variant evaluation (never crea
 import argparse
 import sys
 
-from .. import config as cfg
+from .. import hw09_config as cfg
 from ..util import banner, load_raw, log, save_raw
 from .domain_kb import load_split
 from .lessons import LessonStore

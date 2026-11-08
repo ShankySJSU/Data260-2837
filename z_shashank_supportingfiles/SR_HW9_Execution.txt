@@ -9,37 +9,7 @@ Total time: about 30-40 minutes, most of it waiting.
 0. ONE-TIME SETUP
 ---------------------------------------------------------------------------------------
 - Docker Desktop must be running.  Ollama running with qwen2.5:1.5b (ollama pull qwen2.5:1.5b)
-- From the repo root:
---Contents of requirements_hw8.txt ..
-kafka-python>=2.1.0,<3
-fastapi>=0.110
-uvicorn>=0.29
-pydantic>=2.5
-requests>=2.31
-python-docx>=1.1
 
-pip install -r code\requirements_hw8.txt
-kafka-python>=2.1.0,<3   # 3.x changed the API - keep 2.x
-fastapi>=0.110
-uvicorn>=0.29
-pydantic>=2.5
-requests>=2.31
-python-docx>=1.1
-================
-#pip install kafka-python>=2.1.0
-pip install "kafka-python>=2.1.0,<3"
---this got installed..
--------------------------------
---the following were already satisfied
-pip install fastapi>=0.110
-pip install uvicorn>=0.29
-pip install pydantic>=2.5
-pip install requests>=2.31
--------------------------------
-pip install python-docx>=1.1
---this got installed
-===============
- 
 
 ----How to run---
 
@@ -105,3 +75,72 @@ AI Use section in your own words, add the hw9 commit hash (`git rev-parse HEAD`)
 ```
 git add -A && git commit -m "HW9" && git tag hw9 && git push && git push origin hw9
 ```
+
+==============Homework 9 : Shashank Ranjan===========
+Step 1 :
+(a) Start Docker Desktop, then run this from the repo root (C...\Data260-2837)
+(the folder that holds docker-compose.yml): 
+(b): Docker started..and verified everything working fine with Docker including "search" MODULE
+
+Step 2:
+Install all the requirments for this homework..
+#the following were installed in HW8 .. but still verifying..
+pip install "kafka-python>=2.1.0,<3"
+pip install "fastapi>=0.110"
+pip install "uvicorn>=0.29"
+pip install "pydantic>=2.5"
+pip install "requests>=2.31"
+pip install "python-docx>=1.1"
+
+=========verified --all the above were already installed=======
+C:\SJSURepo\Data260\Data260-2837>pip install "kafka-python>=2.1.0,<3"
+Requirement already satisfied: kafka-python<3,>=2.1.0 in C:\Python\python3.12\Lib\site-packages (2.3.3)
+
+=======================================
+===New installation for HW9====(ensure you put it in quote)=====
+pip install "redis>=5.0"
+pip install "sentence-transformers>=2.7"
+pip install "numpy>=1.26"
+pip install "pyyaml>=6.0"
+pip install "pymysql>=1.1"
+pip install "python-docx>=1.1"
+
+--most of them were already installed..
+======================================
+verify that I am able to access redis using python
+C:\SJSURepo\Data260\Data260-2837>python -c "import redis; r= redis.Redis(); print(r.ping()) "
+True
+--it printed True for Ping() 
+=====ensure MySQL and Ollama need to be running...
+
+=========Part 1 completed=========
+
+
+========Part 2 ====Start========
+step 1 : start the kafka and redis service..
+docker compose up -d kafka redis
+------here is output--------
+C:\SJSURepo\Data260\Data260-2837>docker compose up -d kafka redis
+[+] up 2/2
+ ✔ Container s2837-redis Running                                                0.0s
+ ✔ Container s2837-kafka Started                                                0.4s
+ ------------------------------------
+Step 2 : Start the 3 HW8 agents (each in its own terminal)
+code\web_application\kafka_pipeline:
+python planner.py
+python writer.py
+python reviewer.py
+
+Step 3:
+cd C:\SJSURepo\Data260\Data260-2837\code
+echo Shashank Ranjan - HW9 - Part 2
+python -m web_application.run_hw09_part2
+
+--------All executed and reports were saved in HW9\reports.--
+===========Part 2 : Completed=============
+===========Part 3 ==============================
+
+Step 1. Commit the labels first. The assignment says the labels must be fixed before you see results:
+cd C:\SJSURepo\Data260\Data260-2837
+git add code/web_application/hw9/cache_cases.yaml
+git commit -m "HW9 Part 3: labeled cache cases (committed before sweep)"
