@@ -6,7 +6,7 @@ Homework 1 continuity.
 """
 
 import json
-from src.model_client import get_llm
+from .src.model_client import get_llm
 
 def planner_agent(title, content, llm):
     prompt = f"""

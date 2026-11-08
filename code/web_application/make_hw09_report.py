@@ -16,7 +16,7 @@ from docx.enum.text import WD_COLOR_INDEX
 from docx.shared import Pt
 
 from . import hw09_config as cfg
-from .hw2_agents_demo import evaluator_agent, system
+from .agent import evaluator_agent, system
 from .util import load_json, load_raw
 
 doc = Document()
@@ -145,7 +145,8 @@ def main():
          "InspectionStore (database + cache class). Redis INCR on "
          "s2837:views:inspection:<id> counts the view; every 10th increment writes the count to "
          "s2837_rel.restaurant_inspection.view_count (column added by HW9).")
-    from . import view_counter
+    
+    from . import view_hw09_counter as view_counter
     code(src(view_counter.InspectionStore.increment_inspection_views))
     if p1:
         out = ["=== Testing Counter ==="]
@@ -176,7 +177,7 @@ def main():
     bullet("Miss: ground the question with the s2837_rel rows it mentions, run the HW8 pipeline "
            "(s2837_inbox -> planner -> writer -> reviewer -> s2837_final), store the entry, "
            "return is_cached=False.")
-    from . import qa_service
+    from . import qa_service as qa_service
     code(src(qa_service.QAService.handle), 60)
     if p2:
         s = p2["summary"]
