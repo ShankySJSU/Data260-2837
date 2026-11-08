@@ -1410,3 +1410,4 @@ e904-4a40-9c18-6d0f2a1542f7"}}
 2026-11-07 20:48:16.349 | Shashank Ranjan | s2837 | WRITER-1   | COMMITTED offset 44 on p1 after success
 2026-11-07 20:48:16.351 | Shashank Ranjan | s2837 | REVIEWER-1 | SENT s2837_final[p0@18] correlation_id=9050450a-fb18-4a87-a4cd-b1ea86368805 message={"correlation_id": "9050450a-fb18-4a87-a4cd-b1ea86368805", "test_run": null, "status": "approved", "answer": "Cafe Milano received a score of 97 in its latest inspection on 2026-10-09. This score falls within the PASS range, indicating no re-inspection is required based on the current policy. The sc...
 2026-11-07 20:48:16.360 | Shashank Ranjan | s2837 | REVIEWER-1 | COMMITTED offset 65 on p0 after success
+2026-11-07 21:27:34.893 | Shashank Ranjan | s2837 | WRITER     | Ollama unavailable (ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)); using template

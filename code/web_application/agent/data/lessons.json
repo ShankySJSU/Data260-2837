@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "Answers about re-inspection omit the due date (or imply one for a PASS).",
+    "correction": "Compute it from the record: WARNING -> re-inspect within 30 days of the inspection date, FAIL -> within 10 days, PASS -> no re-inspection is required. State the exact due date as YYYY-MM-DD.",
+    "created_at": "2026-11-07",
+    "use_count": 7,
+    "failure_code": "MISSING_REINSPECTION",
+    "applies_to": [
+      "reinspection"
+    ],
+    "source_question": "train_03",
+    "occurrences_seen": 2,
+    "status": "rejected",
+    "validation": {
+      "kept": false,
+      "checks": {
+        "failure_cases_improve_or_unchanged": true,
+        "previously_correct_stay_correct": true,
+        "unrelated_no_unsupported_answers": false
+      },
+      "failures_before": [
+        "val_06",
+        "val_09"
+      ],
+      "failures_after": [
+        "val_06",
+        "val_09"
+      ],
+      "regressions": [],
+      "unsupported": [
+        "val_06"
+      ],
+      "first_try_pass_before": 5,
+      "first_try_pass_after": 6,
+      "summary_before": {
+        "questions": 10,
+        "correct": 8,
+        "incorrect": 2,
+        "accuracy_pct": 80.0,
+        "avg_attempts": 1.5,
+        "avg_latency_ms": 6632.1,
+        "unsupported_answers": 1
+      },
+      "summary_after": {
+        "questions": 10,
+        "correct": 8,
+        "incorrect": 2,
+        "accuracy_pct": 80.0,
+        "avg_attempts": 1.4,
+        "avg_latency_ms": 6245.5,
+        "unsupported_answers": 1
+      }
+    }
+  }
+]

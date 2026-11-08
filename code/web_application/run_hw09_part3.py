@@ -27,7 +27,7 @@ import yaml
 
 from . import hw09_config as cfg
 from .agent_backend import run_agent
-from hw09_db import Db
+from .hw09_db import Db
 from .embedder import embed, embedder_name
 from .qa_service import QAService
 from .semantic_cache import SemanticCache

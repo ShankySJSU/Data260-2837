@@ -1,7 +1,6 @@
 """HW9 self-check -> reports/hw09/verification.json
-
     cd code
-    python -m web_application.hw9.verify_hw09
+    python -m web_application.verify_hw09
 
 Reads the raw files written by the Part 1-4 scripts (and Redis, if reachable).
 """

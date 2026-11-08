@@ -1,0 +1,112 @@
+{
+  "controlled_revision": {
+    "id": "demo_controlled",
+    "question": "What score did Rangoli Indian Cuisine receive in its latest inspection?",
+    "question_type": "score",
+    "lessons_loaded": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "Rangoli Indian Cuisine had a routine health inspection recently.",
+        "model": "controlled-incomplete (no model call)",
+        "answer_ms": 0.4,
+        "evaluation": {
+          "result": "REVISE",
+          "question_type": "score",
+          "explanation": "score question; failed: MISSING_SCORE",
+          "feedback": "Fix: state the score: 94",
+          "failure_codes": [
+            "MISSING_SCORE"
+          ],
+          "checks": {
+            "score": false
+          }
+        },
+        "feedback_given": null
+      },
+      {
+        "attempt": 2,
+        "answer": "Rangoli Indian Cuisine received a score of 94 in its latest inspection.",
+        "model": "ollama:qwen2.5:1.5b",
+        "answer_ms": 4883.3,
+        "evaluation": {
+          "result": "PASS",
+          "question_type": "score",
+          "explanation": "score question; all required facts present and supported",
+          "feedback": null,
+          "failure_codes": [],
+          "checks": {
+            "score": true
+          }
+        },
+        "feedback_given": "Fix: state the score: 94"
+      }
+    ],
+    "n_attempts": 2,
+    "final_answer": "Rangoli Indian Cuisine received a score of 94 in its latest inspection.",
+    "final_result": "PASS",
+    "first_failure_codes": [
+      "MISSING_SCORE"
+    ],
+    "latency_ms": 4894.4
+  },
+  "lesson_reuse": {
+    "event": "loaded",
+    "lesson_id": "lesson_001",
+    "question_id": "train_07"
+  },
+  "lesson_reuse_row": {
+    "id": "train_07",
+    "question": "What is the re-inspection deadline for Spicy Pho House?",
+    "question_type": "reinspection",
+    "lessons_loaded": [
+      "lesson_001"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "The re-inspection deadline for Spicy Pho House is 2027-01-22.",
+        "model": "ollama:qwen2.5:1.5b",
+        "answer_ms": 6033.6,
+        "evaluation": {
+          "result": "REVISE",
+          "question_type": "reinspection",
+          "explanation": "reinspection question; failed: MISSING_REINSPECTION",
+          "feedback": "Fix: Spicy Pho House is FAIL (inspected 2026-10-22); FAIL requires re-inspection within 10 days, so it is due by 2026-11-01",
+          "failure_codes": [
+            "MISSING_REINSPECTION"
+          ],
+          "checks": {
+            "due_date": false
+          }
+        },
+        "feedback_given": null
+      },
+      {
+        "attempt": 2,
+        "answer": "The re-inspection deadline for Spicy Pho House is 2026-11-01.",
+        "model": "ollama:qwen2.5:1.5b",
+        "answer_ms": 4992.6,
+        "evaluation": {
+          "result": "PASS",
+          "question_type": "reinspection",
+          "explanation": "reinspection question; all required facts present and supported",
+          "feedback": null,
+          "failure_codes": [],
+          "checks": {
+            "due_date": true
+          }
+        },
+        "feedback_given": "Fix: Spicy Pho House is FAIL (inspected 2026-10-22); FAIL requires re-inspection within 10 days, so it is due by 2026-11-01"
+      }
+    ],
+    "n_attempts": 2,
+    "final_answer": "The re-inspection deadline for Spicy Pho House is 2026-11-01.",
+    "final_result": "PASS",
+    "first_failure_codes": [
+      "MISSING_REINSPECTION"
+    ],
+    "latency_ms": 11031.8,
+    "lessons_created": []
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "rows": [
+    {
+      "id": "train_01",
+      "question": "When must Taj Grill be re-inspected?",
+      "question_type": "reinspection",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Taj Grill must be re-inspected on or before October 20, 2027.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 6899.4,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; failed: MISSING_REINSPECTION",
+            "feedback": "Fix: Taj Grill is WARNING (inspected 2026-10-20); WARNING requires re-inspection within 30 days, so it is due by 2026-11-19",
+            "failure_codes": [
+              "MISSING_REINSPECTION"
+            ],
+            "checks": {
+              "due_date": false
+            }
+          },
+          "feedback_given": null
+        },
+        {
+          "attempt": 2,
+          "answer": "Taj Grill must be re-inspected on or before November 19, 2026.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4949.2,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "due_date": true
+            }
+          },
+          "feedback_given": "Fix: Taj Grill is WARNING (inspected 2026-10-20); WARNING requires re-inspection within 30 days, so it is due by 2026-11-19"
+        }
+      ],
+      "n_attempts": 2,
+      "final_answer": "Taj Grill must be re-inspected on or before November 19, 2026.",
+      "final_result": "PASS",
+      "first_failure_codes": [
+        "MISSING_REINSPECTION"
+      ],
+      "latency_ms": 11853.4,
+      "lessons_created": []
+    },
+    {
+      "id": "train_02",
+      "question": "What score did Rangoli Indian Cuisine receive in its latest inspection?",
+      "question_type": "score",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Rangoli Indian Cuisine received a score of 94 in its latest inspection.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4122.1,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "score",
+            "explanation": "score question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "score": true
+            }
+          },
+          "feedback_given": null
+        }
+      ],
+      "n_attempts": 1,
+      "final_answer": "Rangoli Indian Cuisine received a score of 94 in its latest inspection.",
+      "final_result": "PASS",
+      "first_failure_codes": [],
+      "latency_ms": 4124.7,
+      "lessons_created": []
+    },
+    {
+      "id": "train_03",
+      "question": "By what date does Golden Dragon Bistro need its follow-up inspection?",
+      "question_type": "reinspection",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Golden Dragon Bistro needs its follow-up inspection on 2027-04-05.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4618.1,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; failed: MISSING_REINSPECTION",
+            "feedback": "Fix: Golden Dragon Bistro is FAIL (inspected 2026-10-05); FAIL requires re-inspection within 10 days, so it is due by 2026-10-15",
+            "failure_codes": [
+              "MISSING_REINSPECTION"
+            ],
+            "checks": {
+              "due_date": false
+            }
+          },
+          "feedback_given": null
+        },
+        {
+          "attempt": 2,
+          "answer": "Golden Dragon Bistro needs its follow-up inspection by 2026-10-15.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4878.4,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "due_date": true
+            }
+          },
+          "feedback_given": "Fix: Golden Dragon Bistro is FAIL (inspected 2026-10-05); FAIL requires re-inspection within 10 days, so it is due by 2026-10-15"
+        }
+      ],
+      "n_attempts": 2,
+      "final_answer": "Golden Dragon Bistro needs its follow-up inspection by 2026-10-15.",
+      "final_result": "PASS",
+      "first_failure_codes": [
+        "MISSING_REINSPECTION"
+      ],
+      "latency_ms": 9501.3,
+      "lessons_created": [
+        "lesson_001"
+      ]
+    },
+    {
+      "id": "train_04",
+      "question": "What violations were found at Rustic Garden Deli?",
+      "question_type": "violations",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Rustic Garden Deli was found to have violations including a sanitizer concentration too low and a food handler card that was expired.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 5111.2,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "violations",
+            "explanation": "violations question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "violations_listed": true
+            }
+          },
+          "feedback_given": null
+        }
+      ],
+      "n_attempts": 1,
+      "final_answer": "Rustic Garden Deli was found to have violations including a sanitizer concentration too low and a food handler card that was expired.",
+      "final_result": "PASS",
+      "first_failure_codes": [],
+      "latency_ms": 5114.6,
+      "lessons_created": []
+    },
+    {
+      "id": "train_05",
+      "question": "What was the result of the latest inspection at Urban Taco Cafe?",
+      "question_type": "status",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The latest inspection at Urban Taco Cafe resulted in a PASS status with a score of 88, and there were no violations reported.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 5268.5,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "status",
+            "explanation": "status question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "score": true,
+              "status": true
+            }
+          },
+          "feedback_given": null
+        }
+      ],
+      "n_attempts": 1,
+      "final_answer": "The latest inspection at Urban Taco Cafe resulted in a PASS status with a score of 88, and there were no violations reported.",
+      "final_result": "PASS",
+      "first_failure_codes": [],
+      "latency_ms": 5272.0,
+      "lessons_created": []
+    },
+    {
+      "id": "train_06",
+      "question": "What score did Sunset Noodle House get on its last inspection?",
+      "question_type": "unknown",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Sunset Noodle House did not have a recent restaurant health inspection.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 3330.8,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "unknown",
+            "explanation": "unknown question; failed: UNSUPPORTED_CLAIM",
+            "feedback": "Fix: this restaurant has no inspection record - say so and do not give a score, status or date",
+            "failure_codes": [
+              "UNSUPPORTED_CLAIM"
+            ],
+            "checks": {
+              "says_no_record": false,
+              "no_invented_facts": true
+            }
+          },
+          "feedback_given": null
+        },
+        {
+          "attempt": 2,
+          "answer": "Sunset Noodle House did not have a recent restaurant health inspection.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 3685.3,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "unknown",
+            "explanation": "unknown question; failed: UNSUPPORTED_CLAIM",
+            "feedback": "Fix: this restaurant has no inspection record - say so and do not give a score, status or date",
+            "failure_codes": [
+              "UNSUPPORTED_CLAIM"
+            ],
+            "checks": {
+              "says_no_record": false,
+              "no_invented_facts": true
+            }
+          },
+          "feedback_given": "Fix: this restaurant has no inspection record - say so and do not give a score, status or date"
+        }
+      ],
+      "n_attempts": 2,
+      "final_answer": "Sunset Noodle House did not have a recent restaurant health inspection.",
+      "final_result": "REVISE",
+      "first_failure_codes": [
+        "UNSUPPORTED_CLAIM"
+      ],
+      "latency_ms": 7021.6,
+      "lessons_created": []
+    },
+    {
+      "id": "train_07",
+      "question": "What is the re-inspection deadline for Spicy Pho House?",
+      "question_type": "reinspection",
+      "lessons_loaded": [
+        "lesson_001"
+      ],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The re-inspection deadline for Spicy Pho House is 2027-01-22.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 6033.6,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; failed: MISSING_REINSPECTION",
+            "feedback": "Fix: Spicy Pho House is FAIL (inspected 2026-10-22); FAIL requires re-inspection within 10 days, so it is due by 2026-11-01",
+            "failure_codes": [
+              "MISSING_REINSPECTION"
+            ],
+            "checks": {
+              "due_date": false
+            }
+          },
+          "feedback_given": null
+        },
+        {
+          "attempt": 2,
+          "answer": "The re-inspection deadline for Spicy Pho House is 2026-11-01.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4992.6,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "reinspection",
+            "explanation": "reinspection question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "due_date": true
+            }
+          },
+          "feedback_given": "Fix: Spicy Pho House is FAIL (inspected 2026-10-22); FAIL requires re-inspection within 10 days, so it is due by 2026-11-01"
+        }
+      ],
+      "n_attempts": 2,
+      "final_answer": "The re-inspection deadline for Spicy Pho House is 2026-11-01.",
+      "final_result": "PASS",
+      "first_failure_codes": [
+        "MISSING_REINSPECTION"
+      ],
+      "latency_ms": 11031.8,
+      "lessons_created": []
+    },
+    {
+      "id": "train_08",
+      "question": "Which score range counts as a WARNING?",
+      "question_type": "rule",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "A WARNING is a score of 70-79.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 3157.7,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "rule",
+            "explanation": "rule question; failed: MISSING_RULE",
+            "feedback": "Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).",
+            "failure_codes": [
+              "MISSING_RULE"
+            ],
+            "checks": {
+              "rule_numbers": false
+            }
+          },
+          "feedback_given": null
+        },
+        {
+          "attempt": 2,
+          "answer": "A WARNING is a score of 70-79.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4039.1,
+          "evaluation": {
+            "result": "REVISE",
+            "question_type": "rule",
+            "explanation": "rule question; failed: MISSING_RULE",
+            "feedback": "Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).",
+            "failure_codes": [
+              "MISSING_RULE"
+            ],
+            "checks": {
+              "rule_numbers": false
+            }
+          },
+          "feedback_given": "Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date)."
+        }
+      ],
+      "n_attempts": 2,
+      "final_answer": "A WARNING is a score of 70-79.",
+      "final_result": "REVISE",
+      "first_failure_codes": [
+        "MISSING_RULE"
+      ],
+      "latency_ms": 7201.9,
+      "lessons_created": []
+    },
+    {
+      "id": "train_09",
+      "question": "What was the outcome of Bayside Sushi Bar's inspection?",
+      "question_type": "status",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Bayside Sushi Bar's inspection was PASS with a score of 91.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 4372.7,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "status",
+            "explanation": "status question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "score": true,
+              "status": true
+            }
+          },
+          "feedback_given": null
+        }
+      ],
+      "n_attempts": 1,
+      "final_answer": "Bayside Sushi Bar's inspection was PASS with a score of 91.",
+      "final_result": "PASS",
+      "first_failure_codes": [],
+      "latency_ms": 4375.3,
+      "lessons_created": []
+    },
+    {
+      "id": "train_10",
+      "question": "What score did Lucky Star Diner receive?",
+      "question_type": "unknown",
+      "lessons_loaded": [],
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "No inspection record found for the restaurant named Lucky Star Diner.",
+          "model": "ollama:qwen2.5:1.5b",
+          "answer_ms": 3199.2,
+          "evaluation": {
+            "result": "PASS",
+            "question_type": "unknown",
+            "explanation": "unknown question; all required facts present and supported",
+            "feedback": null,
+            "failure_codes": [],
+            "checks": {
+              "says_no_record": true,
+              "no_invented_facts": true
+            }
+          },
+          "feedback_given": null
+        }
+      ],
+      "n_attempts": 1,
+      "final_answer": "No inspection record found for the restaurant named Lucky Star Diner.",
+      "final_result": "PASS",
+      "first_failure_codes": [],
+      "latency_ms": 3201.8,
+      "lessons_created": []
+    }
+  ],
+  "lesson_events": [
+    {
+      "event": "created",
+      "lesson_id": "lesson_001",
+      "question_id": "train_03"
+    },
+    {
+      "event": "loaded",
+      "lesson_id": "lesson_001",
+      "question_id": "train_07"
+    }
+  ],
+  "summary": {
+    "questions": 10,
+    "correct": 8,
+    "incorrect": 2,
+    "accuracy_pct": 80.0,
+    "avg_attempts": 1.5,
+    "avg_latency_ms": 6869.8,
+    "unsupported_answers": 1
+  },
+  "lessons": [
+    {
+      "lesson_id": "lesson_001",
+      "failure_pattern": "Answers about re-inspection omit the due date (or imply one for a PASS).",
+      "correction": "Compute it from the record: WARNING -> re-inspect within 30 days of the inspection date, FAIL -> within 10 days, PASS -> no re-inspection is required. State the exact due date as YYYY-MM-DD.",
+      "created_at": "2026-11-07",
+      "use_count": 1,
+      "failure_code": "MISSING_REINSPECTION",
+      "applies_to": [
+        "reinspection"
+      ],
+      "source_question": "train_03",
+      "occurrences_seen": 2,
+      "status": "candidate",
+      "validation": null
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "query": "What is the current status and score of Taj Grill's latest inspection?",
+  "record": "S2837-H9-0002",
+  "steps": [
+    {
+      "step": "1 first ask (miss, stored with data-version marker)",
+      "is_cached": false,
+      "similarity": 0.0,
+      "stale_detected": false,
+      "latency_ms": 26058.5,
+      "answer": "Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above 41\u00b0F and Prepared food missing date labels. According to the county policy, a score of 70-84 falls under the WARNING category, which requires a re-inspection within 30 days of the inspection date. Therefore, Taj Grill should be scheduled for a re-inspection within 30 days of this inspection.",
+      "db_status": "WARNING",
+      "db_score": 78,
+      "dv_marker": 1,
+      "entry_deps": {
+        "S2837-H9-0002": 1
+      }
+    },
+    {
+      "step": "2 ask again (hit, still correct)",
+      "is_cached": true,
+      "similarity": 1.0,
+      "stale_detected": false,
+      "latency_ms": 83.1,
+      "answer": "Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above 41\u00b0F and Prepared food missing date labels. According to the county policy, a score of 70-84 falls under the WARNING category, which requires a re-inspection within 30 days of the inspection date. Therefore, Taj Grill should be scheduled for a re-inspection within 30 days of this inspection.",
+      "db_status": "WARNING",
+      "db_score": 78,
+      "dv_marker": 1,
+      "entry_deps": null
+    },
+    {
+      "step": "3 ask with version check OFF (STALE HIT - old answer)",
+      "is_cached": true,
+      "similarity": 1.0,
+      "stale_detected": false,
+      "latency_ms": 39.4,
+      "answer": "Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above 41\u00b0F and Prepared food missing date labels. According to the county policy, a score of 70-84 falls under the WARNING category, which requires a re-inspection within 30 days of the inspection date. Therefore, Taj Grill should be scheduled for a re-inspection within 30 days of this inspection.",
+      "db_status": "PASS",
+      "db_score": 91,
+      "dv_marker": 2,
+      "entry_deps": null
+    },
+    {
+      "step": "4 ask with version check ON (stale detected -> invalidated -> agent rerun)",
+      "is_cached": false,
+      "similarity": 1.0,
+      "stale_detected": true,
+      "latency_ms": 22924.8,
+      "answer": "Taj Grill's latest inspection on 2026-10-20 was a PASS with a score of 91. This inspection found violations related to the cold-holding unit being above 41\u00b0F and the prepared food missing date labels. According to the county policy, a score of 85-100 is considered PASS, 70-84 is a WARNING, and 0-69 is a FAIL. Since Taj Grill's score of 91 falls within the PASS range, the restaurant's health status is currently PASS. No re-inspection is required based on the current score.",
+      "db_status": "PASS",
+      "db_score": 91,
+      "dv_marker": 2,
+      "entry_deps": {
+        "S2837-H9-0002": 2
+      }
+    },
+    {
+      "step": "5 ask again (hit on the fresh answer)",
+      "is_cached": true,
+      "similarity": 1.0,
+      "stale_detected": false,
+      "latency_ms": 23.7,
+      "answer": "Taj Grill's latest inspection on 2026-10-20 was a PASS with a score of 91. This inspection found violations related to the cold-holding unit being above 41\u00b0F and the prepared food missing date labels. According to the county policy, a score of 85-100 is considered PASS, 70-84 is a WARNING, and 0-69 is a FAIL. Since Taj Grill's score of 91 falls within the PASS range, the restaurant's health status is currently PASS. No re-inspection is required based on the current score.",
+      "db_status": "PASS",
+      "db_score": 91,
+      "dv_marker": 2,
+      "entry_deps": null
+    }
+  ],
+  "strategy": "per-record data-version marker s2837:dv:inspection:<code>, stored in the entry's deps, compared on every hit"
+}

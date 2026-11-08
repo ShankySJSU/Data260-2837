@@ -1,0 +1,131 @@
+{
+  "student": "Shashank Ranjan",
+  "prefix": "s2837",
+  "generated_at": "2026-11-08T06:33:19.832+00:00",
+  "checks": [
+    {
+      "check": "redis_reachable_with_search_module",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all_hw9_redis_keys_start_with_prefix",
+      "status": "PASS",
+      "detail": "4 keys, bad=[]"
+    },
+    {
+      "check": "part1_counter_counts_1_to_25",
+      "status": "PASS",
+      "detail": "[25]"
+    },
+    {
+      "check": "part1_synced_every_10",
+      "status": "PASS",
+      "detail": "syncs=[{'count': 10, 'db_value': 10}, {'count': 20, 'db_value': 20}]"
+    },
+    {
+      "check": "part1_key_has_prefix",
+      "status": "PASS",
+      "detail": "s2837:views:inspection:5009"
+    },
+    {
+      "check": "part2_at_least_10_queries_mixed",
+      "status": "PASS",
+      "detail": "12 queries"
+    },
+    {
+      "check": "part2_rows_have_flag_similarity_latency",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "part2_exact_duplicates_hit",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "part2_summary_reported",
+      "status": "PASS",
+      "detail": "{'queries': 12, 'hits': 6, 'misses': 6, 'hit_rate_pct': 50.0, 'avg_latency_cached_ms': 19.6, 'avg_latency_uncached_ms': 26724.9, 'threshold': 0.85, 'agent_mode': 'kafka', 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'observed_ratio': 1363.5}"
+    },
+    {
+      "check": "cache_cases_40_labeled_10_per_category",
+      "status": "PASS",
+      "detail": "{'exact_duplicate': 10, 'paraphrase': 10, 'similar_different': 10, 'unrelated': 10}"
+    },
+    {
+      "check": "sweep_five_thresholds",
+      "status": "PASS",
+      "detail": "[0.75, 0.8, 0.85, 0.9, 0.95]"
+    },
+    {
+      "check": "sweep_table_complete",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "false_hit_example_complete",
+      "status": "PASS",
+      "detail": "S10"
+    },
+    {
+      "check": "threshold_chosen_by_cost",
+      "status": "PASS",
+      "detail": "0.95"
+    },
+    {
+      "check": "stale_hit_demonstrated",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "invalidation_by_data_version",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "input_datasets_contain_questions_only",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "lessons_json_required_fields",
+      "status": "PASS",
+      "detail": "1 lessons"
+    },
+    {
+      "check": "no_lesson_from_test_split",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "lessons_validated",
+      "status": "PASS",
+      "detail": "{'lesson_001': 'rejected'}"
+    },
+    {
+      "check": "four_variants_on_test",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "max_two_attempts",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "controlled_revision_sequence",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "check": "lesson_reused_on_later_question",
+      "status": "PASS",
+      "detail": "{'event': 'loaded', 'lesson_id': 'lesson_001', 'question_id': 'train_07'}"
+    }
+  ],
+  "summary": {
+    "passed": 24,
+    "total": 24
+  }
+}

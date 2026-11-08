@@ -1,0 +1,59 @@
+{
+  "kept": [],
+  "candidates": [
+    "lesson_001"
+  ],
+  "history": [
+    {
+      "lessons": [],
+      "summary": {
+        "questions": 10,
+        "correct": 8,
+        "incorrect": 2,
+        "accuracy_pct": 80.0,
+        "avg_attempts": 1.5,
+        "avg_latency_ms": 6632.1,
+        "unsupported_answers": 1
+      },
+      "per_question": {
+        "val_01": "PASS",
+        "val_02": "PASS",
+        "val_03": "PASS",
+        "val_04": "PASS",
+        "val_05": "PASS",
+        "val_06": "REVISE",
+        "val_07": "PASS",
+        "val_08": "PASS",
+        "val_09": "REVISE",
+        "val_10": "PASS"
+      }
+    },
+    {
+      "lessons": [
+        "lesson_001"
+      ],
+      "summary": {
+        "questions": 10,
+        "correct": 8,
+        "incorrect": 2,
+        "accuracy_pct": 80.0,
+        "avg_attempts": 1.4,
+        "avg_latency_ms": 6245.5,
+        "unsupported_answers": 1
+      },
+      "per_question": {
+        "val_01": "PASS",
+        "val_02": "PASS",
+        "val_03": "PASS",
+        "val_04": "PASS",
+        "val_05": "PASS",
+        "val_06": "REVISE",
+        "val_07": "PASS",
+        "val_08": "PASS",
+        "val_09": "REVISE",
+        "val_10": "PASS"
+      },
+      "decision": "rejected"
+    }
+  ]
+}

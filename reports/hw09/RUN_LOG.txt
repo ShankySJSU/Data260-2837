@@ -119,3 +119,445 @@
 2026-11-07 20:48:16.366 | Shashank Ranjan | s2837 | PART2      | ======================================================================
 2026-11-07 20:48:16.368 | Shashank Ranjan | s2837 | PART2      | hit rate 50.0% (6/12); avg latency cached 19.6 ms vs non-cached 26724.9 ms
 2026-11-07 20:48:16.371 | Shashank Ranjan | s2837 | PART2      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part2_results.json
+2026-11-07 21:13:59.416 | Shashank Ranjan | s2837 | PART3      | agent memo: 0 answers on file, 60 to generate (direct)
+2026-11-07 21:14:20.296 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 20874.2 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 21:14:20.297 | Shashank Ranjan | s2837 | PART3      |   [1/60] 20874.2 ms  What score did Taj Grill get in its latest inspection?
+2026-11-07 21:14:55.719 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 35413.6 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 21:14:55.720 | Shashank Ranjan | s2837 | PART3      |   [2/60] 35413.6 ms  What violations were found at Golden Dragon Bistro?
+2026-11-07 21:15:17.888 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22160.9 ms status=approved deps=['S2837-H9-0005']
+2026-11-07 21:15:17.890 | Shashank Ranjan | s2837 | PART3      |   [3/60] 22160.9 ms  When must Rustic Garden Deli be re-inspected?
+2026-11-07 21:15:44.663 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 26765.3 ms status=approved deps=['S2837-H9-0004']
+2026-11-07 21:15:44.665 | Shashank Ranjan | s2837 | PART3      |   [4/60] 26765.3 ms  What was the result of the latest inspection at Urban Taco Cafe?
+2026-11-07 21:16:08.042 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 23365.8 ms status=approved deps=['S2837-H9-0006']
+2026-11-07 21:16:08.043 | Shashank Ranjan | s2837 | PART3      |   [5/60] 23365.8 ms  Does Bayside Sushi Bar need a re-inspection?
+2026-11-07 21:16:28.278 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 20225.8 ms status=approved deps=[]
+2026-11-07 21:16:28.280 | Shashank Ranjan | s2837 | PART3      |   [6/60] 20225.8 ms  What score range counts as a WARNING?
+2026-11-07 21:17:06.440 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 38151.4 ms status=approved deps=['S2837-H9-0007']
+2026-11-07 21:17:06.441 | Shashank Ranjan | s2837 | PART3      |   [7/60] 38151.4 ms  What violations were recorded at Spicy Pho House?
+2026-11-07 21:17:36.436 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 29988.0 ms status=approved deps=['S2837-H9-0008']
+2026-11-07 21:17:36.438 | Shashank Ranjan | s2837 | PART3      |   [8/60] 29988.0 ms  When is the follow-up inspection for Golden Crust Bakery due?
+2026-11-07 21:17:55.496 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 19048.1 ms status=approved deps=[]
+2026-11-07 21:17:55.498 | Shashank Ranjan | s2837 | PART3      |   [9/60] 19048.1 ms  What temperature must cold food be held at in a restaurant?
+2026-11-07 21:18:14.415 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18906.5 ms status=approved deps=[]
+2026-11-07 21:18:14.416 | Shashank Ranjan | s2837 | PART3      |   [10/60] 18906.5 ms  How long does a FAIL restaurant have before it is re-inspected?
+2026-11-07 21:18:35.788 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 21362.0 ms status=approved deps=['S2837-H9-0009']
+2026-11-07 21:18:35.789 | Shashank Ranjan | s2837 | PART3      |   [11/60] 21362.0 ms  What score did Cafe Milano receive on its last inspection?
+2026-11-07 21:18:51.634 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 15835.3 ms status=approved deps=['S2837-H9-0009']
+2026-11-07 21:18:51.636 | Shashank Ranjan | s2837 | PART3      |   [12/60] 15835.3 ms  How many points did Cafe Milano get at its most recent inspection?
+2026-11-07 21:19:16.761 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25117.1 ms status=approved deps=['S2837-H9-0010']
+2026-11-07 21:19:16.763 | Shashank Ranjan | s2837 | PART3      |   [13/60] 25117.1 ms  Which violations were cited at Grill & Barrel Bar?
+2026-11-07 21:19:45.051 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 28279.6 ms status=approved deps=['S2837-H9-0010']
+2026-11-07 21:19:45.053 | Shashank Ranjan | s2837 | PART3      |   [14/60] 28279.6 ms  What problems did inspectors find at Grill & Barrel Bar?
+2026-11-07 21:20:06.208 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 21141.5 ms status=approved deps=['S2837-H9-0007']
+2026-11-07 21:20:06.209 | Shashank Ranjan | s2837 | PART3      |   [15/60] 21141.5 ms  When is Spicy Pho House's re-inspection deadline?
+2026-11-07 21:20:39.092 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 32872.7 ms status=approved deps=['S2837-H9-0007']
+2026-11-07 21:20:39.094 | Shashank Ranjan | s2837 | PART3      |   [16/60] 32872.7 ms  By what date does Spicy Pho House have to be inspected again?
+2026-11-07 21:21:03.205 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24100.8 ms status=approved deps=['S2837-H9-0001']
+2026-11-07 21:21:03.206 | Shashank Ranjan | s2837 | PART3      |   [17/60] 24100.8 ms  Did Rangoli Indian Cuisine pass its health inspection?
+2026-11-07 21:21:23.927 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 20706.8 ms status=approved deps=['S2837-H9-0001']
+2026-11-07 21:21:23.928 | Shashank Ranjan | s2837 | PART3      |   [18/60] 20706.8 ms  Was Rangoli Indian Cuisine's health inspection a pass?
+2026-11-07 21:21:49.467 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25526.9 ms status=approved deps=[]
+2026-11-07 21:21:49.468 | Shashank Ranjan | s2837 | PART3      |   [19/60] 25526.9 ms  What is the minimum score needed to pass an inspection?
+2026-11-07 21:22:04.994 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 15515.2 ms status=approved deps=[]
+2026-11-07 21:22:04.995 | Shashank Ranjan | s2837 | PART3      |   [20/60] 15515.2 ms  What is the lowest score that still counts as a PASS?
+2026-11-07 21:22:30.201 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25197.3 ms status=approved deps=[]
+2026-11-07 21:22:30.202 | Shashank Ranjan | s2837 | PART3      |   [21/60] 25197.3 ms  How should cooked rice be cooled safely?
+2026-11-07 21:22:58.788 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 28576.2 ms status=approved deps=[]
+2026-11-07 21:22:58.789 | Shashank Ranjan | s2837 | PART3      |   [22/60] 28576.2 ms  What is the safe way to cool down cooked rice?
+2026-11-07 21:23:21.051 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22253.4 ms status=approved deps=[]
+2026-11-07 21:23:21.052 | Shashank Ranjan | s2837 | PART3      |   [23/60] 22253.4 ms  What does a WARNING inspection status mean for a restaurant?
+2026-11-07 21:23:40.015 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18955.4 ms status=approved deps=[]
+2026-11-07 21:23:40.020 | Shashank Ranjan | s2837 | PART3      |   [24/60] 18955.4 ms  What does it mean when a restaurant gets a WARNING status?
+2026-11-07 21:24:02.048 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22016.1 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 21:24:02.050 | Shashank Ranjan | s2837 | PART3      |   [25/60] 22016.1 ms  What was Golden Dragon Bistro's inspection score?
+2026-11-07 21:24:25.761 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 23699.0 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 21:24:25.762 | Shashank Ranjan | s2837 | PART3      |   [26/60] 23699.0 ms  What score did Golden Dragon Bistro get when it was inspected?
+2026-11-07 21:27:34.895 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 189123.1 ms status=approved deps=[]
+2026-11-07 21:27:34.897 | Shashank Ranjan | s2837 | PART3      |   [27/60] 189123.1 ms  What happens after a restaurant fails its inspection?
+2026-11-07 21:27:57.907 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22997.3 ms status=approved deps=[]
+2026-11-07 21:27:57.908 | Shashank Ranjan | s2837 | PART3      |   [28/60] 22997.3 ms  What happens to a restaurant once it fails a health inspection?
+2026-11-07 21:28:36.656 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 38739.2 ms status=approved deps=[]
+2026-11-07 21:28:36.657 | Shashank Ranjan | s2837 | PART3      |   [29/60] 38739.2 ms  What should an owner fix before a re-inspection?
+2026-11-07 21:29:04.618 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 27949.3 ms status=approved deps=[]
+2026-11-07 21:29:04.619 | Shashank Ranjan | s2837 | PART3      |   [30/60] 27949.3 ms  What should a restaurant owner correct before the re-inspection?
+2026-11-07 21:29:25.507 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 20880.4 ms status=approved deps=['S2837-H9-0006']
+2026-11-07 21:29:25.509 | Shashank Ranjan | s2837 | PART3      |   [31/60] 20880.4 ms  What score did Bayside Sushi Bar get in its latest inspection?
+2026-11-07 21:29:49.424 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 23907.1 ms status=approved deps=['S2837-H9-0008']
+2026-11-07 21:29:49.426 | Shashank Ranjan | s2837 | PART3      |   [32/60] 23907.1 ms  What score did Golden Crust Bakery get in its latest inspection?
+2026-11-07 21:30:14.031 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24596.5 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 21:30:14.032 | Shashank Ranjan | s2837 | PART3      |   [33/60] 24596.5 ms  When must Taj Grill be re-inspected?
+2026-11-07 21:30:35.549 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 21506.9 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 21:30:35.551 | Shashank Ranjan | s2837 | PART3      |   [34/60] 21506.9 ms  When was Taj Grill last inspected?
+2026-11-07 21:30:54.410 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18848.3 ms status=approved deps=['S2837-H9-0004']
+2026-11-07 21:30:54.411 | Shashank Ranjan | s2837 | PART3      |   [35/60] 18848.3 ms  What violations were found at Urban Taco Cafe?
+2026-11-07 21:31:17.173 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22752.4 ms status=approved deps=['S2837-H9-0005']
+2026-11-07 21:31:17.175 | Shashank Ranjan | s2837 | PART3      |   [36/60] 22752.4 ms  What violations were found at Rustic Garden Deli?
+2026-11-07 21:31:39.188 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22005.6 ms status=approved deps=[]
+2026-11-07 21:31:39.190 | Shashank Ranjan | s2837 | PART3      |   [37/60] 22005.6 ms  What score range counts as a PASS?
+2026-11-07 21:31:58.956 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 19752.0 ms status=rejected deps=[]
+2026-11-07 21:31:58.958 | Shashank Ranjan | s2837 | PART3      |   [38/60] 19752.0 ms  What score range counts as a FAIL?
+2026-11-07 21:32:23.800 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24829.8 ms status=approved deps=['S2837-H9-0003']
+2026-11-07 21:32:23.801 | Shashank Ranjan | s2837 | PART3      |   [39/60] 24829.8 ms  Does Golden Dragon Bistro need a re-inspection?
+2026-11-07 21:32:49.368 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25553.3 ms status=approved deps=['S2837-H9-0009']
+2026-11-07 21:32:49.369 | Shashank Ranjan | s2837 | PART3      |   [40/60] 25553.3 ms  Does Cafe Milano need a re-inspection?
+2026-11-07 21:33:14.023 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24641.1 ms status=approved deps=[]
+2026-11-07 21:33:14.024 | Shashank Ranjan | s2837 | PART3      |   [41/60] 24641.1 ms  What temperature must hot food be held at?
+2026-11-07 21:33:38.277 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24241.9 ms status=approved deps=[]
+2026-11-07 21:33:38.279 | Shashank Ranjan | s2837 | PART3      |   [42/60] 24241.9 ms  What temperature must frozen food be stored at?
+2026-11-07 21:33:54.727 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 16436.8 ms status=approved deps=[]
+2026-11-07 21:33:54.728 | Shashank Ranjan | s2837 | PART3      |   [43/60] 16436.8 ms  How many days does a WARNING restaurant have before re-inspection?
+2026-11-07 21:34:13.237 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18500.3 ms status=approved deps=[]
+2026-11-07 21:34:13.254 | Shashank Ranjan | s2837 | PART3      |   [44/60] 18500.3 ms  How many days does a FAIL restaurant have before re-inspection?
+2026-11-07 21:34:44.776 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 31507.3 ms status=approved deps=['S2837-H9-0007']
+2026-11-07 21:34:44.777 | Shashank Ranjan | s2837 | PART3      |   [45/60] 31507.3 ms  What was the result of the latest inspection at Spicy Pho House?
+2026-11-07 21:35:12.032 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 27246.1 ms status=approved deps=['S2837-H9-0001']
+2026-11-07 21:35:12.035 | Shashank Ranjan | s2837 | PART3      |   [46/60] 27246.1 ms  What was the result of the latest inspection at Rangoli Indian Cuisine?
+2026-11-07 21:35:30.381 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18327.8 ms status=approved deps=[]
+2026-11-07 21:35:30.382 | Shashank Ranjan | s2837 | PART3      |   [47/60] 18327.8 ms  Which restaurant had the highest inspection score?
+2026-11-07 21:35:46.686 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 16294.5 ms status=approved deps=[]
+2026-11-07 21:35:46.687 | Shashank Ranjan | s2837 | PART3      |   [48/60] 16294.5 ms  Which restaurant had the lowest inspection score?
+2026-11-07 21:36:01.442 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 14744.8 ms status=approved deps=[]
+2026-11-07 21:36:01.443 | Shashank Ranjan | s2837 | PART3      |   [49/60] 14744.8 ms  Is a score of 84 a PASS?
+2026-11-07 21:36:16.572 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 15118.5 ms status=approved deps=[]
+2026-11-07 21:36:16.573 | Shashank Ranjan | s2837 | PART3      |   [50/60] 15118.5 ms  Is a score of 85 a PASS?
+2026-11-07 21:36:35.520 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 18935.9 ms status=approved deps=[]
+2026-11-07 21:36:35.521 | Shashank Ranjan | s2837 | PART3      |   [51/60] 18935.9 ms  How do I apply for a new food service permit?
+2026-11-07 21:37:08.805 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 33273.5 ms status=approved deps=[]
+2026-11-07 21:37:08.806 | Shashank Ranjan | s2837 | PART3      |   [52/60] 33273.5 ms  Can a restaurant appeal an inspection result?
+2026-11-07 21:37:33.888 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25069.5 ms status=approved deps=[]
+2026-11-07 21:37:33.889 | Shashank Ranjan | s2837 | PART3      |   [53/60] 25069.5 ms  What are the requirements to get a food handler card?
+2026-11-07 21:37:49.640 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 15741.3 ms status=approved deps=[]
+2026-11-07 21:37:49.642 | Shashank Ranjan | s2837 | PART3      |   [54/60] 15741.3 ms  Are pets allowed inside restaurant dining areas?
+2026-11-07 21:38:15.458 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25806.1 ms status=approved deps=[]
+2026-11-07 21:38:15.459 | Shashank Ranjan | s2837 | PART3      |   [55/60] 25806.1 ms  How should a restaurant store cleaning chemicals?
+2026-11-07 21:38:40.034 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 24565.3 ms status=approved deps=[]
+2026-11-07 21:38:40.036 | Shashank Ranjan | s2837 | PART3      |   [56/60] 24565.3 ms  What is the fee for a food truck permit?
+2026-11-07 21:39:12.979 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 32933.4 ms status=approved deps=[]
+2026-11-07 21:39:12.981 | Shashank Ranjan | s2837 | PART3      |   [57/60] 32933.4 ms  How often must grease traps be cleaned?
+2026-11-07 21:39:36.555 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 23556.5 ms status=approved deps=[]
+2026-11-07 21:39:36.556 | Shashank Ranjan | s2837 | PART3      |   [58/60] 23556.5 ms  Do restaurants have to post their inspection placard by the entrance?
+2026-11-07 21:40:09.839 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 33271.5 ms status=approved deps=[]
+2026-11-07 21:40:09.840 | Shashank Ranjan | s2837 | PART3      |   [59/60] 33271.5 ms  What pest control records must a restaurant keep?
+2026-11-07 21:40:35.226 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25375.1 ms status=approved deps=[]
+2026-11-07 21:40:35.228 | Shashank Ranjan | s2837 | PART3      |   [60/60] 25375.1 ms  How do I report food poisoning after eating out?
+2026-11-07 21:40:35.499 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:40:35.500 | Shashank Ranjan | s2837 | PART3      | HW9 Part 3.2 - Shashank Ranjan - threshold sweep over 40 labeled cases, embeddings sentence-transformers/all-MiniLM-L6-v2
+2026-11-07 21:40:35.501 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:40:59.299 | Shashank Ranjan | s2837 | PART3      | threshold 0.75: hit rate 70.0%  false-hit rate 22.5%  mean latency 7537.9 ms  cost $18.24
+2026-11-07 21:40:59.810 | Shashank Ranjan | s2837 | PART3      | threshold 0.80: hit rate 60.0%  false-hit rate 15.0%  mean latency 10087.0 ms  cost $12.32
+2026-11-07 21:41:00.315 | Shashank Ranjan | s2837 | PART3      | threshold 0.85: hit rate 57.5%  false-hit rate 15.0%  mean latency 10785.7 ms  cost $12.34
+2026-11-07 21:41:00.815 | Shashank Ranjan | s2837 | PART3      | threshold 0.90: hit rate 45.0%  false-hit rate 10.0%  mean latency 13864.7 ms  cost $8.44
+2026-11-07 21:41:01.385 | Shashank Ranjan | s2837 | PART3      | threshold 0.95: hit rate 35.0%  false-hit rate 5.0%  mean latency 15782.3 ms  cost $4.52
+2026-11-07 21:41:01.394 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:41:01.396 | Shashank Ranjan | s2837 | PART3      | 3.3 FALSE HIT at threshold 0.85 (S10)
+2026-11-07 21:41:01.397 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:41:01.397 | Shashank Ranjan | s2837 | PART3      | cached_query: Is a score of 84 a PASS?
+2026-11-07 21:41:01.398 | Shashank Ranjan | s2837 | PART3      | incoming_query: Is a score of 85 a PASS?
+2026-11-07 21:41:01.398 | Shashank Ranjan | s2837 | PART3      | similarity: 0.9623
+2026-11-07 21:41:01.399 | Shashank Ranjan | s2837 | PART3      | shared_words: ['a', 'is', 'of', 'pass', 'score']
+2026-11-07 21:41:01.400 | Shashank Ranjan | s2837 | PART3      | differing_words: ['84', '85']
+2026-11-07 21:41:01.400 | Shashank Ranjan | s2837 | PART3      | why_different: 84 = WARNING (no) vs 85 = PASS (yes)
+2026-11-07 21:41:01.401 | Shashank Ranjan | s2837 | PART3      | cached answer returned: 1. The score range for a PASS is 85-100.
+2. The given score is 84, which falls within the range of 85-100.
+3. Therefore, a score of 84 is a PASS. The restaurant does not need to be re-inspected within the specified time frame.
+2026-11-07 21:41:01.403 | Shashank Ranjan | s2837 | PART3      | correct answer: Based on the provided facts, a score of 85 falls within the PASS range (85-100). According to the county policy, a score of 85-100 indicates that the restaurant is in compliance and no re-inspection is required. Therefore, a score of 85 is a PASS.
+2026-11-07 21:41:01.404 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:41:01.405 | Shashank Ranjan | s2837 | PART3      | 3.2 / 3.4 THRESHOLD TABLE
+2026-11-07 21:41:01.406 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:41:01.407 | Shashank Ranjan | s2837 | PART3      | similarity by category: {"exact_duplicate": {"min": 1.0, "max": 1.0, "mean": 1.0}, "paraphrase": {"min": 0.7547, "max": 0.9694, "mean": 0.8854}, "similar_different": {"min": 0.708, "max": 0.9623, "mean": 0.8423}, "unrelated": {"min": 0.3642, "max": 0.7479, "mean": 0.4762}}
+2026-11-07 21:41:01.407 | Shashank Ranjan | s2837 | PART3      | cost model: miss $0.02, false hit $2.0 -> lowest total cost at threshold 0.95 ($4.52)
+2026-11-07 21:41:01.416 | Shashank Ranjan | s2837 | PART3      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part3_sweep.json
+2026-11-07 21:52:01.561 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:52:01.562 | Shashank Ranjan | s2837 | PART3      | HW9 Part 3.5 - Shashank Ranjan - stale answers for Taj Grill (S2837-H9-0002) in s2837_rel
+2026-11-07 21:52:01.563 | Shashank Ranjan | s2837 | PART3      | ======================================================================
+2026-11-07 21:52:01.574 | Shashank Ranjan | s2837 | PART3      | reset S2837-H9-0002 to WARNING 78 (data version 1); cache flushed
+2026-11-07 21:52:01.590 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=0.0000 < 0.85 query="What is the current status and score of Taj Grill's latest inspection?"
+2026-11-07 21:52:27.572 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 25968.4 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 21:52:27.634 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:44de3db48cf8 deps={'S2837-H9-0002': 1} total latency=26058.5 ms
+2026-11-07 21:52:27.665 | Shashank Ranjan | s2837 | PART3      | [1 first ask (miss, stored with data-version marker)] is_cached=False sim=0.0000 db=WARNING 78 answer="Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above"
+2026-11-07 21:52:27.755 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=83.1 ms query="What is the current status and score of Taj Grill's latest inspection?" matched="What is the current status and score of Taj Grill's latest inspection?"
+2026-11-07 21:52:27.760 | Shashank Ranjan | s2837 | PART3      | [2 ask again (hit, still correct)] is_cached=True sim=1.0000 db=WARNING 78 answer="Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above"
+2026-11-07 21:52:27.774 | Shashank Ranjan | s2837 | PART3      | UPDATE s2837_rel.restaurant_inspection S2837-H9-0002: WARNING 78 -> PASS 91 (re-inspection passed); s2837:dv:inspection:S2837-H9-0002 -> 2
+2026-11-07 21:52:27.821 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=39.4 ms query="What is the current status and score of Taj Grill's latest inspection?" matched="What is the current status and score of Taj Grill's latest inspection?"
+2026-11-07 21:52:27.826 | Shashank Ranjan | s2837 | PART3      | [3 ask with version check OFF (STALE HIT - old answer)] is_cached=True sim=1.0000 db=PASS 91 answer="Taj Grill's latest inspection on 2026-10-20 was conducted and resulted in a WARNING status with a score of 78. The violations noted were Cold-holding unit above"
+2026-11-07 21:52:27.881 | Shashank Ranjan | s2837 | QA         | STALE entry s2837:semcache:entry:44de3db48cf8 similarity=1.0000 - data version changed {'S2837-H9-0002': (1, 2)} -> invalidated, running agent
+2026-11-07 21:52:27.883 | Shashank Ranjan | s2837 | QA         | CACHE MISS best_similarity=1.0000 < 0.85 (stale entry removed) query="What is the current status and score of Taj Grill's latest inspection?"
+2026-11-07 21:52:50.748 | Shashank Ranjan | s2837 | AGENT      | agent (direct) answered in 22839.1 ms status=approved deps=['S2837-H9-0002']
+2026-11-07 21:52:50.752 | Shashank Ranjan | s2837 | QA         | stored s2837:semcache:entry:ec74eb68f6ea deps={'S2837-H9-0002': 2} total latency=22924.8 ms
+2026-11-07 21:52:50.755 | Shashank Ranjan | s2837 | PART3      | [4 ask with version check ON (stale detected -> invalidated -> agent rerun)] is_cached=False sim=1.0000 db=PASS 91 answer="Taj Grill's latest inspection on 2026-10-20 was a PASS with a score of 91. This inspection found violations related to the cold-holding unit being above 41°F an"
+2026-11-07 21:52:50.780 | Shashank Ranjan | s2837 | QA         | CACHE HIT similarity=1.0000 >= 0.85 latency=23.7 ms query="What is the current status and score of Taj Grill's latest inspection?" matched="What is the current status and score of Taj Grill's latest inspection?"
+2026-11-07 21:52:50.785 | Shashank Ranjan | s2837 | PART3      | [5 ask again (hit on the fresh answer)] is_cached=True sim=1.0000 db=PASS 91 answer="Taj Grill's latest inspection on 2026-10-20 was a PASS with a score of 91. This inspection found violations related to the cold-holding unit being above 41°F an"
+2026-11-07 21:52:50.792 | Shashank Ranjan | s2837 | PART3      | restored S2837-H9-0002 to WARNING 78 (data version 3)
+2026-11-07 21:52:50.795 | Shashank Ranjan | s2837 | PART3      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part3_stale.json
+2026-11-07 22:11:33.531 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:11:33.532 | Shashank Ranjan | s2837 | PART4      | HW9 Part 4 TRAINING - Shashank Ranjan - repair loop + lessons created from repeated failure patterns
+2026-11-07 22:11:33.533 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:11:40.435 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6899.4 ms, lessons=[]): 'Taj Grill must be re-inspected on or before October 20, 2027.'
+2026-11-07 22:11:40.435 | Shashank Ranjan | s2837 | SYSTEM     | train_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Taj Grill is WARNING (inspected 2026-10-20); WARNING requires re-inspection within 30 days, so it is due by 2026-11-19
+2026-11-07 22:11:45.386 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4949.2 ms, lessons=[]): 'Taj Grill must be re-inspected on or before November 19, 2026.'
+2026-11-07 22:11:45.387 | Shashank Ranjan | s2837 | SYSTEM     | train_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:11:49.511 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4122.1 ms, lessons=[]): 'Rangoli Indian Cuisine received a score of 94 in its latest inspection.'
+2026-11-07 22:11:49.512 | Shashank Ranjan | s2837 | SYSTEM     | train_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:11:54.132 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4618.1 ms, lessons=[]): 'Golden Dragon Bistro needs its follow-up inspection on 2027-04-05.'
+2026-11-07 22:11:54.133 | Shashank Ranjan | s2837 | SYSTEM     | train_03 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Golden Dragon Bistro is FAIL (inspected 2026-10-05); FAIL requires re-inspection within 10 days, so it is due by 2026-10-15
+2026-11-07 22:11:59.013 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4878.4 ms, lessons=[]): 'Golden Dragon Bistro needs its follow-up inspection by 2026-10-15.'
+2026-11-07 22:11:59.014 | Shashank Ranjan | s2837 | SYSTEM     | train_03 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:11:59.015 | Shashank Ranjan | s2837 | LESSONS    | LESSON CREATED lesson_001 code=MISSING_REINSPECTION after 2 failures (latest train_03): Compute it from the record: WARNING -> re-inspect within 30 days of the inspection date, F
+2026-11-07 22:12:04.129 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5111.2 ms, lessons=[]): 'Rustic Garden Deli was found to have violations including a sanitizer concentration too low and a food handler card that was expired.'
+2026-11-07 22:12:04.130 | Shashank Ranjan | s2837 | SYSTEM     | train_04 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:12:09.402 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5268.5 ms, lessons=[]): 'The latest inspection at Urban Taco Cafe resulted in a PASS status with a score of 88, and there were no violations reported.'
+2026-11-07 22:12:09.403 | Shashank Ranjan | s2837 | SYSTEM     | train_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:12:12.737 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3330.8 ms, lessons=[]): 'Sunset Noodle House did not have a recent restaurant health inspection.'
+2026-11-07 22:12:12.738 | Shashank Ranjan | s2837 | SYSTEM     | train_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:12:16.425 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3685.3 ms, lessons=[]): 'Sunset Noodle House did not have a recent restaurant health inspection.'
+2026-11-07 22:12:16.426 | Shashank Ranjan | s2837 | SYSTEM     | train_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:12:16.428 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for train_07 - use_count now 1
+2026-11-07 22:12:22.463 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6033.6 ms, lessons=['lesson_001']): 'The re-inspection deadline for Spicy Pho House is 2027-01-22.'
+2026-11-07 22:12:22.464 | Shashank Ranjan | s2837 | SYSTEM     | train_07 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Spicy Pho House is FAIL (inspected 2026-10-22); FAIL requires re-inspection within 10 days, so it is due by 2026-11-01
+2026-11-07 22:12:27.457 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4992.6 ms, lessons=['lesson_001']): 'The re-inspection deadline for Spicy Pho House is 2026-11-01.'
+2026-11-07 22:12:27.458 | Shashank Ranjan | s2837 | SYSTEM     | train_07 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:12:30.617 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3157.7 ms, lessons=[]): 'A WARNING is a score of 70-79.'
+2026-11-07 22:12:30.619 | Shashank Ranjan | s2837 | SYSTEM     | train_08 attempt 1: REVISE - rule question; failed: MISSING_RULE | feedback: Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).
+2026-11-07 22:12:34.659 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4039.1 ms, lessons=[]): 'A WARNING is a score of 70-79.'
+2026-11-07 22:12:34.661 | Shashank Ranjan | s2837 | SYSTEM     | train_08 attempt 2: REVISE - rule question; failed: MISSING_RULE | feedback: Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).
+2026-11-07 22:12:39.035 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4372.7 ms, lessons=[]): "Bayside Sushi Bar's inspection was PASS with a score of 91."
+2026-11-07 22:12:39.036 | Shashank Ranjan | s2837 | SYSTEM     | train_09 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:12:42.237 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3199.2 ms, lessons=[]): 'No inspection record found for the restaurant named Lucky Star Diner.'
+2026-11-07 22:12:42.238 | Shashank Ranjan | s2837 | SYSTEM     | train_10 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:12:42.242 | Shashank Ranjan | s2837 | PART4      | training done: {'questions': 10, 'correct': 8, 'incorrect': 2, 'accuracy_pct': 80.0, 'avg_attempts': 1.5, 'avg_latency_ms': 6869.8, 'unsupported_answers': 1}; lessons created: ['lesson_001:MISSING_REINSPECTION']
+2026-11-07 22:12:42.243 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:12:42.244 | Shashank Ranjan | s2837 | PART4      | HW9 Part 4.3 VALIDATION - candidates ['lesson_001']
+2026-11-07 22:12:42.245 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:12:47.357 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5110.2 ms, lessons=[]): "Rustic Garden Deli's re-inspection is due on September 30, 2026."
+2026-11-07 22:12:47.359 | Shashank Ranjan | s2837 | SYSTEM     | val_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Rustic Garden Deli is WARNING (inspected 2026-09-30); WARNING requires re-inspection within 30 days, so it is due by 2026-10-30
+2026-11-07 22:12:52.204 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4842.7 ms, lessons=[]): "Rustic Garden Deli's re-inspection is due on October 30, 2026."
+2026-11-07 22:12:52.205 | Shashank Ranjan | s2837 | SYSTEM     | val_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:12:56.215 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4008.9 ms, lessons=[]): 'Cafe Milano got a score of 97.'
+2026-11-07 22:12:56.217 | Shashank Ranjan | s2837 | SYSTEM     | val_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:12:59.971 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3751.4 ms, lessons=[]): 'Rangoli Indian Cuisine needs a re-inspection.'
+2026-11-07 22:12:59.972 | Shashank Ranjan | s2837 | SYSTEM     | val_03 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Rangoli Indian Cuisine PASSED (score 94); a PASS needs no re-inspection - say so and give no due date
+2026-11-07 22:13:03.592 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3618.7 ms, lessons=[]): 'Rangoli Indian Cuisine does not need a re-inspection.'
+2026-11-07 22:13:03.593 | Shashank Ranjan | s2837 | SYSTEM     | val_03 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:13:09.970 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6375.3 ms, lessons=[]): 'Taj Grill had a WARNING recorded on their inspection on 2026-10-20. The violations were: Cold-holding unit above 41F and Prepared food missi'
+2026-11-07 22:13:09.971 | Shashank Ranjan | s2837 | SYSTEM     | val_04 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:13:15.198 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5225.8 ms, lessons=[]): 'The latest inspection of Golden Crust Bakery resulted in a WARNING status with a score of 83, and violations of light shields missing over t'
+2026-11-07 22:13:15.199 | Shashank Ranjan | s2837 | SYSTEM     | val_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:13:18.494 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3293.1 ms, lessons=[]): 'Harbor View Grill did not have a restaurant health inspection recorded.'
+2026-11-07 22:13:18.495 | Shashank Ranjan | s2837 | SYSTEM     | val_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:13:22.098 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3601.4 ms, lessons=[]): 'Harbor View Grill did not have a restaurant health inspection recorded.'
+2026-11-07 22:13:22.099 | Shashank Ranjan | s2837 | SYSTEM     | val_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:13:25.316 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3215.4 ms, lessons=[]): 'The minimum score to PASS an inspection is 80.'
+2026-11-07 22:13:25.317 | Shashank Ranjan | s2837 | SYSTEM     | val_07 attempt 1: REVISE - rule question; failed: MISSING_RULE | feedback: Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).
+2026-11-07 22:13:29.990 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4671.2 ms, lessons=[]): 'The minimum score to PASS an inspection is 85-100.'
+2026-11-07 22:13:29.991 | Shashank Ranjan | s2837 | SYSTEM     | val_07 attempt 2: PASS - rule question; all required facts present and supported
+2026-11-07 22:13:34.647 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4654.3 ms, lessons=[]): "The outcome of Golden Dragon Bistro's inspection was FAIL with a score of 62."
+2026-11-07 22:13:34.649 | Shashank Ranjan | s2837 | SYSTEM     | val_08 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:13:39.620 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4970.0 ms, lessons=[]): 'Grill & Barrel Bar must be re-inspected on 2027-04-05.'
+2026-11-07 22:13:39.622 | Shashank Ranjan | s2837 | SYSTEM     | val_09 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:13:45.051 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5427.6 ms, lessons=[]): 'Grill & Barrel Bar must be re-inspected on 2027-04-05.'
+2026-11-07 22:13:45.052 | Shashank Ranjan | s2837 | SYSTEM     | val_09 attempt 2: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:13:48.566 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3511.6 ms, lessons=[]): 'The latest inspection status for Maple Leaf Cafe is no inspection record found.'
+2026-11-07 22:13:48.567 | Shashank Ranjan | s2837 | SYSTEM     | val_10 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:13:48.568 | Shashank Ranjan | s2837 | PART4      | validation without lessons: {'questions': 10, 'correct': 8, 'incorrect': 2, 'accuracy_pct': 80.0, 'avg_attempts': 1.5, 'avg_latency_ms': 6632.1, 'unsupported_answers': 1}
+2026-11-07 22:13:48.571 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for val_01 - use_count now 2
+2026-11-07 22:13:55.061 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6488.7 ms, lessons=['lesson_001']): "Rustic Garden Deli's re-inspection is due within 30 days of the inspection date, which is 2027-03-30."
+2026-11-07 22:13:55.062 | Shashank Ranjan | s2837 | SYSTEM     | val_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Rustic Garden Deli is WARNING (inspected 2026-09-30); WARNING requires re-inspection within 30 days, so it is due by 2026-10-30
+2026-11-07 22:14:00.333 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5269.5 ms, lessons=['lesson_001']): "Rustic Garden Deli's re-inspection is due by 2026-10-30."
+2026-11-07 22:14:00.334 | Shashank Ranjan | s2837 | SYSTEM     | val_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:14:04.112 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3775.7 ms, lessons=[]): 'Cafe Milano got a score of 97.'
+2026-11-07 22:14:04.114 | Shashank Ranjan | s2837 | SYSTEM     | val_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:14:04.119 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for val_03 - use_count now 3
+2026-11-07 22:14:09.994 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5866.0 ms, lessons=['lesson_001']): 'Rangoli Indian Cuisine does not need a re-inspection. The inspection was passed on October 12, 2026, and no re-inspection is required.'
+2026-11-07 22:14:09.995 | Shashank Ranjan | s2837 | SYSTEM     | val_03 attempt 1: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:14:13.990 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3993.7 ms, lessons=[]): 'Taj Grill was recorded with a WARNING for a cold-holding unit above 41F and a PREPARED FOOD missing date labels.'
+2026-11-07 22:14:13.992 | Shashank Ranjan | s2837 | SYSTEM     | val_04 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:14:18.153 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4159.8 ms, lessons=[]): "The result of Golden Crust Bakery's latest inspection was a WARNING with a score of 83, and violations of light shields missing over the pre"
+2026-11-07 22:14:18.154 | Shashank Ranjan | s2837 | SYSTEM     | val_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:14:21.818 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3662.2 ms, lessons=[]): 'Harbor View Grill did not have a restaurant health inspection record found in the lookup.'
+2026-11-07 22:14:21.819 | Shashank Ranjan | s2837 | SYSTEM     | val_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:14:25.788 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3967.7 ms, lessons=[]): 'Harbor View Grill did not have a restaurant health inspection record found in the lookup.'
+2026-11-07 22:14:25.789 | Shashank Ranjan | s2837 | SYSTEM     | val_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:14:28.724 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 2933.3 ms, lessons=[]): 'The minimum score to PASS an inspection is 80.'
+2026-11-07 22:14:28.725 | Shashank Ranjan | s2837 | SYSTEM     | val_07 attempt 1: REVISE - rule question; failed: MISSING_RULE | feedback: Fix: use the county bands: Score 85-100 = PASS (no re-inspection required). Score 70-84 = WARNING (re-inspection within 30 days of the inspection date). Score 0-69 = FAIL (re-inspection within 10 days of the inspection date).
+2026-11-07 22:14:33.307 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4580.4 ms, lessons=[]): 'The minimum score to PASS an inspection is 85-100.'
+2026-11-07 22:14:33.308 | Shashank Ranjan | s2837 | SYSTEM     | val_07 attempt 2: PASS - rule question; all required facts present and supported
+2026-11-07 22:14:36.656 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3346.2 ms, lessons=[]): "Golden Dragon Bistro's inspection was FAIL with a score of 62."
+2026-11-07 22:14:36.658 | Shashank Ranjan | s2837 | SYSTEM     | val_08 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:14:36.666 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for val_09 - use_count now 4
+2026-11-07 22:14:42.130 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5462.8 ms, lessons=['lesson_001']): 'Grill & Barrel Bar must be re-inspected within 30 days of the inspection date, which is 2027-02-25.'
+2026-11-07 22:14:42.131 | Shashank Ranjan | s2837 | SYSTEM     | val_09 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:14:47.690 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5557.3 ms, lessons=['lesson_001']): 'Grill & Barrel Bar must be re-inspected within 30 days of the inspection date, which is 2027-01-24.'
+2026-11-07 22:14:47.691 | Shashank Ranjan | s2837 | SYSTEM     | val_09 attempt 2: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:14:51.024 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3331.4 ms, lessons=[]): 'The latest inspection status for Maple Leaf Cafe is no inspection record found.'
+2026-11-07 22:14:51.025 | Shashank Ranjan | s2837 | SYSTEM     | val_10 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:14:51.027 | Shashank Ranjan | s2837 | PART4      | lesson_001 (MISSING_REINSPECTION): REJECT checks={'failure_cases_improve_or_unchanged': True, 'previously_correct_stay_correct': True, 'unrelated_no_unsupported_answers': False} first-try passes 5->6
+2026-11-07 22:14:51.029 | Shashank Ranjan | s2837 | PART4      | validated lessons kept: []
+2026-11-07 22:14:51.030 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:14:51.031 | Shashank Ranjan | s2837 | PART4      | HW9 Part 4.4 TEST - 4 variants on test_data.json (all lessons ['lesson_001'], kept [])
+2026-11-07 22:14:51.032 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:14:51.032 | Shashank Ranjan | s2837 | PART4      | --- variant Baseline
+2026-11-07 22:14:55.833 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4796.8 ms, lessons=[]): "Golden Crust Bakery's follow-up inspection is due on 2026-10-18."
+2026-11-07 22:14:55.834 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Golden Crust Bakery is WARNING (inspected 2026-10-18); WARNING requires re-inspection within 30 days, so it is due by 2026-11-17
+2026-11-07 22:14:59.867 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4030.5 ms, lessons=[]): 'Spicy Pho House received a score of 58.'
+2026-11-07 22:14:59.868 | Shashank Ranjan | s2837 | SYSTEM     | test_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:15:04.672 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4801.7 ms, lessons=[]): 'No hot water at the handwashing sink, Evidence of rodents in dry storage, Raw chicken stored above ready-to-eat food.'
+2026-11-07 22:15:04.673 | Shashank Ranjan | s2837 | SYSTEM     | test_03 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:15:08.987 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4313.0 ms, lessons=[]): 'Yes, Bayside Sushi Bar needs a re-inspection.'
+2026-11-07 22:15:08.988 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Bayside Sushi Bar PASSED (score 91); a PASS needs no re-inspection - say so and give no due date
+2026-11-07 22:15:14.938 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 5948.1 ms, lessons=[]): "Taj Grill's latest inspection resulted in a WARNING status with a score of 78, and violations of cold-holding unit above 41F and Prepared fo"
+2026-11-07 22:15:14.939 | Shashank Ranjan | s2837 | SYSTEM     | test_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:15:18.118 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3175.8 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:15:18.119 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:15:50.901 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 32780.0 ms, lessons=[]): 'The scores leading to a FAIL status are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27'
+2026-11-07 22:15:50.902 | Shashank Ranjan | s2837 | SYSTEM     | test_07 attempt 1: PASS - rule question; all required facts present and supported
+2026-11-07 22:15:55.716 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4811.8 ms, lessons=[]): 'The follow-up inspection deadline for Grill & Barrel Bar is 2027-04-25.'
+2026-11-07 22:15:55.717 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:15:59.985 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4266.6 ms, lessons=[]): 'Urban Taco Cafe had one violation found: Employee drink stored on a food-prep table.'
+2026-11-07 22:15:59.987 | Shashank Ranjan | s2837 | SYSTEM     | test_09 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:16:04.018 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4029.7 ms, lessons=[]): "Cafe Milano's latest inspection was PASS with a score of 97."
+2026-11-07 22:16:04.020 | Shashank Ranjan | s2837 | SYSTEM     | test_10 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:16:07.759 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3735.2 ms, lessons=[]): 'The latest inspection status for Copper Kettle Tavern is no inspection record found.'
+2026-11-07 22:16:07.760 | Shashank Ranjan | s2837 | SYSTEM     | test_11 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:16:11.861 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4098.6 ms, lessons=[]): 'Grill & Barrel Bar received a score of 75.'
+2026-11-07 22:16:11.863 | Shashank Ranjan | s2837 | SYSTEM     | test_12 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:16:11.864 | Shashank Ranjan | s2837 | PART4      | Baseline: correct 8/12, avg attempts 1.0, avg latency 6735.7 ms
+2026-11-07 22:16:11.865 | Shashank Ranjan | s2837 | PART4      | --- variant Evaluator Repair
+2026-11-07 22:16:16.042 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4174.5 ms, lessons=[]): "Golden Crust Bakery's follow-up inspection is due on 2026-10-18."
+2026-11-07 22:16:16.043 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Golden Crust Bakery is WARNING (inspected 2026-10-18); WARNING requires re-inspection within 30 days, so it is due by 2026-11-17
+2026-11-07 22:16:21.155 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5111.1 ms, lessons=[]): "Golden Crust Bakery's follow-up inspection is due on 2026-11-17."
+2026-11-07 22:16:21.158 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:16:25.206 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4045.4 ms, lessons=[]): 'Spicy Pho House received a score of 58.'
+2026-11-07 22:16:25.207 | Shashank Ranjan | s2837 | SYSTEM     | test_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:16:28.997 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3787.9 ms, lessons=[]): 'No hot water at the handwashing sink, Evidence of rodents in dry storage, Raw chicken stored above ready-to-eat food.'
+2026-11-07 22:16:28.998 | Shashank Ranjan | s2837 | SYSTEM     | test_03 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:16:32.106 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3106.3 ms, lessons=[]): 'Yes, Bayside Sushi Bar needs a re-inspection.'
+2026-11-07 22:16:32.106 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Bayside Sushi Bar PASSED (score 91); a PASS needs no re-inspection - say so and give no due date
+2026-11-07 22:16:35.954 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3845.7 ms, lessons=[]): 'No, Bayside Sushi Bar does not need a re-inspection.'
+2026-11-07 22:16:35.955 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:16:40.524 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4567.1 ms, lessons=[]): "Taj Grill's latest inspection resulted in a WARNING status with a score of 78, and violations of cold-holding unit above 41F and Prepared fo"
+2026-11-07 22:16:40.526 | Shashank Ranjan | s2837 | SYSTEM     | test_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:16:43.735 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3207.5 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:16:43.736 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:16:47.327 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3589.3 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:16:47.328 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:17:17.476 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 30145.6 ms, lessons=[]): 'The scores leading to a FAIL status are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27'
+2026-11-07 22:17:17.477 | Shashank Ranjan | s2837 | SYSTEM     | test_07 attempt 1: PASS - rule question; all required facts present and supported
+2026-11-07 22:17:21.079 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3599.7 ms, lessons=[]): 'The follow-up inspection deadline for Grill & Barrel Bar is 2027-04-25.'
+2026-11-07 22:17:21.080 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:17:26.291 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5209.6 ms, lessons=[]): 'The follow-up inspection deadline for Grill & Barrel Bar is 2026-11-24.'
+2026-11-07 22:17:26.293 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:17:29.764 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3469.1 ms, lessons=[]): 'Urban Taco Cafe had one violation found: an employee drink was stored on a food-prep table.'
+2026-11-07 22:17:29.765 | Shashank Ranjan | s2837 | SYSTEM     | test_09 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:17:33.026 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3259.4 ms, lessons=[]): "Cafe Milano's latest inspection was PASS with a score of 97."
+2026-11-07 22:17:33.028 | Shashank Ranjan | s2837 | SYSTEM     | test_10 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:17:36.234 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3203.6 ms, lessons=[]): 'The latest inspection status for Copper Kettle Tavern is no inspection record found.'
+2026-11-07 22:17:36.235 | Shashank Ranjan | s2837 | SYSTEM     | test_11 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:17:40.304 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4066.9 ms, lessons=[]): 'Grill & Barrel Bar received a score of 75.'
+2026-11-07 22:17:40.305 | Shashank Ranjan | s2837 | SYSTEM     | test_12 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:17:40.307 | Shashank Ranjan | s2837 | PART4      | Evaluator Repair: correct 11/12, avg attempts 1.33, avg latency 7370.0 ms
+2026-11-07 22:17:40.308 | Shashank Ranjan | s2837 | PART4      | --- variant Lesson Memory
+2026-11-07 22:17:40.312 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for test_01 - use_count now 5
+2026-11-07 22:17:46.595 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6281.6 ms, lessons=['lesson_001']): "Golden Crust Bakery's follow-up inspection is due within 30 days of the inspection date, which is 2026-12-18."
+2026-11-07 22:17:46.596 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Golden Crust Bakery is WARNING (inspected 2026-10-18); WARNING requires re-inspection within 30 days, so it is due by 2026-11-17
+2026-11-07 22:17:51.615 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5016.2 ms, lessons=['lesson_001']): "Golden Crust Bakery's follow-up inspection is due by 2026-11-17."
+2026-11-07 22:17:51.616 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:17:55.750 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4131.0 ms, lessons=[]): 'Spicy Pho House received a score of 58.'
+2026-11-07 22:17:55.752 | Shashank Ranjan | s2837 | SYSTEM     | test_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:18:00.558 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4803.2 ms, lessons=[]): 'No hot water at the handwashing sink, Evidence of rodents in dry storage, Raw chicken stored above ready-to-eat food.'
+2026-11-07 22:18:00.560 | Shashank Ranjan | s2837 | SYSTEM     | test_03 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:18:00.564 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for test_04 - use_count now 6
+2026-11-07 22:18:06.864 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 6297.6 ms, lessons=['lesson_001']): 'Bayside Sushi Bar does not need a re-inspection. The inspection was passed on October 15, 2026, and no re-inspection is required.'
+2026-11-07 22:18:06.865 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 1: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:18:11.517 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4649.2 ms, lessons=[]): "Taj Grill's latest inspection resulted in a WARNING status with a score of 78, and violations of cold-holding unit above 41F and Prepared fo"
+2026-11-07 22:18:11.519 | Shashank Ranjan | s2837 | SYSTEM     | test_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:18:14.767 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3245.7 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:18:14.768 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:18:18.235 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3465.5 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:18:18.236 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:18:48.590 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 30351.8 ms, lessons=[]): 'The scores leading to a FAIL status are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27'
+2026-11-07 22:18:48.591 | Shashank Ranjan | s2837 | SYSTEM     | test_07 attempt 1: PASS - rule question; all required facts present and supported
+2026-11-07 22:18:48.594 | Shashank Ranjan | s2837 | SYSTEM     | LESSON LOADED lesson_001 (MISSING_REINSPECTION) for test_08 - use_count now 7
+2026-11-07 22:18:53.555 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4959.8 ms, lessons=['lesson_001']): 'The follow-up inspection deadline for Grill & Barrel Bar is 2027-01-25.'
+2026-11-07 22:18:53.557 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:18:58.397 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4838.8 ms, lessons=['lesson_001']): 'The follow-up inspection deadline for Grill & Barrel Bar is 2026-11-24.'
+2026-11-07 22:18:58.398 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:19:02.217 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3815.6 ms, lessons=[]): 'Urban Taco Cafe had one violation found: an employee drink was stored on a food-prep table.'
+2026-11-07 22:19:02.218 | Shashank Ranjan | s2837 | SYSTEM     | test_09 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:19:05.646 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3425.3 ms, lessons=[]): "Cafe Milano's latest inspection was PASS with a score of 97."
+2026-11-07 22:19:05.690 | Shashank Ranjan | s2837 | SYSTEM     | test_10 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:19:08.991 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3260.1 ms, lessons=[]): 'The latest inspection status for Copper Kettle Tavern is no inspection record found.'
+2026-11-07 22:19:08.995 | Shashank Ranjan | s2837 | SYSTEM     | test_11 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:19:12.942 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3944.8 ms, lessons=[]): 'Grill & Barrel Bar received a score of 75.'
+2026-11-07 22:19:12.943 | Shashank Ranjan | s2837 | SYSTEM     | test_12 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:19:12.946 | Shashank Ranjan | s2837 | PART4      | Lesson Memory: correct 11/12, avg attempts 1.25, avg latency 7719.5 ms
+2026-11-07 22:19:12.947 | Shashank Ranjan | s2837 | PART4      | --- variant Validated Improvement
+2026-11-07 22:19:16.949 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3998.7 ms, lessons=[]): "Golden Crust Bakery's follow-up inspection is due on 2026-10-18."
+2026-11-07 22:19:16.950 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Golden Crust Bakery is WARNING (inspected 2026-10-18); WARNING requires re-inspection within 30 days, so it is due by 2026-11-17
+2026-11-07 22:19:22.115 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5162.9 ms, lessons=[]): "Golden Crust Bakery's follow-up inspection is due on 2026-11-17."
+2026-11-07 22:19:22.116 | Shashank Ranjan | s2837 | SYSTEM     | test_01 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:19:25.215 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3096.6 ms, lessons=[]): 'Spicy Pho House received a score of 58.'
+2026-11-07 22:19:25.216 | Shashank Ranjan | s2837 | SYSTEM     | test_02 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:19:29.208 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3989.2 ms, lessons=[]): 'No hot water at the handwashing sink, Evidence of rodents in dry storage, Raw chicken stored above ready-to-eat food.'
+2026-11-07 22:19:29.210 | Shashank Ranjan | s2837 | SYSTEM     | test_03 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:19:32.843 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3631.4 ms, lessons=[]): 'Yes, Bayside Sushi Bar needs a re-inspection.'
+2026-11-07 22:19:32.845 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Bayside Sushi Bar PASSED (score 91); a PASS needs no re-inspection - say so and give no due date
+2026-11-07 22:19:37.720 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4873.6 ms, lessons=[]): 'No, Bayside Sushi Bar does not need a re-inspection.'
+2026-11-07 22:19:37.724 | Shashank Ranjan | s2837 | SYSTEM     | test_04 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:19:42.384 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 4654.5 ms, lessons=[]): "Taj Grill's latest inspection resulted in a WARNING status with a score of 78, and violations of cold-holding unit above 41F and Prepared fo"
+2026-11-07 22:19:42.386 | Shashank Ranjan | s2837 | SYSTEM     | test_05 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:19:45.470 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3082.0 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:19:45.471 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 1: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:19:49.070 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 3598.1 ms, lessons=[]): 'Blue Lotus Kitchen did not have a restaurant health inspection recorded.'
+2026-11-07 22:19:49.072 | Shashank Ranjan | s2837 | SYSTEM     | test_06 attempt 2: REVISE - unknown question; failed: UNSUPPORTED_CLAIM | feedback: Fix: this restaurant has no inspection record - say so and do not give a score, status or date
+2026-11-07 22:20:23.362 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 34289.1 ms, lessons=[]): 'The scores leading to a FAIL status are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27'
+2026-11-07 22:20:23.364 | Shashank Ranjan | s2837 | SYSTEM     | test_07 attempt 1: PASS - rule question; all required facts present and supported
+2026-11-07 22:20:27.137 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3771.1 ms, lessons=[]): 'The follow-up inspection for Grill & Barrel Bar is due on 2027-04-05.'
+2026-11-07 22:20:27.138 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 1: REVISE - reinspection question; failed: MISSING_REINSPECTION | feedback: Fix: Grill & Barrel Bar is WARNING (inspected 2026-10-25); WARNING requires re-inspection within 30 days, so it is due by 2026-11-24
+2026-11-07 22:20:32.592 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 5452.7 ms, lessons=[]): 'The follow-up inspection for Grill & Barrel Bar is due on 2026-11-24.'
+2026-11-07 22:20:32.594 | Shashank Ranjan | s2837 | SYSTEM     | test_08 attempt 2: PASS - reinspection question; all required facts present and supported
+2026-11-07 22:20:36.390 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3793.9 ms, lessons=[]): 'Urban Taco Cafe had one violation found: an employee drink was stored on a food-prep table.'
+2026-11-07 22:20:36.391 | Shashank Ranjan | s2837 | SYSTEM     | test_09 attempt 1: PASS - violations question; all required facts present and supported
+2026-11-07 22:20:39.612 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3217.8 ms, lessons=[]): "Cafe Milano's latest inspection was PASS with a score of 97."
+2026-11-07 22:20:39.613 | Shashank Ranjan | s2837 | SYSTEM     | test_10 attempt 1: PASS - status question; all required facts present and supported
+2026-11-07 22:20:42.867 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3252.4 ms, lessons=[]): 'The latest inspection status for Copper Kettle Tavern is no inspection record found.'
+2026-11-07 22:20:42.868 | Shashank Ranjan | s2837 | SYSTEM     | test_11 attempt 1: PASS - unknown question; all required facts present and supported
+2026-11-07 22:20:45.978 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (ollama:qwen2.5:1.5b, 3107.9 ms, lessons=[]): 'Grill & Barrel Bar received a score of 75.'
+2026-11-07 22:20:45.978 | Shashank Ranjan | s2837 | SYSTEM     | test_12 attempt 1: PASS - score question; all required facts present and supported
+2026-11-07 22:20:45.979 | Shashank Ranjan | s2837 | PART4      | Validated Improvement: correct 11/12, avg attempts 1.33, avg latency 7752.5 ms
+2026-11-07 22:20:45.980 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:20:45.981 | Shashank Ranjan | s2837 | PART4      | RESULTS (test_data.json)
+2026-11-07 22:20:45.982 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:20:45.988 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:20:45.989 | Shashank Ranjan | s2837 | PART4      | HW9 Part 4.1 CONTROLLED REVISION DEMO (first answer intentionally incomplete)
+2026-11-07 22:20:45.990 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-07 22:20:45.992 | Shashank Ranjan | s2837 | ANSWERER   | ANSWER (controlled-incomplete (no model call), 0.4 ms, lessons=[]): 'Rangoli Indian Cuisine had a routine health inspection recently.'
+2026-11-07 22:20:45.992 | Shashank Ranjan | s2837 | SYSTEM     | demo_controlled attempt 1: REVISE - score question; failed: MISSING_SCORE | feedback: Fix: state the score: 94
+2026-11-07 22:20:50.877 | Shashank Ranjan | s2837 | ANSWERER   | REVISED (ollama:qwen2.5:1.5b, 4883.3 ms, lessons=[]): 'Rangoli Indian Cuisine received a score of 94 in its latest inspection.'
+2026-11-07 22:20:50.881 | Shashank Ranjan | s2837 | SYSTEM     | demo_controlled attempt 2: PASS - score question; all required facts present and supported
+2026-11-07 22:20:50.886 | Shashank Ranjan | s2837 | PART4      | final: PASS after 2 attempts -> 'Rangoli Indian Cuisine received a score of 94 in its latest inspection.'
+2026-11-07 22:20:50.901 | Shashank Ranjan | s2837 | PART4      | 4.2 lesson lesson_001 created after failed train_03 ('By what date does Golden Dragon Bistro need its follow-up inspection?') and LOADED for later train_07 ('What is the re-inspection deadline for Spicy Pho House?') -> PASS in 2 attempt(s)
+2026-11-07 22:33:19.791 | Shashank Ranjan | s2837 | VERIFY     | PASS  redis_reachable_with_search_module  
+2026-11-07 22:33:19.793 | Shashank Ranjan | s2837 | VERIFY     | PASS  all_hw9_redis_keys_start_with_prefix  4 keys, bad=[]
+2026-11-07 22:33:19.796 | Shashank Ranjan | s2837 | VERIFY     | PASS  part1_counter_counts_1_to_25  [25]
+2026-11-07 22:33:19.797 | Shashank Ranjan | s2837 | VERIFY     | PASS  part1_synced_every_10  syncs=[{'count': 10, 'db_value': 10}, {'count': 20, 'db_value': 20}]
+2026-11-07 22:33:19.797 | Shashank Ranjan | s2837 | VERIFY     | PASS  part1_key_has_prefix  s2837:views:inspection:5009
+2026-11-07 22:33:19.798 | Shashank Ranjan | s2837 | VERIFY     | PASS  part2_at_least_10_queries_mixed  12 queries
+2026-11-07 22:33:19.799 | Shashank Ranjan | s2837 | VERIFY     | PASS  part2_rows_have_flag_similarity_latency  
+2026-11-07 22:33:19.799 | Shashank Ranjan | s2837 | VERIFY     | PASS  part2_exact_duplicates_hit  
+2026-11-07 22:33:19.800 | Shashank Ranjan | s2837 | VERIFY     | PASS  part2_summary_reported  {'queries': 12, 'hits': 6, 'misses': 6, 'hit_rate_pct': 50.0, 'avg_latency_cached_ms': 19.6, 'avg_latency_uncached_ms': 26724.9, 'threshold': 0.85, 'agent_mode': 'kafka', 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'observed_ratio': 1363.5}
+2026-11-07 22:33:19.819 | Shashank Ranjan | s2837 | VERIFY     | PASS  cache_cases_40_labeled_10_per_category  {'exact_duplicate': 10, 'paraphrase': 10, 'similar_different': 10, 'unrelated': 10}
+2026-11-07 22:33:19.822 | Shashank Ranjan | s2837 | VERIFY     | PASS  sweep_five_thresholds  [0.75, 0.8, 0.85, 0.9, 0.95]
+2026-11-07 22:33:19.823 | Shashank Ranjan | s2837 | VERIFY     | PASS  sweep_table_complete  
+2026-11-07 22:33:19.823 | Shashank Ranjan | s2837 | VERIFY     | PASS  false_hit_example_complete  S10
+2026-11-07 22:33:19.824 | Shashank Ranjan | s2837 | VERIFY     | PASS  threshold_chosen_by_cost  0.95
+2026-11-07 22:33:19.825 | Shashank Ranjan | s2837 | VERIFY     | PASS  stale_hit_demonstrated  
+2026-11-07 22:33:19.826 | Shashank Ranjan | s2837 | VERIFY     | PASS  invalidation_by_data_version  
+2026-11-07 22:33:19.827 | Shashank Ranjan | s2837 | VERIFY     | PASS  input_datasets_contain_questions_only  
+2026-11-07 22:33:19.827 | Shashank Ranjan | s2837 | VERIFY     | PASS  lessons_json_required_fields  1 lessons
+2026-11-07 22:33:19.828 | Shashank Ranjan | s2837 | VERIFY     | PASS  no_lesson_from_test_split  
+2026-11-07 22:33:19.828 | Shashank Ranjan | s2837 | VERIFY     | PASS  lessons_validated  {'lesson_001': 'rejected'}
+2026-11-07 22:33:19.830 | Shashank Ranjan | s2837 | VERIFY     | PASS  four_variants_on_test  
+2026-11-07 22:33:19.830 | Shashank Ranjan | s2837 | VERIFY     | PASS  max_two_attempts  
+2026-11-07 22:33:19.831 | Shashank Ranjan | s2837 | VERIFY     | PASS  controlled_revision_sequence  PASS
+2026-11-07 22:33:19.831 | Shashank Ranjan | s2837 | VERIFY     | PASS  lesson_reused_on_later_question  {'event': 'loaded', 'lesson_id': 'lesson_001', 'question_id': 'train_07'}
+2026-11-07 22:33:19.834 | Shashank Ranjan | s2837 | VERIFY     | 24/24 checks passed -> C:\SJSURepo\Data260\Data260-2837\reports\hw09\verification.json

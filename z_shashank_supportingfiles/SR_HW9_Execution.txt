@@ -141,6 +141,54 @@ python -m web_application.run_hw09_part2
 ===========Part 3 ==============================
 
 Step 1. Commit the labels first. The assignment says the labels must be fixed before you see results:
-cd C:\SJSURepo\Data260\Data260-2837
-git add code/web_application/hw9/cache_cases.yaml
+git status
+git add *
 git commit -m "HW9 Part 3: labeled cache cases (committed before sweep)"
+
+Step 2 : run "sweep"
+PS C:\SJSURepo\Data260\Data260-2837\code> echo "Shashank Ranjan - HW9 - Part 3 Sweep"
+Shashank Ranjan - HW9 - Part 3 Sweep
+PS C:\SJSURepo\Data260\Data260-2837\code> python -m web_application.run_hw09_part3 sweep
+--all good
+===============Threshold Report============================
+Threshold  Hit rate  False-hit    Mean ms  Total cost
+     0.75     70.0%      22.5%     7537.9      $18.24
+     0.80     60.0%      15.0%    10087.0      $12.32
+     0.85     57.5%      15.0%    10785.7      $12.34
+     0.90     45.0%      10.0%    13864.7       $8.44
+     0.95     35.0%       5.0%    15782.3       $4.52
+==========================================================
+2026-11-07 21:41:01.407 | Shashank Ranjan | s2837 | PART3      | similarity by category: {"exact_duplicate": {"min": 1.0, "max": 1.0, "mean": 1.0}, "paraphrase": {"min": 0.7547, "max": 0.9694, "mean": 0.8854}, "similar_different": {"min": 0.708, "max": 0.9623, "mean": 0.8423}, "unrelated": {"min": 0.3642, "max": 0.7479, "mean": 0.4762}}
+2026-11-07 21:41:01.407 | Shashank Ranjan | s2837 | PART3      | cost model: miss $0.02, false hit $2.0 -> lowest total cost at threshold 0.95 ($4.52)
+2026-11-07 21:41:01.416 | Shashank Ranjan | s2837 | PART3      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part3_sweep.json
+
+ saved C:\SJSURepo\Data260\Data260-2837\reports\hw09\raw\part3_sweep.json
+ ==========
+ Step 3 : Now going to run "stale"
+
+  echo "Shashank Ranjan - HW9 - Part 3 Stale"
+Shashank Ranjan - HW9 - Part 3 Stale
+PS C:\SJSURepo\Data260\Data260-2837\code>python -m web_application.run_hw09_part3 stale
+
+-------Part 3 : Complete-------------
+========Part 4 ====================================
+all runs train → validate → test → demo in order.
+ There are about 150 short model calls of about 3–10 s each, so expect about 20–40 minutes.
+  You can also run the stages one at a time: train, then validate, then test, then demo. 
+  Run them in that order and never run train again after validate, because train resets lessons.json.
+
+Ollama must be running; Kafka and the agent terminals aren’t needed. From code:
+PS C:\SJSURepo\Data260\Data260-2837\code> echo "Shashank Ranjan - HW9 - Part 4 Agent ALL"
+Shashank Ranjan - HW9 - Part 4 Agent ALL
+python -m .web_application.agent.run_part4 all
+
+python -c "import json;[print(l['lesson_id'],l['failure_code'],l['status'],l['use_count']) for l in json.load(open(r'web_application\agent\data\lessons.json'))]"
+
+python -c "import json;d=json.load(open(r'..\reports\hw09\raw\part4_test.json'));[print(k,r['id'],r['question'],r['attempts'][-1]['evaluation']['failure_codes'],'|',r['final_answer'][:150]) for k,v in d['variants'].items() for r in v['rows'] if r['final_result']!='PASS']"
+
+==========Part 5 : Final verification=====
+will exeucte verify_hw09.py
+python -m web_application.verify_hw09
+
+---final report using code--
+python -m web_application.make_hw09_report
