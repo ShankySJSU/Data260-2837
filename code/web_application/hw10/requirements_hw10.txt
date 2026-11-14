@@ -1,0 +1,5 @@
+# HW10 additions (on top of the HW8/HW9 environment: kafka-python, redis, pymysql,
+# sentence-transformers, requests, pyyaml, python-docx)
+streamlit>=1.36
+deepeval>=3.0
+pandas>=2.0
