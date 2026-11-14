@@ -5,6 +5,10 @@ Safety features (Part 3) and the switches that turn them OFF for the "before fix
   idempotency   correlation_id stored in SQLite; replay => no new output      --no-idempotency
   offset commit commit only AFTER output is acked by Kafka                     --commit-mode early
   retries/DLQ   bounded retries, then s2837_dead_letter, then move on          --no-dlq
+
+HW10: every handled message also writes structured JSON spans (reports/hw10/raw/spans.jsonl)
+with trace_id = correlation_id: one queue-wait span for the input topic and one span for the
+agent stage (status ok, or error when the message is dead-lettered).
 """
 
 import argparse
@@ -18,6 +22,11 @@ from .kafka_io import (
     decode, ensure_topics, log, make_group_consumer, make_producer, now_iso, send_json, short,
     trace, wait_for_kafka,
 )
+
+try:  # HW10 tracing (standard library only); absent in the HW8 Docker image
+    from web_application.hw10 import tracing as hw10_tracing
+except Exception:  # noqa: BLE001
+    hw10_tracing = None
 
 
 class PermanentError(ValueError):
@@ -96,10 +105,11 @@ class AgentRunner:
             log(self.component, f"COMMITTED offset {record.offset + 1} on p{record.partition} "
                                 "BEFORE processing (unsafe early-commit mode)")
         attempts = 0
+        received_ts = time.time()  # HW10: start of this agent's span (first delivery)
         while True:
             attempts += 1
             try:
-                outcome = self._process_once(record, where, attempts)
+                outcome = self._process_once(record, where, attempts, received_ts)
                 break
             except Exception as exc:  # retry / dead-letter
                 permanent = isinstance(exc, (PermanentError, ValueError, UnicodeDecodeError))
@@ -107,7 +117,7 @@ class AgentRunner:
                                     f"{'' if self.args.no_dlq else '/' + str(self.args.max_retries)}"
                                     f" at {where}: {type(exc).__name__}: {exc}")
                 if not self.args.no_dlq and attempts >= self.args.max_retries:
-                    self._dead_letter(record, exc, attempts, permanent)
+                    self._dead_letter(record, exc, attempts, permanent, received_ts)
                     outcome = "dead_letter"
                     break
                 backoff = 1.0 if self.args.no_dlq else min(0.5 * 2 ** (attempts - 1), 4)
@@ -120,7 +130,7 @@ class AgentRunner:
             log(self.component, f"COMMITTED offset {record.offset + 1} on p{record.partition} "
                                 f"after {outcome}")
 
-    def _process_once(self, record, where, attempts):
+    def _process_once(self, record, where, attempts, received_ts=None):
         message = decode(record.value)  # ValueError -> poison
         correlation_id = message.get("correlation_id")
         if not isinstance(correlation_id, str) or not correlation_id:
@@ -132,6 +142,9 @@ class AgentRunner:
         if attempts == 1:
             log(self.component, f"RECEIVED {where} correlation_id={correlation_id} "
                                 f"message={short(message, 300)}")
+        if message.get("inject_failure") == self.name:
+            # HW10 Part 4.2: deterministic failed trace (the flag travels with the message)
+            raise RuntimeError(f"injected failure in {self.name} stage (HW10 failed-trace demo)")
         if self.store is not None:
             status = self.store.status(correlation_id)
             if status == "done":
@@ -153,6 +166,8 @@ class AgentRunner:
         stage["finished_at"] = now_iso()
         for topic, value, key in outputs:
             value.setdefault("trace", message["trace"] + [stage])
+            if "inject_failure" in message:
+                value.setdefault("inject_failure", message["inject_failure"])
             meta = send_json(self.producer, topic, value, key=key)
             log(self.component, f"SENT {topic}[p{meta.partition}@{meta.offset}] "
                                 f"correlation_id={correlation_id} message={short(value, 300)}")
@@ -160,9 +175,35 @@ class AgentRunner:
                   partition=meta.partition, offset=meta.offset)
         if self.store is not None:
             self.store.mark_done(correlation_id, {"outputs": len(outputs)})
+        if outputs:
+            self._hw10_spans(correlation_id, message, record, received_ts, attempts,
+                             outputs=[topic for topic, _value, _key in outputs])
         return "success"
 
-    def _dead_letter(self, record, exc, attempts, permanent):
+    def _hw10_spans(self, trace_id, message, record, received_ts, attempts, error=None,
+                    outputs=None):
+        """HW10 Part 4.1: queue-wait span for the input topic + span for this agent stage.
+
+        trace_id is the HW8 correlation_id. HW8 Part 3 test messages (test_run tag) are not
+        traced so the failure experiments do not pollute the span file.
+        """
+        if hw10_tracing is None or not trace_id or received_ts is None:
+            return
+        if isinstance(message, dict) and message.get("test_run") is not None:
+            return
+        now = time.time()
+        common = {"agent": self.args.instance, "topic": record.topic,
+                  "partition": record.partition, "offset": record.offset}
+        produced_ts = (record.timestamp or 0) / 1000.0  # producer CreateTime of the input
+        queue_stage = hw10_tracing.TOPIC_STAGE.get(record.topic)
+        if queue_stage and produced_ts > 0:
+            hw10_tracing.write_span(trace_id, queue_stage, min(produced_ts, received_ts),
+                                    received_ts, "ok", None, **common)
+        hw10_tracing.write_span(trace_id, self.name, received_ts, now,
+                                "error" if error else "ok", error, attempts=attempts,
+                                output_topics=outputs, **common)
+
+    def _dead_letter(self, record, exc, attempts, permanent, received_ts=None):
         raw = record.value.decode("utf-8", "replace") if record.value else None
         try:
             correlation_id = decode(record.value).get("correlation_id")
@@ -184,6 +225,12 @@ class AgentRunner:
                             f"{cfg.DEAD_LETTER_TOPIC}[p{meta.partition}@{meta.offset}] "
                             f"source={record.topic}[p{record.partition}@{record.offset}]")
         trace(self.component, "DEAD_LETTER", correlation_id, offset=record.offset)
+        try:
+            original = decode(record.value)
+        except Exception:  # noqa: BLE001
+            original = None
+        self._hw10_spans(correlation_id, original, record, received_ts, attempts,
+                         error=f"{type(exc).__name__}: {exc}")
 
 
 def require(message, field, kind=str):
