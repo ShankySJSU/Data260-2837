@@ -1,0 +1,179 @@
+{
+  "student": "Shashank Ranjan",
+  "prefix": "s2837",
+  "generated_at": "2026-11-15T17:26:34.851+00:00",
+  "passed": 34,
+  "total": 34,
+  "checks": [
+    {
+      "check": "spans_file_has_structured_json_spans",
+      "status": "PASS",
+      "detail": "762 spans"
+    },
+    {
+      "check": "every_span_has_trace_id_stage_start_end_status",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "error_spans_carry_an_error_message",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "three_example_trace_ids_available",
+      "status": "PASS",
+      "detail": "{'cache_hit': '0de4dddd-4404-4fc2-8ac2-a7594aac86ab', 'cache_miss': '071fa4ea-43b8-49be-a94b-6bf7d584c982', 'failed': 'f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc'}"
+    },
+    {
+      "check": "cache_hit_trace_has_lookup_hit_and_no_agent_spans",
+      "status": "PASS",
+      "detail": "['cache_lookup']"
+    },
+    {
+      "check": "cache_miss_trace_completes_agent_path_in_order",
+      "status": "PASS",
+      "detail": "['cache_lookup', 'inbox', 'planner', 'tasks', 'writer', 'drafts', 'reviewer', 'final', 'cache_store', 'evaluation']"
+    },
+    {
+      "check": "cache_miss_trace_reaches_the_evaluator",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "failed_trace_identifies_stage_and_error",
+      "status": "PASS",
+      "detail": "writer: RuntimeError: injected failure in writer stage (HW10 failed-trace demo)"
+    },
+    {
+      "check": "examples_ran_on_kafka_pipeline",
+      "status": "PASS",
+      "detail": "kafka"
+    },
+    {
+      "check": "part2_at_least_one_end_to_end_question_evaluated",
+      "status": "PASS",
+      "detail": "3 records"
+    },
+    {
+      "check": "part2_four_criteria_saved",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "scores_on_1_to_5_scale",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "plan_quality_has_reason_writer_has_trace_id_final_has_answer",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "improvement_has_both_scores_difference_interpretation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "plan_draft_final_joined_on_correlation_id_equal_to_trace_id",
+      "status": "PASS",
+      "detail": "162 messages"
+    },
+    {
+      "check": "original_messages_kept_with_topic_partition_offset",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "judge_is_local_geval_and_documented",
+      "status": "PASS",
+      "detail": "ollama:qwen3:4b (local) deepeval 4.3.4"
+    },
+    {
+      "check": "eval_cases_has_20_writer_drafts",
+      "status": "PASS",
+      "detail": "20 cases"
+    },
+    {
+      "check": "human_labels_one_1_to_5_label_per_draft",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "eval_cases_and_labels_committed_before_judge_run",
+      "status": "PASS",
+      "detail": "{'eval_cases.json': '84a305061e', 'human_labels.csv': '84a305061e'}"
+    },
+    {
+      "check": "frozen_files_unchanged_since_judge_run_no_relabeling",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "raw_per_case_data_for_20_drafts_and_3_runs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "spearman_recomputed_from_raw_matches_report",
+      "status": "PASS",
+      "detail": "recomputed 0.4063077704703041 reported 0.4063"
+    },
+    {
+      "check": "mean_abs_difference_recomputed_matches_report",
+      "status": "PASS",
+      "detail": "recomputed 0.9 reported 0.9"
+    },
+    {
+      "check": "repeatability_recomputed_matches_report",
+      "status": "PASS",
+      "detail": "changed 1/20 max 1"
+    },
+    {
+      "check": "part3_judge_is_local_not_mock",
+      "status": "PASS",
+      "detail": "ollama:qwen3:4b (local)"
+    },
+    {
+      "check": "latency_50_confirmed_cache_misses",
+      "status": "PASS",
+      "detail": "50 misses"
+    },
+    {
+      "check": "every_latency_trace_has_a_cache_miss_lookup_span",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "stage_table_has_p50_p95_share_for_required_stages",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "check": "stage_shares_sum_to_about_100_pct",
+      "status": "PASS",
+      "detail": "100.0%"
+    },
+    {
+      "check": "dominant_contributor_identified",
+      "status": "PASS",
+      "detail": "Evaluation"
+    },
+    {
+      "check": "cache_hit_latency_reported_separately",
+      "status": "PASS",
+      "detail": "{'n': 1, 'p50_ms': 28.2, 'p95_ms': 28.2, 'mean_ms': 28.2}"
+    },
+    {
+      "check": "latency_ran_on_kafka_pipeline",
+      "status": "PASS",
+      "detail": "kafka"
+    },
+    {
+      "check": "streamlit_dashboard_present",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

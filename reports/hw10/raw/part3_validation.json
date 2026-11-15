@@ -1,0 +1,1045 @@
+{
+  "generated_at": "2026-11-15T08:06:27.317+00:00",
+  "judge": {
+    "framework": "deepeval GEval",
+    "backend": "ollama",
+    "scale": "1-5 (1 very poor, 5 excellent)",
+    "band_mapping_0_10_to_1_5": [
+      [
+        [
+          0,
+          2
+        ],
+        1
+      ],
+      [
+        [
+          3,
+          4
+        ],
+        2
+      ],
+      [
+        [
+          5,
+          6
+        ],
+        3
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        4
+      ],
+      [
+        [
+          9,
+          10
+        ],
+        5
+      ]
+    ],
+    "evaluation_params": [
+      "INPUT",
+      "ACTUAL_OUTPUT"
+    ],
+    "async_mode": false,
+    "call_timeout_s": 180.0,
+    "hard_timeout_s": 240.0,
+    "max_consecutive_failures": 3,
+    "criteria": {
+      "plan_quality": {
+        "name": "Plan Quality",
+        "evaluation_steps": [
+          "Read the user question in the input. It may contain database facts about a restaurant inspection and the county policy.",
+          "Check whether the plan steps in the actual output are specific to this question (the restaurant, fact or rule that is needed) instead of generic advice.",
+          "Check whether the steps are in a logical order and whether a writer who follows them would produce a complete and correct answer to the question.",
+          "Penalize steps that are irrelevant, repeated, or that lead away from the facts given in the input."
+        ],
+        "rubric": {
+          "1": "Very poor: the plan is unrelated to the question or unusable.",
+          "2": "Poor: mostly generic or misdirected; following it would miss the question.",
+          "3": "Acceptable: addresses the question but with generic, missing or disordered steps.",
+          "4": "Good: specific and ordered, with only minor gaps or redundancy.",
+          "5": "Excellent: specific, ordered and sufficient to fully answer the question."
+        }
+      },
+      "writer_helpfulness": {
+        "name": "Writer Helpfulness",
+        "evaluation_steps": [
+          "Identify exactly what the question in the input asks and note the facts and county policy given in the input.",
+          "Compare every score, status, date and violation stated in the actual output with the facts and policy in the input. A contradicted or invented fact is a serious error.",
+          "Check whether the actual output directly answers the question and would be useful to a restaurant owner or diner.",
+          "Penalize vague, padded or off-topic text and answers that leave the question unanswered."
+        ],
+        "rubric": {
+          "1": "Very poor: wrong or contradicts the facts, or does not answer the question.",
+          "2": "Poor: partly answers but contains a significant factual error or omission.",
+          "3": "Acceptable: answers the question with minor inaccuracies, gaps or padding.",
+          "4": "Good: accurate and useful, with only small omissions or wordiness.",
+          "5": "Excellent: fully accurate, direct, complete and useful."
+        }
+      },
+      "final_helpfulness": {
+        "name": "Final Answer Helpfulness",
+        "evaluation_steps": [
+          "Identify exactly what the question in the input asks.",
+          "Check whether the actual output answers that question directly and completely.",
+          "Check relevance: the answer must stay on the question and must not contradict the facts or county policy given in the input.",
+          "Check that the answer is clear and that a restaurant owner or diner could act on it. Penalize irrelevant, vague or contradictory content."
+        ],
+        "rubric": {
+          "1": "Very poor: irrelevant, wrong, or does not answer the question.",
+          "2": "Poor: only partly relevant or helpful, with a significant error or omission.",
+          "3": "Acceptable: relevant and mostly helpful, with minor errors, gaps or padding.",
+          "4": "Good: relevant, correct and helpful, with only small weaknesses.",
+          "5": "Excellent: directly relevant, correct, complete and clearly helpful."
+        }
+      }
+    },
+    "model": "ollama:qwen3:4b (local)",
+    "url": "http://localhost:11434/api/chat",
+    "temperature": 0,
+    "seed": 2837,
+    "think": false,
+    "deepeval_version": "4.3.4"
+  },
+  "criterion": "writer_helpfulness",
+  "frozen_files": {
+    "eval_cases.json": {
+      "sha256": "99e764ef4cfe6e25c0f73e96667d378b9b69592877409492c2f56afe483805fb",
+      "commit": "84a305061e5af29f82da5e30b226525b6b40901e",
+      "committed_at": "2026-11-14T23:24:38-08:00",
+      "uncommitted_changes": false
+    },
+    "human_labels.csv": {
+      "sha256": "7e25cd40329ecb5d3ce96bf55dbf5b41a35171de92f21de59668aba80632441b",
+      "commit": "84a305061e5af29f82da5e30b226525b6b40901e",
+      "committed_at": "2026-11-14T23:24:38-08:00",
+      "uncommitted_changes": false
+    }
+  },
+  "frozen_check_skipped": false,
+  "n_cases": 20,
+  "comparison_primary_run": 1,
+  "spearman": 0.4063,
+  "mean_abs_difference": 0.9,
+  "comparison_by_run": [
+    {
+      "run": 1,
+      "n_scored": 20,
+      "spearman": 0.4063,
+      "mean_abs_difference": 0.9
+    },
+    {
+      "run": 2,
+      "n_scored": 20,
+      "spearman": 0.4687,
+      "mean_abs_difference": 0.85
+    },
+    {
+      "run": 3,
+      "n_scored": 20,
+      "spearman": 0.4687,
+      "mean_abs_difference": 0.85
+    }
+  ],
+  "repeatability": {
+    "n_cases": 20,
+    "n_runs": 3,
+    "cases_comparable": 20,
+    "cases_with_any_change": 1,
+    "change_rate_pct": 5.0,
+    "pairwise_comparisons": 60,
+    "pairwise_changes": 2,
+    "mean_abs_change": 0.0333,
+    "mean_abs_change_when_changed": 1.0,
+    "max_abs_change": 1,
+    "per_case_range": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "by_run_pair": [
+      {
+        "runs": "1 vs 2",
+        "n": 20,
+        "changed": 1,
+        "mean_abs_change": 0.05,
+        "max_abs_change": 1
+      },
+      {
+        "runs": "1 vs 3",
+        "n": 20,
+        "changed": 1,
+        "mean_abs_change": 0.05,
+        "max_abs_change": 1
+      },
+      {
+        "runs": "2 vs 3",
+        "n": 20,
+        "changed": 0,
+        "mean_abs_change": 0.0,
+        "max_abs_change": 0
+      }
+    ]
+  },
+  "judge_failures": 0,
+  "human_distribution": {
+    "1": 4,
+    "2": 0,
+    "3": 2,
+    "4": 3,
+    "5": 11
+  },
+  "judge_distribution_run1": {
+    "1": 3,
+    "2": 1,
+    "3": 0,
+    "4": 4,
+    "5": 12
+  },
+  "per_case": [
+    {
+      "case_id": "C01",
+      "trace_id": "910fe24f-a9cd-4032-a4e5-3cba47a02944",
+      "question": "What score and status did Taj Grill get in its latest inspection?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C02",
+      "trace_id": "68292259-c752-4629-b199-739ee50ccb09",
+      "question": "By what date must Taj Grill be re-inspected?",
+      "human_label": 1,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 4,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C03",
+      "trace_id": "85ef44b4-99f1-44f9-8265-cea05129260e",
+      "question": "What violations were found at Golden Dragon Bistro?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C04",
+      "trace_id": "e5924dec-911c-4352-93c6-dd547839f745",
+      "question": "Golden Dragon Bistro failed its inspection. What should the owner fix first, and why?",
+      "human_label": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C05",
+      "trace_id": "720867c8-4c31-46fa-8730-5d2af7f56880",
+      "question": "Does Bayside Sushi Bar need a re-inspection?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C06",
+      "trace_id": "b0735f80-0cb5-4f65-a80e-ae7bb6804c58",
+      "question": "When is the re-inspection deadline for Spicy Pho House?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C07",
+      "trace_id": "c111fa2c-30ce-4636-8456-9b7b05cb770b",
+      "question": "Which violations at Spicy Pho House are the most serious food-safety risks?",
+      "human_label": 4,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C08",
+      "trace_id": "ce564e22-2102-4484-be48-3129383c91d9",
+      "question": "Is Golden Crust Bakery's score of 83 a PASS?",
+      "human_label": 1,
+      "judge_run1": 1,
+      "judge_run2": 1,
+      "judge_run3": 1,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C09",
+      "trace_id": "f0263a65-c551-4335-a74d-9df6909a8503",
+      "question": "How many more points would Rustic Garden Deli need to reach a PASS?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C10",
+      "trace_id": "0afa82d8-2fea-44b5-8090-d0a6114684ea",
+      "question": "What did the inspector find at Urban Taco Cafe, and is any follow-up required?",
+      "human_label": 3,
+      "judge_run1": 2,
+      "judge_run2": 2,
+      "judge_run3": 2,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C11",
+      "trace_id": "9d3ac4c5-a62e-4e1a-8104-f34f996e6797",
+      "question": "Which scored higher in the latest inspection, Cafe Milano or Rangoli Indian Cuisine?",
+      "human_label": 1,
+      "judge_run1": 1,
+      "judge_run2": 1,
+      "judge_run3": 1,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C12",
+      "trace_id": "164a7666-c07d-4d47-a9eb-f1997de56991",
+      "question": "Compare the inspection results of Taj Grill and Grill & Barrel Bar.",
+      "human_label": 3,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C13",
+      "trace_id": "f3a88c58-b7f9-4411-a596-94ca6c509ceb",
+      "question": "What must Grill & Barrel Bar do before its re-inspection?",
+      "human_label": 5,
+      "judge_run1": 4,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "range_across_runs": 1
+    },
+    {
+      "case_id": "C14",
+      "trace_id": "694f8ad1-c034-4f4c-baa2-1ca72e0860fd",
+      "question": "How many days does a restaurant with a FAIL status have before re-inspection?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C15",
+      "trace_id": "c632e42c-b884-44d4-aa39-97396435b1e6",
+      "question": "What score range counts as a WARNING, and what happens after a WARNING?",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C16",
+      "trace_id": "df0f17da-9b86-4661-beba-8c77480d1067",
+      "question": "Is a score of 85 a PASS or a WARNING?",
+      "human_label": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C17",
+      "trace_id": "b7730b12-3ebb-44d5-bec2-1257471c0425",
+      "question": "What was the latest inspection result for Blue Lotus Cafe?",
+      "human_label": 4,
+      "judge_run1": 1,
+      "judge_run2": 1,
+      "judge_run3": 1,
+      "abs_diff_run1": 3,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C18",
+      "trace_id": "e5f4fa23-ca5e-468d-a87a-b80b4c7509e7",
+      "question": "Why is cooling cooked rice improperly a health hazard?",
+      "human_label": 4,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C19",
+      "trace_id": "a49a6a39-fdde-44b4-bc97-e8bb13fea35e",
+      "question": "Is it safe to eat at Rustic Garden Deli given its latest inspection?",
+      "human_label": 1,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 4,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "C20",
+      "trace_id": "6d5809f4-3b3a-4a1d-9c87-34dc531c8ede",
+      "question": "Summarize the latest inspection of Rangoli Indian Cuisine for a customer.",
+      "human_label": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    }
+  ],
+  "calls": [
+    {
+      "run": 1,
+      "case_id": "C01",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 43458.0,
+      "reason": "The response accurately identifies the inspection date, status (WARNING), score (78), and violations as per the input facts and county policy. It directly answers the question without contradictions or omissions, making it fully accurate and useful for a restaurant owner."
+    },
+    {
+      "run": 1,
+      "case_id": "C02",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 41046.2,
+      "reason": "The response correctly identifies the inspection date, status, and score from the input facts and applies the county policy accurately. It states the re-inspection deadline as October 20, 2027, which is 30 days after the inspection date (2026-10-20), aligning with the policy. The response is direct, accurate, and addresses the question without omissions or errors."
+    },
+    {
+      "run": 1,
+      "case_id": "C03",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 45751.1,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with the county policy on scoring. It directly answers the question without contradictions or omissions. The only minor issue is repeating the violations list twice, which adds slight wordiness but does not affect accuracy or usefulness."
+    },
+    {
+      "run": 1,
+      "case_id": "C04",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 54464.4,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with county policy (score 62 = FAIL, requiring re-inspection within 10 days). It directly answers the question by prioritizing critical fixes with clear explanations. Minor wordiness in the 'why' explanations slightly reduces the score from 9 to 8, but no factual errors or omissions exist."
+    },
+    {
+      "run": 1,
+      "case_id": "C05",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 36443.6,
+      "reason": "The output correctly identifies the inspection status as PASS with score 91 and states no re-inspection is needed, matching the facts and policy. It directly answers the question without contradictions or omissions."
+    },
+    {
+      "run": 1,
+      "case_id": "C06",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 45333.9,
+      "reason": "The response correctly identifies the inspection status, score, and violations from the input facts. It accurately applies the county policy to determine that a score of 58 (0-69) requires re-inspection within 10 days, calculating the deadline as 2026-11-12. All facts align with the input, and the answer is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 1,
+      "case_id": "C07",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 44628.3,
+      "reason": "The response accurately identifies all three violations from the input and correctly applies the county policy (score 58 = FAIL, re-inspection within 10 days). It clearly states the most serious violations (improper cooling of cooked rice and no certified food manager) without contradictions or omissions. The explanation is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 1,
+      "case_id": "C08",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 33794.2,
+      "reason": "The response incorrectly states that 83 falls within 85-100 for PASS, contradicting the county policy which specifies 85-100 = PASS. This factual error (step 2) results in a score of : 0"
+    },
+    {
+      "run": 1,
+      "case_id": "C09",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 30361.5,
+      "reason": "The response correctly identifies the current score (71) and the PASS threshold (85), calculating a 14-point improvement needed. It aligns with the county policy and facts without contradictions or omissions. The explanation is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 1,
+      "case_id": "C10",
+      "score": 2,
+      "geval_score": 0.3,
+      "status": "ok",
+      "error": null,
+      "ms": 33083.7,
+      "reason": "The output correctly identifies the inspection date, status, score, and violation but incorrectly states that the violations are within the 70-84 range (WARNING) when the score is 88 (PASS). This factual error contradicts the county policy, leading to a poor score."
+    },
+    {
+      "run": 1,
+      "case_id": "C11",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 29823.5,
+      "reason": "The output incorrectly states that Rang: 94 and Cafe Milano: 97, but the facts show Cafe Milano scored 97 and Rangoli 94. This contradicts the facts, making it a serious error."
+    },
+    {
+      "run": 1,
+      "case_id": "C12",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 62205.6,
+      "reason": "The response accurately identifies both restaurants' inspection dates, scores, statuses, and violations as per the input facts. It correctly applies the county policy (WARNING range for re-inspection timelines) and avoids contradictions. However, it incorrectly states that Grill & Barrel Bar requires re-inspection within 10 days (policy says 30 days for WARNING), which is a factual error. This minor error places it in the 7-8 range (Good) rather than higher."
+    },
+    {
+      "run": 1,
+      "case_id": "C13",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 59941.6,
+      "reason": "The response correctly identifies the need to address violations and explains the re-inspection timeline based on the policy. However, it incorrectly states the re-inspection date as November 25, 2026, when the policy requires re-inspection within 30 days of October 25, 2026 (which would be October 25 to November 24, 2026), not November 25. This minor factual error reduces the score from 9 to 8."
+    },
+    {
+      "run": 1,
+      "case_id": "C14",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 34068.9,
+      "reason": "The response correctly identifies the 10-day re-inspection period for FAIL status based on the county policy (0-69 = FAIL), which matches the facts. It directly answers the question without contradictions or omissions, making it fully accurate and useful for a restaurant owner."
+    },
+    {
+      "run": 1,
+      "case_id": "C15",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 35254.1,
+      "reason": "The output correctly identifies the WARNING score range (70-84) and explains the re-inspection process accurately, matching the county policy without contradictions. It directly answers the question and is useful for a restaurant owner, with no factual errors or omissions."
+    },
+    {
+      "run": 1,
+      "case_id": "C16",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 35124.4,
+      "reason": "The output correctly identifies the score range (85-100 = PASS) and matches the county policy without contradictions. It directly answers the question and is concise, meeting the criteria for a Good (7-8) or Excellent (9-10) score. The only minor omission is not explicitly stating the re-inspection requirement for PASS, but this does not impact accuracy or usefulness."
+    },
+    {
+      "run": 1,
+      "case_id": "C17",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 47998.7,
+      "reason": "The response correctly identifies that no restaurant record matched the query and explains the policy, but it invents possible outcomes (PASS, WARNING, FAIL) without any data to support them, which contradicts the input's fact that no specific record exists. This is a serious error as it invents facts where none should be present."
+    },
+    {
+      "run": 1,
+      "case_id": "C18",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 43593.7,
+      "reason": "The response correctly identifies the health hazard of bacterial growth in improperly cooled rice and explains the science accurately. It also accurately translates the county policy into practical terms for restaurant owners, matching the input's facts and policy without contradictions. Minor padding in the list of health risks is acceptable but does not impact the core accuracy or usefulness."
+    },
+    {
+      "run": 1,
+      "case_id": "C19",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 39918.2,
+      "reason": "The response accurately identifies the inspection date, status, score, and violations from the input facts and correctly applies the county policy to state that a re-inspection is required within 30 days. It directly answers the question about safety with actionable advice, avoiding factual errors or omissions. The only minor wordiness is acceptable for clarity."
+    },
+    {
+      "run": 1,
+      "case_id": "C20",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 31111.6,
+      "reason": "The output accurately summarizes the inspection with correct facts (date, status, score, violations), aligns with county policy, and directly answers the customer query without errors or padding. It correctly states the PASS range and implications, matching the input's requirements."
+    },
+    {
+      "run": 2,
+      "case_id": "C01",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 30491.0,
+      "reason": "The output accurately states Taj Grill's inspection date, status (WARNING), score (78), and violations, matching the facts and policy without contradictions. It directly answers the question and is concise and useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C02",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 21729.8,
+      "reason": "The response correctly identifies the inspection date, status, and score from the input facts and applies the county policy accurately to determine the re-inspection deadline. It directly answers the question with precise details and avoids factual errors or padding. The only minor omission is not explicitly stating the 30-day period from the inspection date, but this does not impact the core answer."
+    },
+    {
+      "run": 2,
+      "case_id": "C03",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 40262.5,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with the county policy on scoring. It directly answers the question without contradictions or omissions. The only minor padding is the repetition of violations and policy details, but this does not affect accuracy or usefulness."
+    },
+    {
+      "run": 2,
+      "case_id": "C04",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 24500.6,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with county policy (score 62 = FAIL, requiring re-inspection within 10 days). It directly answers the question by prioritizing critical fixes with clear explanations. Minor wordiness in the 'why' explanations slightly reduces the score from 9 to 8, but no factual errors or omissions exist."
+    },
+    {
+      "run": 2,
+      "case_id": "C05",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 15160.4,
+      "reason": "The output correctly identifies the inspection status as PASS with score 91 and states no re-inspection is needed, matching the facts and policy. It directly answers the question without contradictions or omissions."
+    },
+    {
+      "run": 2,
+      "case_id": "C06",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 28492.4,
+      "reason": "The response correctly identifies the inspection status, score, and violations from the input facts. It accurately applies the county policy to determine the re-inspection deadline (10 days from 2026-10-22 = 2026-11-12), which matches the policy's requirement for a score 0-69. There are no factual errors or omissions, and the answer is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C07",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 26095.2,
+      "reason": "The response accurately identifies all three violations from the input and correctly applies the county policy (score 58 = FAIL, re-inspection within 10 days). It directly answers the question about the most serious risks by prioritizing the critical violation (no certified food manager) and the serious violations (improper cooling of rice), while avoiding factual errors or omissions. The explanation is clear and useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C08",
+      "score": 1,
+      "geval_score": 0.2,
+      "status": "ok",
+      "error": null,
+      "ms": 34951.3,
+      "reason": "The response incorrectly states that 83 falls within 85-100 for PASS, contradicting the county policy which specifies 85-100 = PASS. This factual error leads to a wrong conclusion that the score is a PASS when it should be a WARNING."
+    },
+    {
+      "run": 2,
+      "case_id": "C09",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 35002.7,
+      "reason": "The response correctly identifies the current score (71) and the PASS threshold (85), calculating a 14-point improvement needed. It aligns with the county policy and facts without contradictions or omissions. The explanation is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C10",
+      "score": 2,
+      "geval_score": 0.3,
+      "status": "ok",
+      "error": null,
+      "ms": 39262.2,
+      "reason": "The output correctly identifies the inspection date, status, score, and violation but incorrectly states that the violations are within the 70-84 range (WARNING) when the score is 88 (PASS). This factual error contradicts the county policy, leading to a poor score."
+    },
+    {
+      "run": 2,
+      "case_id": "C11",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 34470.8,
+      "reason": "The output incorrectly states that Rang: 94 and Cafe Milano: 97, but the facts show Cafe Milano scored 97 and Rangoli 94. This contradicts the facts, making it a serious error."
+    },
+    {
+      "run": 2,
+      "case_id": "C12",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 63645.1,
+      "reason": "The response accurately identifies both restaurants' inspection dates, scores, statuses, and violations as per the input facts. It correctly applies the county policy (WARNING range for re-inspection timelines) and avoids contradictions. However, it incorrectly states that Grill & Barrel Bar requires re-inspection within 10 days (policy says 30 days for WARNING), which is a factual error. This minor error places it in the 7-8 range (Good) rather than higher."
+    },
+    {
+      "run": 2,
+      "case_id": "C13",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 53063.8,
+      "reason": "The response correctly identifies the violations and re-inspection requirements based on the input facts and policy. It accurately states the score (75) falls in the WARNING range, requiring re-inspection within 30 days of October 25, 2026. The re-inspection date calculation (November 25, 2026) aligns with the policy. However, the response slightly overcomplicates the re-inspection date by implying it must be 'no earlier than' November 25, 2026, when the policy only requires re-inspection within 30 days (so any date from October 26 to November 25 is acceptable). This minor overstatement is a small omission but does not contradict facts or omit critical information. The response fully answers the question and is useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C14",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 33275.3,
+      "reason": "The response correctly identifies the 10-day re-inspection period for FAIL status based on the county policy (0-69 = FAIL), which matches the facts. It directly answers the question without contradictions or omissions, making it fully accurate and useful for a restaurant owner."
+    },
+    {
+      "run": 2,
+      "case_id": "C15",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 36025.3,
+      "reason": "The output correctly identifies the WARNING score range (70-84) and explains the re-inspection process accurately, matching the county policy without contradictions. It directly answers the question and is useful for a restaurant owner, with no factual errors or omissions."
+    },
+    {
+      "run": 2,
+      "case_id": "C16",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 34522.7,
+      "reason": "The output correctly identifies the score range (85-100 = PASS) and matches the county policy without contradictions. It directly answers the question and is concise, meeting the criteria for a Good (7-8) or Excellent (9-10) score. The only minor omission is not explicitly stating the re-inspection requirement for PASS, but this does not impact accuracy or usefulness."
+    },
+    {
+      "run": 2,
+      "case_id": "C17",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 45834.9,
+      "reason": "The response correctly identifies that no restaurant record matched the query and explains the policy, but it invents possible outcomes (PASS, WARNING, FAIL) without any data to support them, which contradicts the input's fact that no specific record exists. This is a serious error as it invents facts where none should be present."
+    },
+    {
+      "run": 2,
+      "case_id": "C18",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 21912.9,
+      "reason": "The response correctly identifies the health hazard of bacterial growth in improperly cooled rice and explains the science accurately. It also accurately translates the county policy into practical terms for restaurant owners, matching the input's facts and policy without contradictions. Minor padding in the list of health risks is acceptable but does not impact the core accuracy or usefulness."
+    },
+    {
+      "run": 2,
+      "case_id": "C19",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 37250.5,
+      "reason": "The response accurately identifies the inspection date, status, score, and violations from the input facts and correctly applies the county policy to state that a re-inspection is required within 30 days. It directly answers the question about safety with actionable advice, avoiding factual errors or omissions. The only minor wordiness is acceptable for clarity."
+    },
+    {
+      "run": 2,
+      "case_id": "C20",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 18759.5,
+      "reason": "The output accurately summarizes the inspection with correct facts (date, status, score, violations), aligns with county policy, and directly answers the customer query without errors or padding. It correctly states the PASS range and implications, matching the input's specifications."
+    },
+    {
+      "run": 3,
+      "case_id": "C01",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 144205.4,
+      "reason": "The response accurately identifies the inspection date, status, score, and violations as per the input facts and county policy. It directly answers the question without contradictions or omissions, making it fully accurate and useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C02",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 22878.9,
+      "reason": "The response correctly identifies the inspection date, status, and score from the input facts and applies the county policy accurately to determine the re-inspection deadline. It directly answers the question with precise details and avoids factual errors or padding. The only minor omission is not explicitly stating the 30-day period from the inspection date, but this does not impact the core answer."
+    },
+    {
+      "run": 3,
+      "case_id": "C03",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 17560.4,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with the county policy on scoring. It directly answers the question without contradictions or omissions. The only minor issue is repeating the violations list twice, which adds slight wordiness but does not affect accuracy or usefulness."
+    },
+    {
+      "run": 3,
+      "case_id": "C04",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 22143.1,
+      "reason": "The response correctly identifies all three violations from the input facts and aligns with county policy (score 62 = FAIL, requiring re-inspection within 10 days). It directly answers the question by prioritizing critical fixes with clear explanations. Minor wordiness in the 'why' explanations slightly reduces the score from 9 to 8, but no factual errors or omissions exist."
+    },
+    {
+      "run": 3,
+      "case_id": "C05",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 13535.4,
+      "reason": "The output correctly identifies the inspection status as PASS with score 91 and states no re-inspection is needed, matching the facts and policy. It directly answers the question without contradictions or omissions."
+    },
+    {
+      "run": 3,
+      "case_id": "C06",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 25933.2,
+      "reason": "The response correctly identifies the inspection status, score, and violations from the input facts. It accurately applies the county policy to determine the re-inspection deadline (10 days from 2026-10-22 = 2026-11-12), which matches the policy's requirement for a score 0-69. There are no factual errors or omissions, and the answer is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C07",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 23693.1,
+      "reason": "The response accurately identifies all three violations from the input and correctly applies the county policy (score 58 = FAIL, re-inspection within 10 days). It directly answers the question about the most serious risks by prioritizing the critical violation (no certified food manager) and the serious violations (improper cooling of rice), while avoiding factual errors or omissions. The explanation is clear and useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C08",
+      "score": 1,
+      "geval_score": 0.2,
+      "status": "ok",
+      "error": null,
+      "ms": 34548.4,
+      "reason": "The response incorrectly states that 83 falls within 85-100 for PASS, contradicting the county policy which specifies 85-100 = PASS. This factual error leads to a wrong conclusion that the score is a PASS when it should be a WARNING."
+    },
+    {
+      "run": 3,
+      "case_id": "C09",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 31465.0,
+      "reason": "The response correctly identifies the current score (71) and the PASS threshold (85), calculating a 14-point improvement needed. It aligns with the county policy and facts without contradictions or omissions. The explanation is direct and useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C10",
+      "score": 2,
+      "geval_score": 0.3,
+      "status": "ok",
+      "error": null,
+      "ms": 31395.2,
+      "reason": "The output correctly identifies the inspection date, status, score, and violation but incorrectly states that the violations are within the 70-84 range (WARNING) when the score is 88 (PASS). This factual error contradicts the county policy, leading to a poor score."
+    },
+    {
+      "run": 3,
+      "case_id": "C11",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 29188.5,
+      "reason": "The output incorrectly states that Rang: 94 and Cafe Milano: 97, but the facts show Cafe Milano scored 97 and Rangoli 94. This contradicts the facts, making it a serious error."
+    },
+    {
+      "run": 3,
+      "case_id": "C12",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 56858.9,
+      "reason": "The response accurately identifies both restaurants' inspection dates, scores, statuses, and violations as per the input facts. It correctly applies the county policy (WARNING range for re-inspection timelines) and avoids contradictions. However, it incorrectly states that Grill & Barrel Bar requires re-inspection within 10 days (policy says 30 days for WARNING), which is a factual error. This minor error places it in the 7-8 range (Good) rather than higher."
+    },
+    {
+      "run": 3,
+      "case_id": "C13",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 44947.2,
+      "reason": "The response correctly identifies the violations and re-inspection requirements based on the input facts and policy. It accurately states the score (75) falls in the WARNING range, requiring re-inspection within 30 days of October 25, 2026. The re-inspection date calculation (November 25, 2026) aligns with the policy. However, the response slightly overcomplicates the re-inspection date by implying it must be 'no earlier than' November 25, 2026, when the policy only requires re-inspection within 30 days (so any date from October 26 to November 25 is acceptable). This minor overstatement is a small omission but does not contradict facts or omit critical information. The response fully answers the question and is useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C14",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 26268.0,
+      "reason": "The response correctly identifies the 10-day re-inspection period for FAIL status based on the county policy (0-69 = FAIL), which matches the facts. It directly answers the question without contradictions or omissions, making it fully accurate and useful for a restaurant owner."
+    },
+    {
+      "run": 3,
+      "case_id": "C15",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 28604.4,
+      "reason": "The output correctly identifies the WARNING score range (70-84) and explains the re-inspection process accurately, matching the county policy without contradictions. It directly answers the question and is useful for a restaurant owner, with no factual errors or omissions."
+    },
+    {
+      "run": 3,
+      "case_id": "C16",
+      "score": 4,
+      "geval_score": 0.8,
+      "status": "ok",
+      "error": null,
+      "ms": 32339.4,
+      "reason": "The output correctly identifies the score range (85-100 = PASS) and matches the county policy without contradictions. It directly answers the question and is concise, meeting the criteria for a Good (7-8) or Excellent (9-10) score. The only minor omission is not explicitly stating the re-inspection requirement for PASS, but this does not impact accuracy or usefulness."
+    },
+    {
+      "run": 3,
+      "case_id": "C17",
+      "score": 1,
+      "geval_score": 0.0,
+      "status": "ok",
+      "error": null,
+      "ms": 48987.1,
+      "reason": "The response correctly identifies that no restaurant record matched the query and explains the policy, but it invents possible outcomes (PASS, WARNING, FAIL) without any data to support them, which contradicts the input's fact that no specific record exists. This is a serious error as it invents facts where none should be present."
+    },
+    {
+      "run": 3,
+      "case_id": "C18",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 27565.7,
+      "reason": "The response correctly identifies the health hazard of bacterial growth in improperly cooled rice and explains the science accurately. It also accurately translates the county policy into practical terms for restaurant owners, matching the input's facts and policy without contradictions. Minor padding in the list of health risks is acceptable but does not impact the core accuracy or usefulness."
+    },
+    {
+      "run": 3,
+      "case_id": "C19",
+      "score": 5,
+      "geval_score": 0.9,
+      "status": "ok",
+      "error": null,
+      "ms": 34449.2,
+      "reason": "The response accurately identifies the inspection date, status, score, and violations from the input facts and correctly applies the county policy to state that a re-inspection is required within 30 days. It directly answers the question about safety with actionable advice, avoiding factual errors or omissions. The only minor wordiness is acceptable for clarity."
+    },
+    {
+      "run": 3,
+      "case_id": "C20",
+      "score": 5,
+      "geval_score": 1.0,
+      "status": "ok",
+      "error": null,
+      "ms": 16161.5,
+      "reason": "The output accurately summarizes the inspection with correct facts (date, status, score, violations), aligns with county policy, and directly answers the customer query without errors or padding. It correctly states the PASS range and implications, matching the input's specifications."
+    }
+  ]
+}
