@@ -1,0 +1,205 @@
+2026-11-14 20:55:25.992 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 20:55:25.993 | Shashank Ranjan | s2837 | PART4      | HW10 Part 4.2 - Shashank Ranjan - cache-hit, cache-miss and failed trace (kafka)
+2026-11-14 20:55:25.994 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 20:55:26.031 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=fd8c5f21-1153-4425-bf0b-6d4b924a219e CACHE MISS best_similarity=0.0000 query='What violations were recorded at Spicy Pho House, and when is it re-inspected?'
+2026-11-14 20:55:26.066 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@14] trace_id=fd8c5f21-1153-4425-bf0b-6d4b924a219e
+2026-11-14 20:59:37.958 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-14 20:59:37.960 | Shashank Ranjan | s2837 | PART2      | HW10 Part 2 - Shashank Ranjan - evaluator on the s2837 Planner/Writer/Reviewer pipeline (kafka)
+2026-11-14 20:59:37.961 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-14 20:59:56.323 | Shashank Ranjan | s2837 | PART2      | judge: ollama:qwen3:4b (local) - OK - qwen3:4b replied: {
+  "ok": true
+}
+2026-11-14 20:59:56.325 | Shashank Ranjan | s2837 | PART2      | --- test question 1: 'Taj Grill received a WARNING. What exactly must the owner fix, and by what date is the re-inspection due?'
+2026-11-14 20:59:56.328 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=58a800ce-38e7-4d7d-bfd4-9ef8e1a23661 CACHE MISS (bypassed) query='Taj Grill received a WARNING. What exactly must the owner fix, and by what date is the re-inspection due?'
+2026-11-14 20:59:56.362 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@15] trace_id=58a800ce-38e7-4d7d-bfd4-9ef8e1a23661
+2026-11-14 21:04:56.574 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=58a800ce-38e7-4d7d-bfd4-9ef8e1a23661 FAILED at stage planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:04:56.577 | Shashank Ranjan | s2837 | PART2      | request FAILED at planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:04:56.578 | Shashank Ranjan | s2837 | PART2      | --- test question 2: 'What violations were found at Golden Dragon Bistro, and what does its FAIL status mean for re-inspection?'
+2026-11-14 21:04:56.581 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=30cf49a5-7fb9-4f42-94d3-033cdc6f797a CACHE MISS (bypassed) query='What violations were found at Golden Dragon Bistro, and what does its FAIL status mean for re-inspection?'
+2026-11-14 21:04:56.980 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@16] trace_id=30cf49a5-7fb9-4f42-94d3-033cdc6f797a
+2026-11-14 21:09:57.125 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=30cf49a5-7fb9-4f42-94d3-033cdc6f797a FAILED at stage planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:09:57.128 | Shashank Ranjan | s2837 | PART2      | request FAILED at planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:09:57.128 | Shashank Ranjan | s2837 | PART2      | --- test question 3: 'Did Cafe Milano pass its latest inspection, and does it need a re-inspection?'
+2026-11-14 21:09:57.129 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=113f507c-6f7f-4e16-85c1-6d9adabf4f69 CACHE MISS (bypassed) query='Did Cafe Milano pass its latest inspection, and does it need a re-inspection?'
+2026-11-14 21:09:57.294 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@17] trace_id=113f507c-6f7f-4e16-85c1-6d9adabf4f69
+2026-11-14 21:14:57.501 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=113f507c-6f7f-4e16-85c1-6d9adabf4f69 FAILED at stage planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:14:57.502 | Shashank Ranjan | s2837 | PART2      | request FAILED at planner: timeout after 300s waiting on s2837_final: no task was produced
+2026-11-14 21:14:57.503 | Shashank Ranjan | s2837 | PART2      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw10\raw\eval_results.json
+2026-11-14 21:34:46.517 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-14 21:34:46.519 | Shashank Ranjan | s2837 | PART2      | HW10 Part 2 - Shashank Ranjan - evaluator on the s2837 Planner/Writer/Reviewer pipeline (kafka)
+2026-11-14 21:34:46.520 | Shashank Ranjan | s2837 | PART2      | ======================================================================
+2026-11-14 21:35:04.470 | Shashank Ranjan | s2837 | PART2      | judge: ollama:qwen3:4b (local) - OK - qwen3:4b replied: {
+  "ok": true
+}
+2026-11-14 21:35:04.473 | Shashank Ranjan | s2837 | PART2      | --- test question 1: 'Taj Grill received a WARNING. What exactly must the owner fix, and by what date is the re-inspection due?'
+2026-11-14 21:35:04.478 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=9c9ce44c-63fc-4f2e-a6ab-20403b3901bf CACHE MISS (bypassed) query='Taj Grill received a WARNING. What exactly must the owner fix, and by what date is the re-inspection due?'
+2026-11-14 21:35:04.547 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@18] trace_id=9c9ce44c-63fc-4f2e-a6ab-20403b3901bf
+2026-11-14 21:35:26.607 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=9c9ce44c-63fc-4f2e-a6ab-20403b3901bf answered by agents status=approved
+2026-11-14 21:35:26.609 | Shashank Ranjan | s2837 | PART2      | trace_id=9c9ce44c-63fc-4f2e-a6ab-20403b3901bf answered in 22131.7 ms; evaluating ...
+2026-11-14 21:38:04.583 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=9c9ce44c-63fc-4f2e-a6ab-20403b3901bf status=ok plan=3 writer=5 final=5 draft(same metric)=5 diff=0 in 157969.8 ms
+2026-11-14 21:38:04.590 | Shashank Ranjan | s2837 | PART2      | --- test question 2: 'What violations were found at Golden Dragon Bistro, and what does its FAIL status mean for re-inspection?'
+2026-11-14 21:38:04.592 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=34903040-dc68-45f9-99c3-521482a694ef CACHE MISS (bypassed) query='What violations were found at Golden Dragon Bistro, and what does its FAIL status mean for re-inspection?'
+2026-11-14 21:38:04.611 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@19] trace_id=34903040-dc68-45f9-99c3-521482a694ef
+2026-11-14 21:38:34.494 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=34903040-dc68-45f9-99c3-521482a694ef answered by agents status=approved
+2026-11-14 21:38:34.497 | Shashank Ranjan | s2837 | PART2      | trace_id=34903040-dc68-45f9-99c3-521482a694ef answered in 29903.6 ms; evaluating ...
+2026-11-14 21:41:12.368 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=34903040-dc68-45f9-99c3-521482a694ef status=ok plan=3 writer=5 final=5 draft(same metric)=5 diff=0 in 157868.6 ms
+2026-11-14 21:41:12.376 | Shashank Ranjan | s2837 | PART2      | --- test question 3: 'Did Cafe Milano pass its latest inspection, and does it need a re-inspection?'
+2026-11-14 21:41:12.377 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=312c88ab-ca80-4d99-8851-ddfc337fd704 CACHE MISS (bypassed) query='Did Cafe Milano pass its latest inspection, and does it need a re-inspection?'
+2026-11-14 21:41:12.404 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@20] trace_id=312c88ab-ca80-4d99-8851-ddfc337fd704
+2026-11-14 21:41:26.316 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=312c88ab-ca80-4d99-8851-ddfc337fd704 answered by agents status=approved
+2026-11-14 21:41:26.319 | Shashank Ranjan | s2837 | PART2      | trace_id=312c88ab-ca80-4d99-8851-ddfc337fd704 answered in 13940.3 ms; evaluating ...
+2026-11-14 21:43:06.481 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=312c88ab-ca80-4d99-8851-ddfc337fd704 status=ok plan=3 writer=5 final=5 draft(same metric)=5 diff=0 in 100160.1 ms
+2026-11-14 21:43:06.488 | Shashank Ranjan | s2837 | PART2      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw10\raw\eval_results.json
+2026-11-14 21:49:59.131 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 21:49:59.133 | Shashank Ranjan | s2837 | PART4      | HW10 Part 4.2 - Shashank Ranjan - cache-hit, cache-miss and failed trace (kafka)
+2026-11-14 21:49:59.134 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 21:49:59.174 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=071fa4ea-43b8-49be-a94b-6bf7d584c982 CACHE MISS best_similarity=0.0000 query='What violations were recorded at Spicy Pho House, and when is it re-inspected?'
+2026-11-14 21:49:59.199 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@21] trace_id=071fa4ea-43b8-49be-a94b-6bf7d584c982
+2026-11-14 21:50:31.459 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=071fa4ea-43b8-49be-a94b-6bf7d584c982 answered by agents status=approved
+2026-11-14 21:50:31.462 | Shashank Ranjan | s2837 | PART4      | MISS  trace_id=071fa4ea-43b8-49be-a94b-6bf7d584c982 is_cached=False status=ok latency=32302.7 ms
+2026-11-14 21:53:01.485 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=071fa4ea-43b8-49be-a94b-6bf7d584c982 status=ok plan=2 writer=3 final=5 draft(same metric)=5 diff=0 in 150019.8 ms
+2026-11-14 21:53:01.520 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=0de4dddd-4404-4fc2-8ac2-a7594aac86ab CACHE HIT similarity=1.0000 >= 0.85 query='What violations were recorded at Spicy Pho House, and when is it re-inspected?'
+2026-11-14 21:53:01.522 | Shashank Ranjan | s2837 | PART4      | HIT   trace_id=0de4dddd-4404-4fc2-8ac2-a7594aac86ab is_cached=True similarity=1.0 latency=28.2 ms
+2026-11-14 21:53:01.548 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc CACHE MISS best_similarity=0.3004 query='Trace demo: explain the latest inspection result of Golden Crust Bakery.'
+2026-11-14 21:53:01.566 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@22] trace_id=f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc
+2026-11-14 21:53:12.004 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc FAILED at stage writer: RuntimeError: injected failure in writer stage (HW10 failed-trace demo) (dead-lettered after 3 attempts)
+2026-11-14 21:53:12.005 | Shashank Ranjan | s2837 | PART4      | FAIL  trace_id=f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc status=error failed_stage=writer error=RuntimeError: injected failure in writer stage (HW10 failed-trace demo) (dead-lettered after 3 attempts)
+2026-11-14 21:53:13.028 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 21:53:13.030 | Shashank Ranjan | s2837 | PART4      | TRACE IDS (paste into the dashboard Trace lookup page)
+2026-11-14 21:53:13.032 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 21:53:13.034 | Shashank Ranjan | s2837 | PART4      | saved C:\SJSURepo\Data260\Data260-2837\reports\hw10\raw\part4_traces.json
+2026-11-14 22:01:46.326 | Shashank Ranjan | s2837 | PART4      | --flush-cache: removed 1 semantic-cache entries first
+2026-11-14 22:01:48.572 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 22:01:48.572 | Shashank Ranjan | s2837 | PART4      | HW10 Part 4.3 - Shashank Ranjan - 50 confirmed cache misses (kafka); already done: 0
+2026-11-14 22:01:48.573 | Shashank Ranjan | s2837 | PART4      | ======================================================================
+2026-11-14 22:01:58.942 | Shashank Ranjan | s2837 | PART4      | judge health: OK - qwen3:4b replied: {
+  "ok": true
+}
+2026-11-14 22:01:58.981 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=2a968854-b72c-442a-a79e-3ebf873251a1 CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Rangoli Indian Cuisine earned at its most recent health inspection.'
+2026-11-14 22:01:59.018 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@23] trace_id=2a968854-b72c-442a-a79e-3ebf873251a1
+2026-11-14 22:02:23.282 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=2a968854-b72c-442a-a79e-3ebf873251a1 answered by agents status=approved
+2026-11-14 22:05:03.521 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=2a968854-b72c-442a-a79e-3ebf873251a1 status=ok plan=2 writer=5 final=5 draft(same metric)=5 diff=0 in 160225.0 ms
+2026-11-14 22:05:03.533 | Shashank Ranjan | s2837 | PART4      | #1/50 trace_id=2a968854-b72c-442a-a79e-3ebf873251a1 is_cached=False similarity=0.0 request=24349.0 ms evaluation=160225.0 ms
+2026-11-14 22:05:03.909 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=1816b089-3d13-4ece-b34f-1fd9c41824a5 CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Taj Grill earned at its most recent health inspection.'
+2026-11-14 22:05:03.925 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@24] trace_id=1816b089-3d13-4ece-b34f-1fd9c41824a5
+2026-11-14 22:05:24.898 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=1816b089-3d13-4ece-b34f-1fd9c41824a5 answered by agents status=approved
+2026-11-14 22:07:29.702 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=1816b089-3d13-4ece-b34f-1fd9c41824a5 status=ok plan=3 writer=5 final=4 draft(same metric)=5 diff=-1 in 124799.7 ms
+2026-11-14 22:07:29.716 | Shashank Ranjan | s2837 | PART4      | #2/50 trace_id=1816b089-3d13-4ece-b34f-1fd9c41824a5 is_cached=False similarity=0.0 request=21042.7 ms evaluation=124799.7 ms
+2026-11-14 22:07:30.065 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=928cbc5e-943d-4bfb-8742-385c3f498b7f CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Golden Dragon Bistro earned at its most recent health inspection.'
+2026-11-14 22:07:30.088 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@25] trace_id=928cbc5e-943d-4bfb-8742-385c3f498b7f
+2026-11-14 22:08:06.123 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=928cbc5e-943d-4bfb-8742-385c3f498b7f answered by agents status=approved
+2026-11-14 22:10:21.572 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=928cbc5e-943d-4bfb-8742-385c3f498b7f status=ok plan=2 writer=5 final=4 draft(same metric)=4 diff=0 in 135444.5 ms
+2026-11-14 22:10:21.584 | Shashank Ranjan | s2837 | PART4      | #3/50 trace_id=928cbc5e-943d-4bfb-8742-385c3f498b7f is_cached=False similarity=0.0 request=36093.3 ms evaluation=135444.5 ms
+2026-11-14 22:10:21.975 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=1aa85223-eac0-4e70-9d40-4c1421644cc5 CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Urban Taco Cafe earned at its most recent health inspection.'
+2026-11-14 22:10:21.991 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@26] trace_id=1aa85223-eac0-4e70-9d40-4c1421644cc5
+2026-11-14 22:10:57.305 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=1aa85223-eac0-4e70-9d40-4c1421644cc5 answered by agents status=approved
+2026-11-14 22:12:57.513 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=1aa85223-eac0-4e70-9d40-4c1421644cc5 status=ok plan=2 writer=4 final=4 draft(same metric)=5 diff=-1 in 120203.5 ms
+2026-11-14 22:12:57.522 | Shashank Ranjan | s2837 | PART4      | #4/50 trace_id=1aa85223-eac0-4e70-9d40-4c1421644cc5 is_cached=False similarity=0.0 request=35397.2 ms evaluation=120203.5 ms
+2026-11-14 22:12:57.886 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=4373826b-b018-4d29-970a-801e04ff9efc CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Rustic Garden Deli earned at its most recent health inspection.'
+2026-11-14 22:12:57.904 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@27] trace_id=4373826b-b018-4d29-970a-801e04ff9efc
+2026-11-14 22:13:22.171 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=4373826b-b018-4d29-970a-801e04ff9efc answered by agents status=approved
+2026-11-14 22:15:32.993 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=4373826b-b018-4d29-970a-801e04ff9efc status=ok plan=4 writer=5 final=4 draft(same metric)=4 diff=0 in 130818.6 ms
+2026-11-14 22:15:33.009 | Shashank Ranjan | s2837 | PART4      | #5/50 trace_id=4373826b-b018-4d29-970a-801e04ff9efc is_cached=False similarity=0.0 request=24323.4 ms evaluation=130818.6 ms
+2026-11-14 22:15:33.383 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=19fdfd07-de65-46b3-bbe6-2a80b7d471a9 CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Bayside Sushi Bar earned at its most recent health inspection.'
+2026-11-14 22:15:33.400 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@28] trace_id=19fdfd07-de65-46b3-bbe6-2a80b7d471a9
+2026-11-14 22:15:55.530 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=19fdfd07-de65-46b3-bbe6-2a80b7d471a9 answered by agents status=approved
+2026-11-14 22:17:49.229 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=19fdfd07-de65-46b3-bbe6-2a80b7d471a9 status=ok plan=2 writer=5 final=5 draft(same metric)=5 diff=0 in 113696.0 ms
+2026-11-14 22:17:49.240 | Shashank Ranjan | s2837 | PART4      | #6/50 trace_id=19fdfd07-de65-46b3-bbe6-2a80b7d471a9 is_cached=False similarity=0.0 request=22181.7 ms evaluation=113696.0 ms
+2026-11-14 22:17:49.622 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=4fd23275-08af-45bc-85fc-0fe9e9ee0bf1 CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Spicy Pho House earned at its most recent health inspection.'
+2026-11-14 22:17:49.650 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@29] trace_id=4fd23275-08af-45bc-85fc-0fe9e9ee0bf1
+2026-11-14 22:18:13.783 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=4fd23275-08af-45bc-85fc-0fe9e9ee0bf1 answered by agents status=approved
+2026-11-14 22:20:08.384 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=4fd23275-08af-45bc-85fc-0fe9e9ee0bf1 status=ok plan=2 writer=5 final=5 draft(same metric)=5 diff=0 in 114593.5 ms
+2026-11-14 22:20:08.399 | Shashank Ranjan | s2837 | PART4      | #7/50 trace_id=4fd23275-08af-45bc-85fc-0fe9e9ee0bf1 is_cached=False similarity=0.0 request=24223.6 ms evaluation=114593.5 ms
+2026-11-14 22:20:08.774 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=01f43fac-2876-43ef-b0e5-7c273aa64dcb CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Golden Crust Bakery earned at its most recent health inspection.'
+2026-11-14 22:20:08.804 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@30] trace_id=01f43fac-2876-43ef-b0e5-7c273aa64dcb
+2026-11-14 22:20:31.412 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=01f43fac-2876-43ef-b0e5-7c273aa64dcb answered by agents status=approved
+2026-11-14 22:22:27.486 | Shashank Ranjan | s2837 | EVALUATOR  | trace_id=01f43fac-2876-43ef-b0e5-7c273aa64dcb status=ok plan=4 writer=4 final=5 draft(same metric)=5 diff=0 in 116068.4 ms
+2026-11-14 22:22:27.497 | Shashank Ranjan | s2837 | PART4      | #8/50 trace_id=01f43fac-2876-43ef-b0e5-7c273aa64dcb is_cached=False similarity=0.0 request=22692.9 ms evaluation=116068.4 ms
+2026-11-14 22:22:27.876 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=eeec8a74-da5a-49a8-8916-71bf3df50abb CACHE MISS best_similarity=0.0000 query='Tell me the exact number of points Cafe Milano earned at its most recent health inspection.'
+2026-11-14 22:22:27.901 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@31] trace_id=eeec8a74-da5a-49a8-8916-71bf3df50abb
+2026-11-14 22:22:55.869 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=eeec8a74-da5a-49a8-8916-71bf3df50abb answered by agents status=approved
+2026-11-14 22:25:42.682 | Shashank Ranjan | s2837 | CASES      | ======================================================================
+2026-11-14 22:25:42.683 | Shashank Ranjan | s2837 | CASES      | HW10 Part 3.1 - Shashank Ranjan - collecting 20 Writer drafts (kafka)
+2026-11-14 22:25:42.684 | Shashank Ranjan | s2837 | CASES      | ======================================================================
+2026-11-14 22:25:42.686 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=910fe24f-a9cd-4032-a4e5-3cba47a02944 CACHE MISS (bypassed) query='What score and status did Taj Grill get in its latest inspection?'
+2026-11-14 22:25:42.734 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@32] trace_id=910fe24f-a9cd-4032-a4e5-3cba47a02944
+2026-11-14 22:26:04.517 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=910fe24f-a9cd-4032-a4e5-3cba47a02944 answered by agents status=approved
+2026-11-14 22:26:04.669 | Shashank Ranjan | s2837 | CASES      | C01 trace_id=910fe24f-a9cd-4032-a4e5-3cba47a02944 draft 78 words
+2026-11-14 22:26:04.674 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=68292259-c752-4629-b199-739ee50ccb09 CACHE MISS (bypassed) query='By what date must Taj Grill be re-inspected?'
+2026-11-14 22:26:04.695 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@33] trace_id=68292259-c752-4629-b199-739ee50ccb09
+2026-11-14 22:26:23.371 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=68292259-c752-4629-b199-739ee50ccb09 answered by agents status=approved
+2026-11-14 22:26:23.509 | Shashank Ranjan | s2837 | CASES      | C02 trace_id=68292259-c752-4629-b199-739ee50ccb09 draft 51 words
+2026-11-14 22:26:23.511 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=85ef44b4-99f1-44f9-8265-cea05129260e CACHE MISS (bypassed) query='What violations were found at Golden Dragon Bistro?'
+2026-11-14 22:26:23.526 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@34] trace_id=85ef44b4-99f1-44f9-8265-cea05129260e
+2026-11-14 22:27:00.703 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=85ef44b4-99f1-44f9-8265-cea05129260e answered by agents status=approved
+2026-11-14 22:27:00.842 | Shashank Ranjan | s2837 | CASES      | C03 trace_id=85ef44b4-99f1-44f9-8265-cea05129260e draft 143 words
+2026-11-14 22:27:00.845 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=e5924dec-911c-4352-93c6-dd547839f745 CACHE MISS (bypassed) query='Golden Dragon Bistro failed its inspection. What should the owner fix first, and why?'
+2026-11-14 22:27:00.860 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@35] trace_id=e5924dec-911c-4352-93c6-dd547839f745
+2026-11-14 22:27:39.881 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=e5924dec-911c-4352-93c6-dd547839f745 answered by agents status=approved
+2026-11-14 22:27:40.031 | Shashank Ranjan | s2837 | CASES      | C04 trace_id=e5924dec-911c-4352-93c6-dd547839f745 draft 249 words
+2026-11-14 22:27:40.033 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=720867c8-4c31-46fa-8730-5d2af7f56880 CACHE MISS (bypassed) query='Does Bayside Sushi Bar need a re-inspection?'
+2026-11-14 22:27:40.050 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@36] trace_id=720867c8-4c31-46fa-8730-5d2af7f56880
+2026-11-14 22:28:05.581 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=720867c8-4c31-46fa-8730-5d2af7f56880 answered by agents status=approved
+2026-11-14 22:28:05.734 | Shashank Ranjan | s2837 | CASES      | C05 trace_id=720867c8-4c31-46fa-8730-5d2af7f56880 draft 106 words
+2026-11-14 22:28:05.737 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=b0735f80-0cb5-4f65-a80e-ae7bb6804c58 CACHE MISS (bypassed) query='When is the re-inspection deadline for Spicy Pho House?'
+2026-11-14 22:28:05.757 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@37] trace_id=b0735f80-0cb5-4f65-a80e-ae7bb6804c58
+2026-11-14 22:28:36.339 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=b0735f80-0cb5-4f65-a80e-ae7bb6804c58 answered by agents status=approved
+2026-11-14 22:28:36.469 | Shashank Ranjan | s2837 | CASES      | C06 trace_id=b0735f80-0cb5-4f65-a80e-ae7bb6804c58 draft 122 words
+2026-11-14 22:28:36.471 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=c111fa2c-30ce-4636-8456-9b7b05cb770b CACHE MISS (bypassed) query='Which violations at Spicy Pho House are the most serious food-safety risks?'
+2026-11-14 22:28:36.485 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@38] trace_id=c111fa2c-30ce-4636-8456-9b7b05cb770b
+2026-11-14 22:29:10.030 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=c111fa2c-30ce-4636-8456-9b7b05cb770b answered by agents status=approved
+2026-11-14 22:29:10.169 | Shashank Ranjan | s2837 | CASES      | C07 trace_id=c111fa2c-30ce-4636-8456-9b7b05cb770b draft 198 words
+2026-11-14 22:29:10.171 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=ce564e22-2102-4484-be48-3129383c91d9 CACHE MISS (bypassed) query="Is Golden Crust Bakery's score of 83 a PASS?"
+2026-11-14 22:29:10.187 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@39] trace_id=ce564e22-2102-4484-be48-3129383c91d9
+2026-11-14 22:29:34.755 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=ce564e22-2102-4484-be48-3129383c91d9 answered by agents status=approved
+2026-11-14 22:29:34.900 | Shashank Ranjan | s2837 | CASES      | C08 trace_id=ce564e22-2102-4484-be48-3129383c91d9 draft 89 words
+2026-11-14 22:29:34.902 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f0263a65-c551-4335-a74d-9df6909a8503 CACHE MISS (bypassed) query='How many more points would Rustic Garden Deli need to reach a PASS?'
+2026-11-14 22:29:34.917 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@40] trace_id=f0263a65-c551-4335-a74d-9df6909a8503
+2026-11-14 22:29:54.246 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f0263a65-c551-4335-a74d-9df6909a8503 answered by agents status=rejected
+2026-11-14 22:29:54.382 | Shashank Ranjan | s2837 | CASES      | C09 trace_id=f0263a65-c551-4335-a74d-9df6909a8503 draft 62 words
+2026-11-14 22:29:54.385 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=0afa82d8-2fea-44b5-8090-d0a6114684ea CACHE MISS (bypassed) query='What did the inspector find at Urban Taco Cafe, and is any follow-up required?'
+2026-11-14 22:29:54.399 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@41] trace_id=0afa82d8-2fea-44b5-8090-d0a6114684ea
+2026-11-14 22:30:15.895 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=0afa82d8-2fea-44b5-8090-d0a6114684ea answered by agents status=approved
+2026-11-14 22:30:16.028 | Shashank Ranjan | s2837 | CASES      | C10 trace_id=0afa82d8-2fea-44b5-8090-d0a6114684ea draft 79 words
+2026-11-14 22:30:16.031 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=9d3ac4c5-a62e-4e1a-8104-f34f996e6797 CACHE MISS (bypassed) query='Which scored higher in the latest inspection, Cafe Milano or Rangoli Indian Cuisine?'
+2026-11-14 22:30:16.043 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@42] trace_id=9d3ac4c5-a62e-4e1a-8104-f34f996e6797
+2026-11-14 22:30:34.654 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=9d3ac4c5-a62e-4e1a-8104-f34f996e6797 answered by agents status=approved
+2026-11-14 22:30:34.799 | Shashank Ranjan | s2837 | CASES      | C11 trace_id=9d3ac4c5-a62e-4e1a-8104-f34f996e6797 draft 46 words
+2026-11-14 22:30:34.803 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=164a7666-c07d-4d47-a9eb-f1997de56991 CACHE MISS (bypassed) query='Compare the inspection results of Taj Grill and Grill & Barrel Bar.'
+2026-11-14 22:30:34.821 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@43] trace_id=164a7666-c07d-4d47-a9eb-f1997de56991
+2026-11-14 22:31:12.521 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=164a7666-c07d-4d47-a9eb-f1997de56991 answered by agents status=approved
+2026-11-14 22:31:12.661 | Shashank Ranjan | s2837 | CASES      | C12 trace_id=164a7666-c07d-4d47-a9eb-f1997de56991 draft 247 words
+2026-11-14 22:31:12.664 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f3a88c58-b7f9-4411-a596-94ca6c509ceb CACHE MISS (bypassed) query='What must Grill & Barrel Bar do before its re-inspection?'
+2026-11-14 22:31:12.679 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@44] trace_id=f3a88c58-b7f9-4411-a596-94ca6c509ceb
+2026-11-14 22:31:46.118 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=f3a88c58-b7f9-4411-a596-94ca6c509ceb answered by agents status=approved
+2026-11-14 22:31:46.252 | Shashank Ranjan | s2837 | CASES      | C13 trace_id=f3a88c58-b7f9-4411-a596-94ca6c509ceb draft 165 words
+2026-11-14 22:31:46.255 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=694f8ad1-c034-4f4c-baa2-1ca72e0860fd CACHE MISS (bypassed) query='How many days does a restaurant with a FAIL status have before re-inspection?'
+2026-11-14 22:31:46.269 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@45] trace_id=694f8ad1-c034-4f4c-baa2-1ca72e0860fd
+2026-11-14 22:32:06.273 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=694f8ad1-c034-4f4c-baa2-1ca72e0860fd answered by agents status=approved
+2026-11-14 22:32:06.430 | Shashank Ranjan | s2837 | CASES      | C14 trace_id=694f8ad1-c034-4f4c-baa2-1ca72e0860fd draft 64 words
+2026-11-14 22:32:06.434 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=c632e42c-b884-44d4-aa39-97396435b1e6 CACHE MISS (bypassed) query='What score range counts as a WARNING, and what happens after a WARNING?'
+2026-11-14 22:32:06.456 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@46] trace_id=c632e42c-b884-44d4-aa39-97396435b1e6
+2026-11-14 22:32:35.126 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=c632e42c-b884-44d4-aa39-97396435b1e6 answered by agents status=approved
+2026-11-14 22:32:35.272 | Shashank Ranjan | s2837 | CASES      | C15 trace_id=c632e42c-b884-44d4-aa39-97396435b1e6 draft 136 words
+2026-11-14 22:32:35.276 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=df0f17da-9b86-4661-beba-8c77480d1067 CACHE MISS (bypassed) query='Is a score of 85 a PASS or a WARNING?'
+2026-11-14 22:32:35.298 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@47] trace_id=df0f17da-9b86-4661-beba-8c77480d1067
+2026-11-14 22:32:52.881 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=df0f17da-9b86-4661-beba-8c77480d1067 answered by agents status=rejected
+2026-11-14 22:32:53.054 | Shashank Ranjan | s2837 | CASES      | C16 trace_id=df0f17da-9b86-4661-beba-8c77480d1067 draft 25 words
+2026-11-14 22:32:53.061 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=b7730b12-3ebb-44d5-bec2-1257471c0425 CACHE MISS (bypassed) query='What was the latest inspection result for Blue Lotus Cafe?'
+2026-11-14 22:32:53.094 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@48] trace_id=b7730b12-3ebb-44d5-bec2-1257471c0425
+2026-11-14 22:33:24.377 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=b7730b12-3ebb-44d5-bec2-1257471c0425 answered by agents status=approved
+2026-11-14 22:33:24.533 | Shashank Ranjan | s2837 | CASES      | C17 trace_id=b7730b12-3ebb-44d5-bec2-1257471c0425 draft 185 words
+2026-11-14 22:33:24.537 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=e5f4fa23-ca5e-468d-a87a-b80b4c7509e7 CACHE MISS (bypassed) query='Why is cooling cooked rice improperly a health hazard?'
+2026-11-14 22:33:24.558 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@49] trace_id=e5f4fa23-ca5e-468d-a87a-b80b4c7509e7
+2026-11-14 22:33:53.396 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=e5f4fa23-ca5e-468d-a87a-b80b4c7509e7 answered by agents status=approved
+2026-11-14 22:33:53.531 | Shashank Ranjan | s2837 | CASES      | C18 trace_id=e5f4fa23-ca5e-468d-a87a-b80b4c7509e7 draft 172 words
+2026-11-14 22:33:53.534 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=a49a6a39-fdde-44b4-bc97-e8bb13fea35e CACHE MISS (bypassed) query='Is it safe to eat at Rustic Garden Deli given its latest inspection?'
+2026-11-14 22:33:53.546 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@50] trace_id=a49a6a39-fdde-44b4-bc97-e8bb13fea35e
+2026-11-14 22:34:14.567 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=a49a6a39-fdde-44b4-bc97-e8bb13fea35e answered by agents status=approved
+2026-11-14 22:34:14.724 | Shashank Ranjan | s2837 | CASES      | C19 trace_id=a49a6a39-fdde-44b4-bc97-e8bb13fea35e draft 89 words
+2026-11-14 22:34:14.727 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=6d5809f4-3b3a-4a1d-9c87-34dc531c8ede CACHE MISS (bypassed) query='Summarize the latest inspection of Rangoli Indian Cuisine for a customer.'
+2026-11-14 22:34:14.749 | Shashank Ranjan | s2837 | PIPELINE   | SENT s2837_inbox[p0@51] trace_id=6d5809f4-3b3a-4a1d-9c87-34dc531c8ede
+2026-11-14 22:34:41.397 | Shashank Ranjan | s2837 | TRACEDQA   | trace_id=6d5809f4-3b3a-4a1d-9c87-34dc531c8ede answered by agents status=approved
+2026-11-14 22:34:41.568 | Shashank Ranjan | s2837 | CASES      | C20 trace_id=6d5809f4-3b3a-4a1d-9c87-34dc531c8ede draft 78 words
+2026-11-14 22:34:41.577 | Shashank Ranjan | s2837 | CASES      | wrote C:\SJSURepo\Data260\Data260-2837\reports\hw10\eval_cases.json and C:\SJSURepo\Data260\Data260-2837\reports\hw10\human_labels.csv (labels empty)
+2026-11-14 22:34:41.578 | Shashank Ranjan | s2837 | CASES      | NEXT: label by hand (label_cases), commit both files, THEN run_part3

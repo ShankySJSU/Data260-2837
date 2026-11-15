@@ -6,7 +6,9 @@ HW10 adds no new identifiers: the HW8 correlation_id is the trace_id everywhere.
 import os
 from pathlib import Path
 
-from .. import hw09_config as h9
+#from .. import hw09_config as h9
+from ..hw9 import hw09_config as h9
+
 
 STUDENT_NAME = h9.STUDENT_NAME
 SID4 = h9.SID4

@@ -1,0 +1,21 @@
+case_id,human_label,note
+C01,5,Perfect match
+C02,1,wrong answer about the re-inspection date. has to be within 30 days
+C03,5,clearly mentioned about the violations
+C04,5,very accurate
+C05,5,excellent analysis
+C06,5,correct calculation of re-inspection date
+C07,4,did not mentioned cross contamination
+C08,1,"factual wrong. 83 is less than 85, hene it is NOT a pass"
+C09,5,correct calculation
+C10,3,it is a pass but also mentioned there is warning whihc is not right
+C11,1,wrong analysis. 97 is higher than 94 for Cafe Milano
+C12,3,ok but missed the violations details
+C13,5,all correct
+C14,5,
+C15,5,
+C16,5,
+C17,4,
+C18,4,
+C19,1,did not answer the main question
+C20,5,

@@ -1,0 +1,337 @@
+{
+  "generated_at": "2026-11-15T05:53:13.009+00:00",
+  "pipeline_mode": "kafka",
+  "cache_hit": {
+    "trace_id": "0de4dddd-4404-4fc2-8ac2-a7594aac86ab",
+    "start_time": "2026-11-15T05:53:01.493+00:00",
+    "path": "hit",
+    "status": "ok",
+    "failed_stage": null,
+    "error": null,
+    "similarity": 1.0,
+    "query": "What violations were recorded at Spicy Pho House, and when is it re-inspected?",
+    "request_ms": 28.2,
+    "journey_ms": 26.0,
+    "queue_wait_ms": 0.0,
+    "stage_ms": {
+      "cache_lookup": 25.9,
+      "request": 28.2
+    },
+    "has_evaluation": false,
+    "n_spans": 2,
+    "spans": [
+      {
+        "stage": "cache_lookup",
+        "start_time": "2026-11-15T05:53:01.493+00:00",
+        "end_time": "2026-11-15T05:53:01.519+00:00",
+        "duration_ms": 25.9,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "threshold": 0.85,
+          "cache_hit": true,
+          "similarity": 1.0,
+          "embed_ms": 17.93,
+          "search_ms": 5.16,
+          "matched_query": "What violations were recorded at Spicy Pho House, and when is it re-inspected?"
+        }
+      }
+    ]
+  },
+  "cache_miss": {
+    "trace_id": "071fa4ea-43b8-49be-a94b-6bf7d584c982",
+    "start_time": "2026-11-15T05:49:59.158+00:00",
+    "path": "miss",
+    "status": "ok",
+    "failed_stage": null,
+    "error": null,
+    "similarity": 0.0,
+    "query": "What violations were recorded at Spicy Pho House, and when is it re-inspected?",
+    "request_ms": 32302.7,
+    "journey_ms": 182325.0,
+    "queue_wait_ms": 45.7,
+    "stage_ms": {
+      "cache_lookup": 15.0,
+      "inbox": 7.6,
+      "planner": 17898.9,
+      "tasks": 16.8,
+      "drafts": 10.4,
+      "writer": 14156.1,
+      "final": 10.9,
+      "reviewer": 32.1,
+      "cache_store": 174.2,
+      "request": 32302.7,
+      "evaluation": 150019.8
+    },
+    "has_evaluation": true,
+    "n_spans": 11,
+    "spans": [
+      {
+        "stage": "cache_lookup",
+        "start_time": "2026-11-15T05:49:59.158+00:00",
+        "end_time": "2026-11-15T05:49:59.173+00:00",
+        "duration_ms": 15.0,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "threshold": 0.85,
+          "cache_hit": false,
+          "similarity": 0.0,
+          "embed_ms": 10.89,
+          "search_ms": 1.96
+        }
+      },
+      {
+        "stage": "inbox",
+        "start_time": "2026-11-15T05:49:59.194+00:00",
+        "end_time": "2026-11-15T05:49:59.201+00:00",
+        "duration_ms": 7.6,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "agent": "planner-1",
+          "topic": "s2837_inbox",
+          "partition": 0,
+          "offset": 21
+        }
+      },
+      {
+        "stage": "planner",
+        "start_time": "2026-11-15T05:49:59.201+00:00",
+        "end_time": "2026-11-15T05:50:17.100+00:00",
+        "duration_ms": 17898.9,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "attempts": 1,
+          "output_topics": [
+            "s2837_tasks"
+          ],
+          "agent": "planner-1",
+          "topic": "s2837_inbox",
+          "partition": 0,
+          "offset": 21
+        }
+      },
+      {
+        "stage": "tasks",
+        "start_time": "2026-11-15T05:50:17.085+00:00",
+        "end_time": "2026-11-15T05:50:17.101+00:00",
+        "duration_ms": 16.8,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "agent": "writer-1",
+          "topic": "s2837_tasks",
+          "partition": 0,
+          "offset": 38
+        }
+      },
+      {
+        "stage": "writer",
+        "start_time": "2026-11-15T05:50:17.101+00:00",
+        "end_time": "2026-11-15T05:50:31.257+00:00",
+        "duration_ms": 14156.1,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "attempts": 1,
+          "output_topics": [
+            "s2837_drafts"
+          ],
+          "agent": "writer-1",
+          "topic": "s2837_tasks",
+          "partition": 0,
+          "offset": 38
+        }
+      },
+      {
+        "stage": "drafts",
+        "start_time": "2026-11-15T05:50:31.242+00:00",
+        "end_time": "2026-11-15T05:50:31.252+00:00",
+        "duration_ms": 10.4,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "agent": "reviewer-1",
+          "topic": "s2837_drafts",
+          "partition": 0,
+          "offset": 72
+        }
+      },
+      {
+        "stage": "reviewer",
+        "start_time": "2026-11-15T05:50:31.252+00:00",
+        "end_time": "2026-11-15T05:50:31.284+00:00",
+        "duration_ms": 32.1,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "attempts": 1,
+          "output_topics": [
+            "s2837_final"
+          ],
+          "agent": "reviewer-1",
+          "topic": "s2837_drafts",
+          "partition": 0,
+          "offset": 72
+        }
+      },
+      {
+        "stage": "final",
+        "start_time": "2026-11-15T05:50:31.270+00:00",
+        "end_time": "2026-11-15T05:50:31.280+00:00",
+        "duration_ms": 10.9,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "topic": "s2837_final",
+          "partition": 0,
+          "offset": 26,
+          "review_status": "approved"
+        }
+      },
+      {
+        "stage": "cache_store",
+        "start_time": "2026-11-15T05:50:31.282+00:00",
+        "end_time": "2026-11-15T05:50:31.457+00:00",
+        "duration_ms": 174.2,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "cache_key": "s2837:semcache:entry:c9732052f85e"
+        }
+      },
+      {
+        "stage": "evaluation",
+        "start_time": "2026-11-15T05:50:31.464+00:00",
+        "end_time": "2026-11-15T05:53:01.483+00:00",
+        "duration_ms": 150019.8,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "batch": "part4_trace",
+          "judge": "ollama:qwen3:4b (local)",
+          "plan_quality": 2,
+          "writer_helpfulness": 3,
+          "final_helpfulness": 5,
+          "eval_status": "ok",
+          "judge_calls_ms": 147340.3
+        }
+      }
+    ]
+  },
+  "failed": {
+    "trace_id": "f8e1bfbc-c522-4e2c-b0b3-394273c7f3dc",
+    "start_time": "2026-11-15T05:53:01.523+00:00",
+    "path": "miss",
+    "status": "error",
+    "failed_stage": "writer",
+    "error": "RuntimeError: injected failure in writer stage (HW10 failed-trace demo)",
+    "similarity": 0.3004,
+    "query": "Trace demo: explain the latest inspection result of Golden Crust Bakery.",
+    "request_ms": 10480.7,
+    "journey_ms": 10482.0,
+    "queue_wait_ms": 24.3,
+    "stage_ms": {
+      "cache_lookup": 23.2,
+      "inbox": 6.1,
+      "tasks": 18.2,
+      "planner": 8884.5,
+      "request": 10480.7,
+      "writer": 1556.7
+    },
+    "has_evaluation": false,
+    "n_spans": 6,
+    "spans": [
+      {
+        "stage": "cache_lookup",
+        "start_time": "2026-11-15T05:53:01.523+00:00",
+        "end_time": "2026-11-15T05:53:01.547+00:00",
+        "duration_ms": 23.2,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "threshold": 0.85,
+          "cache_hit": false,
+          "similarity": 0.3004,
+          "embed_ms": 19.25,
+          "search_ms": 2.49,
+          "matched_query": "What violations were recorded at Spicy Pho House, and when is it re-inspected?"
+        }
+      },
+      {
+        "stage": "inbox",
+        "start_time": "2026-11-15T05:53:01.561+00:00",
+        "end_time": "2026-11-15T05:53:01.567+00:00",
+        "duration_ms": 6.1,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "agent": "planner-1",
+          "topic": "s2837_inbox",
+          "partition": 0,
+          "offset": 22
+        }
+      },
+      {
+        "stage": "planner",
+        "start_time": "2026-11-15T05:53:01.567+00:00",
+        "end_time": "2026-11-15T05:53:10.451+00:00",
+        "duration_ms": 8884.5,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "attempts": 1,
+          "output_topics": [
+            "s2837_tasks"
+          ],
+          "agent": "planner-1",
+          "topic": "s2837_inbox",
+          "partition": 0,
+          "offset": 22
+        }
+      },
+      {
+        "stage": "tasks",
+        "start_time": "2026-11-15T05:53:10.431+00:00",
+        "end_time": "2026-11-15T05:53:10.449+00:00",
+        "duration_ms": 18.2,
+        "status": "ok",
+        "error": null,
+        "attrs": {
+          "agent": "writer-1",
+          "topic": "s2837_tasks",
+          "partition": 1,
+          "offset": 48
+        }
+      },
+      {
+        "stage": "writer",
+        "start_time": "2026-11-15T05:53:10.449+00:00",
+        "end_time": "2026-11-15T05:53:12.005+00:00",
+        "duration_ms": 1556.7,
+        "status": "error",
+        "error": "RuntimeError: injected failure in writer stage (HW10 failed-trace demo)",
+        "attrs": {
+          "attempts": 3,
+          "agent": "writer-1",
+          "topic": "s2837_tasks",
+          "partition": 1,
+          "offset": 48
+        }
+      }
+    ]
+  },
+  "question": "What violations were recorded at Spicy Pho House, and when is it re-inspected?",
+  "failed_question": "Trace demo: explain the latest inspection result of Golden Crust Bakery.",
+  "injected_failure_stage": "writer",
+  "expectations": {
+    "hit_is_cached": true,
+    "miss_is_cached": false,
+    "miss_status": "ok",
+    "failed_status": "error",
+    "failed_stage": "writer",
+    "failed_error": "RuntimeError: injected failure in writer stage (HW10 failed-trace demo) (dead-lettered after 3 attempts)"
+  }
+}

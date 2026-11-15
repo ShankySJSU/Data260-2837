@@ -1,0 +1,338 @@
+{
+  "runs": [
+    {
+      "n": 1,
+      "trace_id": "2a968854-b72c-442a-a79e-3ebf873251a1",
+      "query": "Tell me the exact number of points Rangoli Indian Cuisine earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 24349.0,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 2,
+      "trace_id": "1816b089-3d13-4ece-b34f-1fd9c41824a5",
+      "query": "Tell me the exact number of points Taj Grill earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 21042.7,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 3,
+      "trace_id": "928cbc5e-943d-4bfb-8742-385c3f498b7f",
+      "query": "Tell me the exact number of points Golden Dragon Bistro earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 36093.3,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 4,
+      "trace_id": "1aa85223-eac0-4e70-9d40-4c1421644cc5",
+      "query": "Tell me the exact number of points Urban Taco Cafe earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 35397.2,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 5,
+      "trace_id": "4373826b-b018-4d29-970a-801e04ff9efc",
+      "query": "Tell me the exact number of points Rustic Garden Deli earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 24323.4,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 6,
+      "trace_id": "19fdfd07-de65-46b3-bbe6-2a80b7d471a9",
+      "query": "Tell me the exact number of points Bayside Sushi Bar earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 22181.7,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 7,
+      "trace_id": "4fd23275-08af-45bc-85fc-0fe9e9ee0bf1",
+      "query": "Tell me the exact number of points Spicy Pho House earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 24223.6,
+      "evaluation_status": "ok"
+    },
+    {
+      "n": 8,
+      "trace_id": "01f43fac-2876-43ef-b0e5-7c273aa64dcb",
+      "query": "Tell me the exact number of points Golden Crust Bakery earned at its most recent health inspection.",
+      "is_cached": false,
+      "similarity": 0.0,
+      "confirmed_miss": true,
+      "request_ms": 22692.9,
+      "evaluation_status": "ok"
+    }
+  ],
+  "excluded": [],
+  "target": 50,
+  "started_at": "2026-11-15T06:01:25.025+00:00",
+  "cache_flushed_entries": 1,
+  "pipeline_mode": "kafka",
+  "threshold": 0.85,
+  "judge": "ollama:qwen3:4b (local)",
+  "protocol": "real cache lookup, store=False, hits excluded and replaced",
+  "table": [
+    {
+      "stage": "Cache lookup",
+      "n": 8,
+      "p50_ms": 43.1,
+      "p95_ms": 60.6,
+      "mean_ms": 44.8,
+      "pct_of_end_to_end": 0.03
+    },
+    {
+      "stage": "Planner",
+      "n": 8,
+      "p50_ms": 9442.8,
+      "p95_ms": 11532.1,
+      "mean_ms": 9801.9,
+      "pct_of_end_to_end": 6.4
+    },
+    {
+      "stage": "Writer",
+      "n": 8,
+      "p50_ms": 13475.9,
+      "p95_ms": 26074.8,
+      "mean_ms": 16392.8,
+      "pct_of_end_to_end": 10.7
+    },
+    {
+      "stage": "Reviewer",
+      "n": 8,
+      "p50_ms": 24.6,
+      "p95_ms": 56.1,
+      "mean_ms": 29.6,
+      "pct_of_end_to_end": 0.02
+    },
+    {
+      "stage": "Queue wait (total)",
+      "n": 8,
+      "p50_ms": 34.6,
+      "p95_ms": 82.2,
+      "mean_ms": 43.2,
+      "pct_of_end_to_end": 0.03
+    },
+    {
+      "stage": "Evaluation",
+      "n": 8,
+      "p50_ms": 122501.6,
+      "p95_ms": 151551.8,
+      "mean_ms": 126981.1,
+      "pct_of_end_to_end": 82.85
+    },
+    {
+      "stage": "Other (cache store, client overhead)",
+      "n": 8,
+      "p50_ms": 0.0,
+      "p95_ms": 0.0,
+      "mean_ms": 0.0,
+      "pct_of_end_to_end": 0.0
+    },
+    {
+      "stage": "End-to-end (cache lookup -> evaluation end)",
+      "n": 8,
+      "p50_ms": 150495.0,
+      "p95_ms": 180013.1,
+      "mean_ms": 153270.9,
+      "pct_of_end_to_end": 100.0
+    },
+    {
+      "stage": "User-facing request (cache lookup -> answer)",
+      "n": 7,
+      "p50_ms": 24223.6,
+      "p95_ms": 32570.0,
+      "mean_ms": 24986.7,
+      "pct_of_end_to_end": 14.26
+    }
+  ],
+  "per_trace": [
+    {
+      "trace_id": "2a968854-b72c-442a-a79e-3ebf873251a1",
+      "end_to_end_ms": 184576.0,
+      "request_ms": 24349.0,
+      "stage_ms": {
+        "cache_lookup": 36.7,
+        "inbox": 9.1,
+        "planner": 12175.7,
+        "tasks": 43.3,
+        "writer": 12037.9,
+        "drafts": 11.2,
+        "reviewer": 69.7,
+        "final": 41.3,
+        "cache_store": null,
+        "evaluation": 160225.0
+      },
+      "queue_wait_ms": 104.9,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "1816b089-3d13-4ece-b34f-1fd9c41824a5",
+      "end_to_end_ms": 145845.0,
+      "request_ms": 21042.7,
+      "stage_ms": {
+        "cache_lookup": 52.0,
+        "inbox": 5.3,
+        "planner": 8817.2,
+        "tasks": 9.5,
+        "writer": 12137.2,
+        "drafts": 9.7,
+        "reviewer": 24.8,
+        "final": 13.4,
+        "cache_store": null,
+        "evaluation": 124799.7
+      },
+      "queue_wait_ms": 37.9,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "928cbc5e-943d-4bfb-8742-385c3f498b7f",
+      "end_to_end_ms": 171539.0,
+      "request_ms": 36093.3,
+      "stage_ms": {
+        "cache_lookup": 31.3,
+        "inbox": 9.1,
+        "planner": 10257.6,
+        "tasks": 9.4,
+        "writer": 25757.9,
+        "drafts": 11.2,
+        "reviewer": 24.3,
+        "final": 10.2,
+        "cache_store": null,
+        "evaluation": 135444.5
+      },
+      "queue_wait_ms": 39.9,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "1aa85223-eac0-4e70-9d40-4c1421644cc5",
+      "end_to_end_ms": 155603.0,
+      "request_ms": null,
+      "stage_ms": {
+        "cache_lookup": 63.7,
+        "inbox": 5.0,
+        "planner": 9053.6,
+        "tasks": 9.1,
+        "writer": 26245.5,
+        "drafts": 10.2,
+        "reviewer": 21.8,
+        "final": 8.9,
+        "cache_store": null,
+        "evaluation": 120203.5
+      },
+      "queue_wait_ms": 33.2,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "4373826b-b018-4d29-970a-801e04ff9efc",
+      "end_to_end_ms": 155145.0,
+      "request_ms": 24323.4,
+      "stage_ms": {
+        "cache_lookup": 37.6,
+        "inbox": 4.1,
+        "planner": 10336.7,
+        "tasks": 8.0,
+        "writer": 13916.9,
+        "drafts": 8.3,
+        "reviewer": 17.9,
+        "final": 8.2,
+        "cache_store": null,
+        "evaluation": 130818.6
+      },
+      "queue_wait_ms": 28.6,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "19fdfd07-de65-46b3-bbe6-2a80b7d471a9",
+      "end_to_end_ms": 135879.0,
+      "request_ms": 22181.7,
+      "stage_ms": {
+        "cache_lookup": 33.4,
+        "inbox": 6.7,
+        "planner": 9330.7,
+        "tasks": 7.4,
+        "writer": 12786.1,
+        "drafts": 8.3,
+        "reviewer": 19.1,
+        "final": 9.2,
+        "cache_store": null,
+        "evaluation": 113696.0
+      },
+      "queue_wait_ms": 31.6,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "4fd23275-08af-45bc-85fc-0fe9e9ee0bf1",
+      "end_to_end_ms": 138819.0,
+      "request_ms": 24223.6,
+      "stage_ms": {
+        "cache_lookup": 54.7,
+        "inbox": 4.2,
+        "planner": 8888.4,
+        "tasks": 8.3,
+        "writer": 15226.2,
+        "drafts": 11.1,
+        "reviewer": 30.9,
+        "final": 10.6,
+        "cache_store": null,
+        "evaluation": 114593.5
+      },
+      "queue_wait_ms": 34.2,
+      "other_ms": 0.0
+    },
+    {
+      "trace_id": "01f43fac-2876-43ef-b0e5-7c273aa64dcb",
+      "end_to_end_ms": 138761.0,
+      "request_ms": 22692.9,
+      "stage_ms": {
+        "cache_lookup": 48.6,
+        "inbox": 6.4,
+        "planner": 9554.9,
+        "tasks": 10.3,
+        "writer": 13034.9,
+        "drafts": 7.9,
+        "reviewer": 28.1,
+        "final": 10.4,
+        "cache_store": null,
+        "evaluation": 116068.4
+      },
+      "queue_wait_ms": 35.0,
+      "other_ms": 0.0
+    }
+  ],
+  "dominant": {
+    "stage": "Evaluation",
+    "n": 8,
+    "p50_ms": 122501.6,
+    "p95_ms": 151551.8,
+    "mean_ms": 126981.1,
+    "pct_of_end_to_end": 82.85
+  },
+  "cache_hit_latency": {
+    "n": 1,
+    "p50_ms": 28.2,
+    "p95_ms": 28.2,
+    "mean_ms": 28.2
+  },
+  "confirmed_misses": 8,
+  "all_confirmed_cache_miss": true,
+  "max_nearest_similarity": 0.0,
+  "updated_at": "2026-11-15T06:22:27.814+00:00"
+}

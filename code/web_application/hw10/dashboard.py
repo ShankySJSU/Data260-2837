@@ -28,6 +28,8 @@ from web_application.hw10 import config as cfg  # noqa: E402
 from web_application.hw10 import insights, stats, tracing  # noqa: E402
 from web_application.hw10.common import load_raw  # noqa: E402
 
+
+
 WINDOWS = {"Last 15 minutes": 15 * 60, "Last hour": 3600, "Last 24 hours": 24 * 3600,
            "Last 7 days": 7 * 24 * 3600, "All time": None}
 SPAN_SOURCE = f"reports/hw10/raw/{cfg.SPAN_FILE.name}"
@@ -60,7 +62,8 @@ def load_json(name, mtime, size):
 def redis_connection():
     """One reusable Redis connection for the lifetime counters (expensive to re-create)."""
     import redis
-    from web_application import hw09_config as h9
+    #from web_application import hw09_config as h9
+    from web_application.hw9 import hw09_config as h9
     client = redis.Redis(host=h9.REDIS_HOST, port=h9.REDIS_PORT, decode_responses=True,
                          socket_connect_timeout=1.5, socket_timeout=1.5)
     client.ping()

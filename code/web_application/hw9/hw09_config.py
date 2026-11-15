@@ -50,7 +50,9 @@ DB_NAME = os.getenv("HW9_DB_NAME", f"{PREFIX}_rel")  # s2837_rel
 SQLITE_PATH = os.getenv("HW9_SQLITE")
 
 # ---------------- paths ----------------
-HW9_DIR = Path(__file__).resolve().parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+#HW9_DIR = Path(__file__).resolve().parent
+HW9_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT = HW9_DIR.parents[1]
 REPORT_DIR = Path(os.getenv("HW9_REPORT_DIR", REPO_ROOT / "reports" / "hw09"))
 RAW_DIR = REPORT_DIR / "raw"

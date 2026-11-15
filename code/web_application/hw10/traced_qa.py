@@ -11,15 +11,18 @@ Same behaviour as HW9 qa_service.QAService (semantic cache in front of the HW8 a
 import time
 import uuid
 
-from .. import hw09_config as h9
-from hw_agents_archive.agent_backend import find_records, grounded_question
+
+from ..hw9.agent_backend import find_records, grounded_question
 from ..embedder import embed
-from hw9.hw09_db import Db
 from ..semantic_cache import SemanticCache
 from ..util import redis_client
 from . import tracing
 from .common import log
 from .pipeline import PipelineError, make_pipeline
+
+from ..hw9 import hw09_config as h9
+from ..hw9.hw09_db import Db
+
 
 COMPONENT = "TRACEDQA"
 

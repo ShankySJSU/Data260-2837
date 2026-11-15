@@ -10,7 +10,7 @@ import re
 
 import numpy as np
 
-from . import hw09_config as cfg
+from .hw9 import hw09_config as cfg
 
 _MODEL = {}
 

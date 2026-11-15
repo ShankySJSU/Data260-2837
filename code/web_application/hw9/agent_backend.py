@@ -14,7 +14,7 @@ Modes (HW9_AGENT_MODE or --agent):
 import time
 
 from . import hw09_config as cfg
-from .util import log, ms_since
+from ..util import log, ms_since
 
 COMPONENT = "AGENT"
 
