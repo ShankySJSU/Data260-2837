@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE (Shashank Ranjan, DATA 260). Hollowmere Bank (HLMB), Quartz River Semiconductor (QRVX),
+     Tidewell Therapeutics (TDLW) and Orchard Foods (ORCF) are FICTIONAL companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture, fictional)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000211</id>
+    <updated>2026-11-30T17:40:00-05:00</updated>
+    <title>QRVX: 8-K/A - Current report, amendment</title>
+    <summary>(Fictional test filing.) Quartz River Semiconductor Inc. Amendment No. 1 to the Form 8-K filed November 30, 2026, filed solely to correct the date shown in the heading of Exhibit 99.1. No change to the reported results or guidance.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000211/0009999911-26-000211-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000210</id>
+    <updated>2026-11-30T16:05:00-05:00</updated>
+    <title>QRVX: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Quartz River Semiconductor Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Q3 revenue $1.84B, up 31% year over year; gross margin 61.2%; Q4 revenue guidance $1.95B-$2.05B, above the prior outlook.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000210/0009999911-26-000210-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999913-26-000052</id>
+    <updated>2026-11-27T07:30:00-05:00</updated>
+    <title>TDLW: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Tidewell Therapeutics Inc. Item 8.01 Other Events: the U.S. FDA granted Breakthrough Therapy designation to TDW-201, the company's lead drug candidate, for adults with relapsed acute myeloid leukemia. TDW-201 is the company's only late-stage program.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999913/000999991326000052/0009999913-26-000052-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000088</id>
+    <updated>2026-11-25T16:15:00-05:00</updated>
+    <title>HLMB: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Hollowmere Bank Corp. Item 5.02 Departure of Certain Officers: Chief Financial Officer Dana Whitlock resigned effective December 31, 2026. The Chief Accounting Officer will serve as interim CFO while the board searches for a successor.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000088/0009999912-26-000088-index.htm" rel="alternate"/>
+  </entry>
+</feed>
