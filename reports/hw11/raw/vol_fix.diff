@@ -1,0 +1,42 @@
+--- /home/hatch/workspace/hw11_outputs/watch.py.before-vol-fix	2026-11-20 16:44:07.464694631 -0800
++++ /home/hatch/stock-watch/watch.py	2026-11-20 16:44:15.953102456 -0800
+@@ -645,8 +645,28 @@
+             except Exception as e:
+                 res.append({"ticker": tk, "error": str(e)[:200]})
+                 continue
+-            raw = [r.split(",") for r in text.strip().splitlines()[1:] if r.strip()]
+-            closes = [float(r[4]) if len(r) >= 5 and r[4] not in ("", "N/D") else None for r in raw][-(a.days + 1):]
++            # HW11 fix (vol crash, Prompt 1): Stooq can answer an automated
++            # client with an HTML browser-verification page instead of CSV.
++            # The original code split that page on commas and called float()
++            # on a JavaScript fragment, crashing the whole command. Validate
++            # the CSV header first, and parse closes defensively so one bad
++            # response becomes a per-ticker error, not a traceback.
++            lines = text.strip().splitlines()
++            if not lines or not lines[0].startswith("Date,"):
++                res.append({"ticker": tk, "error": "Stooq did not return CSV "
++                            f"(first line is not a CSV header); got: {text[:120]!r}"})
++                continue
++            parsed = []  # (date, close) for rows with a real numeric close
++            for row in [r.split(",") for r in lines[1:] if r.strip()]:
++                if len(row) < 5 or row[4] in ("", "N/D"):
++                    continue  # missing close (N/D day): skip, as before
++                if not re.match(r"^\d{4}-\d{2}-\d{2}$", row[0].strip()):
++                    continue  # not a data row
++                try:
++                    parsed.append((row[0].strip(), float(row[4])))
++                except ValueError:
++                    continue  # non-numeric close: skip the row, do not crash
++            closes = [c for _, c in parsed][-(a.days + 1):]
+             chg = [(c1 - c0) / c0 * 100.0 for c0, c1 in zip(closes, closes[1:]) if c0 and c1]
+             if len(chg) < 20:
+                 res.append({"ticker": tk, "error": f"only {len(chg)} daily changes; got: {text[:120]!r}"})
+@@ -655,7 +675,7 @@
+             sd = (sum((x - mean) ** 2 for x in chg) / (len(chg) - 1)) ** 0.5
+             ab = sorted(abs(x) for x in chg)
+             res.append({
+-                "ticker": tk, "days": len(chg), "last_date": raw[-1][0],
++                "ticker": tk, "days": len(chg), "last_date": parsed[-1][0],
+                 "daily_sd_pct": round(sd, 2),
+                 "p95_abs_move_pct": round(ab[int(0.95 * (len(ab) - 1))], 2),
+                 "max_abs_move_pct": round(ab[-1], 2),

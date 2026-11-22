@@ -1,0 +1,36 @@
+{
+  "metrics": {
+    "cases": 12,
+    "decision_accuracy": 1.0,
+    "precision_notify": 1.0,
+    "recall_notify": 1.0,
+    "unnecessary_notification_rate": 0.0,
+    "duplicate_notification_rate": 0.0,
+    "restart_recovery_rate": 1.0,
+    "blocked_non_allowlisted_urls": 1,
+    "injection_items_flagged": 1,
+    "injection_items_notified": 0,
+    "tokens_per_accepted_notification": 0
+  },
+  "per_case": [
+    {"case_id": "N1", "expected": "notify", "got": "notify", "correct": true},
+    {"case_id": "N2", "expected": "digest", "got": "digest", "correct": true},
+    {"case_id": "B1", "expected": "notify", "got": "notify", "correct": true},
+    {"case_id": "B2", "expected": "ask", "got": "ask", "correct": true},
+    {"case_id": "A1", "expected": "ask", "got": "ask", "correct": true},
+    {"case_id": "A2", "expected": "ask", "got": "ask", "correct": true},
+    {"case_id": "M1", "expected": "digest", "got": "digest", "correct": true},
+    {"case_id": "M2", "expected": "notify", "got": "notify", "correct": true},
+    {"case_id": "D1", "expected": "notify", "got": "notify", "correct": true},
+    {"case_id": "D2", "expected": "quiet", "got": "quiet", "correct": true},
+    {"case_id": "R1", "expected": "quiet", "got": "quiet", "correct": true},
+    {"case_id": "R2", "expected": "notify", "got": "notify", "correct": true}
+  ],
+  "runs": [{
+    "run_id": "20261120-174950-149f",
+    "mode": "fixtures", "status": "complete", "note": "resumed",
+    "started": "2026-11-21T01:49:50+00:00",
+    "finished": "2026-11-21T01:55:19+00:00",
+    "latency_seconds": 329.0
+  }]
+}

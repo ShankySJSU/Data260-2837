@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "window_trading_days": 250,
+  "tickers": [
+    {
+      "ticker": "ko.us",
+      "error": "Stooq did not return CSV (first line is not a CSV header); got: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T'"
+    },
+    {
+      "ticker": "jpm.us",
+      "error": "Stooq did not return CSV (first line is not a CSV header); got: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T'"
+    },
+    {
+      "ticker": "nvda.us",
+      "error": "Stooq did not return CSV (first line is not a CSV header); got: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T'"
+    },
+    {
+      "ticker": "mrna.us",
+      "error": "Stooq did not return CSV (first line is not a CSV header); got: '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>T'"
+    }
+  ]
+}
